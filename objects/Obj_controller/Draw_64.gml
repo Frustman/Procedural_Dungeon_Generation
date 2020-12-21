@@ -1,8 +1,8 @@
 var fingerX = device_mouse_x_to_gui(0);
 var fingerY = device_mouse_y_to_gui(0);
 
-draw_text(0,0,fingerX);
-draw_text(0,20,view_wport[0]);
+//draw_text(0,0,fingerX);
+//draw_text(0,20,view_wport[0]);
 
 if(move){
 	distanceBox = point_distance(boxCenterX, boxCenterY, fingerX, fingerY);
