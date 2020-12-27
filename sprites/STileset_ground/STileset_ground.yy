@@ -10,12 +10,12 @@
   "bbox_left": 0,
   "bbox_right": 255,
   "bbox_top": 0,
-  "bbox_bottom": 255,
+  "bbox_bottom": 191,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 256,
-  "height": 256,
+  "height": 192,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_wall2/STileset_wall2.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_wall2/STileset_wall2.yy",},"LayerId":{"name":"96748d5b-416d-44cb-8486-c227f610ed2e","path":"sprites/STileset_wall2/STileset_wall2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"STileset_wall2","path":"sprites/STileset_wall2/STileset_wall2.yy",},"resourceVersion":"1.0","name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_ground/STileset_ground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_ground/STileset_ground.yy",},"LayerId":{"name":"96748d5b-416d-44cb-8486-c227f610ed2e","path":"sprites/STileset_ground/STileset_ground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"STileset_ground","path":"sprites/STileset_ground/STileset_ground.yy",},"resourceVersion":"1.0","name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"STileset_wall2","path":"sprites/STileset_wall2/STileset_wall2.yy",},
+    "spriteId": {"name":"STileset_ground","path":"sprites/STileset_ground/STileset_ground.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8033dd2c-c06b-44e1-966c-1c7d5c48922a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_wall2/STileset_wall2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"8033dd2c-c06b-44e1-966c-1c7d5c48922a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d576f3d7-675c-4c51-a9c6-be3b74d42836","path":"sprites/STileset_ground/STileset_ground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"STileset_wall2","path":"sprites/STileset_wall2/STileset_wall2.yy",},
+    "parent": {"name":"STileset_ground","path":"sprites/STileset_ground/STileset_ground.yy",},
     "resourceVersion": "1.3",
-    "name": "STileset_wall2",
+    "name": "STileset_ground",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -72,7 +72,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "STileset_wall2",
+  "name": "STileset_ground",
   "tags": [],
   "resourceType": "GMSprite",
 }

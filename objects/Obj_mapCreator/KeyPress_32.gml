@@ -1,1 +1,0 @@
-Scr_Pdg_Process(global.map, 20, 20);

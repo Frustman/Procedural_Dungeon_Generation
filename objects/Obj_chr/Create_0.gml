@@ -1,1 +1,1 @@
-moveSpeed = 1;
+moveSpeed = 1.5;

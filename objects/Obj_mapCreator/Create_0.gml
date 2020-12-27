@@ -1,2 +1,4 @@
 randomize();
-global.map = Scr_Pdg_Init(20, 20);
+
+
+alarm[0] = 20;
