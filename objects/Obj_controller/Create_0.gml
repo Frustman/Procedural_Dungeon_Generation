@@ -13,7 +13,5 @@ directionBox = 90;
 boxControlX = 0;
 boxControlY = 0;
 
-Obj_chr.ControllerID = id;
-Obj_camera.ControllerID = id;
 
 maxWidth = 128;

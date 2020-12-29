@@ -1,5 +1,11 @@
-var targetX = Obj_chr.x + lengthdir_x(30,ControllerID.directionBox);
-var targetY = Obj_chr.y + lengthdir_y(30,ControllerID.directionBox);
+
+if(instance_exists(Obj_controller)){
+	var targetX = Obj_chr.x + lengthdir_x(30,Obj_controller.directionBox);
+	var targetY = Obj_chr.y + lengthdir_y(30,Obj_controller.directionBox);
+} else{
+	var targetX = 0;
+	var targetY = 0;
+}
 
 x += (targetX - x) / CamDivSpeed;
 y += (targetY - y) / CamDivSpeed;

@@ -1,5 +1,10 @@
-dx = lengthdir_x(moveSpeed,ControllerID.directionBox);
-dy = lengthdir_y(moveSpeed,ControllerID.directionBox);
+if(instance_exists(Obj_controller)){
+	dx = lengthdir_x(moveSpeed,Obj_controller.directionBox);
+	dy = lengthdir_y(moveSpeed,Obj_controller.directionBox);
+} else{
+	dx = 0;
+	dy = 0;
+}
 
 signX = sign(dx);
 signY = sign(dy);

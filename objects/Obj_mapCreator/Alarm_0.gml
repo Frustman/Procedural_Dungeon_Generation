@@ -22,7 +22,7 @@ for(var i = 0; i < Obj_map.dungeon_width; i++){
 			} else{
 				var tile_data = tile_set_index(TileSet_wall,46);
 			}
-			
+			instance_create_layer(i * 32, j * 32, layer_get_id("wall"),Obj_wall);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_1"), tile_data, i* 32, j * 32);
 		} else {
 			var top = (map[#i, j-1] == 1) ? 1 : 0;

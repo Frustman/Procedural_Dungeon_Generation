@@ -1,5 +1,6 @@
 /// @description 
 if is_create{
+	var MIN_SIZE = Obj_map.MIN_SIZE;
 	width = x2 - x1;
 	height = y2 - y1;
 	
@@ -9,11 +10,22 @@ if is_create{
 	x = cx * 32;
 	y = cy * 32;
 	
-	split_width = round(width / 4 + irandom(width / 2));
-	split_height = round(width / 4 + irandom(width / 2));
+	var splitH = irandom(10) > 4;
 	
-	if(width > height){
-		if(width > room_size){
+	if(width / height >= 1.25){
+		splitH = true;
+	} else if(height / width >= 1.25){
+		splitH = false;
+	}
+	
+	var split = min(width, height) > MIN_SIZE;
+	
+	if(split){
+		split_width = round(width / 4 + irandom(width / 2));
+		split_height = round(height / 4 + irandom(height / 2));
+	
+	
+		if(splitH){
 			left_node = instance_create_layer(x1,y1,"room",Obj_room);
 			right_node = instance_create_layer(x1 + split_width,y1,"room",Obj_room);
 			with(left_node){
@@ -35,9 +47,7 @@ if is_create{
 				brother_node = left_node;
 			}
 			is_terminal = false;
-		}
-	} else{
-		if(height > room_size){
+		} else{
 			left_node = instance_create_layer(x1,y1,"room",Obj_room);
 			right_node = instance_create_layer(x1,y1 + split_height,"room",Obj_room);
 			with(left_node){
@@ -66,9 +76,11 @@ if is_create{
 if(!is_terminal){
 	instance_destroy(self);
 } else{
-	var data_list = array_create(2,0);
+	var data_list = array_create(4,0);
 	data_list[0] = x;
 	data_list[1] = y;
+	data_list[2] = cx;
+	data_list[3] = cy;
 	var Mroom_width = width / 2 - 2;
 	var Mroom_height = height / 2 - 2;
 	ds_grid_set_region(Obj_map.geo_map,cx - Mroom_width, cy - Mroom_height,cx + Mroom_width, cy + Mroom_height, 1);

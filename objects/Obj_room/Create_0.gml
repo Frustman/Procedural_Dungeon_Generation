@@ -13,7 +13,5 @@ left_node = noone;
 brother_node = noone;
 parent_node = noone;
 
-room_size = 20;
-
 is_create = true;
 is_terminal = true;
