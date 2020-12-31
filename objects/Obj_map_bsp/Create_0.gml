@@ -1,4 +1,7 @@
 /// @description Insert description here
+#macro CELL_WIDTH 64
+#macro CELL_HEIGHT 64
+
 LAND = 1;
 dungeon_width = 50;
 dungeon_height = 25;
@@ -14,10 +17,10 @@ node_list = ds_list_create();
 
 newRoom = room_duplicate(room);
 
-room_set_width(newRoom, dungeon_width * 32);
-room_set_height(newRoom, dungeon_height * 32);
+room_set_width(newRoom, dungeon_width * CELL_WIDTH);
+room_set_height(newRoom, dungeon_height * CELL_HEIGHT);
 
-var root_node = instance_create_layer(0,0,"room",Obj_room);
+var root_node = instance_create_layer(0,0,"room",Obj_room_bsp);
 with root_node{
 	x1 = 1;
 	y1 = 1;

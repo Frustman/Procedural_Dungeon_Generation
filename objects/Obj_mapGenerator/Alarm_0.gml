@@ -1,13 +1,14 @@
 /// @description Insert description here
+// You can write your code in this editor
 
 #macro CELL_WIDTH 64
 #macro CELL_HEIGHT 64
 
-var map = Obj_map_bsp.geo_map;
-for(var i = 0; i < Obj_map_bsp.dungeon_width; i++){
-	for(var j = 0; j < Obj_map_bsp.dungeon_height; j++){
+var map = real_map;
+for(var i = 0; i < real_width; i++){
+	for(var j = 0; j < real_height; j++){
 		if(map[#i, j] == 0){
-			if(i != 0 && i != Obj_map_bsp.dungeon_width - 1 && j != 0 && j != Obj_map_bsp.dungeon_height - 1){
+			if(i != 0 && i != real_width - 1 && j != 0 && j != real_height - 1){
 				var top = (map[#i, j-1] == 0) ? 1 : 0;
 				var left = (map[#i-1, j] == 0) ? 1 : 0;
 				var bottom = (map[#i, j+1] == 0) ? 1 : 0;
@@ -46,3 +47,10 @@ for(var i = 0; i < Obj_map_bsp.dungeon_width; i++){
 		}
 	}
 }
+
+instance_create_layer(0,0, "Instances",Obj_controller);
+instance_create_layer(0,0, "Instances",Obj_varContainer);
+
+instance_create_layer((dg_width * 4 + dg_width / 2) * 64, (dg_height * 3 + dg_height / 2) * 64, "Instances", Obj_chr);
+instance_create_layer((dg_width * 4 + dg_width / 2) * 64, (dg_height * 3 + dg_height / 2) * 64, "Instances", Obj_enemy);
+instance_create_layer((dg_width * 4 + dg_width / 2) * 64, (dg_height * 3 + dg_height / 2) * 64, "Instances", Obj_camera);

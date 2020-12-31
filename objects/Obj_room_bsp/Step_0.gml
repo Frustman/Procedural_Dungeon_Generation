@@ -1,14 +1,18 @@
 /// @description 
+
+#macro CELL_WIDTH 64
+#macro CELL_HEIGHT 64
+
 if is_create{
-	var MIN_SIZE = Obj_map.MIN_SIZE;
+	var MIN_SIZE = Obj_map_bsp.MIN_SIZE;
 	width = x2 - x1;
 	height = y2 - y1;
 	
 	cx = (x1 + x2) div 2;
 	cy = (y1 + y2) div 2;
 	
-	x = cx * 32;
-	y = cy * 32;
+	x = cx * CELL_WIDTH;
+	y = cy * CELL_HEIGHT;
 	
 	var splitH = irandom(10) > 4;
 	
@@ -26,8 +30,8 @@ if is_create{
 	
 	
 		if(splitH){
-			left_node = instance_create_layer(x1,y1,"room",Obj_room);
-			right_node = instance_create_layer(x1 + split_width,y1,"room",Obj_room);
+			left_node = instance_create_layer(x1,y1,"room",Obj_room_bsp);
+			right_node = instance_create_layer(x1 + split_width,y1,"room",Obj_room_bsp);
 			with(left_node){
 				x1 = other.x1;
 				y1 = other.y1;
@@ -48,8 +52,8 @@ if is_create{
 			}
 			is_terminal = false;
 		} else{
-			left_node = instance_create_layer(x1,y1,"room",Obj_room);
-			right_node = instance_create_layer(x1,y1 + split_height,"room",Obj_room);
+			left_node = instance_create_layer(x1,y1,"room",Obj_room_bsp);
+			right_node = instance_create_layer(x1,y1 + split_height,"room",Obj_room_bsp);
 			with(left_node){
 				x1 = other.x1;
 				x2 = other.x2;
@@ -83,7 +87,7 @@ if(!is_terminal){
 	data_list[3] = cy;
 	var Mroom_width = width / 2 - 2;
 	var Mroom_height = height / 2 - 2;
-	ds_grid_set_region(Obj_map.geo_map,cx - Mroom_width, cy - Mroom_height,cx + Mroom_width, cy + Mroom_height, 1);
-	ds_list_add(Obj_map.node_list, data_list);
+	ds_grid_set_region(Obj_map_bsp.geo_map,cx - Mroom_width, cy - Mroom_height,cx + Mroom_width, cy + Mroom_height, 1);
+	ds_list_add(Obj_map_bsp.node_list, data_list);
 	instance_destroy(self);
 }
