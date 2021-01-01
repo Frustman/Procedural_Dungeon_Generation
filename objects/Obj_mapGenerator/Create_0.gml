@@ -2,8 +2,8 @@
 
 randomize();
 
-dg_width = 22;
-dg_height = 18;
+dg_width = 23;
+dg_height = 19;
 
 real_width = dg_width * 9;
 real_height = dg_height * 8;

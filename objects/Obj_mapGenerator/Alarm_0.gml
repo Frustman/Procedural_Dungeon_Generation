@@ -7,6 +7,9 @@
 var map = real_map;
 for(var i = 0; i < real_width; i++){
 	for(var j = 0; j < real_height; j++){
+		if(map[#i, j] == 2){
+			//instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "Instances", Obj_door);	
+		}
 		if(map[#i, j] == 0){
 			if(i != 0 && i != real_width - 1 && j != 0 && j != real_height - 1){
 				var top = (map[#i, j-1] == 0) ? 1 : 0;
