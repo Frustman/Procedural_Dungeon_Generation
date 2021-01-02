@@ -5,6 +5,8 @@ randomize();
 dg_width = 23;
 dg_height = 19;
 
+dg_trim = 6;
+
 real_width = dg_width * 9;
 real_height = dg_height * 8;
 
@@ -15,7 +17,7 @@ real_map = ds_grid_create(real_width, real_height);
 ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, 0);
 
 ds_grid_set_region(map_list, 0,0, dg_width - 1, dg_height - 1, 0);
-ds_grid_set_region(map_list, 4,4, dg_width - 5, dg_height - 5, 1);
+ds_grid_set_region(map_list, dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 1);
 
 map_grid = ds_grid_create(9,8);
 door_grid = ds_grid_create(9,8);

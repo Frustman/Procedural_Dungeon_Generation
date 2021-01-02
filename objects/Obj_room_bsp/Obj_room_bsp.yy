@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "bsp",
+    "path": "folders/Objects/bsp.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_room_bsp",

@@ -1,42 +1,36 @@
+target = instance_nearest(Obj_chr.x, Obj_chr.y, Obj_enemy);
 
-if(instance_exists(Obj_controller)){
-	var targetX = Obj_chr.x + lengthdir_x(30,Obj_controller.directionBox);
-	var targetY = Obj_chr.y + lengthdir_y(30,Obj_controller.directionBox);
-} else{
-	var targetX = 0;
-	var targetY = 0;
+if(Scr_get_room_pos(Obj_chr.x, Obj_chr.y) == Scr_get_room_pos(target.x, target.y)){
+	var targetX = (Obj_chr.x + target.x * 2) / 3;
+	var targetY = (Obj_chr.y + target.y * 2) / 3;
+
+	cam_zoom = 1.0 + point_distance(Obj_chr.x, Obj_chr.y, Obj_enemy.x, Obj_enemy.y) / 600;
+}
+else{
+	if(instance_exists(Obj_controller)){
+		var targetX = Obj_chr.x + lengthdir_x(30 * cam_zoom,Obj_controller.directionBox);
+		var targetY = Obj_chr.y + lengthdir_y(30 * cam_zoom,Obj_controller.directionBox);
+	} else{
+		var targetX = 0;
+		var targetY = 0;
+	}
+	cam_zoom = 1.0;
 }
 
-x += (targetX - x) / CamDivSpeed;
-y += (targetY - y) / CamDivSpeed;
+var view_width = camera_get_view_width(view_camera[0]);
+var view_height = camera_get_view_height(view_camera[0]);
 
-camera_set_view_border(view_camera[0], camera_get_view_width(view_camera[0]) / 2 * cam_zoom, camera_get_view_height(view_camera[0]) / 2 * cam_zoom);
+var new_width = lerp(view_width, cam_zoom * cam_width, rate);
+var new_height = lerp(view_height, cam_zoom * cam_height, rate);
+
+camera_set_view_size(view_camera[0], new_width, new_height);
+
+view_width = camera_get_view_width(view_camera[0]);
+view_height = camera_get_view_height(view_camera[0]);
+
+x = lerp(x,targetX, rate);
+y = lerp(y,targetY, rate);
+
+camera_set_view_border(view_camera[0], new_width / 2, new_height / 2);
 
 camera_set_view_pos(view_camera[0], x - camera_get_view_border_x(view_camera[0]), y - camera_get_view_border_y(view_camera[0]));
-//camera_set_view_size(view_camera[0], cam_width * cam_zoom, cam_height * cam_zoom);
-
-//this is cahnges the zoom based on scolling but you can set it how ever you like
-zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
-
-//Get current size
-var view_w = camera_get_view_width(view_camera[0]);
-var view_h = camera_get_view_height(view_camera[0]);
-
-//Set the rate of interpolation
-var rate = 0.2;
-
-//Get new sizes by interpolating current and target zoomed size
-var new_w = lerp(view_w, zoom_level * default_zoom_width, rate);
-var new_h = lerp(view_h, zoom_level * default_zoom_height, rate);
-
-//Apply the new size
-//camera_set_view_size(view_camera[0], new_w, new_h);
-
-var vpos_x = x;
-var vpos_y = y;
-
-//change coordinates of camera so zoom is centered
-var new_x = lerp(vpos_x,vpos_x+(view_w - zoom_level * default_zoom_width)/2, rate);
-var new_y = lerp(vpos_y,vpos_y+(view_h - zoom_level * default_zoom_height)/2, rate);
-
-//camera_set_view_pos(view_camera[0], x - camera_get_view_border_x(view_camera[0]), y - camera_get_view_border_y(view_camera[0]));

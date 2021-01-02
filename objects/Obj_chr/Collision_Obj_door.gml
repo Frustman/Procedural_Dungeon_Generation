@@ -1,28 +1,31 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var pos = Scr_get_room_pos();
+var pos = Scr_get_room_pos(x, y);
 var xpos = pos div 10;
 var ypos = pos % 10;
 
 var dg_width = Obj_mapGenerator.dg_width;
 var dg_height = Obj_mapGenerator.dg_height;
+
+var dg_trim = Obj_mapGenerator.dg_trim;
+
 switch(other.dir){
 	case 0: // L
-		x = (xpos * dg_width - 4.5) * CELL_WIDTH;
+		x = (xpos * dg_width - 0.5 - dg_trim) * CELL_WIDTH;
 		y = (ypos * dg_height + dg_height / 2) * CELL_HEIGHT;
 		break;
 	case 1: // D
 		x = (xpos * dg_width + dg_width / 2) * CELL_WIDTH;
-		y = ((ypos + 1) * dg_height + 4.5) * CELL_HEIGHT;
+		y = ((ypos + 1) * dg_height + 0.5 + dg_trim) * CELL_HEIGHT;
 		break;
 	case 2: // R
-		x = ((xpos + 1) * dg_width + 4.5) * CELL_WIDTH;
+		x = ((xpos + 1) * dg_width + 0.5 + dg_trim) * CELL_WIDTH;
 		y = (ypos * dg_height + dg_height / 2) * CELL_HEIGHT;
 		break;
 	case 3: // U
 		x = (xpos * dg_width + dg_width / 2) * CELL_WIDTH;
-		y = ((ypos) * dg_height - 4.5) * CELL_HEIGHT;
+		y = ((ypos) * dg_height - 0.5 - dg_trim) * CELL_HEIGHT;
 		break;
 }
 				/*if(door_grid[# i, j] % 10 == 1){
