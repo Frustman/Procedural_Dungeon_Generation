@@ -1,38 +1,59 @@
-if(instance_exists(Obj_controller)){
-	dx = lengthdir_x(moveSpeed,Obj_controller.directionBox);
-	dy = lengthdir_y(moveSpeed,Obj_controller.directionBox);
+if(!dash){
+	if(instance_exists(Obj_controller)){
+		dx = lengthdir_x(moveSpeed,Obj_controller.directionBox);
+		dy = lengthdir_y(moveSpeed,Obj_controller.directionBox);
+	} else{
+		dx = 0;
+		dy = 0;
+	}
 } else{
-	dx = 0;
-	dy = 0;
+	dx = lengthdir_x(dashSpeed,dashDir);
+	dy = lengthdir_y(dashSpeed,dashDir);
+}
+
+anim_maxIndex = image_number;
+
+if(anim_index < anim_maxIndex * anim_fps){
+	anim_index++;
+} else{
+	anim_index = 0;
+}
+
+if(dash){
+	dashSpeed -= 0.5;
+	clamp(dashSpeed,0,9);
 }
 
 signX = sign(dx);
 signY = sign(dy);
 
-if(signX > 0)
+if(signX > 0){
 	image_xscale = 1.0;
-else if(signX < 0)
+	LookRight = 1;
+}
+else if(signX < 0){
 	image_xscale = -1.0;
+	LookRight = 0;
+}
 
 if(ControllerID.move){
-	image_speed = 0.2;
+	state = "move";
 } else{
-	image_index = 0;
-	image_speed = 0;
+	state = "idle";
 }
 
-if(ControllerID.move && place_empty(x + dx, y, Obj_wall)){
+if((ControllerID.move || dash) && place_empty(x + dx, y, Obj_wall)){
 	x += dx;
 } else if(ControllerID.move && !place_empty(x + dx, y, Obj_wall)){
-	while(place_free(x + signX / 2, y)){
-		x += signX / 2;
+	while(place_free(x + signX / 100, y)){
+		x += signX / 100;
 	}
 }
-if(ControllerID.move && place_empty(x, y + dy, Obj_wall)){
+if((ControllerID.move || dash) && place_empty(x, y + dy, Obj_wall)){
 	y += dy;
 } else if(ControllerID.move && !place_empty(x, y + dy, Obj_wall)){
-	while(place_free(x, y + signY / 2)){
-		y += signY / 2;
+	while(place_free(x, y + signY / 100)){
+		y += signY / 100;
 	}
 }
 
