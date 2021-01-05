@@ -1,25 +1,24 @@
-move = false;
-_move = false;
+/// @description Insert description here
+// You can write your code in this editor
 
-boxCenterX = 192;
-boxCenterY = 512 + 64;
+boxCenterX = 160;
+boxCenterY = 512 + 32;
+boxRadius = 128;
 
-AttackCenterX = 1366 - 192;
-AttackCenterY = 512 + 64;
+AttackCenterX = 1366 - 160;
+AttackCenterY = 512 + 32;
 AttackRadius = 128;
 
-DashCenterX = 1366 - 80;
-DashCenterY = 512 - 64;
-DashRadius = 64;
+dashCenterX = 1366 - 80;
+dashCenterY = 512 - 128;
+dashRadius = 32;
 
-distanceBox = 0;
+joyIndex = -1;
+
+clickOne = false;
+clickTwo = false;
+
 directionBox = 90;
+distanceBox = 0;
 
-AttackdistanceBox = 0;
-AttackdirectionBox = 90;
-
-boxControlX = 0;
-boxControlY = 0;
-
-
-maxWidth = 128;
+move = false;

@@ -6,7 +6,6 @@
 room_goto(newRoom);
 
 room_instance_add(newRoom,0,0,Obj_controller);
-room_instance_add(newRoom,0,0,Obj_varContainer);
 room_instance_add(newRoom,0,0,Obj_mapCreator);
 
 var start_room = node_list[|0];

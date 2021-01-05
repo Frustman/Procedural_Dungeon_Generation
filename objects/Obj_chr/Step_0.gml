@@ -36,22 +36,22 @@ else if(signX < 0){
 	LookRight = 0;
 }
 
-if(ControllerID.move){
+if(Obj_controller.move){
 	state = "move";
 } else{
 	state = "idle";
 }
 
-if((ControllerID.move || dash) && place_empty(x + dx, y, Obj_wall)){
+if((Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
 	x += dx;
-} else if(ControllerID.move && !place_empty(x + dx, y, Obj_wall)){
+} else if(Obj_controller.move && !place_empty(x + dx, y, Obj_wall)){
 	while(place_free(x + signX / 100, y)){
 		x += signX / 100;
 	}
 }
-if((ControllerID.move || dash) && place_empty(x, y + dy, Obj_wall)){
+if((Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
 	y += dy;
-} else if(ControllerID.move && !place_empty(x, y + dy, Obj_wall)){
+} else if(Obj_controller.move && !place_empty(x, y + dy, Obj_wall)){
 	while(place_free(x, y + signY / 100)){
 		y += signY / 100;
 	}

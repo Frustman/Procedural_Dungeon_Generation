@@ -5,6 +5,7 @@
     {"id":{"name":"Scr_BSP_init","path":"scripts/Scr_BSP_init/Scr_BSP_init.yy",},"order":3,},
     {"id":{"name":"TileSet_ground","path":"tilesets/TileSet_ground/TileSet_ground.yy",},"order":1,},
     {"id":{"name":"Obj_enemy","path":"objects/Obj_enemy/Obj_enemy.yy",},"order":5,},
+    {"id":{"name":"Spr_AttackBox","path":"sprites/Spr_AttackBox/Spr_AttackBox.yy",},"order":14,},
     {"id":{"name":"Spr_chr","path":"sprites/Spr_chr/Spr_chr.yy",},"order":3,},
     {"id":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"order":2,},
     {"id":{"name":"Spr_chr_move","path":"sprites/Spr_chr_move/Spr_chr_move.yy",},"order":9,},

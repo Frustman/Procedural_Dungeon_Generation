@@ -20,4 +20,4 @@ if(dash){
 	}
 }
 
-draw_sprite_ext(Spr_sword,0,x,y,1.0,1.0,Obj_controller.AttackdirectionBox + 30,c_white,1.0);
+//draw_sprite_ext(Spr_sword,0,x,y,1.0,1.0,Obj_controller.AttackdirectionBox + 30,c_white,1.0);
