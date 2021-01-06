@@ -5,5 +5,3 @@ for(var i = 0; i < 9; i++){
 		draw_text(i * 10, j * 10, map_grid[# i, j]);
 	}
 }
-/*if(instance_exists(Obj_chr))
-	draw_text(0,30,Scr_get_room_pos(Obj_chr.x, Obj_chr.y));*/

@@ -22,3 +22,6 @@ directionBox = 90;
 distanceBox = 0;
 
 move = false;
+
+can_attack = true;
+can_dash = true;

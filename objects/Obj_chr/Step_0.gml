@@ -13,15 +13,16 @@ if(!dash){
 
 anim_maxIndex = image_number;
 
-if(anim_index < anim_maxIndex * anim_fps){
+if(anim_index < (anim_maxIndex) * anim_fps){
 	anim_index++;
+	if(dash || shoot) anim_index++;
 } else{
 	anim_index = 0;
 }
 
 if(dash){
-	dashSpeed -= 0.5;
-	clamp(dashSpeed,0,9);
+	dashSpeed -= 0.125;
+	clamp(dashSpeed,0,4.5);
 }
 
 signX = sign(dx);
@@ -42,14 +43,14 @@ if(Obj_controller.move){
 	state = "idle";
 }
 
-if((Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
+if(!shoot && (Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
 	x += dx;
 } else if(Obj_controller.move && !place_empty(x + dx, y, Obj_wall)){
 	while(place_free(x + signX / 100, y)){
 		x += signX / 100;
 	}
 }
-if((Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
+if(!shoot && (Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
 	y += dy;
 } else if(Obj_controller.move && !place_empty(x, y + dy, Obj_wall)){
 	while(place_free(x, y + signY / 100)){

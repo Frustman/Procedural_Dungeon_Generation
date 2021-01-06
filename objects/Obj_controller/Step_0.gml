@@ -20,29 +20,57 @@ if(clickOne && device_mouse_x_to_gui(0) <= view_wport[0] / 2){
 if(clickOne && clickTwo){
 	if(joyIndex != -1){
 		if(point_distance(AttackCenterX, AttackCenterY, device_mouse_x_to_gui(!joyIndex), device_mouse_y_to_gui(!joyIndex)) <= AttackRadius){
-			show_message("attack");
+			if(can_attack){
+				with(Obj_chr){
+					instance_create_depth(x + 10 * image_xscale,y, -1, Obj_Catridge);
+					state = "shoot";
+					shoot = true;
+					anim_index = 0;
+					alarm[1] = 20;
+				}
+				can_attack = false;
+				alarm[0] = 10;
+			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(!joyIndex), device_mouse_y_to_gui(!joyIndex)) <= dashRadius){
-			with(Obj_chr){
-				alarm[0] = 15;
-				anim_index = 0;
-				dashDir = other.directionBox;
-				dashSpeed = 9;
-				dash = true;
+			if(can_dash && !Obj_chr.shoot){
+				with(Obj_chr){
+					alarm[0] = 27;
+					anim_index = 0;
+					dashDir = other.directionBox;
+					dashSpeed = 4.5;
+					dash = true;
+				}
+				can_dash = false;
+				alarm[1] = 30;
 			}
 		}
 	} else{
 		for(var i = 0; i < 2; i++){
 			if(point_distance(AttackCenterX, AttackCenterY, device_mouse_x_to_gui(i), device_mouse_y_to_gui(i)) <= AttackRadius){
-				show_message("attack");
+				if(can_attack){
+					with(Obj_chr){
+						instance_create_depth(x + 10 * image_xscale,y, -1, Obj_Catridge);
+						state = "shoot";
+						shoot = true;
+						anim_index = 0;
+						alarm[1] = 20;
+					}
+					can_attack = false;
+					alarm[0] = 10;
+				}
 			}
 			if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(i), device_mouse_y_to_gui(i)) <= dashRadius){
-				with(Obj_chr){
-					alarm[0] = 15;
-					anim_index = 0;
-					dashDir = other.directionBox;
-					dashSpeed = 9;
-					dash = true;
+				if(can_dash && !Obj_chr.shoot){
+					with(Obj_chr){
+						alarm[0] = 27;
+						anim_index = 0;
+						dashDir = other.directionBox;
+						dashSpeed = 4.5;
+						dash = true;
+					}
+					can_dash = false;
+					alarm[1] = 30;
 				}
 			}
 		}
@@ -51,15 +79,29 @@ if(clickOne && clickTwo){
 if(clickOne){
 	if(joyIndex == -1 && device_mouse_x_to_gui(0) >= view_wport[0] / 2){
 		if(point_distance(AttackCenterX, AttackCenterY, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)) <= AttackRadius){
-			show_message("attack");
+			if(can_attack){
+				with(Obj_chr){
+					instance_create_depth(x + 10 * image_xscale,y, -1, Obj_Catridge);
+					state = "shoot";
+					shoot = true;
+					anim_index = 0;
+					alarm[1] = 20;
+				}
+				can_attack = false;
+				alarm[0] = 10;
+			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)) <= dashRadius){
-			with(Obj_chr){
-				alarm[0] = 15;
-				anim_index = 0;
-				dashDir = other.directionBox;
-				dashSpeed = 9;
-				dash = true;
+			if(can_dash && !Obj_chr.shoot){
+				with(Obj_chr){
+					alarm[0] = 27;
+					anim_index = 0;
+					dashDir = other.directionBox;
+					dashSpeed = 4.5;
+					dash = true;
+				}
+				can_dash = false;
+				alarm[1] = 30;
 			}
 		}
 	}
