@@ -10,15 +10,25 @@ dg_trim = 6;
 real_width = dg_width * 9;
 real_height = dg_height * 8;
 
-map_list = ds_grid_create(dg_width,dg_height);
+map_list[0] = ds_grid_create(dg_width,dg_height);
+map_list[1] = ds_grid_create(dg_width,dg_height);
+
 
 real_map = ds_grid_create(real_width, real_height);
 
 ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, 1);
 
-ds_grid_set_region(map_list, 0,0, dg_width - 1, dg_height - 1, -1);
-ds_grid_set_region(map_list, dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
-ds_grid_set_region(map_list, dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
+ds_grid_set_region(map_list[0], 0,0, dg_width - 1, dg_height - 1, -1);
+ds_grid_set_region(map_list[0], dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
+ds_grid_set_region(map_list[0], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
+
+ds_grid_set_region(map_list[1], 0,0, dg_width - 1, dg_height - 1, -1);
+ds_grid_set_region(map_list[1], dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
+ds_grid_set_region(map_list[1], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
+
+ds_grid_set_region(map_list[1],dg_trim + 4, dg_trim + 4, dg_trim + 4, dg_height - dg_trim - 5, 1);
+ds_grid_set_region(map_list[1],dg_trim + 4, dg_height - dg_trim - 5, dg_width - dg_trim - 5, dg_height - dg_trim - 5, 1);
+
 
 map_grid = ds_grid_create(9,8);
 door_grid = ds_grid_create(9,8);

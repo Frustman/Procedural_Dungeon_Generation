@@ -10,6 +10,36 @@ if(!dash){
 	dx = lengthdir_x(dashSpeed,dashDir);
 	dy = lengthdir_y(dashSpeed,dashDir);
 }
+if(!shoot){
+	ds_list_clear(shoot_list);
+	ds_list_clear(wall_list);
+	_Enemy_num = 0;
+	_Wall_num = 0;
+}
+if(_Enemy_num > 0 && _Wall_num > 0){
+	if(point_distance(x,y,shoot_list[|0].x, shoot_list[|0].y) < point_distance(x,y,wall_list[|0].x,wall_list[|0].y)){
+		near_id = shoot_list[|0];
+		near_inst = "enemy";
+	} else{
+		near_id = wall_list[|0];
+		near_inst = "wall";
+	}
+}else if(_Enemy_num > 0 && _Wall_num == 0){
+	near_id = shoot_list[|0];
+	near_inst = "enemy";
+}else if(_Enemy_num == 0 && _Wall_num > 0){
+	near_id = wall_list[|0];
+	near_inst = "wall";
+}else{
+	near_id = noone;
+	near_inst = "noone";
+}
+AttackTarget = instance_nearest(x,y,Obj_enemy);
+if(Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != Scr_get_room_pos(x,y)){
+	AttackTarget = noone;
+}
+
+
 
 anim_maxIndex = image_number;
 

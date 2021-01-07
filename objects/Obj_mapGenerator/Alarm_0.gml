@@ -8,7 +8,7 @@ var map = real_map;
 for(var i = 0; i < real_width; i++){
 	for(var j = 0; j < real_height; j++){
 		if(map[#i, j] == 2){
-			//instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "Instances", Obj_door);	
+			//instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "Instances", Obj_door);
 		}
 		if(abs(map[#i, j]) == 1){
 			if(i != 0 && i != real_width - 1 && j != 0 && j != real_height - 1){
@@ -54,5 +54,5 @@ for(var i = 0; i < real_width; i++){
 instance_create_layer(0,0, "Instances",Obj_controller);
 
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_chr);
-instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_E_apple);
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_camera);

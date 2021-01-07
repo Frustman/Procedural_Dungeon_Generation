@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(!generated){
+	var error = false;
 	if(!ds_queue_empty(room_queue)){
 		var created = false;
 		var val = ds_queue_dequeue(room_queue);
@@ -66,12 +67,17 @@ if(!generated){
 			repeat(irandom(stack_cnt)){
 				ds_stack_pop(endroom_list);
 			}
+			if(ds_stack_empty(endroom_list)){
+				error = true;
+			}
 			var reward_room = ds_stack_pop(endroom_list);
 			map_grid[# boss_room div 10, boss_room % 10] = 2;
 			map_grid[# reward_room div 10, reward_room % 10] = 3;
 			generated = true;
 		}
-		if(map_cnt < max_mapcnt){
+		if(map_cnt < max_mapcnt) error = true;
+		if(error){
+			generated = false;
 			ds_grid_set_region(map_grid,0,0,8,7,0);
 			ds_grid_set_region(door_grid,0,0,8,7,0);
 			ds_grid_set(map_grid,4,3,1);
@@ -86,25 +92,25 @@ if(!generated){
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 8; j++){
 			if(map_grid[# i, j] != 0){
-				ds_grid_set_grid_region(real_map, map_list, 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
+				ds_grid_set_grid_region(real_map, map_list[1], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
 				if(door_grid[# i, j] % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_trim - 1, j * dg_height + dg_height / 2, 2);
-					var door_L = instance_create_layer(floor(i * dg_width + dg_trim - 1) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_door);	
+					ds_grid_set(real_map, i * dg_width + dg_trim - 1, j * dg_height + dg_height / 2, 0);
+					var door_L = instance_create_layer(floor(i * dg_width + dg_trim - 1) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "wall", Obj_door);	
 					door_L.dir = 0;
 				}
 				if(door_grid[# i, j] div 10 % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, (j + 1) * dg_height - dg_trim, 2);
-					var door_D = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, ((j + 1) * dg_height - dg_trim) * CELL_HEIGHT, "Instances", Obj_door);	
+					ds_grid_set(real_map, i * dg_width + dg_width / 2, (j + 1) * dg_height - dg_trim, 0);
+					var door_D = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, ((j + 1) * dg_height - dg_trim) * CELL_HEIGHT, "wall", Obj_door);	
 					door_D.dir = 1;
 				}
 				if(door_grid[# i, j] div 100 % 10 == 1){
-					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim, j * dg_height + dg_height / 2, 2);
-					var door_R = instance_create_layer(floor((i + 1) * dg_width - dg_trim) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_door);	
+					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim, j * dg_height + dg_height / 2, 0);
+					var door_R = instance_create_layer(floor((i + 1) * dg_width - dg_trim) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "wall", Obj_door);	
 					door_R.dir = 2;
 				}
 				if(door_grid[# i, j] div 1000 % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, j * dg_height + dg_trim - 1, 2);
-					var door_U = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, floor(j * dg_height + dg_trim - 1) * CELL_HEIGHT, "Instances", Obj_door);	
+					ds_grid_set(real_map, i * dg_width + dg_width / 2, j * dg_height + dg_trim - 1, 0);
+					var door_U = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, floor(j * dg_height + dg_trim - 1) * CELL_HEIGHT, "wall", Obj_door);	
 					door_U.dir = 3;
 				}
 			}

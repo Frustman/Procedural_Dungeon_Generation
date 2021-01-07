@@ -6,6 +6,3 @@ draw_sprite(Spr_controller, 0, boxCenterX + lengthdir_x(min(distanceBox, boxRadi
 
 draw_sprite(Spr_DashBox, 0, dashCenterX, dashCenterY);
 draw_sprite(Spr_AttackBox, 0, AttackCenterX, AttackCenterY);
-
-draw_text(100,0,joyIndex);
-draw_text(110,0,view_wport[0]);

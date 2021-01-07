@@ -4,7 +4,7 @@ if(Scr_get_room_pos(Obj_chr.x, Obj_chr.y) == Scr_get_room_pos(target.x, target.y
 	var targetX = (Obj_chr.x + target.x * 2) / 3;
 	var targetY = (Obj_chr.y + target.y * 2) / 3;
 
-	cam_zoom = 1.0 + point_distance(Obj_chr.x, Obj_chr.y, Obj_enemy.x, Obj_enemy.y) / 600;
+	cam_zoom = 1.0 + point_distance(Obj_chr.x, Obj_chr.y, Obj_enemy.x, Obj_enemy.y) / 600 + zoom_shake;
 }
 else{
 	if(instance_exists(Obj_controller)){
@@ -14,7 +14,7 @@ else{
 		var targetX = 0;
 		var targetY = 0;
 	}
-	cam_zoom = 1.0;
+	cam_zoom = 1.0 + zoom_shake;
 }
 
 var view_width = camera_get_view_width(view_camera[0]);
