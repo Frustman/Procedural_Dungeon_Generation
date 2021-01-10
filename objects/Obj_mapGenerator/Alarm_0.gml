@@ -24,10 +24,10 @@ for(var i = 0; i < real_width; i++){
 				var dir = 1*top_left + 2*top + 4*top_right + 8*left + 16*right + 32*bottom_left + 64*bottom + 128*bottom_right;
 				var index = Scr_dir_to_index(dir);
 			
-				var tile_data = tile_set_index(TileSet_wall,index + 1);
+				var tile_data = tile_set_index(TileSet3,index + 1);
 		
 			} else{
-				var tile_data = tile_set_index(TileSet_wall,46);
+				var tile_data = tile_set_index(TileSet3,46);
 			}
 			if(map[#i, j] == 1) instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, layer_get_id("wall"),Obj_wall);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_1"), tile_data, i* CELL_WIDTH, j * CELL_HEIGHT);

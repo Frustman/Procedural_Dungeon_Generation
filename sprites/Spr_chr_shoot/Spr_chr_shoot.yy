@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a1f48a99-3a9c-465e-ac61-f055afaca80f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "chr",
+    "path": "folders/Sprites/chr.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_chr_shoot",

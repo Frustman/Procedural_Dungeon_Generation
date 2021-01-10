@@ -20,3 +20,8 @@ near_inst = "noone";
 
 _Enemy_num = 0;
 _Wall_num = 0;
+
+ray_map = -1;
+
+hitX = 0;
+hitY = 0;

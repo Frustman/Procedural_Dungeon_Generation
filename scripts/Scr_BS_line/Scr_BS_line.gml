@@ -8,8 +8,8 @@ function Scr_BS_line(xpos, ypos, dir, len, inst){
 	var x_prev = xpos;
 	var y_prev = ypos;
 	
-	var x_next = x_prev + lengthdir_x(len, dir);
-	var y_next = y_prev + lengthdir_y(len, dir);
+	var x_next = x_prev + lengthdir_x(len, 360 - dir);
+	var y_next = y_prev + lengthdir_y(len, 360 - dir);
 	
 	while(point_distance(x_prev, y_prev, x_next, y_next) >= 0.001){
 		var x_mid = (x_prev + x_next) / 2;

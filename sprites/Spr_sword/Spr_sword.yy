@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e67bc364-e3d8-45bc-b54c-4b77698737a3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "chr",
+    "path": "folders/Sprites/chr.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_sword",

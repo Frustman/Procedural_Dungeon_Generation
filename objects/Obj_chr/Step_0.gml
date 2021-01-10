@@ -10,36 +10,43 @@ if(!dash){
 	dx = lengthdir_x(dashSpeed,dashDir);
 	dy = lengthdir_y(dashSpeed,dashDir);
 }
-if(!shoot){
-	ds_list_clear(shoot_list);
-	ds_list_clear(wall_list);
-	_Enemy_num = 0;
-	_Wall_num = 0;
-}
-if(_Enemy_num > 0 && _Wall_num > 0){
-	if(point_distance(x,y,shoot_list[|0].x, shoot_list[|0].y) < point_distance(x,y,wall_list[|0].x,wall_list[|0].y)){
-		near_id = shoot_list[|0];
-		near_inst = "enemy";
-	} else{
-		near_id = wall_list[|0];
-		near_inst = "wall";
-	}
-}else if(_Enemy_num > 0 && _Wall_num == 0){
-	near_id = shoot_list[|0];
-	near_inst = "enemy";
-}else if(_Enemy_num == 0 && _Wall_num > 0){
-	near_id = wall_list[|0];
-	near_inst = "wall";
-}else{
-	near_id = noone;
-	near_inst = "noone";
-}
+
 AttackTarget = instance_nearest(x,y,Obj_enemy);
 if(Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != Scr_get_room_pos(x,y)){
 	AttackTarget = noone;
 }
 
+ds_list_clear(shoot_list);
+ds_list_clear(wall_list);
 
+if(AttackTarget != noone){
+	angle = point_direction(x,y,AttackTarget.x, AttackTarget.y) + random(5) - 2.5;	
+} else{
+	angle = Obj_controller.directionBox + random(5) - 2.5;
+}
+if(AttackTarget == noone){
+	if(image_xscale = 1.0){
+		shootX = x + lengthdir_x(21.3775583264319501,angle + 90 - 79.215702132437);
+	} else{
+		shootX = x + lengthdir_x(21.3775583264319501,angle - 90 + 79.215702132437);
+	}
+	if(image_xscale = 1.0){
+		shootY = y + lengthdir_y(21.3775583264319501,angle + 90 - 79.215702132437);
+	} else{
+		shootY = y + lengthdir_y(21.3775583264319501,angle - 90 + 79.215702132437);
+	}
+} else{
+	if(x < AttackTarget.x){
+		shootX = x + lengthdir_x(21.3775583264319501,angle + 90 - 79.215702132437);
+	} else{
+		shootX = x + lengthdir_x(21.3775583264319501,angle - 90 + 79.215702132437);
+	}
+	if(x < AttackTarget.x){
+		shootY = y + lengthdir_y(21.3775583264319501,angle + 90 - 79.215702132437);
+	} else{
+		shootY = y + lengthdir_y(21.3775583264319501,angle - 90 + 79.215702132437);
+	}
+}
 
 anim_maxIndex = image_number;
 
