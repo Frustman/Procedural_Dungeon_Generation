@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9fc54a29-70b6-456c-b9f0-7645f348ead9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "tile",
+    "path": "folders/Sprites/tile.yy",
   },
   "resourceVersion": "1.0",
   "name": "STileset_wall",

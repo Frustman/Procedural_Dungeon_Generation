@@ -94,8 +94,6 @@ if(_Enemy_num > 0 && _Wall_num > 0){
 var bullet = instance_create_layer(shootX,shootY,"Instances",Obj_bullet);
 	
 with(bullet){
-	near_id = other.near_id;
-	near_inst = other.near_inst;
 	targetX = other.hitX;
 	targetY = other.hitY;
 }

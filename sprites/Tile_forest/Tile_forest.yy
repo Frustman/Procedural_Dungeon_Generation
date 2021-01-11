@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a366ca3a-6661-4701-b32a-72e5287bd076","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "tile",
+    "path": "folders/Sprites/tile.yy",
   },
   "resourceVersion": "1.0",
   "name": "Tile_forest",
