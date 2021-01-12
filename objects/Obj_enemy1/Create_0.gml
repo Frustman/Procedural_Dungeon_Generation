@@ -1,17 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
+
 hp = 100;
 chr_diff = 100;
 
-state = states.idle;
 state_change = true;
-in_sight = false;
+
+chr_diff = point_distance(Obj_chr.x, Obj_chr.y, x, y);
+in_sight = collision_line(x,y,Obj_chr.x,Obj_chr.y,Obj_wall,true,false) == noone;
+
+targetX = x;
+targetY = y;
+targeted = false;
 
 dx = 0;
 dy = 0;
 
 sp_index = 0;
 
-change_delay = 60;
+
 image_index = 0;
 image_speed = 0;

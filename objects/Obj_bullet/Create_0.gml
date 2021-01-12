@@ -7,6 +7,9 @@ dumY = y;
 targetX = 0;
 targetY = 0;
 
+bullet_type = "normal";
+
+
 ran = irandom(1);
 
 index = 0;

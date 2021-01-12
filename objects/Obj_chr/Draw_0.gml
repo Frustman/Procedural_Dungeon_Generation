@@ -10,6 +10,10 @@ if(_Wall_num > 0){
 }
 */
 
+if(AttackTarget != noone){
+	draw_sprite_ext(Spr_target,0,AttackTarget.x,AttackTarget.y,0.8,0.8,0,c_white,1.0);
+}
+
 if(dash){
 	sprite_index = Spr_chr_dash;
 	//draw_sprite_ext(Spr_chr_hand,LookRight,x,y,1.0,1.0,0,c_white,1.0);

@@ -1,10 +1,11 @@
 {
   "resources": [
-    {"id":{"name":"Spr_sword","path":"sprites/Spr_sword/Spr_sword.yy",},"order":6,},
+    {"id":{"name":"Spr_target","path":"sprites/Spr_target/Spr_target.yy",},"order":6,},
     {"id":{"name":"Spr_chr_hand","path":"sprites/Spr_chr_hand/Spr_chr_hand.yy",},"order":2,},
     {"id":{"name":"Scr_shake","path":"scripts/Scr_shake/Scr_shake.yy",},"order":6,},
     {"id":{"name":"Obj_shake","path":"objects/Obj_shake/Obj_shake.yy",},"order":14,},
-    {"id":{"name":"Spr_hitmsk3","path":"sprites/Spr_hitmsk3/Spr_hitmsk3.yy",},"order":4,},
+    {"id":{"name":"Spr_hitmsk3","path":"sprites/Spr_hitmsk3/Spr_hitmsk3.yy",},"order":5,},
+    {"id":{"name":"Spr_hitmsk2","path":"sprites/Spr_hitmsk2/Spr_hitmsk2.yy",},"order":4,},
     {"id":{"name":"Scr_BSP_init","path":"scripts/Scr_BSP_init/Scr_BSP_init.yy",},"order":3,},
     {"id":{"name":"Spr_chr_shoot","path":"sprites/Spr_chr_shoot/Spr_chr_shoot.yy",},"order":5,},
     {"id":{"name":"TileSet_ground","path":"tilesets/TileSet_ground/TileSet_ground.yy",},"order":1,},
@@ -27,7 +28,7 @@
     {"id":{"name":"Obj_controller","path":"objects/Obj_controller/Obj_controller.yy",},"order":0,},
     {"id":{"name":"Obj_chr","path":"objects/Obj_chr/Obj_chr.yy",},"order":3,},
     {"id":{"name":"Obj_map_bsp","path":"objects/Obj_map_bsp/Obj_map_bsp.yy",},"order":2,},
-    {"id":{"name":"Spr_hitmsk2","path":"sprites/Spr_hitmsk2/Spr_hitmsk2.yy",},"order":3,},
+    {"id":{"name":"Spr_hitmsk4","path":"sprites/Spr_hitmsk4/Spr_hitmsk4.yy",},"order":3,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":1,},
     {"id":{"name":"Spr_wallM","path":"sprites/Spr_wallM/Spr_wallM.yy",},"order":2,},
     {"id":{"name":"Obj_enemy1","path":"objects/Obj_enemy1/Obj_enemy1.yy",},"order":13,},

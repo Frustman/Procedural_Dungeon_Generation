@@ -7,6 +7,6 @@ enum states{
 	hurt,
 	attack_ready
 }
-
+in_sight = false;
 state_change = true;
 state = states.idle;
