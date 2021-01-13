@@ -131,3 +131,8 @@ if(!generated){
 	}
 	tiled = true;
 }
+
+if(instance_exists(Obj_chr)){
+	var curRoom = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
+	miniMap_grid[# curRoom div 10, curRoom % 10] = map_grid[# curRoom div 10, curRoom % 10];
+}

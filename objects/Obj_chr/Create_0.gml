@@ -15,7 +15,7 @@ anim_fps = 10;
 shoot_list = ds_list_create();
 wall_list = ds_list_create();
 
-bullet_maxCount = 6;
+bullet_maxCount = 4;
 bullet_count = 0;
 
 AttackTarget = noone;

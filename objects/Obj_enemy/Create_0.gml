@@ -7,6 +7,10 @@ enum states{
 	hurt,
 	attack_ready
 }
+knuckback = false;
 in_sight = false;
 state_change = true;
 state = states.idle;
+
+dx = 0;
+dy = 0;

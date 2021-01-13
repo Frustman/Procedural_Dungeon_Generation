@@ -31,10 +31,13 @@ ds_grid_set_region(map_list[1],dg_trim + 4, dg_height - dg_trim - 5, dg_width - 
 
 
 map_grid = ds_grid_create(9,8);
+miniMap_grid = ds_grid_create(9,8);
 door_grid = ds_grid_create(9,8);
 
 ds_grid_set(map_grid,4,3,1);
 ds_grid_set_region(door_grid, 0, 0, 8, 7, 0);
+ds_grid_set_region(miniMap_grid, 0, 0, 8, 7, 0);
+ds_grid_set(miniMap_grid,4,3,1);
 
 room_queue = ds_queue_create();
 ds_queue_enqueue(room_queue, 43);
