@@ -12,14 +12,14 @@ if(!dash){
 }
 
 AttackTarget = instance_nearest(x,y,Obj_enemy);
-if(Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != Scr_get_room_pos(x,y)){
+if(AttackTarget != noone && Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != Scr_get_room_pos(x,y)){
 	AttackTarget = noone;
 }
 
 ds_list_clear(shoot_list);
 ds_list_clear(wall_list);
 
-if(AttackTarget != noone){
+if(AttackTarget != noone && instance_exists(AttackTarget)){
 	angle = point_direction(x,y,AttackTarget.x, AttackTarget.y) + random(5) - 2.5;	
 } else{
 	angle = Obj_controller.directionBox + random(5) - 2.5;
@@ -35,7 +35,7 @@ if(AttackTarget == noone){
 	} else{
 		shootY = y + lengthdir_y(21.3775583264319501,angle - 90 + 79.215702132437);
 	}
-} else{
+} else if(AttackTarget != noone && instance_exists(AttackTarget)){
 	if(x < AttackTarget.x){
 		shootX = x + lengthdir_x(21.3775583264319501,angle + 90 - 79.215702132437);
 	} else{
@@ -60,6 +60,9 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 if(dash){
 	dashSpeed -= 0.125;
 	clamp(dashSpeed,0,4.5);
+	if(random(1) < 0.2){
+		instance_create_layer(x,y+16,"Instances",Obj_dust);
+	}
 }
 
 signX = sign(dx);

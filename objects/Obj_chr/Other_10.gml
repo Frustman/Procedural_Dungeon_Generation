@@ -38,6 +38,7 @@ if(bullet_count < bullet_maxCount){
 		if(point_distance(shootX,shootY,shoot_list[|0].x,shoot_list[|0].y) < point_distance(shootX,shootY,wall_list[|0].x,wall_list[|0].y)){
 			with(shoot_list[|0]){
 				hp -= 5;
+				AttackBy = other;
 			}
 			ray_map = Scr_ray_cast([shootX, shootY],angle,shoot_list[|0],true,false,500);
 			if(ds_exists(ray_map,ds_type_map)){
@@ -135,10 +136,11 @@ if(bullet_count < bullet_maxCount){
 		if(point_distance(shootX,shootY,shoot_list[|0].x,shoot_list[|0].y) < point_distance(shootX,shootY,wall_list[|0].x,wall_list[|0].y)){
 			with(shoot_list[|0]){
 				hp -= 5;
+				AttackBy = other;
 				knuckback = true;
 				stun = true;
 				alarm[0] = 5;
-				alarm[1] = 15;
+				alarm[1] = 45;
 			}
 			ray_map = Scr_ray_cast([shootX, shootY],angle,shoot_list[|0],true,false,500);
 			if(ds_exists(ray_map,ds_type_map)){

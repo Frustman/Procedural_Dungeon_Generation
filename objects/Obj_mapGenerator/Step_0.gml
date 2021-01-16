@@ -64,17 +64,20 @@ if(!generated){
 		if(map_cnt >= max_mapcnt){
 			var boss_room = ds_stack_pop(endroom_list);
 			var stack_cnt = ds_stack_size(endroom_list) - 2;
-			repeat(irandom(stack_cnt)){
-				ds_stack_pop(endroom_list);
+			if(stack_cnt > 0){
+				repeat(irandom(stack_cnt)){
+					ds_stack_pop(endroom_list);
+				}
+				if(ds_stack_empty(endroom_list)){
+					error = true;
+				}
+				reward_room = ds_stack_pop(endroom_list);
+				map_grid[# boss_room div 10, boss_room % 10] = 2;
+				map_grid[# reward_room div 10, reward_room % 10] = 3;
+				generated = true;
+			} else{
+				error = true;	
 			}
-			if(ds_stack_empty(endroom_list)){
-				error = true;
-			}
-			var reward_room = 0;
-			reward_room = ds_stack_pop(endroom_list);
-			map_grid[# boss_room div 10, boss_room % 10] = 2;
-			map_grid[# reward_room div 10, reward_room % 10] = 3;
-			generated = true;
 		}
 		if(map_cnt < max_mapcnt) error = true;
 		if(error){
@@ -132,7 +135,22 @@ if(!generated){
 	tiled = true;
 }
 
-if(instance_exists(Obj_chr)){
+randomize();
+if(generated && instance_exists(Obj_chr)){
 	var curRoom = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
+	if(miniMap_grid[# curRoom div 10, curRoom % 10] == 0 && map_grid[# curRoom div 10, curRoom % 10] == 1){
+		repeat(5){
+			mongen = false;
+			while(!mongen){
+				var xpos = irandom(dg_width - dg_trim * 2) + dg_trim;
+				var ypos = irandom(dg_height - dg_trim * 2) + dg_trim;
+			
+				if(!instance_place(xpos,ypos,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
+					instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + 32,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + 32,"Instances",Obj_spawner);
+					mongen = true;
+				}
+			}
+		}
+	}
 	miniMap_grid[# curRoom div 10, curRoom % 10] = map_grid[# curRoom div 10, curRoom % 10];
 }

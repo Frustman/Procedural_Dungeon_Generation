@@ -1,6 +1,20 @@
-target = instance_nearest(Obj_chr.x, Obj_chr.y, Obj_enemy);
 
-if(Scr_get_room_pos(Obj_chr.x, Obj_chr.y) == Scr_get_room_pos(target.x, target.y)){
+#macro CELL_WIDTH 64
+#macro CELL_HEIGT 64
+
+if(instance_exists(Obj_chr)){
+	cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
+	target = Obj_chr.AttackTarget;
+	
+	instance_deactivate_region((dg_width * (cur_room div 10)) * CELL_WIDTH,(dg_height * (cur_room % 10)) * CELL_HEIGT,dg_width * CELL_WIDTH, dg_height * CELL_HEIGT, false, true);
+	instance_activate_region((dg_width * (cur_room div 10)) * CELL_WIDTH,(dg_height * (cur_room % 10)) * CELL_HEIGT,dg_width * CELL_WIDTH, dg_height * CELL_HEIGT, true);
+	instance_activate_object(Obj_shake);
+	instance_activate_object(Obj_controller);
+	instance_activate_object(Obj_mapGenerator);
+	instance_activate_object(Obj_chr);
+}
+
+if(target != noone && instance_exists(target) && cur_room == Scr_get_room_pos(target.x, target.y)){
 	var targetX = (Obj_chr.x + target.x * 2) / 3;
 	var targetY = (Obj_chr.y + target.y * 2) / 3;
 

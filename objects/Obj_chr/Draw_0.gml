@@ -10,7 +10,7 @@ if(_Wall_num > 0){
 }
 */
 
-if(AttackTarget != noone){
+if(AttackTarget != noone && instance_exists(AttackTarget)){
 	draw_sprite_ext(Spr_target,0,AttackTarget.x,AttackTarget.y,0.8,0.8,0,c_white,1.0);
 }
 
@@ -21,7 +21,7 @@ if(dash){
 	//draw_sprite_ext(Spr_chr_hand,!LookRight,x,y,1.0,1.0,0,c_white,1.0);
 } else if(shoot){
 	sprite_index = Spr_chr_shoot;
-	if(AttackTarget != noone){
+	if(AttackTarget != noone && instance_exists(AttackTarget)){
 		angle = point_direction(x,y,AttackTarget.x, AttackTarget.y);
 		if(x >= AttackTarget.x){
 			image_xscale = -1.0;

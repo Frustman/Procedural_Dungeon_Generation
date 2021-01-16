@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-hp = 100;
+hp = 30;
 chr_diff = 100;
 
 state_change = true;
@@ -15,6 +15,8 @@ stun = false;
 targetX = x;
 targetY = y;
 targeted = false;
+
+AttackBy = noone;
 
 dx = 0;
 dy = 0;
