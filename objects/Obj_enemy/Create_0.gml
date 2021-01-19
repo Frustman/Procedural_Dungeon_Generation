@@ -12,5 +12,9 @@ in_sight = false;
 state_change = true;
 state = states.idle;
 
+anim_maxIndex = image_number;
+anim_index = 0;
+anim_fps = 10;
+
 dx = 0;
 dy = 0;

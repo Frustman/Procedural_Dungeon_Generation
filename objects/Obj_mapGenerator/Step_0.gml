@@ -146,7 +146,11 @@ if(generated && instance_exists(Obj_chr)){
 				var ypos = irandom(dg_height - dg_trim * 2) + dg_trim;
 			
 				if(!instance_place(xpos,ypos,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
-					instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + 32,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + 32,"Instances",Obj_spawner);
+					with(instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + 32,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + 32,"Instances",Obj_spawner)){
+						if(irandom(1) == 0){
+							obj = Obj_enemy_wildpig;
+						}
+					}
 					mongen = true;
 				}
 			}
