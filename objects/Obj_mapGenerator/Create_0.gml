@@ -54,7 +54,6 @@ ypos = 3;
 map_cnt = 1;
 max_mapcnt = 9;
 
-alarm[0] = 120;
 
 dir_list[0][0] = -1; // 0 - left / 1 - down / 2 - right / 3 - up
 dir_list[0][1] = 0;

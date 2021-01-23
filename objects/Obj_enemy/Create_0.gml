@@ -7,6 +7,13 @@ enum states{
 	hurt,
 	attack_ready
 }
+
+upixelH = shader_get_uniform(Sha_white_outline,"pixelH");
+upixelW = shader_get_uniform(Sha_white_outline,"pixelW");
+texelH = texture_get_texel_height(sprite_get_texture(sprite_index,0));
+texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
+
+
 knuckback = false;
 in_sight = false;
 state_change = true;

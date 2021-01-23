@@ -10,9 +10,6 @@ if(_Wall_num > 0){
 }
 */
 
-if(AttackTarget != noone && instance_exists(AttackTarget)){
-	draw_sprite_ext(Spr_target,0,AttackTarget.x,AttackTarget.y,0.8,0.8,0,c_white,1.0);
-}
 
 if(dash){
 	sprite_index = Spr_chr_dash;

@@ -92,48 +92,8 @@ if(!generated){
 			ypos = 3;
 		}
 	}
-}else if(!tiled){
-	for(var i = 0; i < 9; i++){
-		for(var j = 0; j < 8; j++){
-			if(map_grid[# i, j] != 0){
-				ds_grid_set_grid_region(real_map, map_list[1], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
-				if(door_grid[# i, j] % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_trim - 1, j * dg_height + dg_height / 2, 0);
-					ds_grid_set(real_map, i * dg_width + dg_trim - 2, j * dg_height + dg_height / 2, 1);
-					ds_grid_set(real_map, i * dg_width + dg_trim - 2, j * dg_height + dg_height / 2 - 1, 1);
-					ds_grid_set(real_map, i * dg_width + dg_trim - 2, j * dg_height + dg_height / 2 + 1, 1);
-					var door_L = instance_create_layer(floor(i * dg_width + dg_trim - 1) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "wall", Obj_door);	
-					door_L.dir = 0;
-				}
-				if(door_grid[# i, j] div 10 % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, (j + 1) * dg_height - dg_trim, 0);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, (j + 1) * dg_height - dg_trim + 1, 1);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2 - 1, (j + 1) * dg_height - dg_trim + 1, 1);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2 + 1, (j + 1) * dg_height - dg_trim + 1, 1);
-					var door_D = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, ((j + 1) * dg_height - dg_trim) * CELL_HEIGHT, "wall", Obj_door);	
-					door_D.dir = 1;
-				}
-				if(door_grid[# i, j] div 100 % 10 == 1){
-					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim, j * dg_height + dg_height / 2, 0);
-					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim + 1, j * dg_height + dg_height / 2, 1);
-					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim + 1, j * dg_height + dg_height / 2 - 1, 1);
-					ds_grid_set(real_map, (i + 1) * dg_width - dg_trim + 1, j * dg_height + dg_height / 2 + 1, 1);
-					var door_R = instance_create_layer(floor((i + 1) * dg_width - dg_trim) * CELL_WIDTH, floor(j * dg_height + dg_height / 2) * CELL_HEIGHT, "wall", Obj_door);	
-					door_R.dir = 2;
-				}
-				if(door_grid[# i, j] div 1000 % 10 == 1){
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, j * dg_height + dg_trim - 1, 0);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2, j * dg_height + dg_trim - 2, 1);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2 + 1, j * dg_height + dg_trim - 2, 1);
-					ds_grid_set(real_map, i * dg_width + dg_width / 2 - 1, j * dg_height + dg_trim - 2, 1);
-					var door_U = instance_create_layer(floor(i * dg_width + dg_width / 2) * CELL_WIDTH, floor(j * dg_height + dg_trim - 1) * CELL_HEIGHT, "wall", Obj_door);	
-					door_U.dir = 3;
-				}
-			}
-		}
-	}
-	tiled = true;
 }
+
 
 randomize();
 if(generated && instance_exists(Obj_chr)){
@@ -157,4 +117,10 @@ if(generated && instance_exists(Obj_chr)){
 		}
 	}
 	miniMap_grid[# curRoom div 10, curRoom % 10] = map_grid[# curRoom div 10, curRoom % 10];
+}
+
+
+if(generated && !tiled){
+	event_perform(ev_other,ev_user0);
+	tiled = true;
 }

@@ -6,6 +6,8 @@ dash = false;
 dashDir = 90;
 shoot = false;
 
+angle = 0;
+
 LookRight = 1;
 
 anim_maxIndex = image_number;
