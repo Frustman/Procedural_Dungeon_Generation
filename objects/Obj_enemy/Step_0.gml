@@ -2,11 +2,11 @@
 // You can write your code in this editor
 chr_diff = point_distance(Obj_chr.x, Obj_chr.y, x, y);
 
-width = bbox_bottom - bbox_top;
-height = bbox_left - bbox_right;
+width = (bbox_bottom - bbox_top)*3/5;
+height = (bbox_left - bbox_right)*3/5;
 for(var i = -1;i < 2; i++){
 	for(var j = -1 ; j < 2; j++){
-		in_sight = collision_line(x + width / 2 * i,y + height / 2 * j,Obj_chr.x,Obj_chr.y,Obj_wall,true,false) == noone;
+		if(i == 0 || j == 0) in_sight = collision_line(x + width / 2 * i,y + height / 2 * j,Obj_chr.x,Obj_chr.y,Obj_wall,true,false) == noone;
 		if(in_sight) break;
 	}
 	if(in_sight) break;

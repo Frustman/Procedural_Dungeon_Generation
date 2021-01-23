@@ -10,14 +10,30 @@ dg_trim = 6;
 real_width = dg_width * 9;
 real_height = dg_height * 8;
 
-map_list[0] = ds_grid_create(dg_width,dg_height);
-map_list[1] = ds_grid_create(dg_width,dg_height);
+for(var i = 0; i < 5; i++){
+	map_list[i] = ds_grid_create(dg_width,dg_height);
+}
+
+map = real(load_csv("dungeon_map.csv"));
+
+for(var i = 0; i < ds_grid_width(map); i++){
+	for(var j = 0; j < ds_grid_height(map); j++){
+		map[# i, j] = real(map[# i, j]);
+	}
+}
+
+for(var i = 0; i < ds_grid_height(map) div dg_height; i++){
+	ds_grid_set_grid_region(map_list[i],map,0,i*dg_height,dg_width-1,(i+1)*dg_height - 1,0,0);
+}
+
 
 
 real_map = ds_grid_create(real_width, real_height);
 
-ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, 1);
 
+ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, -1);
+
+/*
 ds_grid_set_region(map_list[0], 0,0, dg_width - 1, dg_height - 1, -1);
 ds_grid_set_region(map_list[0], dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
 ds_grid_set_region(map_list[0], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
@@ -29,15 +45,18 @@ ds_grid_set_region(map_list[1], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_hei
 ds_grid_set_region(map_list[1],dg_trim + 4, dg_trim + 4, dg_trim + 4, dg_height - dg_trim - 5, 1);
 ds_grid_set_region(map_list[1],dg_trim + 4, dg_height - dg_trim - 5, dg_width - dg_trim - 5, dg_height - dg_trim - 5, 1);
 
-
+*/
 map_grid = ds_grid_create(9,8);
 miniMap_grid = ds_grid_create(9,8);
+Map_visit_grid = ds_grid_create(9,8);
 door_grid = ds_grid_create(9,8);
 
 ds_grid_set(map_grid,4,3,1);
 ds_grid_set_region(door_grid, 0, 0, 8, 7, 0);
 ds_grid_set_region(miniMap_grid, 0, 0, 8, 7, 0);
+ds_grid_set_region(Map_visit_grid, 0, 0, 8, 7, 0);
 ds_grid_set(miniMap_grid,4,3,1);
+ds_grid_set(Map_visit_grid,4,3,1);
 
 room_queue = ds_queue_create();
 ds_queue_enqueue(room_queue, 43);

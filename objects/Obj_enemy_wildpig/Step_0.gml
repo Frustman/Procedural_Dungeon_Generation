@@ -52,7 +52,7 @@ if(state == states.attack_ready && state_change){
 }
 
 if(state == states.attack && targeted){
-	if(point_distance(x,y,targetX,targetY) >= 32){
+	if(point_distance(x,y,targetX,targetY) >= 48){
 		if(x < targetX){
 			image_xscale = -1.0;	
 		}else{
