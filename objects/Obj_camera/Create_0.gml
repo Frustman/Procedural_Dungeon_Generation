@@ -1,7 +1,12 @@
 rate = 0.1;
 
-cam_width = 683;
-cam_height = 384;
+cam_width = 740;
+cam_height = 360;
+
+view_set_wport(0,1440);
+view_set_hport(0,720);
+
+room_set_viewport(room[0],0,true,0,0,1440,720);
 
 cam_zoom = 1.0;
 
