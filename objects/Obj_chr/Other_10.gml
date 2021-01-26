@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 if(bullet_count < bullet_maxCount){
+	audio_play_sound(Pistol_Shot_08,0,false);
 	instance_create_depth(shootX,shootY, -1, Obj_Catridge);
 	state = "shoot";
 	shoot = true;
@@ -102,6 +102,7 @@ if(bullet_count < bullet_maxCount){
 		targetY = other.hitY;
 	}
 } else if(bullet_count == bullet_maxCount){
+	audio_play_sound(Pistol_Shot_02,0,false);
 	instance_create_depth(shootX,shootY, -1, Obj_Catridge);
 	state = "shoot";
 	shoot = true;

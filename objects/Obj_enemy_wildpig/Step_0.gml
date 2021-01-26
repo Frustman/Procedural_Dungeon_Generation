@@ -2,8 +2,8 @@
 // You can write your code in this editor
 event_inherited();
 
-var playerX = Obj_chr.x;
-var playerY = Obj_chr.y;
+playerX = Obj_chr.x;
+playerY = Obj_chr.y;
 
 
 if(in_sight && (state == states.move || state == states.idle) && state_change){
@@ -12,7 +12,6 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 	}else{
 		image_xscale = 1.0;	
 	}
-	state_change = false;
 	ray_map = Scr_ray_cast([x, y],point_direction(x,y,playerX,playerY),Obj_wall,true,false,500);
 	if(ds_exists(ray_map,ds_type_map)){
 		var point = ray_map[?"hitPosition"];
@@ -25,6 +24,8 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 		}
 	}
 	if(point_distance(x,y,targetX,targetY) >= point_distance(x,y,playerX,playerY)){
+		alarm[4] = 120;
+		state_change = false;
 		state = states.attack_ready;
 		sprite_index = Spr_wildpig_attack_ready;
 	} else{
@@ -34,7 +35,6 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 		sprite_index = Spr_wildpig_attack;
 	}
 	targeted = true;
-	alarm[2] = 120;
 }
 
 if(hp <= 0){
@@ -60,7 +60,7 @@ if(state == states.attack && targeted){
 		}
 		mp_potential_step_object(targetX,targetY,4.5,Obj_wall);
 		if(random(1) < 0.2){
-			instance_create_layer(x,y+16,"Instances",Obj_dust);
+			instance_create_layer(x,y+8,"Instances",Obj_dust);
 		}
 	} else{
 		targetX = x;

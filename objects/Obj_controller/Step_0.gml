@@ -25,8 +25,9 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user0);
 				}
 				can_attack = false;
-				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 50;
-				else alarm[0] = 20;
+				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
+				else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
+				else alarm[0] = 10;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(!joyIndex), device_mouse_y_to_gui(!joyIndex)) <= dashRadius){
@@ -51,8 +52,9 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user0);
 				}
 					can_attack = false;
-					if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 50;
-					else alarm[0] = 20;
+					if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
+					else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
+					else alarm[0] = 10;
 				}
 			}
 			if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(i), device_mouse_y_to_gui(i)) <= dashRadius){
@@ -79,8 +81,9 @@ if(clickOne){
 					event_perform(ev_other,ev_user0);
 				}
 				can_attack = false;
-				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 50;
-				else alarm[0] = 20;
+				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
+				else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
+				else alarm[0] = 10;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)) <= dashRadius){

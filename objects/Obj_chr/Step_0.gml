@@ -79,6 +79,11 @@ else if(signX < 0){
 
 if(Obj_controller.move){
 	state = "move";
+	if(footstep){
+		footstep = false;
+		alarm[2] = 20;
+		audio_play_sound(Dirt_footstep_9,0,false);
+	}
 } else{
 	state = "idle";
 }

@@ -14,6 +14,8 @@ anim_maxIndex = image_number;
 anim_index = 0;
 anim_fps = 10;
 
+footstep = true;
+
 shoot_list = ds_list_create();
 wall_list = ds_list_create();
 

@@ -1,3 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-footstep = true;
+state_change = true;
+state = states.idle;
