@@ -24,8 +24,6 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 		}
 	}
 	if(point_distance(x,y,targetX,targetY) >= point_distance(x,y,playerX,playerY)){
-		alarm[4] = 120;
-		state_change = false;
 		state = states.attack_ready;
 		sprite_index = Spr_wildpig_attack_ready;
 	} else{
@@ -35,6 +33,8 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 		sprite_index = Spr_wildpig_attack;
 	}
 	targeted = true;
+	alarm[2] = 120;
+	state_change = false;
 }
 
 if(hp <= 0){

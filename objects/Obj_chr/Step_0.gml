@@ -88,14 +88,14 @@ if(Obj_controller.move){
 	state = "idle";
 }
 
-if(!shoot && (Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
+if((Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
 	x += dx;
 } else if(Obj_controller.move && !place_empty(x + dx, y, Obj_wall)){
 	while(place_free(x + signX / 100, y)){
 		x += signX / 100;
 	}
 }
-if(!shoot && (Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
+if((Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
 	y += dy;
 } else if(Obj_controller.move && !place_empty(x, y + dy, Obj_wall)){
 	while(place_free(x, y + signY / 100)){
