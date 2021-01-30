@@ -16,11 +16,12 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 	if(ds_exists(ray_map,ds_type_map)){
 		var point = ray_map[?"hitPosition"];
 		if(array_length(point)){
+			targeted = true;
 			targetX = point[0];
 			targetY = point[1];
 		}else{
-			targetX = playerX;
-			targetY = playerY;
+			targetX = x;
+			targetY = y;
 		}
 	}
 	if(point_distance(x,y,targetX,targetY) >= point_distance(x,y,playerX,playerY)){
@@ -28,8 +29,8 @@ if(in_sight && (state == states.move || state == states.idle) && state_change){
 		sprite_index = Spr_wildpig_attack_ready;
 	} else{
 		state = states.move;
-		targetX = playerX;
-		targetY = playerY;
+		targetX = x;
+		targetY = y;
 		sprite_index = Spr_wildpig_attack;
 	}
 	targeted = true;
@@ -52,7 +53,7 @@ if(state == states.attack_ready && state_change){
 }
 
 if(state == states.attack && targeted){
-	if(point_distance(x,y,targetX,targetY) >= 48){
+	if(point_distance(x,y,targetX,targetY) >= 32){
 		if(x < targetX){
 			image_xscale = -1.0;	
 		}else{
@@ -76,8 +77,8 @@ if(state == states.attack && targeted){
 if(state == states.move && targeted && !stun){
 	image_speed = 1.0;
 	sprite_index = Spr_wildpig_attack;
-	if(point_distance(x,y,targetX,targetY) >= 16){
-		mp_potential_step_object(targetX,targetY,1,Obj_wall);
+	if(point_distance(x,y,playerX,playerY + 8) >= 16){
+		mp_potential_step_object(playerX,playerY + 8,1, Obj_wall);
 	} else{
 		targetX = x;
 		targetY = y;

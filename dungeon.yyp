@@ -61,6 +61,7 @@
     {"id":{"name":"TileSet3","path":"tilesets/TileSet3/TileSet3.yy",},"order":2,},
     {"id":{"name":"Spr_spawner","path":"sprites/Spr_spawner/Spr_spawner.yy",},"order":3,},
     {"id":{"name":"Spr_Catridge","path":"sprites/Spr_Catridge/Spr_Catridge.yy",},"order":0,},
+    {"id":{"name":"Scr_Astar","path":"scripts/Scr_Astar/Scr_Astar.yy",},"order":12,},
     {"id":{"name":"Pistol_Shot_02","path":"sounds/Pistol_Shot_02/Pistol_Shot_02.yy",},"order":0,},
     {"id":{"name":"Obj_door","path":"objects/Obj_door/Obj_door.yy",},"order":10,},
     {"id":{"name":"TileSet_wall","path":"tilesets/TileSet_wall/TileSet_wall.yy",},"order":0,},

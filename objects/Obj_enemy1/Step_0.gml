@@ -2,17 +2,6 @@
 // You can write your code in this editor
 event_inherited();
 
-if(chr_diff > 45 && in_sight){
-	targetX = Obj_chr.x;
-	targetY = Obj_chr.y;
-	targeted = true;
-	state = states.move;
-}
-if(chr_diff <= 45 && in_sight && state != states.attack_ready && state != states.attack && state_change){
-	state = states.attack_ready;
-	state_change = false;
-	alarm[2] = 60;
-}
 
 if(hp <= 0){
 	with(instance_create_layer(x,y,"Instances",Obj_corpse)){
@@ -21,30 +10,6 @@ if(hp <= 0){
 	}
 	instance_destroy(self);
 }
-
-if(state == states.attack_ready && state_change){
-	state = states.attack;
-	var inst = instance_create_layer(x,y,"Instances",Obj_enemy_attackmsk);
-	pdir = point_direction(x,y,Obj_chr.x,Obj_chr.y);
-	with(inst){
-		dir = other.pdir;
-	}
-	state_change = false;
-	alarm[3] = 30;
-}
-
-if(state == states.move && targeted && !stun){
-	image_speed = 1.0;
-	if(x < Obj_chr.x){
-		image_xscale = -1.0;	
-	}else{
-		image_xscale = 1.0;	
-	}
-	if(point_distance(x,y,targetX,targetY) >= 16){
-		mp_potential_step_object(targetX,targetY,1,Obj_wall);
-	} else{
-		targetX = x;
-		targetY = y;
-		targeted = false;
-	}
-}
+	if(mp_grid_path(path_grid,player_path,x,y,Obj_chr.x,Obj_chr.y + 8,1)){
+		path_start(player_path,1,0,0);
+	} 

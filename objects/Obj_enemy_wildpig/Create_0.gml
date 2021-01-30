@@ -2,6 +2,8 @@
 // You can write your code in this editor
 event_inherited();
 
+player_path = path_add();
+path_set_kind(player_path,0);
 
 hp = 30;
 chr_diff = 100;

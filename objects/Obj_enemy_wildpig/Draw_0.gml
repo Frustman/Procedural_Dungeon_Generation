@@ -21,7 +21,8 @@ if(state == states.attack){
 	
 shader_reset();
 
-draw_sprite_ext(Spr_controller,0,targetX,targetY,1,1,0,c_white,0.2);
+draw_circle(targetX,targetY,1,true);
+//draw_sprite_ext(Spr_controller,0,targetX,targetY,1,1,0,c_white,0.2);
 
 draw_rectangle_color(x-10,y-22,x-10 + hp/1.5, y-20,c_black,c_black,c_black,c_black,true);
 draw_rectangle_color(x-10,y-22,x-10 + hp/1.5, y-20,c_red,c_red,c_red,c_red,false);

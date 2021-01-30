@@ -9,8 +9,13 @@ for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
 		if(map_grid[# i, j] != 0){
 			var c = irandom(4);
-			if(map_grid[# i, j] == 1) ds_grid_set_grid_region(real_map, map_list[c], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
-			else ds_grid_set_grid_region(real_map, map_list[0], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
+			if(map_grid[# i, j] == 1) {
+				ds_grid_set_grid_region(real_map, map_list[c], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
+				global.path_grid[i * 10 + j] = map_list[c];
+			}else {
+				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
+				global.path_grid[i * 10 + j] = map_list[0];
+			}
 			if(i == 4 && j == 3) ds_grid_set_grid_region(real_map, map_list[0], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
 			if(door_grid[# i, j] % 10 == 1){
 				ds_grid_set(real_map, i * dg_width + dg_trim - 1, j * dg_height + dg_height / 2, 0);

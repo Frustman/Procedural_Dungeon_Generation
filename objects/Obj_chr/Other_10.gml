@@ -138,8 +138,8 @@ if(bullet_count < bullet_maxCount){
 				pos = [other.x,other.y];
 				knuckback = true;
 				stun = true;
-				alarm[0] = 5;
-				alarm[1] = 45;
+				alarm[10] = 5;
+				alarm[11] = 45;
 			}
 			ray_map = Scr_ray_cast([shootX, shootY],angle,shoot_list[|0],true,false,500);
 			if(ds_exists(ray_map,ds_type_map)){
