@@ -29,4 +29,4 @@ can_dash = true;
 
 globalvar path_grid;
 path_grid = mp_grid_create(0,0,room_width / CELL_WIDTH, room_height / CELL_HEIGHT,CELL_WIDTH,CELL_HEIGHT);
-mp_grid_add_instances(path_grid, Obj_wall, true);
+mp_grid_add_instances(path_grid, Obj_wall, false);

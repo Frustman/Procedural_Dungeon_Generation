@@ -11,5 +11,5 @@ if(hp <= 0){
 	instance_destroy(self);
 }
 	if(mp_grid_path(path_grid,player_path,x,y,Obj_chr.x,Obj_chr.y + 8,1)){
-		path_start(player_path,1,0,0);
+		path_start(player_path,1,path_action_stop,true);
 	} 
