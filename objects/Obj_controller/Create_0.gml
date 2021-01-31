@@ -1,16 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-boxCenterX = 240;
-boxCenterY = 1200 + 32;
+boxCenterX = (300) / 2;
+boxCenterY = (1200 - 64) / 2;
 boxRadius = 128;
 
-AttackCenterX = 2960 - 240;
-AttackCenterY = 1200 + 32;
+AttackCenterX = (2960 - 360) / 2;
+AttackCenterY = (1200 - 64) / 2;
 AttackRadius = 128;
 
-dashCenterX = 2960 - 140;
-dashCenterY = 1200 - 128;
+dashCenterX = (2960 - 120) / 2;
+dashCenterY = (1200 - 320) / 2;
 dashRadius = 32;
 
 joyIndex = -1;

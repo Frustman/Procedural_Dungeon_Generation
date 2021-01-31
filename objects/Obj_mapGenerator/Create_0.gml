@@ -10,9 +10,6 @@ dg_trim = 6;
 real_width = dg_width * 9;
 real_height = dg_height * 8;
 
-for(var i = 0; i < 5; i++){
-	map_list[i] = ds_grid_create(dg_width,dg_height);
-}
 
 map = real(load_csv("dungeon_map.csv"));
 
@@ -21,8 +18,10 @@ for(var i = 0; i < ds_grid_width(map); i++){
 		map[# i, j] = real(map[# i, j]);
 	}
 }
+dungeon_cnt = ds_grid_height(map) div dg_height;
 
-for(var i = 0; i < ds_grid_height(map) div dg_height; i++){
+for(var i = 0; i < dungeon_cnt; i++){
+	map_list[i] = ds_grid_create(dg_width,dg_height);
 	ds_grid_set_grid_region(map_list[i],map,0,i*dg_height,dg_width-1,(i+1)*dg_height - 1,0,0);
 }
 

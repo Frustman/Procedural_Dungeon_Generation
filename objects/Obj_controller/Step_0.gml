@@ -11,8 +11,8 @@ if(clickOne && device_mouse_x_to_gui(0) <= view_wport[0] / 2){
 	move = true;
 } else {
 	joyIndex = -1;
-	boxCenterX = 240;
-	boxCenterY = 1200 + 32;
+	boxCenterX = (300) / 2;
+	boxCenterY = (1200 - 64) / 2;
 	distanceBox = 0;
 	move = false;
 }

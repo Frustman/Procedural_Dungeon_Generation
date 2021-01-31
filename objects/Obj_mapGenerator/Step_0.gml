@@ -99,7 +99,7 @@ randomize();
 if(generated && instance_exists(Obj_chr)){
 	var curRoom = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
 	if(Map_visit_grid[# curRoom div 10, curRoom % 10] == 0 && map_grid[# curRoom div 10, curRoom % 10] == 1){
-		repeat(5){
+		repeat(2){
 			mongen = false;
 			while(!mongen){
 				var xpos = irandom(dg_width - dg_trim * 2) + dg_trim;
@@ -108,7 +108,7 @@ if(generated && instance_exists(Obj_chr)){
 				if(!instance_place(xpos,ypos,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
 					with(instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + 32,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + 32,"Instances",Obj_spawner)){
 						if(irandom(1) == 0){
-							obj = Obj_enemy_wildpig;
+							//obj = Obj_enemy_wildpig;
 						}
 					}
 					mongen = true;

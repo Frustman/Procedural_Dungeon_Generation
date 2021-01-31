@@ -8,7 +8,7 @@ randomize()
 for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
 		if(map_grid[# i, j] != 0){
-			var c = irandom(4);
+			var c = irandom(dungeon_cnt - 1);
 			if(map_grid[# i, j] == 1) {
 				ds_grid_set_grid_region(real_map, map_list[c], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
 				global.path_grid[i * 10 + j] = map_list[c];

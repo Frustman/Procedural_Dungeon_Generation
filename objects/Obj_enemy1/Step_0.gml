@@ -10,6 +10,13 @@ if(hp <= 0){
 	}
 	instance_destroy(self);
 }
-	if(mp_grid_path(path_grid,player_path,x,y,Obj_chr.x,Obj_chr.y + 8,1)){
-		path_start(player_path,1,path_action_stop,true);
-	} 
+if(mp_grid_path(path_grid,player_path,x,y,Obj_chr.x,Obj_chr.y + 8,1)){
+	targetX = path_get_point_x(player_path,1);
+	targetY = path_get_point_y(player_path,1);
+}
+if(targetX < x){
+	image_xscale = 1.0;
+} else {
+	image_xscale = -1.0;
+}
+if(!stun) mp_potential_step_object(targetX,targetY,1,Obj_wall);

@@ -14,6 +14,12 @@ for(var i = -1;i < 2; i++){
 if(knuckback){
 	dx = lengthdir_x(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180);
 	dy = lengthdir_y(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180);
+} else {
+	dx = 0;
+	dy = 0;
+}
+if(stun){
+	path_end();	
 }
 
 anim_maxIndex = image_number;
