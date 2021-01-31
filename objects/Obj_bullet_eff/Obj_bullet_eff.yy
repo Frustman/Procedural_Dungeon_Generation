@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "Spr_door",
-    "path": "sprites/Spr_door/Spr_door.yy",
+    "name": "Spr_bullet",
+    "path": "sprites/Spr_bullet/Spr_bullet.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Obj_bullet_parent",
+    "path": "objects/Obj_bullet_parent/Obj_bullet_parent.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -20,10 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_door","path":"objects/Obj_door/Obj_door.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"Obj_door","path":"objects/Obj_door/Obj_door.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_door",
+  "name": "Obj_bullet_eff",
   "tags": [],
   "resourceType": "GMObject",
 }
