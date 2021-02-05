@@ -13,6 +13,12 @@ upixelW = shader_get_uniform(Sha_white_outline,"pixelW");
 texelH = texture_get_texel_height(sprite_get_texture(sprite_index,0));
 texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
 
+maxhp = 20;
+hp = 20;
+
+height = abs(bbox_bottom - bbox_top)*3/5;
+width = abs(bbox_left - bbox_right)*3/5;
+
 hit = false;
 knuckback = false;
 in_sight = false;

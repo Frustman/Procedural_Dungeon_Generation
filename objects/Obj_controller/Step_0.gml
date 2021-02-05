@@ -11,8 +11,8 @@ if(clickOne && device_mouse_x_to_gui(0) <= view_wport[0] / 2){
 	move = true;
 } else {
 	joyIndex = -1;
-	boxCenterX = (300) / 2;
-	boxCenterY = (1200 - 64) / 2;
+	boxCenterX = deviceHeight / 5;
+	boxCenterY = deviceHeight * 4 / 5;
 	distanceBox = 0;
 	move = false;
 }
@@ -22,12 +22,10 @@ if(clickOne && clickTwo){
 		if(point_distance(AttackCenterX, AttackCenterY, device_mouse_x_to_gui(!joyIndex), device_mouse_y_to_gui(!joyIndex)) <= AttackRadius){
 			if(can_attack && !Obj_chr.dash){
 				with(Obj_chr){
-					event_perform(ev_other,ev_user0);
+					event_perform(ev_other,ev_user1);
+					other.alarm[0] = bullet_delay;
 				}
 				can_attack = false;
-				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
-				else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
-				else alarm[0] = 10;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(!joyIndex), device_mouse_y_to_gui(!joyIndex)) <= dashRadius){
@@ -49,12 +47,10 @@ if(clickOne && clickTwo){
 				if(can_attack && !Obj_chr.dash){
 					
 				with(Obj_chr){
-					event_perform(ev_other,ev_user0);
+					event_perform(ev_other,ev_user1);
+					other.alarm[0] = bullet_delay;
 				}
 					can_attack = false;
-					if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
-					else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
-					else alarm[0] = 10;
 				}
 			}
 			if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(i), device_mouse_y_to_gui(i)) <= dashRadius){
@@ -78,12 +74,10 @@ if(clickOne){
 		if(point_distance(AttackCenterX, AttackCenterY, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)) <= AttackRadius){
 			if(can_attack && !Obj_chr.dash){
 				with(Obj_chr){
-					event_perform(ev_other,ev_user0);
+					event_perform(ev_other,ev_user1);
+					other.alarm[0] = bullet_delay;
 				}
 				can_attack = false;
-				if(Obj_chr.bullet_count == Obj_chr.bullet_maxCount)	alarm[0] = 20;
-				else if(Obj_chr.bullet_count == 0)	alarm[0] = 20;
-				else alarm[0] = 10;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)) <= dashRadius){

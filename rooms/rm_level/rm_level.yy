@@ -319,10 +319,10 @@
   "creationCodeFile": "${project_dir}/rooms/Room1/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_4CEC42A3","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_6A0BE0F4","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_362AA183","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_2C3468F1","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_4CEC42A3","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_6A0BE0F4","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_362AA183","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_2C3468F1","path":"rooms/rm_level/rm_level.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -350,7 +350,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Room1",
+  "name": "rm_level",
   "tags": [],
   "resourceType": "GMRoom",
 }

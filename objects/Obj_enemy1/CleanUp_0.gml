@@ -1,4 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-state_change = true;
-state = states.idle;
+audio_play_sound(Player_Takes_Damage_20,0,false);

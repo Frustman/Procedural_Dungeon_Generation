@@ -1,16 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-boxCenterX = (300) / 2;
-boxCenterY = (1200 - 64) / 2;
+deviceWidth = display_get_width();
+deviceHeight = display_get_height();
+window_set_size(deviceWidth,deviceHeight);
+surface_resize(application_surface,deviceWidth,deviceHeight);
+alarm[11] = 1;
+
+boxCenterX = deviceHeight / 5;
+boxCenterY = deviceHeight * 4 / 5;
 boxRadius = 128;
 
-AttackCenterX = (2960 - 360) / 2;
-AttackCenterY = (1200 - 64) / 2;
+AttackCenterX = deviceWidth * 6 / 7;
+AttackCenterY = deviceHeight * 4 / 5;
 AttackRadius = 128;
 
-dashCenterX = (2960 - 120) / 2;
-dashCenterY = (1200 - 320) / 2;
+dashCenterX = AttackCenterX + 128;
+dashCenterY = AttackCenterY - 128;
 dashRadius = 32;
 
 joyIndex = -1;

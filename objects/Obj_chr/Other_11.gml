@@ -7,7 +7,7 @@ anim_index = 0;
 alarm[1] = 20;
 var bullet = instance_create_depth(shootX,shootY,0,Obj_bullet_eff);
 with(bullet){
-	damage = 5;
+	damage = irandom(2) + 4;
 	image_angle = other.angle;
 	motion_set(other.angle,15);
 }

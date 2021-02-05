@@ -5,6 +5,7 @@ event_inherited();
 player_path = path_add();
 path_set_kind(player_path,0);
 
+maxhp = 30;
 hp = 30;
 chr_diff = 100;
 

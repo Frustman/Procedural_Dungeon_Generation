@@ -22,6 +22,8 @@ wall_list = ds_list_create();
 bullet_maxCount = 4;
 bullet_count = 0;
 
+bullet_delay = 20;
+
 AttackTarget = noone;
 near_id = noone;
 near_inst = "noone";
