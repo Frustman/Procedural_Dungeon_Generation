@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-deviceWidth = display_get_width();
-deviceHeight = display_get_height();
-window_set_size(deviceWidth,deviceHeight);
-surface_resize(application_surface,deviceWidth,deviceHeight);
+deviceWidth = 1480;
+deviceHeight = 720;
+window_set_size(1480,720);
+surface_resize(application_surface,1480,720);
 alarm[11] = 1;
 
 boxCenterX = deviceHeight / 5;

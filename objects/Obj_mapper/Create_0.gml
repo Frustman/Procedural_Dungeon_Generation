@@ -5,8 +5,6 @@ globalvar deviceWidth;
 deviceWidth = display_get_width();
 globalvar deviceHeight;
 deviceHeight = display_get_height();
-show_message(deviceWidth);
-show_message(deviceHeight);
 
 cam_width = 740;
 cam_height = 360;

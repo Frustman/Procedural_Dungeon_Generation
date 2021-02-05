@@ -11,7 +11,28 @@ if(!dash){
 	dy = lengthdir_y(dashSpeed,dashDir);
 }
 
-AttackTarget = instance_nearest(x,y,Obj_enemy);
+EnemyCount = instance_number(Obj_enemy);
+if(EnemyCount > 0){
+	enemy_pr = ds_priority_create();
+	with(Obj_enemy){
+		ds_priority_add(other.enemy_pr,id,point_distance(x,y,other.x,other.y));
+	}
+	canTarget = true;
+	_target = noone;
+	AttackTarget = noone;
+	while(canTarget && !ds_priority_empty(enemy_pr)){
+		_target = ds_priority_delete_min(enemy_pr);
+		if(collision_line(x,y,_target.x,_target.y,Obj_wall,false,false) == noone){
+			canTarget = false;
+			AttackTarget = _target;
+		}
+	}
+	if(AttackTarget == noone){
+		AttackTarget = instance_nearest(x,y,Obj_enemy);
+	}
+} else {
+	AttackTarget = noone;
+}
 if(AttackTarget != noone && Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != Scr_get_room_pos(x,y)){
 	AttackTarget = noone;
 }
