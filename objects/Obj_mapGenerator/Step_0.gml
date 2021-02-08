@@ -99,7 +99,7 @@ randomize();
 if(generated && instance_exists(Obj_chr)){
 	var curRoom = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
 	if(Map_visit_grid[# curRoom div 10, curRoom % 10] == 0 && map_grid[# curRoom div 10, curRoom % 10] == 1){
-		repeat(2){
+		repeat(6){
 			mongen = false;
 			while(!mongen){
 				var xpos = irandom(dg_width - dg_trim * 2) + dg_trim;

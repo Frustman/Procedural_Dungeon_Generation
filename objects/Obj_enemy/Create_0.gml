@@ -8,6 +8,8 @@ enum states{
 	attack_ready
 }
 
+hitList = ds_list_create();
+
 upixelH = shader_get_uniform(Sha_white_outline,"pixelH");
 upixelW = shader_get_uniform(Sha_white_outline,"pixelW");
 texelH = texture_get_texel_height(sprite_get_texture(sprite_index,0));

@@ -13,7 +13,7 @@ if(!dash){
 
 EnemyCount = instance_number(Obj_enemy);
 if(EnemyCount > 0){
-	enemy_pr = ds_priority_create();
+	ds_priority_clear(enemy_pr);
 	with(Obj_enemy){
 		ds_priority_add(other.enemy_pr,id,point_distance(x,y,other.x,other.y));
 	}
@@ -22,7 +22,7 @@ if(EnemyCount > 0){
 	AttackTarget = noone;
 	while(canTarget && !ds_priority_empty(enemy_pr)){
 		_target = ds_priority_delete_min(enemy_pr);
-		if(collision_line(x,y,_target.x,_target.y,Obj_wall,false,false) == noone){
+		if(collision_line(x,y + 8,_target.x,_target.y,Obj_wall,false,false) == noone){
 			canTarget = false;
 			AttackTarget = _target;
 		}

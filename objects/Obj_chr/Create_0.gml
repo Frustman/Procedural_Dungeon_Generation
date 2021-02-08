@@ -10,6 +10,8 @@ angle = 0;
 
 LookRight = 1;
 
+fireshot = true;
+
 anim_maxIndex = image_number;
 anim_index = 0;
 anim_fps = 10;
@@ -18,6 +20,7 @@ footstep = true;
 
 shoot_list = ds_list_create();
 wall_list = ds_list_create();
+enemy_pr = ds_priority_create();
 
 bullet_maxCount = 4;
 bullet_count = 0;
