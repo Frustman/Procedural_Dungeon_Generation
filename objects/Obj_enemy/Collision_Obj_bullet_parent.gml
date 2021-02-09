@@ -18,7 +18,7 @@ if(other.par != id && ds_list_find_index(hitList,other.id) == -1){
 			with(instance_create_layer(x,y,"Instances",Obj_bullet_pen_eff)){
 				var rangle = other.angle + i + random(20) - 10;
 				image_angle = rangle;
-				damage = other._damage div 5;
+				damage = (other._damage div 5 == 0) ? 1 : other._damage div 5;
 				fireshot = false;
 				par = other.id;
 				motion_set(rangle, 2);
