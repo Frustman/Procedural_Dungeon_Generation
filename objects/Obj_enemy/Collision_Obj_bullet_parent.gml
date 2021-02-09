@@ -9,20 +9,20 @@ if(other.par != id && ds_list_find_index(hitList,other.id) == -1){
 		dmg = other._damage;
 	}
 	hit = true;
+	alarm[9] = 5;
 
 	angle = other.image_angle;
 
 	if(Obj_chr.fireshot == true && other.fireshot == true){
 		for(var i = -30; i <= 30; i += 15){
 			with(instance_create_layer(x,y,"Instances",Obj_bullet_pen_eff)){
-				var rangle = other.angle + i + random(5) - 2.5;
+				var rangle = other.angle + i + random(20) - 10;
 				image_angle = rangle;
 				damage = other._damage div 5;
 				fireshot = false;
 				par = other.id;
-				motion_set(rangle, 5);
+				motion_set(rangle, 2);
 			}
 		}
 	}
-	alarm[9] = 5;
 }

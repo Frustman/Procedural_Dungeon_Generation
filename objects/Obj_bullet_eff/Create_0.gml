@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-fireshot = true;
+fireshot = false;
+chain_lightning = false;

@@ -4,7 +4,7 @@ attack_list = ds_list_create();
 ds_list_add(attack_list, other.id);
 
 instance_destroy(self);
-Scr_chain_lightning(attack_list,1,3,other.id);
+Scr_chain_lightning(attack_list,1,3,other.id,90);
 pos_list = ds_list_create();
 for(var i = 0; i < ds_list_size(attack_list); i++){
 	ds_list_add(pos_list,[attack_list[|i].x,attack_list[|i].y]);

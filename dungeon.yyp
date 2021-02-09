@@ -22,6 +22,7 @@
     {"id":{"name":"Ambiance_Crickets_01","path":"sounds/Ambiance_Crickets_01/Ambiance_Crickets_01.yy",},"order":3,},
     {"id":{"name":"Spr_mini_map","path":"sprites/Spr_mini_map/Spr_mini_map.yy",},"order":5,},
     {"id":{"name":"Spr_wildpig_attack_ready","path":"sprites/Spr_wildpig_attack_ready/Spr_wildpig_attack_ready.yy",},"order":1,},
+    {"id":{"name":"Scr_draw_electricity","path":"scripts/Scr_draw_electricity/Scr_draw_electricity.yy",},"order":16,},
     {"id":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"order":2,},
     {"id":{"name":"Spr_chr_move","path":"sprites/Spr_chr_move/Spr_chr_move.yy",},"order":3,},
     {"id":{"name":"Spr_flower_attack","path":"sprites/Spr_flower_attack/Spr_flower_attack.yy",},"order":1,},
