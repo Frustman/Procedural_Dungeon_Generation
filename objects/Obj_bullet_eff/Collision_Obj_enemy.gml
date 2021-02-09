@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(other.id != par){
+if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id))){
 	instance_destroy(self);
 	target = other.id;
 
@@ -37,7 +37,8 @@ if(other.id != par){
 				chainDamage = 3;
 				chain_lightning = other.chain_lightning;
 	
-				par = other.target;	
+				par = other.target;
+				target = other.nearest;
 				
 				fireshot = other.fireshot;
 				

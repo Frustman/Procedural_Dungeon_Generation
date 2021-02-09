@@ -18,6 +18,7 @@ with(bullet){
 	
 	fireshot = false;
 	
+	target = other.AttackTarget;
 	sharp_shooting = true;
 	cusion_max = 7;
 	cusion_dist = 400;

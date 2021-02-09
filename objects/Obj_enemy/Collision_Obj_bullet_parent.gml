@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(other.par != id && ds_list_find_index(hitList,other.id) == -1){
+if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && other.par != id && ds_list_find_index(hitList,other.id) == -1){
 	_damage = other.damage;
 	hp -= _damage;
 	ds_list_add(hitList,other.id);

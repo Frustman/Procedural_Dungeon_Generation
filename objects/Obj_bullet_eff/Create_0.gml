@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
+target = noone;
 fireshot = false;
 chain_lightning = false;
 sharp_shooting = false;
