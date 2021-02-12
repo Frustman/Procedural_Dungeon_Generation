@@ -19,4 +19,4 @@ if(targetX < x){
 } else {
 	xscale *= (sign(xscale) == 1) ? -1 : 1;
 }
-if(!stun) mp_potential_step_object(targetX,targetY,1,Obj_wall);
+if(!stun) mp_potential_step_object(targetX,targetY,0.5,Obj_wall);

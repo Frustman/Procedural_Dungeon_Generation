@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "Spr_slime_msk",
+    "path": "sprites/Spr_slime_msk/Spr_slime_msk.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "Obj_enemy",

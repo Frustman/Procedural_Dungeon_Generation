@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "Spr_wildpig_msk",
+    "path": "sprites/Spr_wildpig_msk/Spr_wildpig_msk.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "Obj_enemy",

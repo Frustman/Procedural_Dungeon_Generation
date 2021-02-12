@@ -7,8 +7,8 @@ anim_index = 0;
 alarm[1] = 20;
 var bullet = instance_create_depth(shootX,shootY,0,Obj_bullet_eff);
 with(bullet){
-	damage = irandom(2) + 4;
-	motion_set(other.angle,15);
+	damage = 4 + irandom(5);
+	motion_set(other.angle,7);
 	image_angle = other.angle;
 	
 	chainDamage = 3;
@@ -19,7 +19,7 @@ with(bullet){
 	fireshot = false;
 	
 	target = other.AttackTarget;
-	sharp_shooting = true;
+	sharp_shooting = false;
 	cusion_max = 7;
 	cusion_dist = 400;
 }

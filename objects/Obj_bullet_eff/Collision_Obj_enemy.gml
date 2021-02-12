@@ -31,7 +31,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			sharp_dir = point_direction(other.x,other.y,nearest.x,nearest.y);
 			with(instance_create_layer(other.x,other.y,"Instances",Obj_bullet_eff)){
 				damage = (other.damage div 2 == 0) ? 1 : other.damage div 2;
-				motion_set(other.sharp_dir,15);
+				motion_set(other.sharp_dir,7);
 				image_angle = other.sharp_dir;
 				
 				chainDamage = 3;

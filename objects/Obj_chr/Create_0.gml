@@ -1,5 +1,5 @@
-moveSpeed = 1.5;
-dashSpeed = 4.5;
+moveSpeed = 0.7;
+dashSpeed = 2.2;
 
 state = "idle";
 dash = false;
