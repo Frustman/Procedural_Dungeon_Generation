@@ -18,6 +18,11 @@ texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
 maxhp = 20;
 hp = 20;
 
+ac_cnt = 0;
+
+xscale = 1;
+yscale = 1;
+
 height = abs(bbox_bottom - bbox_top)*3/5;
 width = abs(bbox_left - bbox_right)*3/5;
 

@@ -3,10 +3,10 @@
 event_inherited();
 if(!stun){
 	sprite_index = Spr_slime;
-	draw_sprite_ext(Spr_slime,real_index,x,y,image_xscale,1.0,0,c_white,1.0);
+	draw_sprite_ext(Spr_slime,real_index,x,y,xscale,yscale,0,c_white,1.0);
 }
 else
-	draw_sprite_ext(Spr_slime_hurt,-1,x,y,image_xscale,1.0,0,c_white,1.0);
+	draw_sprite_ext(Spr_slime_hurt,-1,x,y,xscale,yscale,0,c_white,1.0);
 shader_reset();
 
 

@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_sprite_ext(Spr_hpbar,0,x - 11,y + abs(height) + 2, hp/maxhp, 1.0, 0 ,c_white,1.0);
-draw_sprite(Spr_hpbar_frame,0,x - 14,y + abs(height));
+draw_sprite_ext(Spr_hpbar,0,x - 11,bbox_bottom + 4, hp/maxhp, 1.0, 0 ,c_white,1.0);
+draw_sprite(Spr_hpbar_frame,0,x - 14,bbox_bottom + 2);
 
 if(Obj_chr.AttackTarget == id){
 	shader_set(Sha_white_outline);

@@ -1,9 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
-
 randomize()
 for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
@@ -111,5 +108,6 @@ instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 96, "Instances", Obj_enemy_flower);
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 96, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_flower);
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 96, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 96, "Instances", Obj_enemy_flower);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 96, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 128, "Instances", Obj_itemTable);
 Obj_camera.x = (dg_width * 4 + dg_width / 2) * CELL_WIDTH;
 Obj_camera.y = (dg_height * 3 + dg_height / 2) * CELL_HEIGHT;

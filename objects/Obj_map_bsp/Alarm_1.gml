@@ -1,7 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
 
 room_goto(newRoom);
 

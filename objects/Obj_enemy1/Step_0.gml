@@ -15,8 +15,8 @@ if(mp_grid_path(path_grid,player_path,x,y,Obj_chr.x,Obj_chr.y + 8,1)){
 	targetY = path_get_point_y(player_path,1);
 }
 if(targetX < x){
-	image_xscale = 1.0;
+	xscale *= (sign(xscale) == 1) ? 1 : -1;
 } else {
-	image_xscale = -1.0;
+	xscale *= (sign(xscale) == 1) ? -1 : 1;
 }
 if(!stun) mp_potential_step_object(targetX,targetY,1,Obj_wall);

@@ -1,7 +1,4 @@
 /// @description Insert description here
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
-
 LAND = 1;
 dungeon_width = 50;
 dungeon_height = 25;

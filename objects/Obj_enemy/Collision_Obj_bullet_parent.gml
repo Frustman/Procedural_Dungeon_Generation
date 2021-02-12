@@ -9,7 +9,8 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 		dmg = other._damage;
 	}
 	hit = true;
-	alarm[9] = 5;
+	ac_cnt = 0;
+	alarm[9] = 10;
 
 	angle = other.image_angle;
 

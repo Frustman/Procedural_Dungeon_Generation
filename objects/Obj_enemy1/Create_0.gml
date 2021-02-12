@@ -6,7 +6,7 @@ player_path = path_add();
 path_set_kind(player_path,0);
 
 maxhp = 50;
-hp = 30;
+hp = 50;
 chr_diff = 100;
 
 state_change = true;

@@ -1,7 +1,5 @@
 /// @description Insert description here
 
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
 
 var map = Obj_map_bsp.geo_map;
 for(var i = 0; i < Obj_map_bsp.dungeon_width; i++){

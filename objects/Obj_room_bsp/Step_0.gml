@@ -1,8 +1,5 @@
 /// @description 
 
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
-
 if is_create{
 	var MIN_SIZE = Obj_map_bsp.MIN_SIZE;
 	width = x2 - x1;

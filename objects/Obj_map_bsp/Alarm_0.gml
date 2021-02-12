@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-#macro CELL_WIDTH 64
-#macro CELL_HEIGHT 64
 
 for(var i = 0; i < ds_list_size(node_list) - 1;i++){
 	var start = node_list[| i];

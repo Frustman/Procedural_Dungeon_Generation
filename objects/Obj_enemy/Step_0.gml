@@ -22,6 +22,17 @@ if(stun){
 	path_end();	
 }
 
+if(hit){
+	ac_cnt++;
+	var _channel = animcurve_get_channel(ac_hit_scale, 0);
+	var _val = animcurve_channel_evaluate(_channel, ac_cnt / 10);
+	xscale = sign(xscale) * _val;
+	yscale = _val;
+} else {
+	xscale = sign(xscale) * 1.0;
+	yscale = 1.0;
+}
+
 anim_maxIndex = image_number;
 
 if(anim_index < (anim_maxIndex) * anim_fps){
