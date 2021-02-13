@@ -47,25 +47,25 @@ if(AttackTarget != noone && instance_exists(AttackTarget)){
 }
 if(AttackTarget == noone){
 	if(image_xscale = 1.0){
-		shootX = x + lengthdir_x(21.3775583264319501,angle + 90 - 79.215702132437);
+		shootX = x + lengthdir_x(11.3775583264319501,angle + 90 - 79.215702132437);
 	} else{
-		shootX = x + lengthdir_x(21.3775583264319501,angle - 90 + 79.215702132437);
+		shootX = x + lengthdir_x(11.3775583264319501,angle - 90 + 79.215702132437);
 	}
 	if(image_xscale = 1.0){
-		shootY = y + lengthdir_y(21.3775583264319501,angle + 90 - 79.215702132437);
+		shootY = y + lengthdir_y(11.3775583264319501,angle + 90 - 79.215702132437);
 	} else{
-		shootY = y + lengthdir_y(21.3775583264319501,angle - 90 + 79.215702132437);
+		shootY = y + lengthdir_y(11.3775583264319501,angle - 90 + 79.215702132437);
 	}
 } else if(AttackTarget != noone && instance_exists(AttackTarget)){
 	if(x < AttackTarget.x){
-		shootX = x + lengthdir_x(21.3775583264319501,angle + 90 - 79.215702132437);
+		shootX = x + lengthdir_x(11.3775583264319501,angle + 90 - 79.215702132437);
 	} else{
-		shootX = x + lengthdir_x(21.3775583264319501,angle - 90 + 79.215702132437);
+		shootX = x + lengthdir_x(11.3775583264319501,angle - 90 + 79.215702132437);
 	}
 	if(x < AttackTarget.x){
-		shootY = y + lengthdir_y(21.3775583264319501,angle + 90 - 79.215702132437);
+		shootY = y + lengthdir_y(11.3775583264319501,angle + 90 - 79.215702132437);
 	} else{
-		shootY = y + lengthdir_y(21.3775583264319501,angle - 90 + 79.215702132437);
+		shootY = y + lengthdir_y(11.3775583264319501,angle - 90 + 79.215702132437);
 	}
 }
 
@@ -79,10 +79,10 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 }
 
 if(dash){
-	dashSpeed -= 0.125;
-	clamp(dashSpeed,0,4.5);
+	dashSpeed -= 0.115;
+	clamp(dashSpeed,0,3);
 	if(random(1) < 0.2){
-		instance_create_layer(x,y+16,"Instances",Obj_dust);
+		instance_create_layer(x,y+8,"Instances",Obj_dust);
 	}
 }
 

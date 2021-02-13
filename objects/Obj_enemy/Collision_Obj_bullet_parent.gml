@@ -2,10 +2,15 @@
 // You can write your code in this editor
 if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && other.par != id && ds_list_find_index(hitList,other.id) == -1){
 	_damage = other.damage;
+	if(crit){
+		_damage *= 2;	
+	}
 	hp -= _damage;
+	crit_chance = other.critical_chance;
 	ds_list_add(hitList,other.id);
 	var damage_eff = instance_create_depth(x + random(20) - 10,y + random(20) - 15,0,Obj_damage_eff);
 	with(damage_eff){
+		critical = other.crit;
 		dmg = other._damage;
 	}
 	hit = true;
@@ -19,6 +24,8 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 			with(instance_create_layer(x,y,"Instances",Obj_bullet_pen_eff)){
 				var rangle = other.angle + i + random(20) - 10;
 				image_angle = rangle;
+				crit = other.crit;
+				critical_chance = other.crit_chance;
 				damage = (other._damage div 5 == 0) ? 1 : other._damage div 5;
 				fireshot = false;
 				par = other.id;

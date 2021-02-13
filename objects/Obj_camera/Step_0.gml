@@ -8,6 +8,7 @@ if(instance_exists(Obj_chr)){
 	instance_activate_object(Obj_controller);
 	instance_activate_object(Obj_mapGenerator);
 	instance_activate_object(Obj_chr);
+	instance_activate_object(Obj_bullet_ui);
 }
 
 if(target != noone && instance_exists(target) && cur_room == Scr_get_room_pos(target.x, target.y)){

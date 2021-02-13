@@ -3,6 +3,8 @@
 if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id))){
 	instance_destroy(self);
 	target = other.id;
+	crit = Scr_critical(critical_chance);
+	other.crit = crit;
 
 	if(chain_lightning == true){
 		attack_list = ds_list_create();
@@ -39,6 +41,8 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 	
 				par = other.target;
 				target = other.nearest;
+				
+				critical_chance = other.critical_chance;
 				
 				fireshot = other.fireshot;
 				

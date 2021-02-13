@@ -10,12 +10,14 @@ if(dash){
 		sprite_index = Spr_chr;
 		draw_sprite_ext(Spr_chr,real_index,x,y,image_xscale,image_yscale,0,c_white,1.0);
 	} else if(state == "move"){
+		anim_fps = 5;
 		sprite_index = Spr_chr_move;
 		draw_sprite_ext(Spr_chr_move,real_index,x,y,image_xscale,image_yscale,0,c_white,1.0);
 	}
 }
 
 if(shoot){
+	anim_fps = 10;
 	if(AttackTarget != noone && instance_exists(AttackTarget)){
 		angle = point_direction(x,y,AttackTarget.x, AttackTarget.y);
 		if(x >= AttackTarget.x){

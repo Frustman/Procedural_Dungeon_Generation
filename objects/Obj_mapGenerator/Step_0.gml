@@ -74,6 +74,7 @@ if(!generated){
 				reward_room = ds_stack_pop(endroom_list);
 				map_grid[# boss_room div 10, boss_room % 10] = 2;
 				map_grid[# reward_room div 10, reward_room % 10] = 3;
+				instance_create_layer(((boss_room div 10) * dg_width + dg_width /2) * CELL_WIDTH,((boss_room % 10) * dg_height + dg_height /2) * CELL_HEIGHT,"Instances",Obj_stair);
 				generated = true;
 			} else{
 				error = true;	

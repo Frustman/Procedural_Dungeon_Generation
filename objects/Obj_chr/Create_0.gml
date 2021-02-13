@@ -1,10 +1,11 @@
 moveSpeed = 0.7;
-dashSpeed = 2.2;
+dashSpeed = 1.5;
 
 state = "idle";
 dash = false;
 dashDir = 90;
 shoot = false;
+reload = false;
 
 angle = 0;
 
@@ -22,19 +23,19 @@ shoot_list = ds_list_create();
 wall_list = ds_list_create();
 enemy_pr = ds_priority_create();
 
-bullet_maxCount = 4;
-bullet_count = 0;
+for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
+	__number = i;
+	bullet_ui[i] = instance_create_layer(x,y,"Instances",Obj_bullet_ui);
+	with(bullet_ui[i]){
+		xpos = 200 + 20 * other.__number;
+		ypos = 20;
+	}
+}
+
+critical_chance = 0.5;
 
 bullet_delay = 20;
 
 AttackTarget = noone;
-near_id = noone;
-near_inst = "noone";
-
-_Enemy_num = 0;
-_Wall_num = 0;
 
 ray_map = -1;
-
-hitX = 0;
-hitY = 0;
