@@ -6,6 +6,7 @@ dash = false;
 dashDir = 90;
 shoot = false;
 reload = false;
+hit = false;
 
 angle = 0;
 

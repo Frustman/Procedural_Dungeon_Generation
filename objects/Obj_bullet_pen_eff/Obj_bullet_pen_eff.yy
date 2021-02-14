@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "bullet",
+    "path": "folders/Objects/bullet.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_bullet_pen_eff",

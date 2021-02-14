@@ -20,6 +20,8 @@ targetX = x;
 targetY = y;
 targeted = false;
 
+attack_delay = false;
+
 AttackBy = noone;
 
 dx = 0;

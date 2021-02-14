@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "item",
+    "path": "folders/Objects/item.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_itemTable",
