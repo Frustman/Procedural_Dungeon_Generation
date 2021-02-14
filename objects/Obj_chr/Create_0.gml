@@ -32,9 +32,6 @@ for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 	}
 }
 
-critical_chance = 0.5;
-
-bullet_delay = 20;
 
 AttackTarget = noone;
 

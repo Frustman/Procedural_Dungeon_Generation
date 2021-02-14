@@ -8,22 +8,22 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	alarm[1] = 20;
 	var bullet = instance_create_depth(shootX,shootY,0,Obj_bullet_eff);
 	with(bullet){
-		damage = 4 + irandom(2);
+		damage = Obj_valueContainer.player_bulletDamage;
 		motion_set(other.angle,7);
 		image_angle = other.angle;
 	
-		chainDamage = 3;
-		chain_lightning = false;
-		critical_chance = other.critical_chance;
+		chainDamage = Obj_valueContainer.player_chainDamage;
+		chain_lightning = Obj_valueContainer.player_chain;
+		critical_chance = Obj_valueContainer.critical_chance;
 	
 		par = other.id;	
 	
-		fireshot = false;
+		fireshot = Obj_valueContainer.player_fireshot;
 	
 		target = other.AttackTarget;
-		sharp_shooting = true;
-		cusion_max = 7;
-		cusion_dist = 400;
+		sharp_shooting = Obj_valueContainer.player_sharpshooting;
+		cusion_max = Obj_valueContainer.sharp_cusionCount;
+		cusion_dist = Obj_valueContainer.sharp_distance;
 	}
 	Obj_valueContainer.bullet_count--;
 	with(bullet_ui[Obj_valueContainer.bullet_count]){

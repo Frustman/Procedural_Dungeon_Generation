@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.12,
+  "volume": 0.11,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "Pistol_Shot_02.wav",
-  "duration": 2.714683,
+  "soundFile": "M4_Reload.wav",
+  "duration": 0.551349,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Pistol_Shot_02",
+  "name": "M4_Reload",
   "tags": [],
   "resourceType": "GMSound",
 }

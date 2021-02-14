@@ -1,3 +1,5 @@
+
+
 if(!dash){
 	if(instance_exists(Obj_controller)){
 		dx = lengthdir_x(moveSpeed,Obj_controller.directionBox);

@@ -15,6 +15,7 @@
     {"id":{"name":"TileSet_ground","path":"tilesets/TileSet_ground/TileSet_ground.yy",},"order":1,},
     {"id":{"name":"Player_Takes_Damage_20","path":"sounds/Player_Takes_Damage_20/Player_Takes_Damage_20.yy",},"order":4,},
     {"id":{"name":"Spr_key","path":"sprites/Spr_key/Spr_key.yy",},"order":11,},
+    {"id":{"name":"M4_Reload","path":"sounds/M4_Reload/M4_Reload.yy",},"order":5,},
     {"id":{"name":"Spr_wildpig_idle","path":"sprites/Spr_wildpig_idle/Spr_wildpig_idle.yy",},"order":0,},
     {"id":{"name":"Spr_wildpig_attack","path":"sprites/Spr_wildpig_attack/Spr_wildpig_attack.yy",},"order":2,},
     {"id":{"name":"Obj_enemy","path":"objects/Obj_enemy/Obj_enemy.yy",},"order":5,},
