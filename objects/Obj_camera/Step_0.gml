@@ -11,7 +11,9 @@ if(instance_exists(Obj_chr)){
 	instance_activate_object(Obj_bullet_ui);
 }
 
-if(target != noone && instance_exists(target) && cur_room == Scr_get_room_pos(target.x, target.y)){
+//vesion 1
+
+/*if(target != noone && instance_exists(target) && cur_room == Scr_get_room_pos(target.x, target.y)){
 	var targetX = (Obj_chr.x + target.x * 2) / 3;
 	var targetY = (Obj_chr.y + target.y * 2) / 3;
 
@@ -26,6 +28,24 @@ else{
 		var targetY = 0;
 	}
 	cam_zoom = 1.0 + zoom_shake;
+}*/
+
+
+//version 2
+if(instance_exists(Obj_chr)){
+	var roomX = ((cur_room div 10) * dg_width + dg_width / 2) * CELL_WIDTH;
+	var roomY = ((cur_room % 10) * dg_height + dg_height / 2) * CELL_HEIGHT;
+	
+	var dir = point_direction(roomX,roomY,Obj_chr.x,Obj_chr.y);
+	var len = point_distance(roomX,roomY,Obj_chr.x,Obj_chr.y);
+	
+	var targetX = roomX + lengthdir_x(len / 2, dir);
+	var targetY = roomY + lengthdir_y(len / 2, dir);
+	
+	cam_zoom = 0.7 + zoom_shake;
+} else {
+	var targetX = 0;
+	var targetY = 0;
 }
 
 var view_width = camera_get_view_width(view_camera[0]);
@@ -41,6 +61,9 @@ view_height = camera_get_view_height(view_camera[0]);
 
 x = lerp(x,targetX, rate);
 y = lerp(y,targetY, rate);
+
+x = round(x);
+y = round(y);
 
 camera_set_view_border(view_camera[0], new_width / 2, new_height / 2);
 
