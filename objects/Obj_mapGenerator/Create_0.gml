@@ -70,7 +70,7 @@ xpos = 4;
 ypos = 3;
 
 map_cnt = 1;
-max_mapcnt = 9;
+max_mapcnt = global.level + 3;
 
 
 dir_list[0][0] = -1; // 0 - left / 1 - down / 2 - right / 3 - up

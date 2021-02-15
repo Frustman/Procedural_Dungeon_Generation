@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_sprite(Spr_map_frame,0,0,0);
 if(instance_exists(Obj_chr)){
+	draw_sprite(Spr_map_frame,0,0,0);
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 8; j++){
 			if(miniMap_grid[#i, j] == 1){
@@ -22,6 +22,12 @@ if(instance_exists(Obj_chr)){
 				else
 					draw_sprite(Spr_mini_map,1,8 + 16 * i, 8 + 16 * j);
 			}
+		}
+	}
+} else {
+	for(var i = 0; i < 9; i++){
+		for(var j = 0; j < 8; j++){
+			draw_text(i * 10, j * 10, map_grid[#i,j]);
 		}
 	}
 }

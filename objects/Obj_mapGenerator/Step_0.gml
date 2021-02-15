@@ -10,7 +10,7 @@ if(!generated){
 	
 		for(var dir = 0; dir < 4; dir++){ // 0 - left / 1 - down / 2 - right / 3 - up
 			if(map_cnt < max_mapcnt){
-				if(random(9) <= 5.0){
+				if(random(9) <= 3.0){
 					var xCursor = xpos + dir_list[dir][0];
 					var yCursor = ypos + dir_list[dir][1];
 					if(xCursor > 1 && xCursor < 9 && yCursor > 2 && yCursor < 7){
@@ -63,20 +63,25 @@ if(!generated){
 	} else { 
 		if(map_cnt >= max_mapcnt){
 			var boss_room = ds_stack_pop(endroom_list);
-			var stack_cnt = ds_stack_size(endroom_list) - 2;
+			var stack_cnt = ds_stack_size(endroom_list);
 			if(stack_cnt > 0){
-				repeat(irandom(stack_cnt)){
-					ds_stack_pop(endroom_list);
+				if(stack_cnt > 1){
+					var rand = irandom(stack_cnt);
+					if(rand > 0){
+						repeat(irandom(rand)){
+							ds_stack_pop(endroom_list);
+						}
+					}
 				}
 				if(ds_stack_empty(endroom_list)){
 					error = true;
 				}
-				reward_room = ds_stack_pop(endroom_list);
+				var reward_room = ds_stack_pop(endroom_list);
 				map_grid[# boss_room div 10, boss_room % 10] = 2;
 				map_grid[# reward_room div 10, reward_room % 10] = 3;
 				instance_create_layer(((boss_room div 10) * dg_width + dg_width /2) * CELL_WIDTH,((boss_room % 10) * dg_height + dg_height /2) * CELL_HEIGHT,"Instances",Obj_stair);
 				generated = true;
-			} else{
+			} else {
 				error = true;	
 			}
 		}

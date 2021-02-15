@@ -42,7 +42,7 @@ if(instance_exists(Obj_chr)){
 	var targetX = roomX + lengthdir_x(len / 2, dir);
 	var targetY = roomY + lengthdir_y(len / 2, dir);
 	
-	cam_zoom = 0.7 + zoom_shake;
+	cam_zoom = 0.7 - zoom_shake;
 } else {
 	var targetX = 0;
 	var targetY = 0;
