@@ -104,9 +104,9 @@ for(var i = 0; i < real_width; i++){
 instance_create_layer(0,0, "Instances",Obj_controller);
 
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_chr);
-instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_flower);
-instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_flower);
-instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 64, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_flower);
-instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 64, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_flower);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_contextMap);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 64, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH + 64, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_contextMap);
 Obj_camera.x = (dg_width * 4 + dg_width / 2) * CELL_WIDTH;
 Obj_camera.y = (dg_height * 3 + dg_height / 2) * CELL_HEIGHT;
