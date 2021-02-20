@@ -9,16 +9,19 @@ else
 	draw_sprite_ext(Spr_slime_hurt,-1,x,y,xscale,yscale,0,c_white,1.0);
 shader_reset();
 
-/*for(var i = 0; i < 16; i++){
-	if(!context_dangerous[i]){
+for(var i = 0; i < ray_count; i++){
+	if(context_map[i] >= 0){
 		draw_set_color(c_green);
 	} else {
-		draw_set_color(c_red);
+		draw_set_color(c_white);
 	}
-	draw_line(x,y,x + lengthdir_x(abs(context_map[i] * 50),point_direction(0,0,context_dir[i][0],context_dir[i][1])), y + lengthdir_y(abs(context_map[i] * 50), point_direction(0,0,context_dir[i][0],context_dir[i][1])));
+	//if(i == max_idx) draw_set_color(c_blue);
+	draw_line(x,y,x + lengthdir_x(abs(context_map[i] * max_distance),point_direction(0,0,context_dir[i][0],context_dir[i][1])), y + lengthdir_y(abs(context_map[i] * max_distance), point_direction(0,0,context_dir[i][0],context_dir[i][1])));
 	draw_set_color(c_white);
-}*/
+}
 
+draw_line(x,y,x+dir[0]*10,y+dir[1]*10);
+draw_text(x,y+10,player_dist);
 
 /*for(var i = 0; i < path_get_number(player_path); i++){
 	targetx[i] = path_get_point_x(player_path,i);

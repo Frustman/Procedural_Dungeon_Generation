@@ -1,4 +1,4 @@
-moveSpeed = 0.7;
+moveSpeed = 1.4;
 dashSpeed = 1.5;
 
 state = "idle";
@@ -7,6 +7,8 @@ dashDir = 90;
 shoot = false;
 reload = false;
 hit = false;
+
+bullet_delay = Obj_valueContainer.player_attackdelay;
 
 angle = 0;
 

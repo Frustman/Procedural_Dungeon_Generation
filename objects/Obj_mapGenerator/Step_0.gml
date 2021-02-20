@@ -76,6 +76,8 @@ if(!generated){
 				if(ds_stack_empty(endroom_list)){
 					error = true;
 				}
+				stack_cnt = ds_stack_size(endroom_list);
+				if(stack_cnt < 1) error = true;
 				var reward_room = ds_stack_pop(endroom_list);
 				map_grid[# boss_room div 10, boss_room % 10] = 2;
 				map_grid[# reward_room div 10, reward_room % 10] = 3;

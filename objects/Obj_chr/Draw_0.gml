@@ -24,14 +24,14 @@ if(shoot){
 	if(AttackTarget != noone && instance_exists(AttackTarget)){
 		angle = point_direction(x,y,AttackTarget.x, AttackTarget.y);
 		if(x >= AttackTarget.x){
-			image_xscale = -1.0;
+			image_xscale = -2.0;
 		}else{
-			image_xscale = 1.0;
+			image_xscale = 2.0;
 		}
 	} else{
 		angle = Obj_controller.directionBox;
-		image_xscale = sign(lengthdir_x(1,angle));
+		image_xscale = sign(lengthdir_x(1,angle)) * 2;
 	}
 
-	draw_sprite_ext(Spr_chr_hand,real_index,x,y,image_xscale,image_yscale,(image_xscale == 1.0) ? angle : angle - 180,c_white,1.0);
+	draw_sprite_ext(Spr_chr_hand,real_index,x,y,image_xscale,image_yscale,(image_xscale == 2.0) ? angle : angle - 180,c_white,1.0);
 } 

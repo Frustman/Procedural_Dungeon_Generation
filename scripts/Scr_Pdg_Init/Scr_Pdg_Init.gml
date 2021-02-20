@@ -2,8 +2,8 @@
 /// @param {real} height The height of Dungeon to make
 /// @param {real} width The width of Dungeon to make
 
-#macro CELL_WIDTH 32
-#macro CELL_HEIGHT 32
+#macro CELL_WIDTH 64
+#macro CELL_HEIGHT 64
 
 function Scr_Pdg_Init(width, height){
 	map = ds_grid_create(width, height); // create grid map [width, height]

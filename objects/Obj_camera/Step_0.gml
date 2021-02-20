@@ -42,11 +42,21 @@ if(instance_exists(Obj_chr)){
 	var targetX = roomX + lengthdir_x(len / 2, dir);
 	var targetY = roomY + lengthdir_y(len / 2, dir);
 	
-	cam_zoom = 0.7 - zoom_shake;
+	cam_zoom = 1.0 - zoom_shake;
 } else {
 	var targetX = 0;
 	var targetY = 0;
 }
+/*
+//version 3
+if(instance_exists(Obj_chr)){
+	var targetX = Obj_chr.x;
+	var targetY = Obj_chr.y;
+	cam_zoom = 0.7 - zoom_shake;
+} else{
+	var targetX = 0;
+	var targetY = 0;
+}*/
 
 var view_width = camera_get_view_width(view_camera[0]);
 var view_height = camera_get_view_height(view_camera[0]);
@@ -59,11 +69,11 @@ camera_set_view_size(view_camera[0], new_width, new_height);
 view_width = camera_get_view_width(view_camera[0]);
 view_height = camera_get_view_height(view_camera[0]);
 
-x = lerp(x,targetX, rate);
-y = lerp(y,targetY, rate);
+x += (targetX - x)/7;
+y += (targetY - y)/7;
 
-x = round(x);
-y = round(y);
+/*x = round(x);
+y = round(y);*/
 
 camera_set_view_border(view_camera[0], new_width / 2, new_height / 2);
 

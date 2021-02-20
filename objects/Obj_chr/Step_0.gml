@@ -1,4 +1,5 @@
-
+image_xscale = sign(image_xscale) * 2.0;
+image_yscale = 2.0;
 
 if(!dash){
 	if(instance_exists(Obj_controller)){
@@ -92,11 +93,11 @@ signX = sign(dx);
 signY = sign(dy);
 
 if(signX > 0){
-	image_xscale = 1.0;
+	image_xscale = 2.0;
 	LookRight = 1;
 }
 else if(signX < 0){
-	image_xscale = -1.0;
+	image_xscale = -2.0;
 	LookRight = 0;
 }
 
