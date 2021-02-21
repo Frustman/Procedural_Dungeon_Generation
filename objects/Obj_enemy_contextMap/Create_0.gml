@@ -46,6 +46,8 @@ for(var i = 0; i < ray_count; i++){
 max_val = -1;
 max_idx = 0;
 
+strafe_range = 70;
+
 _speed = 0.7;
 player_dist = 0;
 

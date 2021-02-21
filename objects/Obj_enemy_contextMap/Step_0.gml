@@ -3,9 +3,9 @@
 event_inherited();
 player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
-if(player_dist > 50) state = "chase";
-if(player_dist <= 50 && player_dist >= 45) state = "strafe";
-if(player_dist < 45) state = "safe";
+if(player_dist > strafe_range) state = "chase";
+if(player_dist <= strafe_range && player_dist >= strafe_range - 5) state = "strafe";
+if(player_dist < strafe_range - 5) state = "safe";
 
 if(hp <= 0){
 	with(instance_create_layer(x,y,"Instances",Obj_corpse)){
@@ -26,7 +26,7 @@ with(Obj_chr){
 			var x1 = lengthdir_x(1,_dir);
 			var y1 = lengthdir_y(1,_dir);
 			
-			if(other.player_dist <= 47 && other.player_dist >= 45){
+			if(other.player_dist <= other.strafe_range - 3 && other.player_dist >= other.strafe_range - 5){
 				x1 = lengthdir_x(1,_dir + 90);	
 				y1 = lengthdir_y(1,_dir + 90);	
 			}

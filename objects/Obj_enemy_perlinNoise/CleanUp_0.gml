@@ -1,4 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-alarm[0] = 60;
-obj = Obj_enemy_Astar;
+audio_play_sound(Player_Takes_Damage_20,0,false);
