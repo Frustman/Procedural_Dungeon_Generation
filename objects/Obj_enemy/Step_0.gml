@@ -43,7 +43,6 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 
 real_index = anim_index div anim_fps;
 
-/*
 signX = sign(dx);
 signY = sign(dy);
 
@@ -74,4 +73,4 @@ if (!place_free(floor(x),y)){
 }
 if (!place_free(x,floor(y))){
  y = ceil(y);
-}*/
+}

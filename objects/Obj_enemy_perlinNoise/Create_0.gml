@@ -27,10 +27,18 @@ real_index = 0;
 dx = 0;
 dy = 0;
 
+relax = false;
+alarm[1] = 45;
+
+spawn_radius = 90;
+
 seed = irandom(300);
 
 _angle = 0;
 _speed = 0;
+
+spawnX = x;
+spawnY = y;
 
 image_index = 0;
 image_speed = 0;
