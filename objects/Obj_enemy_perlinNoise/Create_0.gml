@@ -29,12 +29,13 @@ dy = 0;
 
 relax = false;
 alarm[1] = 45;
+alarm[2] = 600;
 
 spawn_radius = 90;
 
 seed = irandom(300);
 
-_angle = 0;
+_angle = random(360);
 _speed = 0;
 
 spawnX = x;

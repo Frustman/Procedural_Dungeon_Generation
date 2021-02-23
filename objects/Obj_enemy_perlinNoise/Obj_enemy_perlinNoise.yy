@@ -33,6 +33,7 @@
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"parent":{"name":"Obj_enemy_perlinNoise","path":"objects/Obj_enemy_perlinNoise/Obj_enemy_perlinNoise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"parent":{"name":"Obj_enemy_perlinNoise","path":"objects/Obj_enemy_perlinNoise/Obj_enemy_perlinNoise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,"parent":{"name":"Obj_enemy_perlinNoise","path":"objects/Obj_enemy_perlinNoise/Obj_enemy_perlinNoise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":2,"collisionObjectId":null,"parent":{"name":"Obj_enemy_perlinNoise","path":"objects/Obj_enemy_perlinNoise/Obj_enemy_perlinNoise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

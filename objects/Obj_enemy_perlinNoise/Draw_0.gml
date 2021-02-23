@@ -14,14 +14,14 @@ else
 shader_reset();
 
 
-/*draw_circle(spawnX,spawnY,spawn_radius,true);
+draw_circle(spawnX,spawnY,spawn_radius,true);
 draw_set_color(c_blue);
 draw_line(x,y,x+lengthdir_x(15,_angle), y + lengthdir_y(15,_angle));
 draw_set_color(c_red);
 var dir = point_direction(x,y,spawnX,spawnY);
 draw_line(x,y,x+lengthdir_x(15,dir), y + lengthdir_y(15,dir));
 draw_set_color(c_white);
-*/
+
 /*for(var i = 0; i < ray_count; i++){
 	if(context_map[i] >= 0){
 		draw_set_color(c_green);
