@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "Spr_wallM64",
-    "path": "sprites/Spr_wallM64/Spr_wallM64.yy",
+    "name": "Spr_wallM32",
+    "path": "sprites/Spr_wallM32/Spr_wallM32.yy",
   },
   "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Obj_wall",
+    "path": "objects/Obj_wall/Obj_wall.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -20,9 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -30,7 +31,7 @@
     "path": "folders/Objects/tile.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_wall",
+  "name": "Obj_wall32",
   "tags": [],
   "resourceType": "GMObject",
 }

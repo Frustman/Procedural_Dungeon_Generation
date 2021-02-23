@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 511,
-  "bbox_top": 0,
-  "bbox_bottom": 447,
+  "bbox_left": 8,
+  "bbox_right": 500,
+  "bbox_top": 8,
+  "bbox_bottom": 318,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 512,
-  "height": 512,
+  "height": 320,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,6 @@
   "gridX": 32,
   "gridY": 32,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d1fd0fbb-9cc6-48a5-925d-6a62c2513655","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d1fd0fbb-9cc6-48a5-925d-6a62c2513655","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"LayerId":{"name":"c734ab35-9468-4d11-aea3-36f24b2b3f65","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"STileset_desert_deco","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","name":"d1fd0fbb-9cc6-48a5-925d-6a62c2513655","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"e465eb71-9d17-43d7-ad8b-9254454e5a5a","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"e465eb71-9d17-43d7-ad8b-9254454e5a5a","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"LayerId":{"name":"c734ab35-9468-4d11-aea3-36f24b2b3f65","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"STileset_desert_deco","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","name":"e465eb71-9d17-43d7-ad8b-9254454e5a5a","tags":[],"resourceType":"GMSpriteFrame",},
@@ -39,13 +36,12 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 2.0,
+    "length": 1.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f71e4793-1992-459c-a618-92add8cbe9a9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d1fd0fbb-9cc6-48a5-925d-6a62c2513655","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"19669c52-b0d1-4cd9-ae07-cc57628dc461","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e465eb71-9d17-43d7-ad8b-9254454e5a5a","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"19669c52-b0d1-4cd9-ae07-cc57628dc461","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e465eb71-9d17-43d7-ad8b-9254454e5a5a","path":"sprites/STileset_desert_deco/STileset_desert_deco.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

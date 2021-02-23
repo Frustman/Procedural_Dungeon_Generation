@@ -9,7 +9,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	var bullet = instance_create_depth(shootX,shootY,0,Obj_bullet_eff);
 	with(bullet){
 		damage = Obj_valueContainer.player_bulletDamage;
-		motion_set(other.angle,7);
+		motion_set(other.angle,15);
 		image_angle = other.angle;
 	
 		chainDamage = Obj_valueContainer.player_chainDamage;

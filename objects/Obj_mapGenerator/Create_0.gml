@@ -5,6 +5,9 @@ randomize();
 dg_width = 23;
 dg_height = 19;
 
+deco_width = dg_width * 2;
+deco_height = dg_height * 2;
+
 dg_trim = 6;
 
 real_width = dg_width * 9;
@@ -26,25 +29,28 @@ for(var i = 0; i < dungeon_cnt; i++){
 }
 
 
+deco_map = real(load_csv("deco_map.csv"));
+
+for(var i = 0; i < ds_grid_width(deco_map); i++){
+	for(var j = 0; j < ds_grid_height(deco_map); j++){
+		deco_map[# i, j] = real(deco_map[# i, j]);
+	}
+}
+deco_cnt = ds_grid_height(deco_map) div deco_height;
+
+for(var i = 0; i < deco_cnt; i++){
+	deco_list[i] = ds_grid_create(deco_width,deco_height);
+	ds_grid_set_grid_region(deco_list[i],deco_map,0,i*deco_width,deco_width-1,(i+1)*deco_height - 1,0,0);
+}
+
 
 real_map = ds_grid_create(real_width, real_height);
+deco_real = ds_grid_create(real_width * 2, real_height * 2);
 
 
 ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, -1);
+ds_grid_set_region(deco_real, 0,0, real_width * 2 - 1, real_height * 2 - 1, -1);
 
-/*
-ds_grid_set_region(map_list[0], 0,0, dg_width - 1, dg_height - 1, -1);
-ds_grid_set_region(map_list[0], dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
-ds_grid_set_region(map_list[0], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
-
-ds_grid_set_region(map_list[1], 0,0, dg_width - 1, dg_height - 1, -1);
-ds_grid_set_region(map_list[1], dg_trim - 1, dg_trim  - 1, dg_width - dg_trim, dg_height - dg_trim, 1)
-ds_grid_set_region(map_list[1], dg_trim, dg_trim, dg_width - 1 - dg_trim, dg_height - 1 - dg_trim, 0);
-
-ds_grid_set_region(map_list[1],dg_trim + 4, dg_trim + 4, dg_trim + 4, dg_height - dg_trim - 5, 1);
-ds_grid_set_region(map_list[1],dg_trim + 4, dg_height - dg_trim - 5, dg_width - dg_trim - 5, dg_height - dg_trim - 5, 1);
-
-*/
 map_grid = ds_grid_create(9,8);
 miniMap_grid = ds_grid_create(9,8);
 Map_visit_grid = ds_grid_create(9,8);

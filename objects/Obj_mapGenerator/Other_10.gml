@@ -6,8 +6,10 @@ for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
 		if(map_grid[# i, j] != 0){
 			var c = irandom(dungeon_cnt - 1);
+			var deco_c = irandom(deco_cnt - 1);
 			if(map_grid[# i, j] == 1) {
 				ds_grid_set_grid_region(real_map, map_list[c], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
+				ds_grid_set_grid_region(deco_real, deco_list[deco_c], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 				global.path_grid[i * 10 + j] = map_list[c];
 			}else {
 				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, dg_width - 1, dg_height - 1, i * dg_width, j * dg_height);
@@ -62,20 +64,42 @@ for(var i = 0; i < real_width; i++){
 			//instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "Instances", Obj_door);
 		}
 		if(abs(map[#i, j]) == 1){
-			var tile_data = Scr_auto_tiling_16(map,i,j,real_width,real_height,TileSet_desert);
+			var tile_data = Scr_auto_tiling_16(map,i,j,real_width,real_height,TileSet_desert,1);
 			
 			if(map[#i, j] == 1)
 				instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, layer_get_id("wall"),Obj_wall);
 			
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_1"), tile_data, i* CELL_WIDTH, j * CELL_HEIGHT);
 		}
-		if(map[#i, j] == -1){
-				
-		}
 	}
 }
 
-
+var _map = deco_real;
+for(var i = 0; i < real_width * 2; i++){
+	for(var j = 0; j < real_height * 2; j++){
+		if(_map[#i, j] == 2){
+			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width * 2,real_height * 2,TileSet_desert_water, 2);
+			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
+			
+			with(instance_create_layer(i * CELL_WIDTH / 2, j * CELL_HEIGHT / 2, layer_get_id("wall"),Obj_wall32)){
+				penetrate = true;
+				solid = false;
+			}
+		}
+		if(_map[#i, j] == 3){
+			var tile_data = tile_set_index(TileSet_desert_anim,(irandom(1) == 0) ? 1: 9);
+			
+			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_anim"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
+		}
+		if(_map[#i, j] == 0 || _map[#i, j] == -1){
+			if(random(1) <= 0.03){
+				var tile_data = tile_set_index(TileSet_desert_deco,irandom(35));
+			
+				tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_deco"), tile_data, i * CELL_WIDTH / 2 + random(16) - 8, j * CELL_HEIGHT / 2 + random(16) - 8);
+			}
+		}
+	}
+}
 
 
 

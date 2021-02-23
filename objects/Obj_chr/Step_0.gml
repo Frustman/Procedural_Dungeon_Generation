@@ -115,28 +115,28 @@ if(Obj_controller.move){
 if((Obj_controller.move || dash) && place_empty(x + dx, y, Obj_wall)){
 	x += dx;
 } else if(Obj_controller.move && !place_empty(x + dx, y, Obj_wall)){
-	while(place_free(x + signX / 100, y)){
+	while(place_empty(x + signX / 100, y,Obj_wall)){
 		x += signX / 100;
 	}
 }
 if((Obj_controller.move || dash) && place_empty(x, y + dy, Obj_wall)){
 	y += dy;
 } else if(Obj_controller.move && !place_empty(x, y + dy, Obj_wall)){
-	while(place_free(x, y + signY / 100)){
+	while(place_empty(x, y + signY / 100,Obj_wall)){
 		y += signY / 100;
 	}
 }
 
 
-if (!place_free(ceil(x),y)){
+if (!place_empty(ceil(x),y,Obj_wall)){
  x = floor(x);
 }
-if (!place_free(x,ceil(y))){
+if (!place_empty(x,ceil(y),Obj_wall)){
  y = floor(y);
 }
-if (!place_free(floor(x),y)){
+if (!place_empty(floor(x),y,Obj_wall)){
  x = ceil(x);
 }
-if (!place_free(x,floor(y))){
+if (!place_empty(x,floor(y),Obj_wall)){
  y = ceil(y);
 }
