@@ -3,8 +3,8 @@
     "name": "Spr_wallM32",
     "path": "sprites/Spr_wallM32/Spr_wallM32.yy",
   },
-  "solid": true,
-  "visible": true,
+  "solid": false,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

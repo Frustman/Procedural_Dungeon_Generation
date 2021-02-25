@@ -3,7 +3,6 @@ rate = 0.1;
 cam_width = 740;
 cam_height = 360;
 
-
 cam_zoom = 1.0;
 
 cur_room = 0;

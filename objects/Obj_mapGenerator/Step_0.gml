@@ -81,7 +81,7 @@ if(!generated){
 				var reward_room = ds_stack_pop(endroom_list);
 				map_grid[# boss_room div 10, boss_room % 10] = 2;
 				map_grid[# reward_room div 10, reward_room % 10] = 3;
-				instance_create_layer(((boss_room div 10) * dg_width + dg_width /2) * CELL_WIDTH,((boss_room % 10) * dg_height + dg_height /2) * CELL_HEIGHT,"Instances",Obj_stair);
+				instance_create_layer(((boss_room div 10) * dg_width + dg_width /2) * CELL_WIDTH,((boss_room % 10) * dg_height + dg_height /2) * CELL_HEIGHT,"sort_start",Obj_stair);
 				generated = true;
 			} else {
 				error = true;	
@@ -113,8 +113,8 @@ if(generated && instance_exists(Obj_chr)){
 				var xpos = irandom(dg_width - dg_trim * 2) + dg_trim;
 				var ypos = irandom(dg_height - dg_trim * 2) + dg_trim;
 			
-				if(!instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
-					with(instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,"Instances",Obj_spawner)){
+				if(!instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_wall) && !instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
+					with(instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,"sort_start",Obj_spawner)){
 						if(irandom(1) == 0){
 							//obj = Obj_enemy_wildpig;
 						}

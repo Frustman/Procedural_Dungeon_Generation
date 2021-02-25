@@ -35,6 +35,7 @@ for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 	}
 }
 
+Scr_update_depth(x,y);
 
 AttackTarget = noone;
 
