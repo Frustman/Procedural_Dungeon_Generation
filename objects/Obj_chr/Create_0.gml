@@ -1,5 +1,7 @@
 moveSpeed = 1.4;
-dashSpeed = 1.5;
+dashSpeed = 3;
+
+handX = 2.0;
 
 state = "idle";
 dash = false;
@@ -28,7 +30,7 @@ enemy_pr = ds_priority_create();
 
 for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 	__number = i;
-	bullet_ui[i] = instance_create_layer(x,y,"Instances",Obj_bullet_ui);
+	bullet_ui[i] = instance_create_layer(x,y,"sort_end",Obj_bullet_ui);
 	with(bullet_ui[i]){
 		xpos = 200 + 20 * other.__number;
 		ypos = 20;

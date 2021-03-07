@@ -2,11 +2,11 @@
 // You can write your code in this editor
 if(Obj_valueContainer.bullet_count > 0 && !reload){
 	audio_play_sound(Pistol_Shot_02,0,false);
-	instance_create_depth(shootX,shootY, -1, Obj_Catridge);
+	instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
 	shoot = true;
 	anim_index = 0;
 	alarm[1] = 20;
-	var bullet = instance_create_depth(shootX,shootY,0,Obj_bullet_eff);
+	var bullet = instance_create_layer(shootX,shootY,"sort_end",Obj_bullet_eff);
 	with(bullet){
 		damage = Obj_valueContainer.player_bulletDamage;
 		motion_set(other.angle,15);

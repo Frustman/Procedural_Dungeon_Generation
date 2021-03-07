@@ -15,8 +15,6 @@ function Scr_auto_tiling_16(map, xpos, ypos, width, height, tileSet, value){
 			var index = top_right * 1 + bottom_right * 2 + bottom_left * 4 + top_left * 8;
 			
 			var tile_data = tile_set_index(tileSet,index);
-			if(value == 2)
-			show_debug_message("value : " + string(value) + ", index = " + string(index));
 		
 		} else{
 			var tile_data = tile_set_index(tileSet,15);

@@ -21,17 +21,20 @@ if(dash){
 
 if(shoot){
 	anim_fps = 10;
+	/*
 	if(AttackTarget != noone && instance_exists(AttackTarget)){
-		angle = point_direction(x,y,AttackTarget.x, AttackTarget.y);
 		if(x >= AttackTarget.x){
 			image_xscale = -2.0;
 		}else{
 			image_xscale = 2.0;
 		}
 	} else{
-		angle = Obj_controller.directionBox;
 		image_xscale = sign(lengthdir_x(1,angle)) * 2;
-	}
+		if(image_xscale == 0){
+			image_xscale = 2;
+		}
+	}*/
+	hand_x = sign(lengthdir_x(1,angle)) * 2.0;
 
-	draw_sprite_ext(Spr_chr_hand,real_index,x,y,image_xscale,image_yscale,(image_xscale == 2.0) ? angle : angle - 180,c_white,1.0);
+	draw_sprite_ext(Spr_chr_hand,real_index,x,y,hand_x,image_yscale,(hand_x == 2.0) ? angle : angle - 180,c_white,1.0);
 } 

@@ -5,7 +5,7 @@ player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
 
 if(hp <= 0){
-	with(instance_create_layer(x,y,"Instances",Obj_corpse)){
+	with(instance_create_layer(x,y,"sort_end",Obj_corpse)){
 		spr = Spr_slime_dead;
 		dir = point_direction(Obj_chr.x,Obj_chr.y,other.x,other.y);
 	}

@@ -13,7 +13,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 		instance_destroy(self);
 		Scr_chain_lightning(attack_list,1,3,other.id,128);
 	
-		with(instance_create_layer(x,y,"Instances",Obj_chain_lightning)){
+		with(instance_create_layer(x,y,"sort_end",Obj_chain_lightning)){
 			list = other.attack_list;
 		}
 	}
@@ -31,7 +31,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 		}
 		if(nearest != noone){
 			sharp_dir = point_direction(other.x,other.y,nearest.x,nearest.y);
-			with(instance_create_layer(other.x,other.y,"Instances",Obj_bullet_eff)){
+			with(instance_create_layer(other.x,other.y,"sort_end",Obj_bullet_eff)){
 				damage = (other.damage div 2 == 0) ? 1 : other.damage div 2;
 				motion_set(other.sharp_dir,15);
 				image_angle = other.sharp_dir;

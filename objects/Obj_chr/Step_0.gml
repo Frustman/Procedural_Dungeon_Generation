@@ -43,11 +43,13 @@ if(AttackTarget != noone && Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != 
 ds_list_clear(shoot_list);
 ds_list_clear(wall_list);
 
-if(AttackTarget != noone && instance_exists(AttackTarget)){
+angle = Obj_controller.AttackDirection;
+
+/*if(AttackTarget != noone && instance_exists(AttackTarget)){
 	angle = point_direction(x,y,AttackTarget.x, AttackTarget.y) + random(5) - 2.5;	
 } else{
 	angle = Obj_controller.directionBox + random(5) - 2.5;
-}
+}*/
 if(AttackTarget == noone){
 	if(image_xscale = 1.0){
 		shootX = x + lengthdir_x(11.3775583264319501,angle + 90 - 79.215702132437);
@@ -85,7 +87,7 @@ if(dash){
 	dashSpeed -= 0.115;
 	clamp(dashSpeed,0,3);
 	if(random(1) < 0.2){
-		instance_create_layer(x,y+8,"Instances",Obj_dust);
+		instance_create_layer(x,y+8,"sort_end",Obj_dust);
 	}
 }
 

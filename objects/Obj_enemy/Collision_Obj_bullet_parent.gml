@@ -21,7 +21,7 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 
 	if(Obj_chr.fireshot == true && other.fireshot == true){
 		for(var i = -30; i <= 30; i += 15){
-			with(instance_create_layer(x,y,"Instances",Obj_bullet_pen_eff)){
+			with(instance_create_layer(x,y,"sort_end",Obj_bullet_pen_eff)){
 				var rangle = other.angle + i + random(20) - 10;
 				image_angle = rangle;
 				crit = other.crit;

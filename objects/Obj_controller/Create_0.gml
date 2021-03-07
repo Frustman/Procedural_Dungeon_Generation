@@ -9,27 +9,38 @@ display_set_gui_size(1480,720);
 
 alarm[11] = 1;
 
-boxCenterX = deviceHeight / 5;
-boxCenterY = deviceHeight * 4 / 5;
+boxCenterX = 160;
+boxCenterY = deviceHeight - 256;
 boxRadius = 128;
 
-AttackCenterX = deviceWidth * 6 / 7;
-AttackCenterY = deviceHeight * 4 / 5;
-AttackRadius = 128;
+AttackCenterX = deviceWidth - 216;
+AttackCenterY = deviceHeight - 256;
+AttackX = deviceWidth - 216;
+AttackY = deviceHeight - 256;
+AttackRadius = 160;
 
-dashCenterX = AttackCenterX + 128;
-dashCenterY = AttackCenterY - 128;
+dashCenterX = AttackCenterX + 160;
+dashCenterY = AttackCenterY - 160;
 dashRadius = 32;
 
+attack = false;
+
 joyIndex = -1;
+attackIndex = -1;
 
 clickOne = false;
 clickTwo = false;
+
+
+
+AttackDirection = 90;
+AttackDistance = 0;
 
 directionBox = 90;
 distanceBox = 0;
 
 move = false;
+keypress = false;
 
 can_attack = true;
 can_dash = true;
