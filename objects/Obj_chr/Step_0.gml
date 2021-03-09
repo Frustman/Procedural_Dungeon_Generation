@@ -14,7 +14,7 @@ if(!dash){
 	dy = lengthdir_y(dashSpeed,dashDir);
 }
 
-EnemyCount = instance_number(Obj_enemy);
+/*EnemyCount = instance_number(Obj_enemy);
 if(EnemyCount > 0){
 	ds_priority_clear(enemy_pr);
 	with(Obj_enemy){
@@ -41,7 +41,7 @@ if(AttackTarget != noone && Scr_get_room_pos(AttackTarget.x, AttackTarget.y) != 
 }
 
 ds_list_clear(shoot_list);
-ds_list_clear(wall_list);
+ds_list_clear(wall_list);*/
 
 angle = Obj_controller.AttackDirection;
 

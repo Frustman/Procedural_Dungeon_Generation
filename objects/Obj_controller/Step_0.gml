@@ -89,6 +89,7 @@ if(attackIndex != -1){
 	if(device_x[attackIndex] >= view_wport[0] / 2){
 		AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
 		AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
+		Obj_chr.angle = AttackDirection;
 		if(can_attack && !Obj_chr.dash){
 			with(Obj_chr){
 				event_perform(ev_other,ev_user1);

@@ -92,6 +92,7 @@
     {"id":{"name":"Spr_slime","path":"sprites/Spr_slime/Spr_slime.yy",},"order":0,},
     {"id":{"name":"Scr_Pdg_Process","path":"scripts/Scr_Pdg_Process/Scr_Pdg_Process.yy",},"order":1,},
     {"id":{"name":"Scr_array","path":"scripts/Scr_array/Scr_array.yy",},"order":11,},
+    {"id":{"name":"Scr_interpolate_aim","path":"scripts/Scr_interpolate_aim/Scr_interpolate_aim.yy",},"order":28,},
     {"id":{"name":"Obj_mapGenerator","path":"objects/Obj_mapGenerator/Obj_mapGenerator.yy",},"order":1,},
     {"id":{"name":"Spr_hitmsk1","path":"sprites/Spr_hitmsk1/Spr_hitmsk1.yy",},"order":1,},
     {"id":{"name":"Spr_cactus_idle","path":"sprites/Spr_cactus_idle/Spr_cactus_idle.yy",},"order":0,},

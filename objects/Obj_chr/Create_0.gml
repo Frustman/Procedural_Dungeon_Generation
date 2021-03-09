@@ -24,9 +24,9 @@ anim_fps = 10;
 
 footstep = true;
 
-shoot_list = ds_list_create();
+/*shoot_list = ds_list_create();
 wall_list = ds_list_create();
-enemy_pr = ds_priority_create();
+enemy_pr = ds_priority_create();*/
 
 for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 	__number = i;

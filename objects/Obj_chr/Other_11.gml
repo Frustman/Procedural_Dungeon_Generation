@@ -6,11 +6,19 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	shoot = true;
 	anim_index = 0;
 	alarm[1] = 20;
+	
+	AttackTarget = Scr_interpolate_aim(x,y,angle);
+	
 	var bullet = instance_create_layer(shootX,shootY,"sort_end",Obj_bullet_eff);
 	with(bullet){
+		var _angle;
+		if(other.AttackTarget != noone)
+			_angle = point_direction(other.x,other.y,other.AttackTarget.x,other.AttackTarget.y);
+		else
+			_angle = other.angle;
 		damage = Obj_valueContainer.player_bulletDamage;
-		motion_set(other.angle,15);
-		image_angle = other.angle;
+		motion_set(_angle,15);
+		image_angle = _angle;
 	
 		chainDamage = Obj_valueContainer.player_chainDamage;
 		chain_lightning = Obj_valueContainer.player_chain;
