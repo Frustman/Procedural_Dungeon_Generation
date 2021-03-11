@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(Obj_valueContainer.bullet_count > 0 && !reload){
+	Scr_shake(0.9,0.2,5,0.7,0.45,0.8);
 	audio_play_sound(Pistol_Shot_02,0,false);
 	instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
 	shoot = true;

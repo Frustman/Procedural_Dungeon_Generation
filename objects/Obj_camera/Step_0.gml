@@ -7,8 +7,10 @@ if(instance_exists(Obj_chr)){
 	instance_activate_object(Obj_shake);
 	instance_activate_object(Obj_controller);
 	instance_activate_object(Obj_mapGenerator);
+	instance_activate_object(Obj_status);
 	instance_activate_object(Obj_chr);
 	instance_activate_object(Obj_bullet_ui);
+	instance_activate_object(Obj_pause);
 }
 
 //vesion 1
@@ -43,7 +45,11 @@ if(instance_exists(Obj_chr)){
 	var targetY = roomY + lengthdir_y(len / 2, dir);
 	
 	cam_zoom = 1.0 - zoom_shake;
-} else {
+} else if(global.paused == true){
+	var targetX = x;
+	var targetY = y;
+}
+else{
 	var targetX = 0;
 	var targetY = 0;
 }

@@ -5,6 +5,8 @@ randomize();
 dg_width = 23;
 dg_height = 19;
 
+global.paused = false;
+
 deco_width = dg_width * 2;
 deco_height = dg_height * 2;
 
