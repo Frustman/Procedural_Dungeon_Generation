@@ -44,6 +44,28 @@ if(clickOne && clickTwo){
 				alarm[1] = 30;
 			}
 		}
+		if(point_distance(dashCenterX, dashCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= dashRadius){
+			if(can_dash && !Obj_chr.shoot){
+				with(Obj_chr){
+					alarm[0] = 27;
+					anim_index = 0;
+					dashDir = other.directionBox;
+					dashSpeed = 4;
+					dash = true;
+				}
+				can_dash = false;
+				alarm[1] = 30;
+			}
+		}
+		if(point_distance(infoCenterX, infoCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= infoRadius){
+			if(can_info){
+				with(Obj_pause){
+					event_perform(ev_other,ev_user0);
+				}
+				can_info = false;
+				alarm[2] = 5;
+			}
+		}
 	} else{
 		for(var i = 0; i < 2; i++){
 			if(point_distance(AttackCenterX, AttackCenterY, device_x[i], device_y[i]) <= AttackRadius){
@@ -60,6 +82,15 @@ if(clickOne && clickTwo){
 					}
 					can_dash = false;
 					alarm[1] = 30;
+				}
+			}
+			if(point_distance(infoCenterX, infoCenterY, device_x[i], device_y[i]) <= infoRadius){
+				if(can_info){
+					with(Obj_pause){
+						event_perform(ev_other,ev_user0);
+					}
+					can_info = false;
+					alarm[2] = 5;
 				}
 			}
 		}
@@ -81,6 +112,15 @@ if(clickOne){
 				}
 				can_dash = false;
 				alarm[1] = 30;
+			}
+		}
+		if(point_distance(infoCenterX, infoCenterY, device_x[0], device_y[0]) <= infoRadius){
+			if(can_info){
+				with(Obj_pause){
+					event_perform(ev_other,ev_user0);
+				}
+				can_info = false;
+				alarm[2] = 5;
 			}
 		}
 	}

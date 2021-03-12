@@ -7,5 +7,6 @@ draw_sprite(Spr_controller, 0, AttackCenterX + lengthdir_x(min(AttackDistance, A
 
 draw_text(0,400,attackIndex);
 
+draw_sprite(Spr_info, 0, infoCenterX, infoCenterY);
 draw_sprite(Spr_DashBox, 0, dashCenterX, dashCenterY);
 draw_sprite(Spr_AttackBox, 0, AttackCenterX, AttackCenterY);

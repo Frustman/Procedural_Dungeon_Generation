@@ -5,6 +5,7 @@ target = noone;
 fireshot = false;
 chain_lightning = false;
 sharp_shooting = false;
+explosion = true;
 
 cusion_dist = 100;
 

@@ -65,20 +65,11 @@ if(!generated){
 			var boss_room = ds_stack_pop(endroom_list);
 			var stack_cnt = ds_stack_size(endroom_list);
 			if(stack_cnt > 0){
-				if(stack_cnt > 1){
-					var rand = irandom(stack_cnt);
-					if(rand > 0){
-						repeat(irandom(rand)){
-							ds_stack_pop(endroom_list);
-						}
-					}
+				var Eroom_list = ds_list_create();
+				for(var i = 0; i < stack_cnt; i++){
+					ds_list_add(Eroom_list, ds_stack_pop(endroom_list));	
 				}
-				if(ds_stack_empty(endroom_list)){
-					error = true;
-				}
-				stack_cnt = ds_stack_size(endroom_list);
-				if(stack_cnt < 1) error = true;
-				var reward_room = ds_stack_pop(endroom_list);
+				var reward_room = Eroom_list[| irandom(stack_cnt - 1)];
 				map_grid[# boss_room div 10, boss_room % 10] = 2;
 				map_grid[# reward_room div 10, reward_room % 10] = 3;
 				instance_create_layer(((boss_room div 10) * dg_width + dg_width /2) * CELL_WIDTH,((boss_room % 10) * dg_height + dg_height /2) * CELL_HEIGHT,"sort_start",Obj_stair);

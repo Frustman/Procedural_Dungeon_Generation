@@ -3,10 +3,14 @@
 if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id))){
 	instance_destroy(self);
 	target = other.id;
-	crit = Scr_critical(critical_chance);
+	crit = Scr_critical(Obj_valueContainer.critical_chance);
 	other.crit = crit;
+	
+	if(crit && Obj_valueContainer.player_explosion){
+		instance_create_layer(x,y,"sort_end",Obj_explosion);
+	}
 
-	if(chain_lightning == true){
+	if(Obj_valueContainer.player_chain == true){
 		attack_list = ds_list_create();
 		ds_list_add(attack_list, other.id);
 
@@ -17,7 +21,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			list = other.attack_list;
 		}
 	}
-	if(sharp_shooting == true && cusion_cnt < cusion_max){
+	if(Obj_valueContainer.player_sharpshooting == true && cusion_cnt < cusion_max){
 		nearest = noone;
 		nearest_dist = 20000000;
 		with(Obj_enemy){
@@ -37,16 +41,11 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 				image_angle = other.sharp_dir;
 				
 				chainDamage = 3;
-				chain_lightning = other.chain_lightning;
 	
 				par = other.target;
 				target = other.nearest;
 				
-				critical_chance = other.critical_chance;
 				
-				fireshot = other.fireshot;
-				
-				sharp_shooting = other.sharp_shooting;
 				cusion_cnt = other.cusion_cnt + 1;
 				cusion_max = other.cusion_max;
 				cusion_dist = other.cusion_dist;

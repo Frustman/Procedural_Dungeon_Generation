@@ -21,6 +21,7 @@
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"Obj_enemy","path":"objects/Obj_enemy/Obj_enemy.yy",},"parent":{"name":"Obj_bullet_parent","path":"objects/Obj_bullet_parent/Obj_bullet_parent.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"parent":{"name":"Obj_bullet_parent","path":"objects/Obj_bullet_parent/Obj_bullet_parent.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_bullet_parent","path":"objects/Obj_bullet_parent/Obj_bullet_parent.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"parent":{"name":"Obj_bullet_parent","path":"objects/Obj_bullet_parent/Obj_bullet_parent.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

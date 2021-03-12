@@ -25,6 +25,10 @@ dashRadius = 32;
 
 attack = false;
 
+infoCenterX = deviceWidth - 64;
+infoCenterY = 64;
+infoRadius = 32;
+
 joyIndex = -1;
 attackIndex = -1;
 
@@ -43,6 +47,7 @@ move = false;
 keypress = false;
 
 can_attack = true;
+can_info = true;
 can_dash = true;
 
 

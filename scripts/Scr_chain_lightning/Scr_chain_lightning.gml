@@ -19,11 +19,14 @@ function Scr_chain_lightning(list, cnt, target, parent, distance){
 			criti = other.crit;
 			if(other.crit){
 				_damage *= 2;	
+				if(Obj_valueContainer.player_explosion){
+					instance_create_layer(x,y,"sort_start",Obj_explosion);	
+				}
 			}
 			hp -= _damage;
 			hit = true;
 			alarm[9] = 5;
-			var damage_eff = instance_create_depth(x + random(20) - 10,y + random(20) - 15,0,Obj_damage_eff);
+			var damage_eff = instance_create_layer(x + random(20) - 10,y + random(20) - 15,"sort_start",Obj_damage_eff);
 			with(damage_eff){
 				critical = other.criti;
 				dmg = other._damage;

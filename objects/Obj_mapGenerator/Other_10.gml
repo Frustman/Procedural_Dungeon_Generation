@@ -106,10 +106,10 @@ for(var i = 0; i < real_width * 2; i++){
 }
 
 
-
 instance_create_layer(0,0, "controller",Obj_controller);
 
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "sort_start", Obj_chr);
+instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "sort_start", Obj_explosion);
 instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "pause", Obj_pause);
 //instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
 //instance_create_layer((dg_width * 4 + dg_width / 2) * CELL_WIDTH, (dg_height * 3 + dg_height / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_contextMap);
