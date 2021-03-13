@@ -127,15 +127,31 @@ if(clickOne){
 }
 if(attackIndex != -1){
 	if(device_x[attackIndex] >= view_wport[0] / 2){
-		AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
-		AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
-		Obj_chr.angle = AttackDirection;
-		if(can_attack && !Obj_chr.dash){
-			with(Obj_chr){
-				event_perform(ev_other,ev_user1);
-				other.alarm[0] = bullet_delay;
+		if(!Obj_valueContainer.player_charge){
+			AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
+			AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
+			Obj_chr.angle = AttackDirection;
+			if(can_attack && !Obj_chr.dash){
+				with(Obj_chr){
+					event_perform(ev_other,ev_user1);
+					other.alarm[0] = bullet_delay;
+				}
+				can_attack = false;
 			}
-			can_attack = false;
+		} else {
+			if(!instance_exists(Obj_charging_eff))
+				instance_create_layer(Obj_chr.x,Obj_chr.y,"sort_start",Obj_charging_eff);
+			AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
+			AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
+			Obj_chr.angle = AttackDirection;
+			Obj_chr.charging = true;
+			with(Obj_chr){
+				AttackTarget = Scr_interpolate_aim(x,y,other.AttackDirection);	
+			}
+			charge++;
+			if(charge >= chargeMax){
+				charge = chargeMax;	
+			}
 		}
 	} else {
 		attackIndex = -1;	
@@ -143,6 +159,15 @@ if(attackIndex != -1){
 }
 
 if(attackIndex != -1 && device_mouse_check_button_released(attackIndex, mb_left)){
+	if(Obj_valueContainer.player_charge){
+		instance_destroy(Obj_charging_eff);
+		Obj_chr.charging = false;
+		Obj_chr.charge = charge;
+		with(Obj_chr){
+			event_perform(ev_other,ev_user0);	
+		}
+		charge = 1;
+	}
 	attackIndex = -1;
 }
 

@@ -12,7 +12,9 @@ critical_chance = 0.7;
 player_bulletDamage = 5;
 player_chainDamage = 3;
 player_explosionDamage = 4;
+player_chargeMaxDamage = 30;
 
+player_charge = true;
 player_sharpshooting = false;
 player_fireshot = false;
 player_chain = false;

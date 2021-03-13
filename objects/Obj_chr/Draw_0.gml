@@ -38,3 +38,9 @@ if(shoot){
 
 	draw_sprite_ext(Spr_chr_hand,real_index,x,y,hand_x,image_yscale,(hand_x == 2.0) ? angle : angle - 180,c_white,1.0);
 } 
+/*if(charging){
+	anim_fps = 10;
+	hand_x = sign(lengthdir_x(1,angle)) * 2.0;
+
+	draw_sprite_ext(Spr_chr_hand,0,x,y,hand_x,image_yscale,(hand_x == 2.0) ? angle : angle - 180,c_white,1.0);
+} */

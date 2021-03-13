@@ -3,12 +3,16 @@ dashSpeed = 3;
 
 handX = 2.0;
 
+charge = 0;
+
 state = "idle";
 dash = false;
 dashDir = 90;
 shoot = false;
 reload = false;
 hit = false;
+
+charging = false;
 
 bullet_delay = Obj_valueContainer.player_attackdelay;
 

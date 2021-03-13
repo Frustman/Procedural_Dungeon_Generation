@@ -35,7 +35,8 @@ attackIndex = -1;
 clickOne = false;
 clickTwo = false;
 
-
+chargeMax = 100;
+charge = 0;
 
 AttackDirection = 90;
 AttackDistance = 0;
