@@ -27,7 +27,16 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 		with(Obj_enemy){
 			if(id != other.target && id != other.par){
 				var dist = point_distance(x,y,other.target.x,other.target.y);
-				if(dist < other.nearest_dist && dist <= other.cusion_dist && collision_line(x,y,other.target.x,other.target.y,Obj_wall,false,true) == noone){
+				var cList = ds_list_create();
+				var pen = true;
+				collision_line_list(x,y,other.target.x,other.target.y,Obj_wall,false,true,cList,false);
+				for(var i = 0; i < ds_list_size(cList); i++){
+					if(cList[|i].solid){
+						pen = false;
+						break;
+					}
+				}
+				if(dist < other.nearest_dist && dist <= other.cusion_dist && pen){
 					other.nearest = id;
 					other.nearest_dist = dist;
 				}
@@ -37,6 +46,8 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			sharp_dir = point_direction(other.x,other.y,nearest.x,nearest.y);
 			with(instance_create_layer(other.x,other.y,"sort_end",Obj_charge_bullet)){
 				damage = (other.damage div 2 == 0) ? 1 : other.damage div 2;
+				image_xscale = other.image_xscale;
+				image_yscale = other.image_yscale;
 				motion_set(other.sharp_dir,7);
 				image_angle = other.sharp_dir;
 				

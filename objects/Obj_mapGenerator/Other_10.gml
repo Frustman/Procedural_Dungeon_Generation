@@ -64,8 +64,11 @@ for(var i = 0; i < real_width; i++){
 		if(abs(map[#i, j]) == 1){
 			var tile_data = Scr_auto_tiling_16(map,i,j,real_width,real_height,TileSet_desert,1);
 			
+			var ind = tile_get_index(tile_data);
 			if(map[#i, j] == 1)
-				instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "sort_start",Obj_wall);
+				with(instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "sort_start",Obj_wall)){
+					image_index = ind;	
+				}
 			
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_1"), tile_data, i* CELL_WIDTH, j * CELL_HEIGHT);
 		}
@@ -79,8 +82,10 @@ for(var i = 0; i < real_width * 2; i++){
 			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width * 2,real_height * 2,TileSet_desert_water, 2);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
 			
+			var _ind = tile_get_index(tile_data);
 			
 			with(instance_create_layer(i * CELL_WIDTH / 2, j * CELL_HEIGHT / 2, "sort_start",Obj_wall32)){
+				image_index = _ind;
 				penetrate = true;
 				solid = false;
 			}
