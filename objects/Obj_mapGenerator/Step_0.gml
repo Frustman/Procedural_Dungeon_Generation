@@ -123,6 +123,10 @@ if(generated && instance_exists(Obj_chr)){
 	miniMap_grid[# curRoom div 10, curRoom % 10 + 1] = map_grid[# curRoom div 10, curRoom % 10 + 1];
 }
 
+if(instance_exists(Obj_enemy)){
+	clear = false;	
+} else clear = true;
+
 
 if(generated && !tiled){
 	event_perform(ev_other,ev_user0);

@@ -22,6 +22,11 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 	if(Obj_valueContainer.player_fireshot){
 		for(var i = -30; i <= 30; i += 15){
 			with(instance_create_layer(x,y,"sort_end",Obj_bullet_pen_eff)){
+				if(Obj_valueContainer.player_charge){
+					sprite_index = Spr_charge_bullet;
+					image_xscale = 0.5;
+					image_yscale = 0.5;
+				}
 				var rangle = other.angle + i + random(20) - 10;
 				image_angle = rangle;
 				crit = other.crit;

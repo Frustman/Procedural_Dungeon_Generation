@@ -7,19 +7,20 @@ player_hp = 30;
 
 player_attackdelay = 20;
 
-critical_chance = 0.1;
+critical_chance = 0.5;
 
 player_bulletDamage = 5;
 player_chainDamage = 3;
 player_explosionDamage = 4;
 player_chargeMaxDamage = 30;
+player_chainCount = 6;
 
-player_charge = true;
-player_sharpshooting = true;
+player_charge = false;
+player_sharpshooting = false;
 player_fireshot = false;
 player_chain = false;
-player_explosion = true;
-player_penetrate = true;
+player_explosion = false;
+player_penetrate = false;
 
 sharp_cusionCount = 4;
 sharp_distance = 400;

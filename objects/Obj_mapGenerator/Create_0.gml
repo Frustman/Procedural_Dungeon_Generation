@@ -10,6 +10,8 @@ global.paused = false;
 deco_width = dg_width * 2;
 deco_height = dg_height * 2;
 
+clear = true;
+
 dg_trim = 6;
 
 real_width = dg_width * 9;

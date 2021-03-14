@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "character",
-    "path": "folders/Objects/character.yy",
+    "name": "bullet",
+    "path": "folders/Objects/bullet.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_chain_lightning",
