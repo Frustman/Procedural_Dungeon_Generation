@@ -9,6 +9,4 @@ if(global.paused == false){
 	sprite_delete(paused_surf);
 	instance_destroy(Obj_status);
     paused_surf = -1;
-} else{
-	instance_create_layer(Obj_chr.x,Obj_chr.y, "status", Obj_status);
 }
