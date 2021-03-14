@@ -19,6 +19,7 @@ player_sharpshooting = true;
 player_fireshot = false;
 player_chain = false;
 player_explosion = true;
+player_penetrate = true;
 
 sharp_cusionCount = 4;
 sharp_distance = 400;

@@ -16,7 +16,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		image_yscale = 0.5 + other.charge / 100 * 0.5;
 		var _angle;
 		if(other.AttackTarget != noone)
-			_angle = point_direction(other.x,other.y,other.AttackTarget.x,other.AttackTarget.y);
+			_angle = point_direction(other.chargeX,other.chargeY,other.AttackTarget.x,other.AttackTarget.y);
 		else
 			_angle = other.angle;
 		damage = floor(other.charge / 100 * Obj_valueContainer.player_chargeMaxDamage);

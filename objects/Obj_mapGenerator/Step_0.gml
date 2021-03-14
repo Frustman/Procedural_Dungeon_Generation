@@ -104,7 +104,7 @@ if(generated && instance_exists(Obj_chr)){
 				var xpos = irandom(dg_width - dg_trim * 2) + dg_trim;
 				var ypos = irandom(dg_height - dg_trim * 2) + dg_trim;
 			
-				if(!instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_wall) && !instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
+				if(!instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_wall) && !instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_wall32) && !instance_place(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,Obj_spawner) && real_map[# (curRoom div 10) * dg_width + xpos, (curRoom % 10) * dg_height + ypos] == 0){
 					with(instance_create_layer(((curRoom div 10) * dg_width + xpos) * CELL_WIDTH + CELL_WIDTH / 2,((curRoom % 10) * dg_height + ypos) * CELL_HEIGHT + CELL_HEIGHT / 2,"sort_start",Obj_spawner)){
 						if(irandom(1) == 0){
 							//obj = Obj_enemy_wildpig;

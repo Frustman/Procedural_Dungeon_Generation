@@ -52,32 +52,32 @@ angle = Obj_controller.AttackDirection;
 }*/
 if(AttackTarget == noone){
 	if(sign(image_xscale) > 0){
-		shootX = x + lengthdir_x(20,angle + 90 - 79.215702132437);
+		shootX = x + lengthdir_x(11,angle + 90 - 79.215702132437);
 		chargeX = x + lengthdir_x(30,angle + 90 - 79.215702132437);
 	} else{
-		shootX = x + lengthdir_x(20,angle - 90 + 79.215702132437);
+		shootX = x + lengthdir_x(11,angle - 90 + 79.215702132437);
 		chargeX = x + lengthdir_x(30,angle - 90 + 79.215702132437);
 	}
 	if(sign(image_xscale) > 0){
-		shootY = y + lengthdir_y(20,angle + 90 - 79.215702132437);
+		shootY = y + lengthdir_y(11,angle + 90 - 79.215702132437);
 		chargeY = y + lengthdir_y(30,angle + 90 - 79.215702132437);
 	} else{
-		shootY = y + lengthdir_y(20,angle - 90 + 79.215702132437);
+		shootY = y + lengthdir_y(11,angle - 90 + 79.215702132437);
 		chargeY = y + lengthdir_y(30,angle - 90 + 79.215702132437);
 	}
 } else if(AttackTarget != noone && instance_exists(AttackTarget)){
 	if(x < AttackTarget.x){
-		shootX = x + lengthdir_x(20,angle + 90 - 79.215702132437);
+		shootX = x + lengthdir_x(11,angle + 90 - 79.215702132437);
 		chargeX = x + lengthdir_x(30,angle + 90 - 79.215702132437);
 	} else{
-		shootX = x + lengthdir_x(20,angle - 90 + 79.215702132437);
+		shootX = x + lengthdir_x(11,angle - 90 + 79.215702132437);
 		chargeX = x + lengthdir_x(30,angle - 90 + 79.215702132437);
 	}
 	if(x < AttackTarget.x){
-		shootY = y + lengthdir_y(20,angle + 90 - 79.215702132437);
+		shootY = y + lengthdir_y(11,angle + 90 - 79.215702132437);
 		chargeY = y + lengthdir_y(30,angle + 90 - 79.215702132437);
 	} else{
-		shootY = y + lengthdir_y(20,angle - 90 + 79.215702132437);
+		shootY = y + lengthdir_y(11,angle - 90 + 79.215702132437);
 		chargeY = y + lengthdir_y(30,angle - 90 + 79.215702132437);
 	}
 }

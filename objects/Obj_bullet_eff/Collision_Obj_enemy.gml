@@ -1,16 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id))){
-	instance_destroy(self);
+	if(!Obj_valueContainer.player_penetrate)
+		instance_destroy(self);
 	target = other.id;
 	crit = Scr_critical(Obj_valueContainer.critical_chance);
 	other.crit = crit;
 	
-	if(crit && Obj_valueContainer.player_explosion){
+	if(crit && Obj_valueContainer.player_explosion && ds_list_find_index(hit_list, other.id) == -1){
 		instance_create_layer(x,y,"sort_end",Obj_explosion);
 	}
 
-	if(Obj_valueContainer.player_chain == true){
+	if(Obj_valueContainer.player_chain == true && ds_list_find_index(hit_list, other.id) == -1){
 		attack_list = ds_list_create();
 		ds_list_add(attack_list, other.id);
 
@@ -21,7 +22,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			list = other.attack_list;
 		}
 	}
-	if(Obj_valueContainer.player_sharpshooting == true && cusion_cnt < cusion_max){
+	if(Obj_valueContainer.player_sharpshooting == true && ds_list_find_index(hit_list, other.id) == -1 &&cusion_cnt < cusion_max){
 		nearest = noone;
 		nearest_dist = 20000000;
 		with(Obj_enemy){
@@ -61,4 +62,5 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			}
 		}
 	}
+	ds_list_add(hit_list, other.id);
 }

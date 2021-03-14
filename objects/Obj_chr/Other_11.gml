@@ -14,7 +14,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	with(bullet){
 		var _angle;
 		if(other.AttackTarget != noone)
-			_angle = point_direction(other.x,other.y,other.AttackTarget.x,other.AttackTarget.y);
+			_angle = point_direction(other.shootX,other.shootY,other.AttackTarget.x,other.AttackTarget.y);
 		else
 			_angle = other.angle;
 		damage = Obj_valueContainer.player_bulletDamage;

@@ -7,6 +7,8 @@ chain_lightning = false;
 sharp_shooting = false;
 explosion = true;
 
+hit_list = ds_list_create();
+
 cusion_dist = 100;
 
 cusion_cnt = 0;

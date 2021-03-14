@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id))){
-	instance_destroy(self);
+if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id)) && ds_list_find_index(hit_list, other.id) == -1){
+	if(!Obj_valueContainer.player_penetrate)
+		instance_destroy(self);
 	target = other.id;
 	crit = Scr_critical(Obj_valueContainer.critical_chance);
 	other.crit = crit;
@@ -63,4 +64,5 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 			}
 		}
 	}
+	ds_list_add(hit_list, other.id);
 }
