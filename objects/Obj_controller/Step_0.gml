@@ -37,7 +37,7 @@ if(clickOne && clickTwo){
 					alarm[0] = 27;
 					anim_index = 0;
 					dashDir = other.directionBox;
-					dashSpeed = 4;
+					dashSpeed = 8;
 					dash = true;
 				}
 				can_dash = false;
@@ -50,7 +50,7 @@ if(clickOne && clickTwo){
 					alarm[0] = 27;
 					anim_index = 0;
 					dashDir = other.directionBox;
-					dashSpeed = 4;
+					dashSpeed = 8;
 					dash = true;
 				}
 				can_dash = false;
@@ -77,7 +77,7 @@ if(clickOne && clickTwo){
 						alarm[0] = 27;
 						anim_index = 0;
 						dashDir = other.directionBox;
-						dashSpeed = 4;
+						dashSpeed = 8;
 						dash = true;
 					}
 					can_dash = false;
@@ -107,7 +107,7 @@ if(clickOne){
 					alarm[0] = 27;
 					anim_index = 0;
 					dashDir = other.directionBox;
-					dashSpeed = 4;
+					dashSpeed = 8;
 					dash = true;
 				}
 				can_dash = false;

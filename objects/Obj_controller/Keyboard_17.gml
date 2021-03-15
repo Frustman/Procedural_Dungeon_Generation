@@ -4,6 +4,6 @@ with(Obj_chr){
 				alarm[0] = 27;
 				anim_index = 0;
 				dashDir = other.directionBox;
-				dashSpeed = 3;
+				dashSpeed = 4;
 				dash = true;
 			}

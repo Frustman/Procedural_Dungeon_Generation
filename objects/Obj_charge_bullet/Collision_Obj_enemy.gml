@@ -15,7 +15,6 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 		attack_list = ds_list_create();
 		ds_list_add(attack_list, other.id);
 
-		instance_destroy(self);
 		Scr_chain_lightning(attack_list,1,Obj_valueContainer.player_chainCount,other.id,256);
 	
 		with(instance_create_layer(x,y,"sort_end",Obj_chain_lightning)){
