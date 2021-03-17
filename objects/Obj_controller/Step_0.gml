@@ -34,11 +34,7 @@ if(clickOne && clickTwo){
 		if(point_distance(dashCenterX, dashCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= dashRadius){
 			if(can_dash && !Obj_chr.shoot){
 				with(Obj_chr){
-					alarm[0] = 27;
-					anim_index = 0;
-					dashDir = other.directionBox;
-					dashSpeed = 8;
-					dash = true;
+					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
 				alarm[1] = 30;
@@ -47,11 +43,7 @@ if(clickOne && clickTwo){
 		if(point_distance(dashCenterX, dashCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= dashRadius){
 			if(can_dash && !Obj_chr.shoot){
 				with(Obj_chr){
-					alarm[0] = 27;
-					anim_index = 0;
-					dashDir = other.directionBox;
-					dashSpeed = 8;
-					dash = true;
+					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
 				alarm[1] = 30;
@@ -74,11 +66,7 @@ if(clickOne && clickTwo){
 			if(point_distance(dashCenterX, dashCenterY, device_x[i], device_y[i]) <= dashRadius){
 				if(can_dash && !Obj_chr.shoot){
 					with(Obj_chr){
-						alarm[0] = 27;
-						anim_index = 0;
-						dashDir = other.directionBox;
-						dashSpeed = 8;
-						dash = true;
+						event_perform(ev_other,ev_user2);
 					}
 					can_dash = false;
 					alarm[1] = 30;
@@ -104,11 +92,7 @@ if(clickOne){
 		if(point_distance(dashCenterX, dashCenterY, device_x[0], device_y[0]) <= dashRadius){
 			if(can_dash && !Obj_chr.shoot){
 				with(Obj_chr){
-					alarm[0] = 27;
-					anim_index = 0;
-					dashDir = other.directionBox;
-					dashSpeed = 8;
-					dash = true;
+					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
 				alarm[1] = 30;
