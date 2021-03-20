@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ui",
-    "path": "folders/Objects/ui.yy",
+    "name": "system",
+    "path": "folders/Objects/system.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_shader",

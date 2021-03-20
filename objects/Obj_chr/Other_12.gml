@@ -12,6 +12,8 @@ with(Obj_shader){
 	new_wave[|waveparam.age]	= 0;
 	new_wave[|waveparam.scale]	= 0;
 	new_wave[|waveparam.alpha]	= 1;
+	new_wave[|waveparam.life]	= 1;
+	new_wave[|waveparam.maxScale]	= 1;
 
-	ds_list_add(list_of_waves, new_wave);	
+	ds_list_add(list_of_waves, new_wave);
 }

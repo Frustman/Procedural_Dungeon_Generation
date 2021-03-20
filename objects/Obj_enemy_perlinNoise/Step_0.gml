@@ -19,7 +19,7 @@ else _speed = 0;
 if(point_distance(x,y,spawnX,spawnY) >= spawn_radius){
 	_angle = lerp(_angle,point_direction(x,y,spawnX,spawnY),0.1);
 }
-_angle += Scr_perlin_noise_1d(seed + current_time / 100);
+_angle += Scr_perlin_noise_1d(seed + current_time / 100) * 2;
 motion_set(_angle,_speed);
 
 

@@ -13,8 +13,8 @@ if (wave_list_size > 0) {
 		this_wave[|waveparam.age]	+= 0.5;
 		
 		if (this_wave[|waveparam.age] < wave_life) {
-			this_wave[|waveparam.scale]	= Scr_cubic_out_simple(this_wave[|waveparam.age] / wave_life) * wave_scale_max;
-			this_wave[|waveparam.alpha]	= 1 - Scr_quadratic_out_simple(this_wave[|waveparam.age] / wave_life);
+			this_wave[|waveparam.scale]	= Scr_cubic_out_simple(this_wave[|waveparam.age] / this_wave[|waveparam.life] * wave_life) * this_wave[|waveparam.maxScale] * wave_scale_max;
+			this_wave[|waveparam.alpha]	= 1 - Scr_quadratic_out_simple(this_wave[|waveparam.age] / this_wave[|waveparam.life] * wave_life);
 		} else {
 			ds_list_destroy(this_wave);
 			ds_list_delete(list_of_waves, w);
