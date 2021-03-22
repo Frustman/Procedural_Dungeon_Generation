@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-list = -1;
-idx = 0;
-alarm[0] = 1;
+par = -1;
+target = -1;
+len = 142;
+
+anim_idx = 0;
+real_idx = 0;

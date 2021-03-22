@@ -18,7 +18,7 @@ player_chainCount = 6;
 player_charge = false;
 player_sharpshooting = false;
 player_fireshot = false;
-player_chain = false;
+player_chain = true;
 player_explosion = true;
 player_penetrate = false;
 
