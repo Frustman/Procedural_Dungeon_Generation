@@ -19,6 +19,7 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 	
 		with(instance_create_layer(x,y,"sort_end",Obj_chain_lightning)){
 			list = other.attack_list;
+			crit = other.crit;
 		}
 	}
 	if(Obj_valueContainer.player_sharpshooting == true && cusion_cnt < cusion_max){

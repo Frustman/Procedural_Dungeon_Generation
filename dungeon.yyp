@@ -158,6 +158,7 @@
     {"id":{"name":"TileSet_desert_deco","path":"tilesets/TileSet_desert_deco/TileSet_desert_deco.yy",},"order":6,},
     {"id":{"name":"Spr_projectile_slime","path":"sprites/Spr_projectile_slime/Spr_projectile_slime.yy",},"order":4,},
     {"id":{"name":"Spr_flower_dead","path":"sprites/Spr_flower_dead/Spr_flower_dead.yy",},"order":2,},
+    {"id":{"name":"Scr_draw_lightning","path":"scripts/Scr_draw_lightning/Scr_draw_lightning.yy",},"order":31,},
     {"id":{"name":"Obj_chain_eff","path":"objects/Obj_chain_eff/Obj_chain_eff.yy",},"order":6,},
     {"id":{"name":"ac_damage_ypos","path":"animcurves/ac_damage_ypos/ac_damage_ypos.yy",},"order":0,},
     {"id":{"name":"Scr_draw_text_outline","path":"scripts/Scr_draw_text_outline/Scr_draw_text_outline.yy",},"order":13,},
