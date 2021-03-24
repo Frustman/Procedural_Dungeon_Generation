@@ -35,7 +35,7 @@
         9,
         1,
         8,
-        16,
+        23,
       ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
   ],
   "tileAnimationFrames": [],
