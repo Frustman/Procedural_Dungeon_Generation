@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+tarX = 0;
+tarY = 0;
+parX = 0;
+parY = 0;
 par = -1;
 target = -1;
 len = 142 - 42;
