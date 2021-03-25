@@ -19,6 +19,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":37,"eventType":9,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":39,"eventType":9,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":50,"eventType":6,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":56,"eventType":6,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"Obj_map_editor","path":"objects/Obj_map_editor/Obj_map_editor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

@@ -17,3 +17,12 @@ for(var i = 0; i < dungeon_cnt; i++){
 	ds_grid_set_grid_region(map_list[i],map,0,i*dg_height,dg_width-1,(i+1)*dg_height - 1,0,0);
 }
 
+sprite_list = ds_list_create();
+
+mouseX = device_mouse_x(0);
+mouseY = device_mouse_y(0);
+
+mouse_down = false;
+
+max_index = 34;
+index = 0;
