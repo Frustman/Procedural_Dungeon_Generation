@@ -7,6 +7,8 @@ if(instance_exists(Obj_chr)){
 	instance_activate_object(Obj_shake);
 	instance_activate_object(Obj_controller);
 	instance_activate_object(Obj_shader);
+	instance_activate_object(Obj_bloom_shader);
+	instance_activate_object(Obj_valueContainer);
 	instance_activate_object(Obj_mapGenerator);
 	instance_activate_object(Obj_status);
 	instance_activate_object(Obj_chr);

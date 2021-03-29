@@ -5,7 +5,7 @@ deviceWidth = 1480;
 deviceHeight = 720;
 window_set_size(1480,720);
 surface_resize(application_surface,1480,720);
-//display_set_gui_size(1480,720);
+display_set_gui_size(1480,720);
 
 alarm[11] = 1;
 
