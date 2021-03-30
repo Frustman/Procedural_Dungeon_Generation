@@ -46,4 +46,4 @@ texel_h					= 1 / app_h;
 
 srf_final				= -1;
 
-application_surface_draw_enable(false);
+//application_surface_draw_enable(false);

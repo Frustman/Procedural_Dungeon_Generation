@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var blur_steps		= round(0.1 * 15) + 1;
+/*var blur_steps		= round(0.1 * 15) + 1;
 var sigma			= max(0.5, 0.0001);
 var bloom_threshold = 0.3;
 var bloom_range		= 0.1;
@@ -80,4 +80,4 @@ shader_set(shader);
 	shader_set_uniform_f(u_size, size);					// should be turned into a constant once you're happy with the setting
 	shader_set_uniform_f(u_strength, strength);			// should be turned into a constant once you're happy with the setting
 	draw_surface(srf_final, 0, 0);
-shader_reset();
+shader_reset();*/

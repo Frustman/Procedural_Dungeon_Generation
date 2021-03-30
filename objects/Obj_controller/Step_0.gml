@@ -37,7 +37,7 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = 30;
+				alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= dashRadius){
@@ -46,7 +46,7 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = 30;
+				alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(infoCenterX, infoCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= infoRadius){
@@ -69,7 +69,7 @@ if(clickOne && clickTwo){
 						event_perform(ev_other,ev_user2);
 					}
 					can_dash = false;
-					alarm[1] = 30;
+					alarm[1] = dash_delay;
 				}
 			}
 			if(point_distance(infoCenterX, infoCenterY, device_x[i], device_y[i]) <= infoRadius){
@@ -95,7 +95,7 @@ if(clickOne){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = 30;
+				alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(infoCenterX, infoCenterY, device_x[0], device_y[0]) <= infoRadius){

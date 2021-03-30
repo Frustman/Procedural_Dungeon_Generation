@@ -51,6 +51,8 @@ can_attack = true;
 can_info = true;
 can_dash = true;
 
+dash_delay = 30;
+
 
 globalvar path_grid;
 path_grid = mp_grid_create(0,0,room_width / CELL_WIDTH, room_height / CELL_HEIGHT,CELL_WIDTH,CELL_HEIGHT);
