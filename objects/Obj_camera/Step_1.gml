@@ -67,6 +67,8 @@ if(instance_exists(Obj_chr)){
 	var targetY = 0;
 }*/
 
+room_speed = lerp(room_speed, 60, 0.3);
+
 var view_width = camera_get_view_width(view_camera[0]);
 var view_height = camera_get_view_height(view_camera[0]);
 

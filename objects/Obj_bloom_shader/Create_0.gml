@@ -46,4 +46,17 @@ texel_h					= 1 / app_h;
 
 srf_final				= -1;
 
-//application_surface_draw_enable(false);
+
+blur_steps		= round(0.1 * 15) + 1;
+sigma			= max(0.5, 0.0001);
+bloom_threshold = 0.3;
+bloom_range		= 0.1;
+bloom_intensity	= 0.25 * 2;
+bloom_darken	= 0.9;
+bloom_saturation= 1 * 2;
+
+
+size		= 0.2 * 4;
+strength	= 0.2 * 0.01;
+
+application_surface_draw_enable(false);

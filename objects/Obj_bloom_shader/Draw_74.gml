@@ -11,7 +11,9 @@ var bloom_saturation= 1 * 2;
 
 time			+= 0.2 * 0.02;
 var size		= 0.2 * 4;
-var strength	= 0.1 * 0.01;
+var strength	= 0.2 * 0.01;*/
+
+time			+= 0.2 * 0.02;
 
 // DRAW:
 //-----------------------------------------------------------------------------
@@ -80,4 +82,4 @@ shader_set(shader);
 	shader_set_uniform_f(u_size, size);					// should be turned into a constant once you're happy with the setting
 	shader_set_uniform_f(u_strength, strength);			// should be turned into a constant once you're happy with the setting
 	draw_surface(srf_final, 0, 0);
-shader_reset();*/
+shader_reset();

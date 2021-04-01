@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && other.par != id && ds_list_find_index(hitList,other.id) == -1){
-
+	Scr_sleep(20);
+	room_speed = 50;
 	_damage = other.damage;
 	if(crit){
 		_damage *= 2;	

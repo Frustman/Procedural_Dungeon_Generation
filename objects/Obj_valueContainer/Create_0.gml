@@ -16,10 +16,10 @@ player_chargeMaxDamage = 30;
 player_chainCount = 6;
 
 player_charge = false;
-player_sharpshooting = true;
+player_sharpshooting = false;
 player_fireshot = false;
 player_chain = false;
-player_explosion = true;
+player_explosion = false;
 player_penetrate = false;
 
 sharp_cusionCount = 4;
