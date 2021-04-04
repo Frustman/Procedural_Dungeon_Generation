@@ -58,8 +58,8 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_27B95826","path":"rooms/Room2/Room2.yy",},
-    {"name":"inst_63FC1B09","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_1CC0F28F","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_63FC1B09","path":"rooms/Room2/Room2.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -67,6 +67,7 @@
     {"id":{"name":"Obj_charge_bullet","path":"objects/Obj_charge_bullet/Obj_charge_bullet.yy",},"order":4,},
     {"id":{"name":"Obj_charging_eff","path":"objects/Obj_charging_eff/Obj_charging_eff.yy",},"order":5,},
     {"id":{"name":"Spr_desert_tree3B","path":"sprites/Spr_desert_tree3B/Spr_desert_tree3B.yy",},"order":5,},
+    {"id":{"name":"ac_shake_duration","path":"animcurves/ac_shake_duration/ac_shake_duration.yy",},"order":2,},
     {"id":{"name":"Sha_bloom_blend","path":"shaders/Sha_bloom_blend/Sha_bloom_blend.yy",},"order":5,},
     {"id":{"name":"Scr_auto_tiling_47","path":"scripts/Scr_auto_tiling_47/Scr_auto_tiling_47.yy",},"order":24,},
     {"id":{"name":"Pistol_Shot_08","path":"sounds/Pistol_Shot_08/Pistol_Shot_08.yy",},"order":1,},
@@ -268,7 +269,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"deco_map.csv","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.1.542",
+    "IDEVersion": "2.3.2.556",
   },
   "resourceVersion": "1.4",
   "name": "dungeon",

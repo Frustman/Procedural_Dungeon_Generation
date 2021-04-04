@@ -835,8 +835,8 @@
   "instanceCreationOrder": [
     {"name":"inst_5F7E9729","path":"rooms/rm_level/rm_level.yy",},
     {"name":"inst_6A0BE0F4","path":"rooms/rm_level/rm_level.yy",},
-    {"name":"inst_362AA183","path":"rooms/rm_level/rm_level.yy",},
     {"name":"inst_2C3468F1","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_362AA183","path":"rooms/rm_level/rm_level.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

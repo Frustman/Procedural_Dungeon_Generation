@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d40a24a9-5d4b-4600-9d61-4cbc9913d4b2","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Cactus Golem",
     "path": "folders/Sprites/monster/Cactus Golem.yy",
