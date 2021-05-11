@@ -46,28 +46,33 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
 	shoot = true;
 	alarm[1] = 20;
+	var _angle = TargetAngle;
+	if(Obj_valueContainer.player_flameShot == true){
+		with(instance_create_layer(x,y,"sort_end",Obj_flame_pen_eff)){
+			damage = 5;
+			par = other.id;
+			dir = _angle;
+		}
+	} else{
+		var bullet = instance_create_layer(shootX,shootY,"sort_end",Obj_bullet_eff);
+		with(bullet){
+			damage = Obj_valueContainer.player_bulletDamage;
+			motion_set(_angle,15);
+			image_angle = _angle;
 	
+			chainDamage = Obj_valueContainer.player_chainDamage;
+			chain_lightning = Obj_valueContainer.player_chain;
+			critical_chance = Obj_valueContainer.critical_chance;
 	
-	var bullet = instance_create_layer(shootX,shootY,"sort_end",Obj_bullet_eff);
-	with(bullet){
-		var _angle;
-		_angle = other.TargetAngle;
-		damage = Obj_valueContainer.player_bulletDamage;
-		motion_set(_angle,15);
-		image_angle = _angle;
+			par = other.id;	
 	
-		chainDamage = Obj_valueContainer.player_chainDamage;
-		chain_lightning = Obj_valueContainer.player_chain;
-		critical_chance = Obj_valueContainer.critical_chance;
+			fireshot = Obj_valueContainer.player_fireshot;
 	
-		par = other.id;	
-	
-		fireshot = Obj_valueContainer.player_fireshot;
-	
-		target = other.AttackTarget;
-		sharp_shooting = Obj_valueContainer.player_sharpshooting;
-		cusion_max = Obj_valueContainer.sharp_cusionCount;
-		cusion_dist = Obj_valueContainer.sharp_distance;
+			target = other.AttackTarget;
+			sharp_shooting = Obj_valueContainer.player_sharpshooting;
+			cusion_max = Obj_valueContainer.sharp_cusionCount;
+			cusion_dist = Obj_valueContainer.sharp_distance;
+		}
 	}
 	var fx = lengthdir_x(1.5,_angle - 180);
 	var fy = lengthdir_y(1.5,_angle - 180);

@@ -11,12 +11,12 @@ function Scr_Pdg_Init(width, height){
 	var centerX = width div 2;
 	var centerY = width div 2 - 2;
 	
-	var cw = 7;
-	var ch = 6;
+	var cw = DG_WIDTH div 3;
+	var ch = DG_HEIGHT div 3;
 	
 	for(var i = 0; i < width; i++){
-		for(var j = 0; j < height; j++){ // 45% = alive cell, others = dead cell
-			if((i - centerX)*(i - centerX) / cw / cw + (j - centerY)*(j - centerY) / ch / ch >= 1){ // border cells are alive
+		for(var j = 0; j < height; j++){ 
+			if((i - centerX)*(i - centerX) / cw / cw + (j - centerY)*(j - centerY) / ch / ch >= 1){
 				ds_grid_set(map, i, j, 1);
 			}
 			else if(random(100) < 45){

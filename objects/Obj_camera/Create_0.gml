@@ -15,8 +15,6 @@ cur_room = 0;
 
 target = noone;
 
-dg_width = 23;
-dg_height = 19;
 
 dg_trim = 6;
 

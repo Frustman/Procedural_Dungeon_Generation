@@ -36,8 +36,8 @@ view_height = camera_get_view_height(view_camera[0]);
 //version 2
 if(instance_exists(Obj_chr)){
 	cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
-	var roomX = ((cur_room div 10) * dg_width + dg_width / 2) * CELL_WIDTH;
-	var roomY = ((cur_room % 10) * dg_height + dg_height / 2) * CELL_HEIGHT;
+	var roomX = ((cur_room div 10) * DG_WIDTH + DG_WIDTH / 2) * CELL_WIDTH;
+	var roomY = ((cur_room % 10) * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT;
 	
 	var dir = point_direction(roomX,roomY,Obj_chr.x,Obj_chr.y);
 	var len = point_distance(roomX,roomY,Obj_chr.x,Obj_chr.y);

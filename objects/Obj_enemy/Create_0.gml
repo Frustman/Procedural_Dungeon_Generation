@@ -36,6 +36,7 @@ anim_maxIndex = image_number;
 anim_index = 0;
 anim_fps = 10;
 
+
 Scr_update_depth(x,y);
 
 dx = 0;

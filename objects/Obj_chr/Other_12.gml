@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 alarm[0] = 62;
 anim_index = 0;
 dashDir = other.directionBox;

@@ -39,6 +39,8 @@ seed = irandom(300);
 _angle = random(360);
 _speed = 0;
 
+crit = false;
+
 spawnX = x;
 spawnY = y;
 

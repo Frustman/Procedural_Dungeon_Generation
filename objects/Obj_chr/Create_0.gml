@@ -7,6 +7,9 @@ charge = 0;
 
 god = false;
 
+shootX = x;
+shootY = y;
+
 
 state = "idle";
 dash = false;

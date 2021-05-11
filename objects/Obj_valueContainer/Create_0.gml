@@ -21,6 +21,7 @@ player_fireshot			= false;
 player_chain			= false;
 player_explosion		= false;
 player_penetrate		= false;
+player_flameShot		= false;
 
 game_timeScale			= 1.0;
 
