@@ -173,7 +173,7 @@
     {"id":{"name":"Scr_noise","path":"scripts/Scr_noise/Scr_noise.yy",},"order":20,},
     {"id":{"name":"Spr_minimap_chr","path":"sprites/Spr_minimap_chr/Spr_minimap_chr.yy",},"order":12,},
     {"id":{"name":"Scr_auto_tiling_16","path":"scripts/Scr_auto_tiling_16/Scr_auto_tiling_16.yy",},"order":25,},
-    {"id":{"name":"Spr_flame_shot","path":"sprites/Spr_flame_shot/Spr_flame_shot.yy",},"order":25,},
+    {"id":{"name":"Spr_item_frame","path":"sprites/Spr_item_frame/Spr_item_frame.yy",},"order":25,},
     {"id":{"name":"STileset_desert","path":"sprites/STileset_desert/STileset_desert.yy",},"order":6,},
     {"id":{"name":"Obj_door","path":"objects/Obj_door/Obj_door.yy",},"order":0,},
     {"id":{"name":"Spr_normal_map","path":"sprites/Spr_normal_map/Spr_normal_map.yy",},"order":0,},

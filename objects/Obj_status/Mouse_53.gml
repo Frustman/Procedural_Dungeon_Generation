@@ -8,12 +8,12 @@ if(mouseX >= buttonX - 50 && mouseX <= buttonX + 50 && mouseY >= buttonY - 50 &&
 		event_perform(ev_other, ev_user0);
 	}
 }
-var x_start = curX - 240 + 50;
-var y_start = curY - 150 + 50;
+var x_start = curX - 270 + 60;
+var y_start = curY - 180 + 60;
 
 for(var i = 0; i < Obj_valueContainer.player_itemCount; i++){
-	var xpos = x_start + (i % 4) * 125;
-	var ypos = y_start + (i div 4) * 125;
+	var xpos = x_start + (i % 4) * 140;
+	var ypos = y_start + (i div 4) * 140;
 	if(mouseX >= xpos - 61 && mouseX <= xpos + 61 && mouseY >= ypos - 61 && mouseY <= ypos + 61){
 		if(cursor != i){
 			if(Obj_valueContainer.player_itemList[| i].Exist())	cursor = i;

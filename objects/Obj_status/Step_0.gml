@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-targetX = view_wport / 2 - 300;
+targetX = view_wport / 2;
 targetY = view_hport / 2 + 60;
 
 curX = lerp(curX, targetX, 0.2);

@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-targetX = deviceWidth / 2 - 300;
+targetX = deviceWidth / 2 ;
 targetY = deviceHeight / 2 + 60;
 
-curX = view_wport / 2 - 300;
+curX = view_wport / 2;
 curY = -200;
 
 

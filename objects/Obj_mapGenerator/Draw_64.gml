@@ -92,7 +92,7 @@ for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 	global.bullet_ui[i].xpos = bulletX - 14 + 20 * i;
 }
 
-draw_sprite_ext(Spr_up_side,0,deviceWidth / 2,deviceHeight + 30, deviceWidth / 480,1,0,c_white,1.0);
+//draw_sprite_ext(Spr_up_side,0,deviceWidth / 2,deviceHeight + 30, deviceWidth / 480,1,0,c_white,1.0);
 
 for(var i = 0; i < Obj_valueContainer.player_maxheart div 2; i++){
 	var idx;
