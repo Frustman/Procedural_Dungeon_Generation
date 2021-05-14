@@ -9,21 +9,27 @@ else
 	draw_sprite_ext(Spr_slime_hurt,-1,x,y,xscale,yscale,0,c_white,1.0);
 shader_reset();
 
-draw_text(x,y,ray_left)
-
 for(var i = 0; i < ray_count; i++){
 	if(context_map[i] >= 0){
 		draw_set_color(c_green);
 	} else {
 		draw_set_color(c_red);
 	}
-	if(i == max_idx) draw_set_color(c_blue);
-	draw_line(x,y,x + lengthdir_x(abs(context_map[i] * max_distance),point_direction(0,0,context_dir[i][0],context_dir[i][1])), y + lengthdir_y(abs(context_map[i] * max_distance), point_direction(0,0,context_dir[i][0],context_dir[i][1])));
+	if(i == maxidx) draw_set_color(c_blue);
+	draw_line(x,y,x + lengthdir_x(abs(context_map[i] * 50),context_dir[i]), y + lengthdir_y(abs(context_map[i] * 50), context_dir[i]));
+	//draw_text(x + lengthdir_x(abs(context_map[i] * 200),context_dir[i]), y + lengthdir_y(abs(context_map[i] * 200), context_dir[i]),context_dir[i]);
 	draw_set_color(c_white);
 }
 
-draw_line(x,y,x+dir[0]*10,y+dir[1]*10);
-draw_text(x,y+10,player_dist);
+draw_circle(x,y,200,true);
+
+
+
+for(var i = 0; i < ds_list_size(wall_list); i++){
+	draw_set_color(c_black);
+	draw_circle(wall_list[|i].x,wall_list[|i].y,3,false);
+	draw_set_color(c_white);
+}
 
 /*for(var i = 0; i < path_get_number(player_path); i++){
 	targetx[i] = path_get_point_x(player_path,i);

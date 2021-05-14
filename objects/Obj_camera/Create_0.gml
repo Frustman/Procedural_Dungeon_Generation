@@ -19,3 +19,8 @@ target = noone;
 dg_trim = 6;
 
 zoom_shake = 0;
+
+globalvar screenX;
+globalvar screenY;
+globalvar screenW;
+globalvar screenH;

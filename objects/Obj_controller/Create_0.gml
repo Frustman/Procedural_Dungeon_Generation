@@ -5,13 +5,13 @@ boxCenterX = 160;
 boxCenterY = deviceHeight - 256;
 boxRadius = 128;
 
-AttackCenterX = deviceWidth - 216;
+AttackCenterX = deviceWidth - 160;
 AttackCenterY = deviceHeight - 256;
 AttackX = deviceWidth - 216;
 AttackY = deviceHeight - 256;
 AttackRadius = 160;
 
-dashCenterX = AttackCenterX + 160;
+dashCenterX = AttackCenterX + 90;
 dashCenterY = AttackCenterY - 160;
 dashRadius = 32;
 
@@ -50,6 +50,6 @@ device_press_x[1] = 0;
 device_press_y[0] = 0;
 device_press_y[1] = 0;
 
-globalvar path_grid;
+/*globalvar path_grid;
 path_grid = mp_grid_create(0,0,room_width / CELL_WIDTH, room_height / CELL_HEIGHT,CELL_WIDTH,CELL_HEIGHT);
-mp_grid_add_instances(path_grid, Obj_wall, false);
+mp_grid_add_instances(path_grid, Obj_wall, false);*/

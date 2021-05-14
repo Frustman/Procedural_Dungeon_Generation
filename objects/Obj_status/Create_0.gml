@@ -12,6 +12,6 @@ infoX = curX + 630;
 infoY = curY - 20;
 
 buttonX = curX;
-buttonY = curY + 220;
+buttonY = curY + 230;
 
 cursor = -1;

@@ -36,21 +36,13 @@ sp_index = 0;
 ray_count = 16;
 ray_distance = 20;
 
-ray_left = false;
-
 for(var i = 0; i < ray_count; i++){
-	var degree = point_direction(0,0,dir[0],dir[1]) + 360 / ray_count * i;
-	context_dir[i][0] = lengthdir_x(1, degree);
-	context_dir[i][1] = lengthdir_y(1, degree);
-	context_dir[i][2] = degree;
+	var degree = 360 / ray_count * i;
+	context_dir[i] = degree;
 	context_map[i] = 0;
-	context_dangerous[i] = false;
 }
 max_val = -1;
-max_idx = 0;
-
-max_val_dir = -1;
-max_idx_dir = 0;
+maxidx = 0;
 
 strafe_range = 70;
 
@@ -61,6 +53,8 @@ force[0] = 0;
 force[1] = 0;
 
 max_distance = 20;
+
+wall_list = ds_list_create();
 
 image_index = 0;
 image_speed = 0;

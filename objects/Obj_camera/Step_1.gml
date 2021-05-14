@@ -82,3 +82,9 @@ camera_set_view_border(view_camera[0], new_width / 2, new_height / 2);
 
 
 camera_set_view_pos(view_camera[0], x - camera_get_view_border_x(view_camera[0]) + offsetX, y - camera_get_view_border_y(view_camera[0]) + offsetY);
+
+
+screenX = camera_get_view_x(view_camera[0]);
+screenY = camera_get_view_y(view_camera[0]);
+screenW = view_width;
+screenH = view_height;

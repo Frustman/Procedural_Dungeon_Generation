@@ -35,7 +35,7 @@ if(cursor != -1){
 	draw_sprite_ext(Obj_valueContainer.player_itemList[| cursor].sprite,Obj_valueContainer.player_itemList[| cursor].index,cursorX,cursorY,2,2,0,c_white,1);
 	draw_set_valign(fa_center);
 	draw_set_halign(fa_center);
-	Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) / 2,infoW / 674,infoW / 674,4,Font_rumber,c_black,c_white,Obj_valueContainer.player_itemList[| cursor].info);
+	Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) / 2,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,Obj_valueContainer.player_itemList[| cursor].info);
 	Scr_draw_text_outline(cursorX + compoX + 98,cursorY - 18,0.5,0.5,4,Font_rumber,c_black,c_white,Obj_valueContainer.player_itemList[| cursor].name);
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
