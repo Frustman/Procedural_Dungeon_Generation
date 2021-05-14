@@ -57,6 +57,9 @@ strafe_range = 70;
 _speed = 0.7;
 player_dist = 0;
 
+context_interval = 3;
+context_val = 0;
+
 force[0] = 0;
 force[1] = 0;
 

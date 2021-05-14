@@ -42,35 +42,3 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 }
 
 real_index = anim_index div anim_fps;
-
-signX = sign(dx);
-signY = sign(dy);
-
-if(place_empty(x + dx, y, Obj_wall)){
-	x += dx;
-} else if(!place_empty(x + dx, y, Obj_wall)){
-	while(place_empty(x + signX / 100, y, Obj_wall)){
-		x += signX / 100;
-	}
-}
-if(place_empty(x, y + dy, Obj_wall)){
-	y += dy;
-} else if(!place_empty(x, y + dy, Obj_wall)){
-	while(place_empty(x, y + signY / 100, Obj_wall)){
-		y += signY / 100;
-	}
-}
-
-
-if (!place_empty(ceil(x),y, Obj_wall)){
- x = floor(x);
-}
-if (!place_empty(x,ceil(y), Obj_wall)){
- y = floor(y);
-}
-if (!place_empty(floor(x),y, Obj_wall)){
- x = ceil(x);
-}
-if (!place_empty(x,floor(y), Obj_wall)){
- y = ceil(y);
-}

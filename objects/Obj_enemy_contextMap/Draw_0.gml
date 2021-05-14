@@ -23,7 +23,7 @@ for(var i = 0; i < ray_count; i++){
 }
 
 draw_line(x,y,x+dir[0]*10,y+dir[1]*10);
-draw_text(x,y+10,player_dist);
+draw_text(x,y+10,context_val);
 
 /*for(var i = 0; i < path_get_number(player_path); i++){
 	targetx[i] = path_get_point_x(player_path,i);
