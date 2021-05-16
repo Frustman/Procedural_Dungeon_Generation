@@ -16,11 +16,11 @@ with(Obj_context_inst){
 			var dot = dot_product(x1,y1,x2,y2);
 			
 			
-			//if(state == ai_state.friendly) other.context_friendly[i] =  1.0 - abs(dot - 0.65);
-			//if(state == ai_state.aggressive) other.context_aggressive[i] = (1.0 - (dot)) / 2;
+			//if(state == ai_state.backward) other.context_backward[i] =  1.0 - abs(dot - 0.65);
+			//if(state == ai_state.chase) other.context_chase[i] = (1.0 - (dot)) / 2;
 			
-			if(state == ai_state.aggressive) other.context_map[i] += (1.0 - abs(dot - 0.65)) / dist;
-			if(state == ai_state.friendly) other.context_map[i] += (1.0 - (dot)) / dist;
+			if(state == ai_state.chase) other.context_map[i] += (1.0 - abs(dot - 0.65)) / dist;
+			if(state == ai_state.backward) other.context_map[i] += (1.0 - (dot)) / dist;
 			
 			
 		}
@@ -30,7 +30,7 @@ var maxval = -1;
 maxidx = -1;
 for(var i = 0; i < ray_count; i++){
 	//context_map[i] = 0;
-	//context_map[i] = context_friendly[i] + context_aggressive[i];
+	//context_map[i] = context_backward[i] + context_chase[i];
 	if(context_map[i] >= maxval){
 		maxidx = i;
 		maxval = context_map[i];

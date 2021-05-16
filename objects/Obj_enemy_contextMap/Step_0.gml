@@ -3,10 +3,6 @@
 event_inherited();
 player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
-if(player_dist > strafe_range) state = "chase";
-if(player_dist <= strafe_range && player_dist >= strafe_range - 5) state = "strafe";
-if(player_dist < strafe_range - 5) state = "safe";
-
 
 
 if(hp <= 0){
@@ -21,32 +17,31 @@ context_val++;
 
 if(context_val >= context_interval) context_val = 0;
 if(context_val == 0){
+	if(player_dist > strafe_range) state = ai_state.chase;
+	else if(player_dist <= strafe_range && player_dist >= strafe_range - 10) state = ai_state.strafe;
+	else if(player_dist < strafe_range - 10) state = ai_state.backward;
+
 	max_val = -999;
 	max_idx = 0;
 
 	max_val_dir = -999;
 	max_idx_dir = 0;
 
-	var _dir = point_direction(Obj_chr.x,Obj_chr.y,x,y);
-
+	var normal = point_direction(Obj_chr.x,Obj_chr.y,x,y);
+	
 	for(var i = 0; i < ray_count; i++){
 		context_map[i] = 0;	
 		context_dangerous[i] = false;
-	
-			
-		var x1 = lengthdir_x(1,_dir);
-		var y1 = lengthdir_y(1,_dir);
-			
-		if(player_dist <= strafe_range - 3 && player_dist >= strafe_range - 5){
-			x1 = lengthdir_x(1,_dir + 90);	
-			y1 = lengthdir_y(1,_dir + 90);	
-		}
+		
+		var x1 = lengthdir_x(1,normal);
+		var y1 = lengthdir_y(1,normal);
 		var x2 = context_dir[i][0];
 		var y2 = context_dir[i][1];
+		
 		var dot = (x1 * x2 + y1 * y2);
-		if(state == "safe") context_map[i] =  1.0 - abs(dot - 0.9);
-		if(state == "strafe") context_map[i] = 1.0 - abs(dot);
-		if(state == "chase") context_map[i] = 1.0 - (dot);
+		if(state == ai_state.backward) context_map[i] =  1.0 - abs(dot - 0.9);
+		if(state == ai_state.strafe) context_map[i] = 1.0 - abs(dot);
+		if(state == ai_state.chase) context_map[i] = 1.0 - (dot);
 	
 	
 		if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_enemy,false,true) != noone || collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
@@ -107,7 +102,7 @@ var force_dir = point_direction(0,0,dir[0],dir[1]);
 /*if(dir > 360) dir -= 360;
 if(dir < 0) dir = 360;
 dir = lerp(dir, dir_ideal, 0.1);*/
-if(state == "safe") _speed  = 1;
+if(state == ai_state.backward) _speed  = 1;
 else _speed = 0.6;
 
 Scr_force_update([lengthdir_x(_speed,force_dir), lengthdir_y(_speed, force_dir)]);
