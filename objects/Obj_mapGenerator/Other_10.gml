@@ -12,6 +12,28 @@ for(var i = 0; i < 9; i++){
 				ds_grid_set_grid_region(deco_real, deco_list[deco_c], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 				global.path_grid[i * 10 + j] = map_list[c];
 			}else {
+				if(map_grid[# i, j] == 3){
+					var xCenter = (i * DG_WIDTH + DG_WIDTH / 2 - 1) * CELL_WIDTH + CELL_WIDTH / 2;
+					var yCenter = (j * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT + CELL_HEIGHT / 2;
+					with(instance_create_layer(xCenter + 80, yCenter + 76,"sort_start",Obj_deco_instance)){
+						sprite_index = Spr_deco_wood;
+						image_speed = 1;
+					}
+					with(instance_create_layer(xCenter + 80, yCenter - 64,"sort_start",Obj_deco_instance)){
+						sprite_index = Spr_deco_wood;
+						image_speed = 1;
+					}
+					with(instance_create_layer(xCenter - 80, yCenter + 76,"sort_start",Obj_deco_instance)){
+						sprite_index = Spr_deco_wood;
+						image_speed = 1;
+					}
+					with(instance_create_layer(xCenter - 80, yCenter - 64,"sort_start",Obj_deco_instance)){
+						sprite_index = Spr_deco_wood;
+						image_speed = 1;
+					}
+					instance_create_layer(xCenter, yCenter,"sort_start",Obj_itemTable);
+					instance_create_layer(xCenter, yCenter,"sort_start",Obj_ground);
+				}
 				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
 				global.path_grid[i * 10 + j] = map_list[0];
 			}
@@ -133,7 +155,7 @@ instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_itemTable);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_itemTable);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "pause", Obj_pause);
-instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
+//instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
 //instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "Instances", Obj_enemy_contextMap);
 //instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH + 64, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "Instances", Obj_enemy_contextMap);
 //instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH + 64, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_enemy_perlinNoise);

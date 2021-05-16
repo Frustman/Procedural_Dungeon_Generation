@@ -7,5 +7,7 @@ if(!instance_exists(Obj_item_sequence)){
 		item_name = other.item_name;
 	}
 	instance_destroy(self);
-	Scr_item_get(new item(item_name, item_type, item_index, item_description[irandom(3)]));
+	var idx = irandom(3);
+	Scr_item_get(new item(item_name, item_type, item_index, item_description[idx]));
+	
 }

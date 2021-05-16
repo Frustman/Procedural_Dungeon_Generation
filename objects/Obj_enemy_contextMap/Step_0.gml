@@ -14,6 +14,17 @@ if(hp <= 0){
 }
 
 context_val++;
+atk_gage++;
+
+if(atk_gage > atk_max_gage){
+	if(player_dist <= 120){
+		with(instance_create_layer(x,y,"sort_start",Obj_projectile_slime)){
+			motion_set(point_direction(x,y,Obj_chr.x,Obj_chr.y + 12),2);
+			image_angle = point_direction(x,y,Obj_chr.x,Obj_chr.y + 12);
+		}	
+	}
+	atk_gage = 0;
+}
 
 if(context_val >= context_interval) context_val = 0;
 if(context_val == 0){
@@ -44,7 +55,8 @@ if(context_val == 0){
 		if(state == ai_state.chase) context_map[i] = 1.0 - (dot);
 	
 	
-		if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_enemy,false,true) != noone || collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
+		//if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_enemy,false,true) != noone || collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
+		if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
 			context_dangerous[i] = true;
 		}
 	
