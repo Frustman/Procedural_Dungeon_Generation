@@ -50,13 +50,13 @@ if(context_val == 0){
 		var y2 = context_dir[i][1];
 		
 		var dot = (x1 * x2 + y1 * y2);
-		if(state == ai_state.backward) context_map[i] =  1.0 - abs(dot - 0.9);
-		if(state == ai_state.strafe) context_map[i] = 1.0 - abs(dot);
+		if(state == ai_state.backward) context_map[i] =  (1.0 - abs(dot - 0.9)) * 2;
+		if(state == ai_state.strafe) context_map[i] = (1.0 - abs(dot)) * 2;
 		if(state == ai_state.chase) context_map[i] = 1.0 - (dot);
 	
 	
-		//if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_enemy,false,true) != noone || collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
-		if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
+		if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_enemy,true,true) != noone || collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,true,true) != noone){
+		//if(collision_line(x,y,x + lengthdir_x(abs(context_map[i] * ray_distance),context_dir[i][2]),y + lengthdir_y(abs(context_map[i] * ray_distance),context_dir[i][2]),Obj_wall,false,true) != noone){
 			context_dangerous[i] = true;
 		}
 	
@@ -101,6 +101,7 @@ if(context_val == 0){
 
 dir_ideal[0] = context_dir[max_idx][0];
 dir_ideal[1] = context_dir[max_idx][1];
+
 
 force[0] = dir_ideal[0] - dir[0];
 force[1] = dir_ideal[1] - dir[1];
