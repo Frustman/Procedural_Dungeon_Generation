@@ -75,7 +75,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 20,
-    "yorigin": 29,
+    "yorigin": 28,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"Spr_slime","path":"sprites/Spr_slime/Spr_slime.yy",},

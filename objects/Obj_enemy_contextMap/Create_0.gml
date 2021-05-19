@@ -5,6 +5,11 @@ event_inherited();
 maxhp = 50;
 hp = 50;
 
+var bbox_w = abs(bbox_left - bbox_right) / 2;
+var bbox_h = abs(bbox_top - bbox_bottom) / 2;
+
+sprite_rad = max(bbox_w, bbox_h, sqrt(bbox_w*bbox_w + bbox_h*bbox_h));
+
 state = ai_state.chase;
 stun = false;
 
@@ -25,10 +30,11 @@ ray_distance = 20;
 ray_left = false;
 
 for(var i = 0; i < ray_count; i++){
-	var degree = point_direction(0,0,dir[0],dir[1]) + 360 / ray_count * i;
+	var degree = 360 / ray_count * i;
 	context_dir[i][0] = lengthdir_x(1, degree);
 	context_dir[i][1] = lengthdir_y(1, degree);
 	context_dir[i][2] = degree;
+	context_left[i] = false;
 	context_map[i] = 0;
 	context_dangerous[i] = false;
 }
@@ -38,7 +44,9 @@ max_idx = 0;
 max_val_dir = -1;
 max_idx_dir = 0;
 
-strafe_range = 70;
+strafe_range = 40 + irandom(60);
+
+atk_range = strafe_range + 50;
 
 _speed = 0.7;
 player_dist = 0;
@@ -48,6 +56,8 @@ context_val = 0;
 
 force[0] = 0;
 force[1] = 0;
+
+plus_ray[1] = false;
 
 max_distance = 20;
 
