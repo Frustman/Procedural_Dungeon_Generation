@@ -74,7 +74,7 @@ if(context_val == 0){
 	force[1] = 0;
 
 
-	var st = point_direction(x,y,Obj_chr.x,Obj_chr.y) div( 360 / ray_count);
+	var st = round(point_direction(x,y,Obj_chr.x,Obj_chr.y) / ( 360 / ray_count));
 
 	if(ray_left == true){
 		for(var i = st; i < st + ray_count div 2; i++){
@@ -87,7 +87,7 @@ if(context_val == 0){
 			context_left[i % ray_count] = true;
 		}
 	} else {
-		for(var i = st + ray_count div 2 + 1; i < st + ray_count; i++){
+		for(var i = st + ray_count div 2; i < st + ray_count; i++){
 			if(!context_dangerous[i % ray_count]){
 				if(context_map[i % ray_count] > max_val_dir){
 					max_idx_dir = i % ray_count;

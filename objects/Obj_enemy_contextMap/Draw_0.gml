@@ -10,7 +10,7 @@ else
 	draw_sprite_ext(Spr_slime_hurt,-1,x,y,xscale,yscale,0,c_white,1.0);
 shader_reset();
 
-draw_text(x,y,point_direction(x,y,Obj_chr.x,Obj_chr.y) div( 360 / ray_count ))
+draw_text(x,y,round(point_direction(x,y,Obj_chr.x,Obj_chr.y) / ( 360 / ray_count )))
 for(var i = 0; i < ray_count; i++){
 	if(context_dangerous[i] == false && context_left[i] == true){
 		if(context_map[i] >= 0){
