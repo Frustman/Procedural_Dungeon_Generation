@@ -9,7 +9,7 @@ if(!stun){
 else
 	draw_sprite_ext(Spr_slime_hurt,-1,x,y,xscale,yscale,0,c_white,1.0);
 shader_reset();
-
+/*
 draw_text(x,y,round(point_direction(x,y,Obj_chr.x,Obj_chr.y) / ( 360 / ray_count )))
 for(var i = 0; i < ray_count; i++){
 	if(context_dangerous[i] == false && context_left[i] == true){
@@ -40,7 +40,7 @@ if(plus_ray[1]) draw_set_color(c_red);
 draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);
 draw_set_color(c_white);
 
-draw_line(x,y,x+dir[0]*10,y+dir[1]*10);
+draw_line(x,y,x+dir[0]*10,y+dir[1]*10);*/
 
 /*for(var i = 0; i < path_get_number(player_path); i++){
 	targetx[i] = path_get_point_x(player_path,i);
