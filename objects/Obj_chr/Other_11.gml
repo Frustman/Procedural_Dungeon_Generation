@@ -4,9 +4,9 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	Scr_shake(2,0,3,15);
 	audio_play_sound(Pistol_Shot_02,0,false);
 	
-	gun_index = 0;
 	AttackTarget = Scr_interpolate_aim(x,y,angle);
 	TargetAngle = angle;
+	gun_index = 0;
 	
 	if(AttackTarget == noone){
 		if(sign(image_xscale) > 0){
@@ -43,10 +43,13 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		TargetAngle = point_direction(shootX,shootY,AttackTarget.x,AttackTarget.y);
 	}
 	
-	instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
+	var _angle = TargetAngle;
+	
+	with(instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge)){
+		hspd = -sign(lengthdir_x(1,_angle)) * random(3);
+	}
 	shoot = true;
 	alarm[1] = 20;
-	var _angle = TargetAngle;
 	if(Obj_valueContainer.player_flameShot == true){
 		with(instance_create_layer(x,y,"sort_end",Obj_flame_pen_eff)){
 			damage = 5;

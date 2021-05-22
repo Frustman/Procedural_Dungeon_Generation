@@ -16,5 +16,5 @@ for(var i = 0; i < cat_cnt; i++){
 	var tilt = (-2 * cat_grav[i] * time + cat_vspeed_st[i]) / cat_hspeed_st[i];
 	cat_dir[i] = point_direction(0,0,1,tilt);
 	
-	cat_len = 2;
+	cat_len = 4;
 }

@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 real_index = anim_index div anim_fps;
-Rgun_index = gun_index div gun_fps;
 //draw_sprite(Spr_wallM,0,(x div 64) * 64, ((y + 8) div 64) * 64);
 //shader_set(Sha_sepia);
 if(AttackTarget == noone){
@@ -27,6 +26,8 @@ if(dash){
 }
 
 if(shoot){
+	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;
+	gun_index++;
 	/*
 	if(AttackTarget != noone && instance_exists(AttackTarget)){
 		if(x >= AttackTarget.x){
@@ -40,8 +41,10 @@ if(shoot){
 			image_xscale = 2;
 		}
 	}*/
-
-	draw_sprite_ext(Spr_chr_hand,Rgun_index,x,y + 8,hand_x,image_yscale,(hand_x == 1.0) ? TargetAngle : TargetAngle  - 180 ,c_white,image_alpha);
+	var Gangle = (hand_x == 1.0) ? TargetAngle : TargetAngle  - 180;
+	draw_sprite_ext(Spr_chr_hand,0,x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
+	if(gun_index <= 2) draw_sprite_ext(Spr_muzzle,irandom(3),x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
+	
 } 
 //shader_reset();
 /*if(charging){

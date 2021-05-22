@@ -5,41 +5,41 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	audio_play_sound(Pistol_Shot_02,0,false);
 	//instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
 	shoot = true;
-	gun_index = 0;
 	alarm[1] = 20;
 	
 	AttackTarget = Scr_interpolate_aim(x,y,angle);
+	gun_index = 0;
 	TargetAngle = angle;
 	
 	if(AttackTarget == noone){
 		if(sign(image_xscale) > 0){
-			shootX = x + lengthdir_x(20,angle + 90 - 79.215702132437);
-			chargeX = x + lengthdir_x(30,angle + 90 - 79.215702132437);
+			shootX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
+			chargeX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
 		} else{
-			shootX = x + lengthdir_x(20,angle - 90 + 79.215702132437);
-			chargeX = x + lengthdir_x(30,angle - 90 + 79.215702132437);
+			shootX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
+			chargeX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
 		}
 		if(sign(image_xscale) > 0){
-			shootY = y + lengthdir_y(20,angle + 90 - 79.215702132437);
-			chargeY = y + lengthdir_y(30,angle + 90 - 79.215702132437);
+			shootY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
+			chargeY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
 		} else{
-			shootY = y + lengthdir_y(20,angle - 90 + 79.215702132437);
-			chargeY = y + lengthdir_y(30,angle - 90 + 79.215702132437);
+			shootY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
+			chargeY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
 		}
 	} else if(AttackTarget != noone && instance_exists(AttackTarget)){
 		if(x < AttackTarget.x){
-			shootX = x + lengthdir_x(20,angle + 90 - 79.215702132437);
-			chargeX = x + lengthdir_x(30,angle + 90 - 79.215702132437);
+			shootX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
+			chargeX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
 		} else{
-			shootX = x + lengthdir_x(20,angle - 90 + 79.215702132437);
-			chargeX = x + lengthdir_x(30,angle - 90 + 79.215702132437);
+			shootX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
+			chargeX = x + lengthdir_x(38,angle) + lengthdir_x(-7,angle + 90);
 		}
 		if(x < AttackTarget.x){
-			shootY = y + lengthdir_y(20,angle + 90 - 79.215702132437);
-			chargeY = y + lengthdir_y(30,angle + 90 - 79.215702132437);
+			shootY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
+			chargeY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
 		} else{
-			shootY = y + lengthdir_y(20,angle - 90 + 79.215702132437);
-			chargeY = y + lengthdir_y(30,angle - 90 + 79.215702132437);
+			shootY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
+			chargeY = y + lengthdir_y(38,angle) + lengthdir_y(-7,angle + 90);
 		}
 		TargetAngle = point_direction(shootX,shootY,AttackTarget.x,AttackTarget.y);
 	}

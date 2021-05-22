@@ -33,9 +33,10 @@ anim_maxIndex = image_number;
 anim_index = 0;
 anim_fps = 10;
 
-gun_maxIndex = 7;
+
 gun_index = 0;
-gun_fps = 5;
+gun_reac_duration = 15;
+channel_gun = animcurve_get_channel(ac_gun_reaction, 0);
 
 footstep = true;
 

@@ -5,7 +5,7 @@
 
 item = {
 	name : "name",
-	sprite : Spr_key,
+	sprite : Spr_itemTable,
 	index : 0,
 	info : ""
 	/*Exist : function(){

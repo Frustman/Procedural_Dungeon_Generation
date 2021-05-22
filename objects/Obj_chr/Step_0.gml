@@ -61,9 +61,6 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 } else{
 	anim_index = 0;
 }
-if(gun_index < (gun_maxIndex) * gun_fps){
-	gun_index++;
-}
 
 if(dash){
 	dashSpeed -= 0.4;

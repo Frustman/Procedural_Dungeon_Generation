@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_key",
-    "path": "sprites/Spr_key/Spr_key.yy",
+    "name": "Spr_itemTable",
+    "path": "sprites/Spr_itemTable/Spr_itemTable.yy",
   },
   "solid": false,
   "visible": true,
