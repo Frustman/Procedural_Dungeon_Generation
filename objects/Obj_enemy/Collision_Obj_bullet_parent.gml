@@ -7,6 +7,7 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 	}
 	hp -= _damage;
 	crit_chance = Obj_valueContainer.critical_chance;
+	
 	ds_list_add(hitList,other.id);
 	var damage_eff = instance_create_depth(x + random(20) - 10,y + random(20) - 15,0,Obj_damage_eff);
 	with(damage_eff){
@@ -18,6 +19,10 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 	alarm[9] = 10;
 
 	angle = other.image_angle;
+	
+	if(random(10) >= 3){
+		instance_create_layer(x + random_range(-sprite_rad,sprite_rad),y + random_range(-sprite_rad,sprite_rad),"gui",Obj_hit_eff);
+	}
 
 	if(Obj_valueContainer.player_fireshot){
 		for(var i = -30; i <= 30; i += 15){

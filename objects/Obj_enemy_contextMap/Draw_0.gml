@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-draw_sprite(Spr_slime_msk,0,x,y);
 if(!stun){
 	sprite_index = Spr_slime;
 	draw_sprite_ext(Spr_slime,real_index,x,y,xscale,yscale,0,c_white,1.0);

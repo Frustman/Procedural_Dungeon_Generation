@@ -8,6 +8,11 @@ enum states{
 	attack_ready
 }
 
+var bbox_w = abs(bbox_left - bbox_right) / 2;
+var bbox_h = abs(bbox_top - bbox_bottom) / 2;
+
+sprite_rad = max(bbox_w, bbox_h, sqrt(bbox_w*bbox_w + bbox_h*bbox_h));
+
 hitList = ds_list_create();
 
 upixelH = shader_get_uniform(Sha_white_outline,"pixelH");

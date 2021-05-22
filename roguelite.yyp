@@ -126,6 +126,7 @@
     {"id":{"name":"Spr_slime_msk","path":"sprites/Spr_slime_msk/Spr_slime_msk.yy",},"order":3,},
     {"id":{"name":"Sha_heat_haze","path":"shaders/Sha_heat_haze/Sha_heat_haze.yy",},"order":7,},
     {"id":{"name":"Scr_cubic_out_simple","path":"scripts/Scr_cubic_out_simple/Scr_cubic_out_simple.yy",},"order":29,},
+    {"id":{"name":"Obj_catridge_eff","path":"objects/Obj_catridge_eff/Obj_catridge_eff.yy",},"order":10,},
     {"id":{"name":"Obj_chain_lightning","path":"objects/Obj_chain_lightning/Obj_chain_lightning.yy",},"order":5,},
     {"id":{"name":"Spr_charge_bullet","path":"sprites/Spr_charge_bullet/Spr_charge_bullet.yy",},"order":17,},
     {"id":{"name":"Spr_leopard_haze","path":"sprites/Spr_leopard_haze/Spr_leopard_haze.yy",},"order":1,},
@@ -255,8 +256,8 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
-    {"roomId":{"name":"rm_map_editor","path":"rooms/rm_map_editor/rm_map_editor.yy",},},
     {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
+    {"roomId":{"name":"rm_map_editor","path":"rooms/rm_map_editor/rm_map_editor.yy",},},
     {"roomId":{"name":"rm_level","path":"rooms/rm_level/rm_level.yy",},},
   ],
   "Folders": [

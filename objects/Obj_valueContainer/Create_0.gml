@@ -9,7 +9,7 @@ player_attackdelay		= 7;
 
 critical_chance			= 0.5;
 
-player_bulletDamage		= 5;
+player_bulletDamage		= 1;
 player_chainDamage		= 2;
 player_explosionDamage	= 4;
 player_chargeMaxDamage	= 30;

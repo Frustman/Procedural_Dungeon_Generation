@@ -5,10 +5,6 @@ event_inherited();
 maxhp = 50;
 hp = 50;
 
-var bbox_w = abs(bbox_left - bbox_right) / 2;
-var bbox_h = abs(bbox_top - bbox_bottom) / 2;
-
-sprite_rad = max(bbox_w, bbox_h, sqrt(bbox_w*bbox_w + bbox_h*bbox_h));
 
 state = ai_state.chase;
 stun = false;

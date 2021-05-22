@@ -3,8 +3,6 @@
 event_inherited();
 player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
-
-
 if(hp <= 0){
 	with(instance_create_layer(x,y,"Instances",Obj_corpse)){
 		spr = Spr_slime_dead;
