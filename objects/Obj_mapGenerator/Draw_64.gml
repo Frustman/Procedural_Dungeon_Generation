@@ -79,17 +79,22 @@ if(instance_exists(Obj_chr)){
 	
 //draw_text(190,20,string(global.level) + " Floor");
 
-var bulletX = 290;
+//var bulletX = 290;
+var bulletX = 10 + mapX;
 
-bulletX = bulletX * mapW / 3;
+//bulletX = bulletX;
+var bulletY = 13 * mapW;
+var heartY = 6 * mapW;
 
 draw_set_font(-1);
-draw_sprite_ext(Spr_bullet_ui,0,bulletX,50, (20 * Obj_valueContainer.bullet_maxCount + 20) / 144,2.0,0,c_white,1.0);
-draw_sprite_ext(Spr_bullet_ui,0,bulletX,10, (180) / 144,2.0,0,c_white,1.0);
+//draw_sprite_ext(Spr_bullet_frame,0,bulletX + 15,30, (12 * Obj_valueContainer.bullet_maxCount + 20) / 355,1.0,0,c_white,1.0);
+//draw_sprite_ext(Spr_bullet_ui,0,bulletX,70, (180) / 144,2.0,0,c_white,1.0);
 
 
 for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
-	global.bullet_ui[i].xpos = bulletX - 14 + 20 * i;
+	global.bullet_ui[i].xpos = bulletX - 5 * mapW + (7 * mapW) * i;
+	global.bullet_ui[i].ypos = bulletY;
+	global.bullet_ui[i].scale = mapW;
 }
 
 //draw_sprite_ext(Spr_up_side,0,deviceWidth / 2,deviceHeight + 30, deviceWidth / 480,1,0,c_white,1.0);
@@ -99,13 +104,19 @@ for(var i = 0; i < Obj_valueContainer.player_maxheart div 2; i++){
 	if(Obj_valueContainer.player_heart - (i+1) * 2 >= 0) idx = 0;
 	else if(Obj_valueContainer.player_heart - (i+1) * 2 == -1) idx = 1;
 	else idx = 2;
-	draw_sprite(Spr_heart_ui,idx,bulletX + 10 + 32 * i, 20);
+	draw_sprite_ext(Spr_heart_ui,idx,bulletX + 3 * mapW + 16 * mapW * i, heartY,mapW,mapW,0,c_white,1);
 }
 
 for(var i = 0; i < Obj_valueContainer.player_maxshield div 2; i++){
-	var _idx;
+	var idx;
 	if(Obj_valueContainer.player_shield - (i+1) * 2 >= 0) _idx = 0;
 	else if(Obj_valueContainer.player_shield - (i+1) * 2 == -1) _idx = 1;
-	else _idx = 2;
-	draw_sprite(Spr_shield_ui,_idx,bulletX + 10 + 32 * (Obj_valueContainer.player_maxheart div 2) + 32 * i, 20);
+	else idx = 2;
+	draw_sprite_ext(Spr_shield_ui,idx,bulletX + 3 * mapW + 16 * mapW * (Obj_valueContainer.player_maxheart div 2) + 16 * mapW * i, heartY,mapW,mapW,0,c_white,1);
+}
+
+if(Obj_valueContainer.boss_exist == true){
+	draw_sprite_ext(Spr_boss_frame,0,deviceWidth / 2 - 348,bosshpY,2.0,2.0,0,c_white,1);
+	var hpper = Obj_valueContainer.boss_id.hp / Obj_valueContainer.boss_id.maxhp;
+	draw_sprite_ext(Spr_boss_hpbar,0,deviceWidth / 2 - 348,bosshpY,hpper * (348 * 2 - 22) / 584,1.0,0,c_white,1);
 }

@@ -23,6 +23,7 @@ texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
 maxhp = 20;
 hp = 20;
 
+
 ac_cnt = 0;
 
 xscale = 1;
@@ -34,8 +35,10 @@ width = abs(bbox_left - bbox_right)*3/5;
 hit = false;
 knuckback = false;
 in_sight = false;
+stun = false;
 state_change = true;
 state = states.idle;
+boss = false;
 
 anim_maxIndex = image_number;
 anim_index = 0;

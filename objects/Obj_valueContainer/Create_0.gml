@@ -39,6 +39,9 @@ player_maxshield		= 4;
 
 player_shieldregen		= 320;
 
+boss_exist				= false;
+boss_id					= noone;
+
 
 player_itemCount = 0;
 player_itemList = ds_list_create();

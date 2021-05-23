@@ -96,9 +96,17 @@ if(!generated){
 
 randomize();
 if(generated && instance_exists(Obj_chr)){
+	if(Obj_valueContainer.boss_exist == true){
+		mapW_target = 0;
+		mapH_target = 0;
+		
+		bosshpY = lerp(bosshpY, deviceHeight - 100, 0.1);
+	}
 	if(mini_resize == true){
 		mapW = lerp(mapW, mapW_target, 0.1);
 		mapH = lerp(mapH, mapH_target, 0.1);
+
+		mapX = 90 * mapW;	
 		
 		if(mapW == mapW_target) mini_resize = false;
 	}
