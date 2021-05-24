@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(hit == false){
 	hit = true;
-	alarm[9] = 5;
+	alarm[9] = 6;
 	
 	_damage = other.damage div 2;
 	if(crit){

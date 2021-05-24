@@ -1,9 +1,16 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 enum ai_state{
+	stop,
+	wandering,
 	chase,
 	strafe,
 	backward
+};
+
+enum state_machine{
+	wander,
+	fight
 };
 
 function Scr_check_state_ai(range, state){

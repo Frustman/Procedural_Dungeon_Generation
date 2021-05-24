@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-knuckback = false;
-dx = 0;
-dy = 0;
+alarm[0] = 600;
+spawnX = x;
+spawnY = y;

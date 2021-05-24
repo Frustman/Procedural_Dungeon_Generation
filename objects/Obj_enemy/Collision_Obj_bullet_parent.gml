@@ -16,7 +16,8 @@ if((other.cusion_cnt == 0 || (other.cusion_cnt != 0 && other.target == id)) && o
 	}
 	hit = true;
 	ac_cnt = 0;
-	alarm[9] = 10;
+	alarm[9] = 6;
+	knuckback = true;
 
 	angle = other.image_angle;
 	

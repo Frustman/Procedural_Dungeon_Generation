@@ -2,7 +2,8 @@
 // You can write your code in this editor
 if(!hit){
 	hit = true;
-	alarm[9] = 10;
+	alarm[9] = 6;
+	knuckback = true;
 	
 	crit_chance = Obj_valueContainer.critical_chance;
 	var _damage = other.damage;

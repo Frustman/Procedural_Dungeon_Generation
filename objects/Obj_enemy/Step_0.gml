@@ -12,21 +12,16 @@ for(var i = -1;i < 2; i++){
 	}
 	if(in_sight) break;
 }
+
 if(knuckback){
-	dx = lengthdir_x(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180);
-	dy = lengthdir_y(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180);
-} else {
-	dx = 0;
-	dy = 0;
-}
-if(stun){
-	path_end();	
+	Scr_force_update([lengthdir_x(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180),lengthdir_y(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180)]);
+	knuckback = false;
 }
 
 if(hit){
 	ac_cnt++;
 	var _channel = animcurve_get_channel(ac_hit_scale, 0);
-	var _val = animcurve_channel_evaluate(_channel, ac_cnt / 10);
+	var _val = animcurve_channel_evaluate(_channel, ac_cnt / 6);
 	xscale = sign(xscale) * _val;
 	yscale = _val;
 } else {
