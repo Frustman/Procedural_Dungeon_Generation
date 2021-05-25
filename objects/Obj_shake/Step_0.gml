@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-shake_cnt++;
+shake_cnt += global.timeScale;
 if(shake_cnt > shake_duration){
 	shake_cnt = shake_duration;
 }

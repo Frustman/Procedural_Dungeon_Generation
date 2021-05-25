@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(!recur)	cnt++;
-else cnt--;
+if(!recur)	cnt += global.timeScale;
+else cnt -= global.timeScale;
 
 var _channel_E = animcurve_get_channel(ac_exponential, 0);
 var _channel_S = animcurve_get_channel(ac_item_sequence, 0);

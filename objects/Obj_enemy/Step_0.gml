@@ -14,12 +14,12 @@ for(var i = -1;i < 2; i++){
 }
 
 if(knuckback){
-	Scr_force_update([lengthdir_x(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180),lengthdir_y(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180)]);
+	Scr_force_update([global.timeScale * lengthdir_x(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180),global.timeScale * lengthdir_y(2,point_direction(x,y,Obj_chr.x,Obj_chr.y) - 180)]);
 	knuckback = false;
 }
 
 if(hit){
-	ac_cnt++;
+	ac_cnt += global.timeScale;
 	var _channel = animcurve_get_channel(ac_hit_scale, 0);
 	var _val = animcurve_channel_evaluate(_channel, ac_cnt / 6);
 	xscale = sign(xscale) * _val;
@@ -32,7 +32,7 @@ if(hit){
 anim_maxIndex = image_number;
 
 if(anim_index < (anim_maxIndex) * anim_fps){
-	anim_index++;
+	anim_index += global.timeScale;
 } else{
 	anim_index = 0;
 }

@@ -1,11 +1,13 @@
-moveSpeed = 2;
-dashSpeed = 2;
+moveSpeed = 2 * global.timeScale;
+dashSpeed = 2 * global.timeScale;
 
 hand_x = 1.0;
 
 charge = 0;
 
 god = false;
+
+justdodge = false;
 
 shootX = x;
 shootY = y;

@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.level			= 1;
+global.timeScale		= 1;
 
 player_maxhp			= 30;
 player_hp				= 30;

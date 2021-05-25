@@ -56,19 +56,19 @@ angle = Obj_controller.AttackDirection;
 anim_maxIndex = image_number;
 
 if(anim_index < (anim_maxIndex) * anim_fps){
-	anim_index++;
-	if(shoot) anim_index++;
+	anim_index += global.timeScale;
+	if(shoot) anim_index += global.timeScale;
 } else{
 	anim_index = 0;
 }
 
 if(dash){
-	dashSpeed -= 0.4;
+	dashSpeed -= 0.4 * global.timeScale;
 	if(dashSpeed < 0) dashSpeed = 0;
 	if(random(1) < 0.4){
 		instance_create_layer(x,y+8,"sort_end",Obj_dust);
 	}
-	Scr_force_update([dx,dy]);
+	Scr_force_update([dx * global.timeScale,dy * global.timeScale]);
 }
 
 if(sign(dx) > 0){
@@ -82,7 +82,7 @@ else if(sign(dx) < 0){
 
 if(Obj_controller.move){
 	state = "move";
-	if(!dash) Scr_force_update([dx,dy]);
+	if(!dash) Scr_force_update([dx * global.timeScale,dy * global.timeScale]);
 } else{
 	state = "idle";
 }

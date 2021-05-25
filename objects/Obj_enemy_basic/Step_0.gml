@@ -42,17 +42,17 @@ if(hp <= 0){
 if(stateMachine == state_machine.wander){
 	
 	
-	if(state != ai_state.stop) moveSpeed = lerp(moveSpeed, 0.3, random(0.05) + 0.07);
+	if(state != ai_state.stop) moveSpeed = lerp(moveSpeed, 0.3, random(0.05) + 0.07) * global.timeScale;
 	else moveSpeed = 0;
 
 	if(point_distance(x,y,spawnX,spawnY) >= spawnRadius){
-		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY),0.1);
+		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY),0.1 * global.timeScale);
 	}
 	moveAngle += Scr_perlin_noise_1d(seed + current_time / 100) * 2;
 	motion_set(moveAngle,moveSpeed);
 
 	if(instance_place(x + lengthdir_x(10,moveAngle), y + lengthdir_y(10,moveAngle),Obj_wall)){
-		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY), 0.1);
+		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY), 0.1 * global.timeScale);
 	}
 	
 	
@@ -60,15 +60,16 @@ if(stateMachine == state_machine.wander){
 } else if(stateMachine== state_machine.fight){
 	
 	
-	contextVal++;
-	attackGage++;
+	contextVal += global.timeScale;
+	attackGage += global.timeScale;
 
 	if(attackGage > attackMaxGage){
 		if(player_dist <= attackRange){
-			/*with(instance_create_layer(x,y,"sort_start",Obj_projectile_slime)){
+			with(instance_create_layer(x,y,"sort_start",Obj_projectile_slime)){
 				motion_set(point_direction(x,y,Obj_chr.x,Obj_chr.y + 12),2);
+				dir = point_direction(x,y,Obj_chr.x,Obj_chr.y + 12);
 				image_angle = point_direction(x,y,Obj_chr.x,Obj_chr.y + 12);
-			}*/	
+			}
 		}
 		attackGage = 0;
 	}
@@ -206,8 +207,8 @@ if(stateMachine == state_machine.wander){
 	/*if(moveDir > 360) moveDir -= 360;
 	if(moveDir < 0) moveDir = 360;
 	moveDir = lerp(moveDir, dirGoal, 0.1);*/
-	if(state == ai_state.backward) moveSpeed  = 1;
-	else moveSpeed = 0.6;
+	if(state == ai_state.backward) moveSpeed  = 1 * global.timeScale;
+	else moveSpeed = 0.6 * global.timeScale;
 
 	Scr_force_update([lengthdir_x(moveSpeed,force_dir), lengthdir_y(moveSpeed, force_dir)]);
 	

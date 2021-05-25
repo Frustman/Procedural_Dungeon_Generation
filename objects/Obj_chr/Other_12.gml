@@ -2,6 +2,13 @@
 // You can write your code in this editor
 
 alarm[0] = 62;
+justdodge = true;
+mask_index = Spr_chr_msk_just;
+alarm[9] = 5;
+	Scr_shake(0,1,0,20);
+	global.timeScale = 0.3;
+	Scr_slow_motion();
+
 anim_index = 0;
 dashDir = other.directionBox;
 dashSpeed = 8;

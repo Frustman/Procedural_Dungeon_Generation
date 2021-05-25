@@ -15,6 +15,7 @@ texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
 maxhp = 20;
 hp = 20;
 
+image_speed = global.timeScale;
 
 ac_cnt = 0;
 

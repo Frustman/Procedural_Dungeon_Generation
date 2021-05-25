@@ -3,7 +3,7 @@
 
 image_xscale = sign(hspd);
 
-vspd += grav;
+vspd += grav * global.timeScale;
 
-x += hspd;
-y += vspd;
+x += hspd * global.timeScale;
+y += vspd * global.timeScale;

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(!god){
+if(god == false && justdodge = false && dash == false){
 	hit = true;
 	anim_index = 3;	
 	//Scr_shake(0.3,0.2,2,30);

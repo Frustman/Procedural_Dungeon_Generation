@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if(anim_index < (anim_maxIndex) * anim_fps){
-	anim_index++;
+	anim_index += global.timeScale;
 } else{
 	anim_index = 0;
 }

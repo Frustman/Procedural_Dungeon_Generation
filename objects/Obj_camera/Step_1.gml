@@ -23,8 +23,8 @@ else{
 var view_width = camera_get_view_width(view_camera[0]);
 var view_height = camera_get_view_height(view_camera[0]);
 
- new_width = lerp(view_width, cam_zoom * cam_width, rate);
- new_height = lerp(view_height, cam_zoom * cam_height, rate);
+ new_width = lerp(view_width, cam_zoom * cam_width, rate * global.timeScale);
+ new_height = lerp(view_height, cam_zoom * cam_height, rate * global.timeScale);
 
 camera_set_view_size(view_camera[0], new_width, new_height);
 
@@ -72,8 +72,8 @@ if(instance_exists(Obj_chr)){
 }*/
 
 
-x += (targetX - x)/7;
-y += (targetY - y)/7;
+x += (targetX - x) / 7 * global.timeScale;
+y += (targetY - y) / 7 * global.timeScale;
 
 /*x = round(x);
 y = round(y);*/

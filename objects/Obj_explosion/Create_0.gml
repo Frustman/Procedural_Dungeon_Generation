@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+image_speed = global.timeScale;
+
 with(Obj_shader){
 	var new_wave = ds_list_create();
 	new_wave[|waveparam.xx]		= other.x;

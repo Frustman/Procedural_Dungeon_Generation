@@ -3,6 +3,6 @@
 
 width_val = animcurve_channel_evaluate(channel_w, cnt / eff_length) * size;
 height_val = animcurve_channel_evaluate(channel_h, cnt / eff_length) * size;
-cnt++;
+cnt += global.timeScale;
 
 if(cnt > eff_length) instance_destroy(self);

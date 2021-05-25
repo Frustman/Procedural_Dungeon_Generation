@@ -12,6 +12,8 @@ crit = false;
 //alarm[1] = 10;
 alarm[0] = 1;
 
+image_speed = global.timeScale;
+
 
 anim_idx = 0;
 real_idx = 0;
