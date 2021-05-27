@@ -10,12 +10,12 @@ if(god == false && justdodge = false && dash == false){
 	if(Obj_valueContainer.player_shield > 0){
 		Obj_valueContainer.player_shield--;
 		with(Obj_valueContainer){
-			alarm[0] = player_shieldregen;	
+			Alarm[0] = player_shieldregen;	
 		}
 	} else Obj_valueContainer.player_heart--;
 	god = true;
-	alarm[8] = 1;
-	alarm[5] = 14;
-	alarm[6] = 120;
-	alarm[7] = 5;
+	Alarm[8] = 1;
+	Alarm[5] = 14;
+	Alarm[6] = 120;
+	Alarm[7] = 5;
 }

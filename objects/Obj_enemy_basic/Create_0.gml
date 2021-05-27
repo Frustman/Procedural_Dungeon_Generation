@@ -71,7 +71,7 @@ force[1] = 0;
 
 #region process
 
-alarm[0] = 600;
-alarm[1] = 45;
+Alarm[0] = 600;
+Alarm[1] = 45;
 
 #endregion

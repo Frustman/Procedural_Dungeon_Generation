@@ -3,4 +3,4 @@
 if(random(1) <= 0.3){
 	relax = !relax;
 }
-alarm[1] = 45;
+Alarm[1] = 45;

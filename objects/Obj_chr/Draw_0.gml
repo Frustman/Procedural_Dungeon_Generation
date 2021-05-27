@@ -3,10 +3,15 @@
 real_index = anim_index div anim_fps;
 //draw_sprite(Spr_wallM,0,(x div 64) * 64, ((y + 8) div 64) * 64);
 //shader_set(Sha_sepia);
+
 if(AttackTarget == noone){
 	TargetAngle = angle;	
 }
 if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));
+
+image_xscale = (abs(image_xscale) > 0) ? image_xscale : 1.0;
+hand_x = (abs(hand_x) > 0) ? hand_x : 1.0;
+
 if(dash){
 	sprite_index = Spr_chr_dash;
 	anim_fps = 7;
@@ -27,7 +32,7 @@ if(dash){
 
 if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;
-	gun_index++;
+	gun_index += global.timeScale;
 	/*
 	if(AttackTarget != noone && instance_exists(AttackTarget)){
 		if(x >= AttackTarget.x){

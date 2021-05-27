@@ -42,8 +42,8 @@ if(instance_exists(Obj_chr)){
 	var dir = point_direction(roomX,roomY,Obj_chr.x,Obj_chr.y);
 	var len = point_distance(roomX,roomY,Obj_chr.x,Obj_chr.y);
 	
-	var targetX = roomX + lengthdir_x(len / 7 * 6, dir);
-	var targetY = roomY + lengthdir_y(len / 7 * 6, dir);
+	targetX = roomX + lengthdir_x(len / 7 * 6, dir);
+	targetY = roomY + lengthdir_y(len / 7 * 6, dir);
 	
 	targetX = min(targetX, roomX + DG_WIDTH * CELL_WIDTH / 2 - view_width / 2);
 	targetX = max(targetX, roomX - DG_WIDTH * CELL_WIDTH / 2 + view_width / 2);
@@ -53,12 +53,12 @@ if(instance_exists(Obj_chr)){
 	
 	cam_zoom = 1 - zoom_shake;
 } else if(global.paused == true){
-	var targetX = x;
-	var targetY = y;
+	targetX = x;
+	targetY = y;
 }
 else{
-	var targetX = 0;
-	var targetY = 0;
+	targetX = 0;
+	targetY = 0;
 }
 /*
 //version 3

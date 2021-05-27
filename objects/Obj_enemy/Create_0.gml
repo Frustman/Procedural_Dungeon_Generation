@@ -42,3 +42,8 @@ Scr_update_depth(x,y);
 
 dx = 0;
 dy = 0;
+
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}

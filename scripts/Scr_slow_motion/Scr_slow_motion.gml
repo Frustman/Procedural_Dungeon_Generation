@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function Scr_slow_motion(){
+function Scr_slow_motion(time){
+	global.timeScale = time;
 	with(all){
 		/*for(var i = 0 ; i < 12; i++){
 			alarm[i] = alarm[i] / global.timeScale;	

@@ -2,15 +2,17 @@
 /// @param {real} angle
 /// @param {real} zoom
 
-function Scr_shake(angle, zoom, shift, duration) {
-	if(!instance_exists(Obj_shake)) exit;
+function Scr_shake(_angle, _zoom, _shift, _duration) {
+	with(instance_create_layer(0,0,"gui",Obj_shake)){
 	
-	Obj_shake.seed = random(1000);
+	seed = random(1000);
 
-	Obj_shake.max_roll = angle;
-	Obj_shake.zoom = zoom;
-	Obj_shake.max_offset = shift;
+	max_roll = _angle;
+	zoom = _zoom;
+	max_offset = _shift;
 	
-	Obj_shake.shake_cnt = 0;
-	Obj_shake.shake_duration = duration;
+	shake_cnt = 0;
+	shake_duration = _duration;
+	
+	}
 }

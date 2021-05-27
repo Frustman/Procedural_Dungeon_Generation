@@ -7,3 +7,13 @@ var _val = animcurve_channel_evaluate(_channel, cnt / 30);
 y = curY - _val * up_speed * global.timeScale;
 image_xscale = 0.7 - power(1 - cnt/30, 5);
 image_yscale = 0.7 - power(1 - cnt/30, 5);
+
+
+for(var i = 0; i < 12; i++){
+	if(Alarm[i] > 0){
+		Alarm[i] -= global.timeScale;	
+	} else if(Alarm[i] <= 0 && Alarm[i] > ALARMINACTIVE){
+		Alarm[i] = ALARMINACTIVE;
+		event_perform(ev_alarm,i)
+	}
+}

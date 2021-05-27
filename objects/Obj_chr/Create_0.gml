@@ -55,6 +55,10 @@ AttackTarget = noone;
 
 ray_map = -1;
 
-	with(Obj_camera){
-		event_perform(ev_other,ev_user0);	
-	}
+with(Obj_camera){
+	event_perform(ev_other,ev_user0);	
+}
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}

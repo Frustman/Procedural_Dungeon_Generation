@@ -4,5 +4,9 @@ dir = 0;
 
 ran = irandom(1);
 
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}
+
 index = 0;
-alarm[0] = 10;
+Alarm[0] = 10;

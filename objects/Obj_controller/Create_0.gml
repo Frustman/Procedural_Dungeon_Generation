@@ -15,6 +15,11 @@ dashCenterX = AttackCenterX + 90;
 dashCenterY = AttackCenterY - 160;
 dashRadius = 32;
 
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}
+
 attack = false;
 
 infoCenterX = deviceWidth - 64;

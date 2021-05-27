@@ -11,7 +11,7 @@ with(target){
 	}
 	hp -= _dmg;
 	hit = true;
-	alarm[9] = 5;
+	Alarm[9] = 5;
 	var damage_eff = instance_create_layer(x + random(20) - 10,y + random(20) - 15,"sort_start",Obj_damage_eff);
 	with(damage_eff){
 		critical = _critical;

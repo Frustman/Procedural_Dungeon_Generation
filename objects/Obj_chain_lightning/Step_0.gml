@@ -1,8 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-index += global.timeScale;
-depth = -500;
-
 
 for(var i = 0; i < 12; i++){
 	if(Alarm[i] > 0){

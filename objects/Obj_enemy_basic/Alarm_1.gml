@@ -4,4 +4,4 @@ if(random(1) <= 0.3){
 	if(state == ai_state.wandering) state = ai_state.stop;
 	else state = ai_state.wandering;
 }
-alarm[1] = 45;
+Alarm[1] = 45;

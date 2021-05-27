@@ -29,8 +29,8 @@ dx = 0;
 dy = 0;
 
 relax = false;
-alarm[1] = 45;
-alarm[2] = 600;
+Alarm[1] = 45;
+Alarm[2] = 600;
 
 spawn_radius = 90;
 

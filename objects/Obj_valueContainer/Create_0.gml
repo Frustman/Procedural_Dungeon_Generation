@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
 global.level			= 1;
 global.timeScale		= 1;
 
@@ -46,3 +48,7 @@ boss_id					= noone;
 
 player_itemCount = 0;
 player_itemList = ds_list_create();
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}

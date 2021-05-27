@@ -20,6 +20,9 @@ dg_trim = 6;
 
 zoom_shake = 0;
 
+targetX = x;
+targetY = y;
+
 globalvar screenX;
 globalvar screenY;
 globalvar screenW;

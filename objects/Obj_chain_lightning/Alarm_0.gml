@@ -20,4 +20,4 @@ if(!ds_list_empty(list)){
 		instance_destroy(self);	
 	}
 }
-alarm[0] = 7;
+Alarm[0] = 7;

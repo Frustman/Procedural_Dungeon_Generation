@@ -2,6 +2,13 @@
 #macro DG_WIDTH 23
 #macro DG_HEIGHT 19
 
+#macro ALARMINACTIVE -100
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}
+
+
 randomize();
 
 deviceWidth = display_get_width() * 0.75;
@@ -12,7 +19,7 @@ display_set_gui_size(deviceWidth,deviceHeight);
 
 display_reset(8, true);
 
-alarm[0] = 1;
+Alarm[0] = 1;
 
 
 global.paused = false;
@@ -123,7 +130,6 @@ dir_list[3][0] = 0;
 dir_list[3][1] = -1;
 
 mini_resize = false;
-
 
 mapW_target = 2.0;
 mapH_target = 2.0;

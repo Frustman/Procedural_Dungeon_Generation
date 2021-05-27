@@ -49,7 +49,7 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = dash_delay;
+				Alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(dashCenterX, dashCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= dashRadius){
@@ -58,7 +58,7 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = dash_delay;
+				Alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(infoCenterX, infoCenterY, device_x[!joyIndex], device_y[!joyIndex]) <= infoRadius){
@@ -67,7 +67,7 @@ if(clickOne && clickTwo){
 					event_perform(ev_other,ev_user0);
 				}
 				can_info = false;
-				alarm[2] = 5;
+				Alarm[2] = 5;
 			}
 		}
 	} else{
@@ -81,7 +81,7 @@ if(clickOne && clickTwo){
 						event_perform(ev_other,ev_user2);
 					}
 					can_dash = false;
-					alarm[1] = dash_delay;
+					Alarm[1] = dash_delay;
 				}
 			}
 			if(point_distance(infoCenterX, infoCenterY, device_x[i], device_y[i]) <= infoRadius){
@@ -90,7 +90,7 @@ if(clickOne && clickTwo){
 						event_perform(ev_other,ev_user0);
 					}
 					can_info = false;
-					alarm[2] = 5;
+					Alarm[2] = 5;
 				}
 			}
 		}
@@ -107,7 +107,7 @@ if(clickOne){
 					event_perform(ev_other,ev_user2);
 				}
 				can_dash = false;
-				alarm[1] = dash_delay;
+				Alarm[1] = dash_delay;
 			}
 		}
 		if(point_distance(infoCenterX, infoCenterY, device_x[0], device_y[0]) <= infoRadius){
@@ -116,7 +116,7 @@ if(clickOne){
 					event_perform(ev_other,ev_user0);
 				}
 				can_info = false;
-				alarm[2] = 5;
+				Alarm[2] = 5;
 			}
 		}
 	}
@@ -130,7 +130,7 @@ if(attackIndex != -1){
 			if(can_attack && !Obj_chr.dash){
 				with(Obj_chr){
 					event_perform(ev_other,ev_user1);
-					other.alarm[0] = bullet_delay;
+					other.Alarm[0] = bullet_delay;
 				}
 				can_attack = false;
 			}
@@ -177,5 +177,15 @@ if(joyIndex != -1){
 		boxCenterY = device_press_y[joyIndex];
 		distanceBox = point_distance(boxCenterX, boxCenterY, device_mouse_x_to_gui(joyIndex), device_mouse_y_to_gui(joyIndex));
 		directionBox = point_direction(boxCenterX, boxCenterY, device_mouse_x_to_gui(joyIndex), device_mouse_y_to_gui(joyIndex));
+	}
+}
+
+
+for(var i = 0; i < 12; i++){
+	if(Alarm[i] > 0){
+		Alarm[i] -= global.timeScale;	
+	} else if(Alarm[i] <= 0 && Alarm[i] > ALARMINACTIVE){
+		Alarm[i] = ALARMINACTIVE;
+		event_perform(ev_alarm,i)
 	}
 }

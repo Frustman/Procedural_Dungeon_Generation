@@ -5,7 +5,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	audio_play_sound(Pistol_Shot_02,0,false);
 	//instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
 	shoot = true;
-	alarm[1] = 20;
+	Alarm[1] = 20;
 	
 	AttackTarget = Scr_interpolate_aim(x,y,angle);
 	gun_index = 0;
@@ -75,6 +75,6 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	if(Obj_valueContainer.bullet_count == 0){
 		reload = true;
 		Obj_valueContainer.bullet_count = Obj_valueContainer.bullet_maxCount;
-		alarm[3] = 90;
+		Alarm[3] = 90;
 	}
 }

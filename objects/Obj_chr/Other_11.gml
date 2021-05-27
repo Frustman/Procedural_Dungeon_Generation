@@ -49,7 +49,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		hspd = -sign(lengthdir_x(1,_angle)) * random(3);
 	}
 	shoot = true;
-	alarm[1] = 20;
+	Alarm[1] = 20;
 	if(Obj_valueContainer.player_flameShot == true){
 		with(instance_create_layer(x,y,"sort_end",Obj_flame_pen_eff)){
 			damage = 5;
@@ -88,6 +88,6 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	if(Obj_valueContainer.bullet_count == 0){
 		reload = true;
 		Obj_valueContainer.bullet_count = Obj_valueContainer.bullet_maxCount;
-		alarm[3] = 90;
+		Alarm[3] = 90;
 	}
 }

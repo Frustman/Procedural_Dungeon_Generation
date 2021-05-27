@@ -3,4 +3,10 @@
 list = -1;
 idx = 0;
 crit = false;
-alarm[0] = 1;
+
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}
+
+Alarm[0] = 1;
