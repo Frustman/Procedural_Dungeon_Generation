@@ -23,6 +23,8 @@ zoom_shake = 0;
 targetX = x;
 targetY = y;
 
+targetTimeScale = 1.0;
+
 globalvar screenX;
 globalvar screenY;
 globalvar screenW;

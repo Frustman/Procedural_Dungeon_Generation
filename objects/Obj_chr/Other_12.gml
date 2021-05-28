@@ -6,8 +6,9 @@ justdodge = true;
 mask_index = Spr_chr_msk_just;
 Alarm[9] = 5;
 	Scr_shake(0,1,0,62);
-	Scr_shake(10,0,0,30);
-	Scr_slow_motion(0.1);
+//Scr_shake(0,0,30,30);
+	//Scr_slow_motion(0.2);
+	Obj_camera.targetTimeScale = 0.2;
 
 anim_index = 0;
 dashDir = other.directionBox;

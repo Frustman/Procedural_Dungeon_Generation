@@ -127,7 +127,7 @@ if(attackIndex != -1){
 			AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
 			AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
 			Obj_chr.angle = AttackDirection;
-			if(can_attack && !Obj_chr.dash){
+			if(can_attack){
 				with(Obj_chr){
 					event_perform(ev_other,ev_user1);
 					other.Alarm[0] = bullet_delay;

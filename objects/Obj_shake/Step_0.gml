@@ -12,11 +12,11 @@ _val = animcurve_channel_evaluate(_channel, shake_cnt / shake_duration);
 //_offsetY = Scr_perlin_noise_1d(shake_cnt / 100 + seed + 100) * _val * max_offset;
 //_offsetR = Scr_perlin_noise_1d(shake_cnt / 100 + seed + 1000) * _val * max_roll;
 
-_offsetX = Scr_perlin_noise_1d(shake_cnt / 100 + seed) * max_offset;
-_offsetY = Scr_perlin_noise_1d(shake_cnt / 100 + seed + 100) * max_offset;
-_offsetR = Scr_perlin_noise_1d(shake_cnt / 100 + seed + 1000) * max_roll;
+_offsetX = Scr_perlin_noise_1d(shake_cnt * 2 + seed) * max_offset * _val;
+_offsetY = Scr_perlin_noise_1d(shake_cnt * 2 + seed + 100) * max_offset * _val;
+_offsetR = Scr_perlin_noise_1d(shake_cnt * 2 + seed + 1000) * max_roll * _val;
 
-if(max_offset > 0) camera_set_view_pos(view_camera[0], Obj_camera.targetX - camera_get_view_width(view_camera[0]) / 2 + (_offsetX / (1 + zoom * _val)), Obj_camera.targetY  - camera_get_view_height(view_camera[0]) / 2 + (_offsetY / (1 + zoom * _val)));
+if(max_offset > 0) camera_set_view_pos(view_camera[0], Obj_camera.targetX - camera_get_view_width(view_camera[0]) / 2 + _offsetX, Obj_camera.targetY  - camera_get_view_height(view_camera[0]) / 2 + _offsetY);
 
 if(max_roll > 0) camera_set_view_angle(view_camera[0], _offsetR);
 if (zoom > 0) Obj_camera.zoom_shake = zoom * _val;

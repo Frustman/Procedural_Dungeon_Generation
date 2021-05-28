@@ -3,7 +3,7 @@
 
 randomize();
 
-seed = random(100);
+seed = random(1000);
 
 max_roll = 3;
 max_offset = 20;
