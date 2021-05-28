@@ -57,7 +57,6 @@ anim_maxIndex = image_number;
 
 if(anim_index < (anim_maxIndex) * anim_fps){
 	anim_index += global.timeScale;
-	if(shoot) anim_index += global.timeScale;
 } else{
 	anim_index = 0;
 }

@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(Obj_valueContainer.bullet_count > 0 && !reload){
-	Scr_shake(2,0,3,15);
+	Scr_shake(5,0,6,15);
 	audio_play_sound(Pistol_Shot_02,0,false);
 	
 	AttackTarget = Scr_interpolate_aim(x,y,angle);

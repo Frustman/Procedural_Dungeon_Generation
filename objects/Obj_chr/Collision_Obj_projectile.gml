@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(god == false && justdodge = false && dash == false){
 	hit = true;
-	anim_index = 3;	
+	anim_index = 2;	
 	//Scr_shake(0.3,0.2,2,30);
 	var fx = lengthdir_x(3,other.image_angle);
 	var fy = lengthdir_y(3,other.image_angle);
@@ -15,7 +15,6 @@ if(god == false && justdodge = false && dash == false){
 	} else Obj_valueContainer.player_heart--;
 	god = true;
 	Alarm[8] = 1;
-	Alarm[5] = 14;
+	Alarm[5] = 25;
 	Alarm[6] = 120;
-	Alarm[7] = 5;
 }

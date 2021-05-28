@@ -18,6 +18,7 @@ if(dash){
 	draw_sprite_ext(Spr_chr_dash,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 }else{
 	if(hit){
+		anim_fps = 10;
 		sprite_index = Spr_chr_hurt;
 		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state == "idle"){
