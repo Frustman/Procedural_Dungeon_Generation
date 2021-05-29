@@ -11,3 +11,5 @@ for(var i = 0; i < 12; i++){
 		event_perform(ev_alarm,i)
 	}
 }
+
+motion_set(dir,spd * global.timeScale);

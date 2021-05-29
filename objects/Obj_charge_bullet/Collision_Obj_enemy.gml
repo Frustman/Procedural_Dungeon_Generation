@@ -49,7 +49,9 @@ if(other.id != par && (cusion_cnt == 0 || (cusion_cnt != 0 && target == other.id
 				damage = (other.damage div 2 == 0) ? 1 : other.damage div 2;
 				image_xscale = other.image_xscale;
 				image_yscale = other.image_yscale;
-				motion_set(other.sharp_dir,7);
+				dir = other.sharp_dir;
+				spd = 7;
+				motion_set(dir,spd * global.timeScale);
 				image_angle = other.sharp_dir;
 				
 				chainDamage = Obj_valueContainer.player_chainDamage;

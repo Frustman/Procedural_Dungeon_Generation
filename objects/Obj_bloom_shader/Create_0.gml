@@ -25,15 +25,54 @@ u_sigma					= shader_get_uniform(shader_blur, "sigma");
 u_blur_vector			= shader_get_uniform(shader_blur, "blur_vector");
 u_texel_size			= shader_get_uniform(shader_blur, "texel_size");
 
+shader_blur_app			= Sha_blur_app;
+u_blurA_steps			= shader_get_uniform(shader_blur_app, "blur_steps");
+u_blurA_vector			= shader_get_uniform(shader_blur_app, "blur_vector");
+u_sigma_app				= shader_get_uniform(shader_blur_app, "sigma");
+u_texelA_size			= shader_get_uniform(shader_blur_app, "texel_size");
+u_app_wh				= shader_get_uniform(shader_blur_app, "app_wh");
+
 shader_bloom_blend		= Sha_bloom_blend;
 u_bloom_intensity		= shader_get_uniform(shader_bloom_blend, "bloom_intensity");
 u_bloom_darken			= shader_get_uniform(shader_bloom_blend, "bloom_darken");
 u_bloom_saturation		= shader_get_uniform(shader_bloom_blend, "bloom_saturation");
 u_bloom_texture			= shader_get_sampler_index(shader_bloom_blend, "bloom_texture");
 
+
+sprite_wave				= Spr_normal_map; //_256
+
+shader_wave				= Sha_distortion_wave;
+u_fx_strength			= shader_get_uniform(shader_wave, "fx_strength");
+u_aspect				= shader_get_uniform(shader_wave, "aspect");
+u_aberration			= shader_get_uniform(shader_wave, "aberration");
+u_tex_waves				= shader_get_sampler_index(shader_wave, "tex_waves");
+aspect					= camera_get_view_width(view_camera[0]) / camera_get_view_height(view_camera[0]);
+tex_waves				= -1;
+
+// wave parameters:
+wave_life				= 20;	// life in seconds
+wave_scale_max			= 800 / sprite_get_width(sprite_wave);		// size in pixels in room space
+enum waveparam {xx, yy, age, scale, alpha, life, maxScale}				// should be in unreferenced script rather
+
+// create waves list which will hold lists for each active wave.
+// those lists will be created in step event on click
+// and will age and be deleted in step event as well
+list_of_waves			= ds_list_create();
+
+// prepare waves surface
+srf_waves				= -1;
+srf_waves_scale			= 1/4;
+view_w					= camera_get_view_width(view_camera[0]);
+view_h					= camera_get_view_height(view_camera[0]);
+
 bloom_texture			= -1;
 srf_ping				= -1;
 srf_pong				= -1;
+srf_ping_app			= -1;
+srf_pong_app			= -1;
+srf_distortion			= -1;
+srf_bloom				= -1;
+srf_final				= -1;
 
 gui_w					= display_get_gui_width();
 gui_h					= display_get_gui_height();
@@ -44,7 +83,6 @@ app_h					= gui_h / 3;
 texel_w					= 1 / app_w;
 texel_h					= 1 / app_h;
 
-srf_final				= -1;
 
 
 blur_steps		= round(0.1 * 15) + 1;

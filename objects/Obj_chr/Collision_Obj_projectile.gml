@@ -18,3 +18,19 @@ if(god == false && justdodge = false && dash == false){
 	Alarm[5] = 25;
 	Alarm[6] = 120;
 }
+if(justdodge == true){
+	Scr_shake(0,0.5,0,62);
+	Obj_camera.targetTimeScale = 0.2;	
+	with(Obj_bloom_shader){
+		var new_wave = ds_list_create();
+		new_wave[|waveparam.xx]		= other.x;
+		new_wave[|waveparam.yy]		= other.bbox_bottom;
+		new_wave[|waveparam.age]	= 0;
+		new_wave[|waveparam.scale]	= 0;
+		new_wave[|waveparam.alpha]	= 0.5;
+		new_wave[|waveparam.life]	= 1;
+		new_wave[|waveparam.maxScale]	= 1;
+
+		ds_list_add(list_of_waves, new_wave);
+	}
+}

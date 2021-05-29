@@ -5,7 +5,6 @@ if(instance_exists(Obj_chr)){
 	instance_activate_region((DG_WIDTH * (cur_room div 10)) * CELL_WIDTH,(DG_HEIGHT * (cur_room % 10)) * CELL_HEIGHT,DG_WIDTH * CELL_WIDTH, DG_HEIGHT * CELL_HEIGHT, true);
 	instance_activate_object(Obj_shake);
 	instance_activate_object(Obj_controller);
-	instance_activate_object(Obj_shader);
 	instance_activate_object(Obj_bloom_shader);
 	instance_activate_object(Obj_valueContainer);
 	instance_activate_object(Obj_mapGenerator);

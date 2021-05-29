@@ -10,6 +10,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	AttackTarget = Scr_interpolate_aim(x,y,angle);
 	gun_index = 0;
 	TargetAngle = angle;
+	var _angle = angle;
 	
 	if(AttackTarget == noone){
 		if(sign(image_xscale) > 0){
@@ -49,10 +50,10 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	with(bullet){
 		image_xscale = 0.5 + other.charge / 100 * 0.5;
 		image_yscale = 0.5 + other.charge / 100 * 0.5;
-		var _angle;
-		_angle = other.TargetAngle;
 		damage = floor(other.charge / 100 * Obj_valueContainer.player_chargeMaxDamage);
-		motion_set(_angle,7);
+		dir = _angle;
+		spd = 7;
+		motion_set(dir,spd * global.timeScale);
 		image_angle = _angle;
 	
 		chainDamage = Obj_valueContainer.player_chainDamage;

@@ -43,7 +43,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		TargetAngle = point_direction(shootX,shootY,AttackTarget.x,AttackTarget.y);
 	}
 	
-	var _angle = TargetAngle;
+	var _angle = TargetAngle + random_range(-2,2);
 	
 	with(instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge)){
 		hspd = -sign(lengthdir_x(1,_angle)) * random(3);
@@ -55,12 +55,16 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 			damage = 5;
 			par = other.id;
 			dir = _angle;
+			spd = 7 + random(1);
+			motion_set(dir,spd * global.timeScale);
 		}
 	} else{
 		var bullet = instance_create_layer(shootX,shootY,"sort_end",Obj_bullet_eff);
 		with(bullet){
 			damage = Obj_valueContainer.player_bulletDamage;
-			motion_set(_angle,15);
+			dir = _angle;
+			spd = 7 + random(1);
+			motion_set(dir,spd * global.timeScale);
 			image_angle = _angle;
 	
 			chainDamage = Obj_valueContainer.player_chainDamage;

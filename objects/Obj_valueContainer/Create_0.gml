@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+#macro CONTAINER Obj_valueContainer
 
 global.level			= 1;
 global.timeScale		= 1;
@@ -27,6 +28,7 @@ player_penetrate		= false;
 player_flameShot		= false;
 
 game_timeScale			= 1.0;
+game_surface_blur_sigma	= false;
 
 sharp_cusionCount		= 4;
 sharp_distance			= 400;
