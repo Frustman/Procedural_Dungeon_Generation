@@ -133,13 +133,14 @@ void main()
 	
 	vec2  sample;
 	float offset_D1, offset_L, sample_weight_D1, sample_weight_D2, sample_weight_L;
-	float dis		= length(v_vPosition - app_wh) / length(vec2(0,0) - app_wh) / 2.0 * sigma;
+	float dis		= length(v_vPosition - app_wh);
+	float val	= smoothstep(0.0, length(vec2(0,0) - app_wh), dis) / 2.0 * sigma;	
 	float total_weight	= 1.0;
 	float kernel		= 2.0 * blur_steps + 1.0;
 	
 	for (offset_D1 = 1.0; offset_D1 <= (2.0 * blur_steps); offset_D1 += 2.0) {
-		sample_weight_D1	= weight(offset_D1/kernel, dis);
-		sample_weight_D2	= weight((offset_D1 + 1.0)/kernel, dis);
+		sample_weight_D1	= weight(offset_D1/kernel, val);
+		sample_weight_D2	= weight((offset_D1 + 1.0)/kernel, val);
 		sample_weight_L		= sample_weight_D1 + sample_weight_D2;
 		total_weight		+= 2.0 * sample_weight_L;
 		

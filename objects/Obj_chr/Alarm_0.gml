@@ -5,3 +5,4 @@ dashSpeed = 3;
 
 //global.timeScale = 1.0;
 Obj_camera.targetTimeScale = 1;
+CONTAINER.game_surface_blur = false;

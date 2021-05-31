@@ -87,11 +87,11 @@ var bulletY = 13 * mapW;
 var heartY = 6 * mapW;
 
 draw_set_font(-1);
-//draw_sprite_ext(Spr_bullet_frame,0,bulletX + 15,30, (12 * Obj_valueContainer.bullet_maxCount + 20) / 355,1.0,0,c_white,1.0);
+//draw_sprite_ext(Spr_bullet_frame,0,bulletX + 15,30, (12 * CONTAINER.bullet_maxCount + 20) / 355,1.0,0,c_white,1.0);
 //draw_sprite_ext(Spr_bullet_ui,0,bulletX,70, (180) / 144,2.0,0,c_white,1.0);
 
 
-for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
+for(var i = 0; i < CONTAINER.bullet_maxCount; i++){
 	global.bullet_ui[i].xpos = bulletX - 5 * mapW + (7 * mapW) * i;
 	global.bullet_ui[i].ypos = bulletY;
 	global.bullet_ui[i].scale = mapW;
@@ -99,24 +99,24 @@ for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
 
 //draw_sprite_ext(Spr_up_side,0,deviceWidth / 2,deviceHeight + 30, deviceWidth / 480,1,0,c_white,1.0);
 
-for(var i = 0; i < Obj_valueContainer.player_maxheart div 2; i++){
+for(var i = 0; i < CONTAINER.player_maxheart div 2; i++){
 	var idx;
-	if(Obj_valueContainer.player_heart - (i+1) * 2 >= 0) idx = 0;
-	else if(Obj_valueContainer.player_heart - (i+1) * 2 == -1) idx = 1;
+	if(CONTAINER.player_heart - (i+1) * 2 >= 0) idx = 0;
+	else if(CONTAINER.player_heart - (i+1) * 2 == -1) idx = 1;
 	else idx = 2;
 	draw_sprite_ext(Spr_heart_ui,idx,bulletX + 3 * mapW + 16 * mapW * i, heartY,mapW,mapW,0,c_white,1);
 }
 
-for(var i = 0; i < Obj_valueContainer.player_maxshield div 2; i++){
+for(var i = 0; i < CONTAINER.player_maxshield div 2; i++){
 	var idx;
-	if(Obj_valueContainer.player_shield - (i+1) * 2 >= 0) _idx = 0;
-	else if(Obj_valueContainer.player_shield - (i+1) * 2 == -1) _idx = 1;
+	if(CONTAINER.player_shield - (i+1) * 2 >= 0) idx = 0;
+	else if(CONTAINER.player_shield - (i+1) * 2 == -1) idx = 1;
 	else idx = 2;
-	draw_sprite_ext(Spr_shield_ui,idx,bulletX + 3 * mapW + 16 * mapW * (Obj_valueContainer.player_maxheart div 2) + 16 * mapW * i, heartY,mapW,mapW,0,c_white,1);
+	draw_sprite_ext(Spr_shield_ui,idx,bulletX + 3 * mapW + 16 * mapW * (CONTAINER.player_maxheart div 2) + 16 * mapW * i, heartY,mapW,mapW,0,c_white,1);
 }
 
-if(Obj_valueContainer.boss_exist == true){
+if(CONTAINER.boss_exist == true){
 	draw_sprite_ext(Spr_boss_frame,0,deviceWidth / 2 - 348,bosshpY,2.0,2.0,0,c_white,1);
-	var hpper = Obj_valueContainer.boss_id.hp / Obj_valueContainer.boss_id.maxhp;
+	var hpper = CONTAINER.boss_id.hp / CONTAINER.boss_id.maxhp;
 	draw_sprite_ext(Spr_boss_hpbar,0,deviceWidth / 2 - 348,bosshpY,hpper * (348 * 2 - 22) / 584,1.0,0,c_white,1);
 }

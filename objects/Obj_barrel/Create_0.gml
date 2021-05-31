@@ -9,6 +9,10 @@ penetrate = false;
 hit = false;
 
 ac_cnt = 0;
-hp = 3;
+hp = 10;
 
 Scr_update_depth(x,y);
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}

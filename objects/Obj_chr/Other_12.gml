@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-Alarm[0] = 62;
+Alarm[0] = 47;
 justdodge = true;
 mask_index = Spr_chr_msk_just;
 Alarm[9] = 5;

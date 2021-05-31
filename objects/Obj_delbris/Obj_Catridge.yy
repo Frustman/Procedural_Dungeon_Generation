@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_destructable_box_broke",
-    "path": "sprites/Spr_destructable_box_broke/Spr_destructable_box_broke.yy",
+    "name": "Spr_bullet_cat",
+    "path": "sprites/Spr_bullet_cat/Spr_bullet_cat.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,16 +24,16 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":7,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "tile",
-    "path": "folders/Objects/tile.yy",
+    "name": "bullet",
+    "path": "folders/Objects/bullet.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_delbris",
+  "name": "Obj_Catridge",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -21,6 +21,7 @@ if(god == false && justdodge = false && dash == false){
 if(justdodge == true){
 	Scr_shake(0,0.5,0,62);
 	Obj_camera.targetTimeScale = 0.2;	
+	CONTAINER.game_surface_blur = true;
 	with(Obj_bloom_shader){
 		var new_wave = ds_list_create();
 		new_wave[|waveparam.xx]		= other.x;

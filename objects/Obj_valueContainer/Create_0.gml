@@ -28,7 +28,8 @@ player_penetrate		= false;
 player_flameShot		= false;
 
 game_timeScale			= 1.0;
-game_surface_blur_sigma	= false;
+game_surface_blur_sigma	= 0;
+game_surface_blur	= false;
 
 sharp_cusionCount		= 4;
 sharp_distance			= 400;

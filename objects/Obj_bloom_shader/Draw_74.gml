@@ -92,15 +92,16 @@ surface_set_target(srf_ping_app);
 surface_reset_target();
 
 
-if(CONTAINER.game_surface_blur_sigma > 0){
+if(CONTAINER.game_surface_blur == true){
 	gpu_set_tex_filter(true);
 	shader_set(shader_blur_app);
 		shader_set_uniform_f(u_blurA_steps,		blur_steps);
 		shader_set_uniform_f(u_blurA_vector,	1, 0);
 		shader_set_uniform_f(u_texelA_size,		texel_w, texel_h);
 		shader_set_uniform_f(u_sigma_app,		CONTAINER.game_surface_blur_sigma);
-		shader_set_uniform_f(u_app_wh,			gui_w / 2, gui_h / 2);
-	
+		//shader_set_uniform_f(u_app_wh,			Obj_camera.targetX, Obj_camera.targetY);
+		shader_set_uniform_f(u_app_wh,			global.deviceWidth / 2, global.deviceHeight /2);
+	 
 		surface_set_target(srf_pong_app);
 			draw_surface(srf_ping_app, 0, 0);
 		surface_reset_target();
@@ -109,7 +110,7 @@ if(CONTAINER.game_surface_blur_sigma > 0){
 		surface_set_target(srf_ping_app);
 			draw_surface(srf_pong_app, 0, 0);
 		surface_reset_target();
-	
+	shader_reset();
 	gpu_set_tex_filter(false);
 }
 surface_set_target(srf_distortion);
