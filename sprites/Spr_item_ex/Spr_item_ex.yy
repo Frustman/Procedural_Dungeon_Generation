@@ -179,7 +179,7 @@
     "spriteId": {"name":"Spr_item_ex","path":"sprites/Spr_item_ex/Spr_item_ex.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 0.3,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

@@ -48,7 +48,7 @@ can_attack = true;
 can_info = true;
 can_dash = true;
 
-dash_delay = 30;
+dash_delay = 47;
 
 device_press_x[0] = 0;
 device_press_x[1] = 0;

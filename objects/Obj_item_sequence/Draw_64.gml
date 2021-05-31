@@ -10,9 +10,9 @@ draw_sprite_ext(Spr_letterbox,0,centerX,2 * centerY + 128 - _val_E * 128,deviceW
 draw_sprite_ext(Spr_letterbox,0,centerX, -128 + _val_E * 128,deviceWidth / 10,1.0,0,c_white,1.0);
 
 //if(cnt >= sequence_length * 2 / 5){
-	draw_set_font(Font_rumber);
+	draw_set_font(Font_ui);
 	draw_set_halign(fa_center);
-	draw_text_transformed(centerX,2 * centerY + 128 - _val_E * 128 - 90,"YOU'VE GOT " + item_name,1.0,1.0,0);
+	draw_text_transformed(centerX,2 * centerY + 128 - _val_E * 128 - 100,"YOU'VE GOT " + item_name,2.0,2.0,0);
 	draw_set_halign(fa_left);
 	draw_set_font(-1);
 //}

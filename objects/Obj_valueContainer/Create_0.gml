@@ -52,6 +52,11 @@ boss_id					= noone;
 player_itemCount = 0;
 player_itemList = ds_list_create();
 
+
+global.synergy_name = string(load_csv("synergy_name.csv"));
+global.item = string_upper(string(load_csv("item_desc.csv")));
+
+
 for(var i = 0; i < 12; i++){
 	Alarm[i] = ALARMINACTIVE;
 }
