@@ -34,24 +34,11 @@ if(dash){
 if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;
 	gun_index += global.timeScale;
-	/*
-	if(AttackTarget != noone && instance_exists(AttackTarget)){
-		if(x >= AttackTarget.x){
-			image_xscale = -2.0;
-		}else{
-			image_xscale = 2.0;
-		}
-	} else{
-		image_xscale = sign(lengthdir_x(1,angle)) * 2;
-		if(image_xscale == 0){
-			image_xscale = 2;
-		}
-	}*/
 	var Gangle = (hand_x == 1.0) ? TargetAngle : TargetAngle  - 180;
 	draw_sprite_ext(Spr_chr_hand,0,x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
 	if(gun_index <= 2) draw_sprite_ext(Spr_muzzle,irandom(3),x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
 	
-} 
+}
 //shader_reset();
 /*if(charging){
 	anim_fps = 10;

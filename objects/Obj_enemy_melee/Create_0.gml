@@ -27,9 +27,7 @@ moveSpeed = 0;
 spawnX = x;
 spawnY = y;
 
-
-attackMaxGage = 100;
-attackGage = 0;
+attackReady = false;
 
 moveDir[0] = 1;
 moveDir[1] = 0;
@@ -57,9 +55,14 @@ maxIdx = 0;
 maxValCheck = -1;
 maxIdxCheck = 0;
 
-strafeRange = 70 + irandom(60);
+strafeRange = 80 + irandom(60);
 
-attackRange = strafeRange + 50;
+attackRange = 25;
+attackDir = 0;
+
+
+attackGage = 0;
+attackMaxGage = 120 + irandom(20);
 
 contextInterval = 3;
 contextVal = 0;

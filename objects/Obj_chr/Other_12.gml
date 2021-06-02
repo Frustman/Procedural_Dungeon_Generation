@@ -10,3 +10,4 @@ anim_index = 0;
 dashDir = other.directionBox;
 dashSpeed = 8;
 dash = true;
+

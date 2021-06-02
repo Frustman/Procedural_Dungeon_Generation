@@ -18,6 +18,9 @@ if(knuckback){
 	knuckback = false;
 }
 
+xscale = -sign(lengthdir_x(1,moveAngle));
+if(xscale == 0) xscale = -1;
+
 if(hit){
 	ac_cnt += global.timeScale;
 	var _channel = animcurve_get_channel(ac_hit_scale, 0);

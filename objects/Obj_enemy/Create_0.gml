@@ -7,11 +7,6 @@ sprite_rad = max(bbox_w, bbox_h, sqrt(bbox_w*bbox_w + bbox_h*bbox_h));
 
 hitList = ds_list_create();
 
-upixelH = shader_get_uniform(Sha_white_outline,"pixelH");
-upixelW = shader_get_uniform(Sha_white_outline,"pixelW");
-texelH = texture_get_texel_height(sprite_get_texture(sprite_index,0));
-texelW = texture_get_texel_width(sprite_get_texture(sprite_index,0));
-
 maxhp = 20;
 hp = 20;
 
@@ -32,6 +27,8 @@ state_change = true;
 state = ai_state.wandering;
 boss = false;
 real_index = 0;
+moveAngle = 0;
+moveSpeed = 0;
 
 anim_maxIndex = image_number;
 anim_index = 0;

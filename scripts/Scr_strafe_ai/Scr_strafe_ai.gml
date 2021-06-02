@@ -5,7 +5,9 @@ enum ai_state{
 	wandering,
 	chase,
 	strafe,
-	backward
+	backward,
+	attackready,
+	attack
 };
 
 enum state_machine{

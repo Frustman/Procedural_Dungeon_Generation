@@ -5,11 +5,6 @@ if(boss == false){
 	draw_sprite(Spr_hpbar_frame,0,x - 14,bbox_bottom + 2);
 }
 
-if(Obj_chr.AttackTarget == id){
-	shader_set(Sha_white_outline);
-	shader_set_uniform_f(upixelH,texelH);
-	shader_set_uniform_f(upixelW,texelW);
-}
 
 if(hit) {
 	if(boss == false){

@@ -6,14 +6,9 @@ event_inherited();
 
 player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
-if(lengthdir_x(1,moveAngle) < 0){
-	xscale *= (sign(xscale) == 1) ? 1 : -1;
-} else {
-	xscale *= (sign(xscale) == 1) ? -1 : 1;
-}
 
 
-if(player_dist <= attackRange && in_sight == true){
+if(player_dist <= strafeRange + 100 && in_sight == true){
 	stateMachine = state_machine.fight;	
 } else {
 	stateMachine = state_machine.wander;	
@@ -61,24 +56,45 @@ if(stateMachine == state_machine.wander){
 	
 	
 	contextVal += global.timeScale;
-	attackGage += global.timeScale;
-
-	if(attackGage > attackMaxGage){
-		if(player_dist <= attackRange){
-			with(instance_create_layer(x,y,"sort_start",Obj_projectile_slime)){
-				motion_set(point_direction(x,y,Obj_chr.x,Obj_chr.y + 12),2);
-				dir = point_direction(x,y,Obj_chr.x,Obj_chr.y + 12);
-				image_angle = point_direction(x,y,Obj_chr.x,Obj_chr.y + 12);
-			}
-		}
-		attackGage = 0;
-	}
 
 	if(contextVal >= contextInterval) contextVal = 0;
 	if(contextVal == 0){
-		if(player_dist > strafeRange) state = ai_state.chase;
-		else if(player_dist <= strafeRange && player_dist >= strafeRange - 10) state = ai_state.strafe;
-		else if(player_dist < strafeRange - 10) state = ai_state.backward;
+		if(state != ai_state.attack && state != ai_state.attackready){
+			if(attackGage <= attackMaxGage){
+				attackGage += global.timeScale;
+			} else if(attackGage > attackMaxGage){
+				attackReady = true;
+				attackGage = 0;
+			}
+		}
+		if(attackReady == true){
+			state = ai_state.attackready;
+			attackReady = false;
+			moveSpeed = 0;
+			Alarm[2] = 30;
+		} else if(state == ai_state.attack){
+			moveSpeed = 2.1 * global.timeScale;
+			if(player_dist <= attackRange){
+				state = ai_state.stop;
+				moveSpeed = 0;
+				attackDir = point_direction(x,y,Obj_chr.x,Obj_chr.y);
+				Alarm[3] = 20;
+			}
+		} else if(state != ai_state.stop && state != ai_state.attackready){
+			if(player_dist > strafeRange){
+				state = ai_state.chase;
+				moveSpeed = 1.3 * global.timeScale;
+			}
+			else if(player_dist <= strafeRange && player_dist >= strafeRange - 10){
+				state = ai_state.strafe;
+				moveSpeed = 1.3 * global.timeScale;
+			}
+			else if(player_dist < strafeRange - 10){
+				state = ai_state.backward;
+				moveSpeed = 1.3 * global.timeScale;
+			}
+		}
+		
 
 		maxVal = -999;
 		maxIdx = 0;
@@ -101,6 +117,8 @@ if(stateMachine == state_machine.wander){
 			if(state == ai_state.backward) contextMap[i] =  (1.0 - abs(dot - 0.9)) * 2;
 			if(state == ai_state.strafe) contextMap[i] = (1.0 - abs(dot)) * 2;
 			if(state == ai_state.chase) contextMap[i] = 1.0 - (dot);
+			if(state == ai_state.attackready) contextMap[i] = 1.0 - (dot);
+			if(state == ai_state.attack) contextMap[i] = 1.0 - (dot);
 	
 	
 			if(collision_line(x,y,x + lengthdir_x(abs(contextMap[i] * rayDistance),contextDir[i][2]),y + lengthdir_y(abs(contextMap[i] * rayDistance),contextDir[i][2]),Obj_enemy,true,true) != noone || collision_line(x,y,x + lengthdir_x(abs(contextMap[i] * rayDistance),contextDir[i][2]),y + lengthdir_y(abs(contextMap[i] * rayDistance),contextDir[i][2]),Obj_wall,true,true) != noone){
@@ -154,7 +172,7 @@ if(stateMachine == state_machine.wander){
 	rayExtraCheck[0] = false;
 	rayExtraCheck[1] = false;
 
-	if(state == ai_state.chase){
+	if(state == ai_state.chase || state == ai_state.attack || state == ai_state.attackready){
 		var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
 		var x_ppd = lengthdir_x(sprite_rad,ideal_ppd);
 		var y_ppd = lengthdir_y(sprite_rad,ideal_ppd);
@@ -200,24 +218,13 @@ if(stateMachine == state_machine.wander){
 
 	moveDir[0] += force[0] / 6;
 	moveDir[1] += force[1] / 6;
+	
 
-	var force_dir = point_direction(0,0,moveDir[0],moveDir[1]);
-
-
-	/*if(moveDir > 360) moveDir -= 360;
-	if(moveDir < 0) moveDir = 360;
-	moveDir = lerp(moveDir, dirGoal, 0.1);*/
-	if(state == ai_state.backward) moveSpeed  = 1 * global.timeScale;
-	else moveSpeed = 0.6 * global.timeScale;
-
-	Scr_force_update([lengthdir_x(moveSpeed,force_dir), lengthdir_y(moveSpeed, force_dir)]);
+	moveAngle = point_direction(0,0,moveDir[0],moveDir[1]);
 	
 	
-	if(Obj_chr.x < x){
-		xscale *= (sign(xscale) == 1) ? 1 : -1;
-	} else {
-		xscale *= (sign(xscale) == 1) ? -1 : 1;
-	}
+	Scr_force_update([lengthdir_x(moveSpeed, moveAngle), lengthdir_y(moveSpeed, moveAngle)]);
+	
 }
 
 
