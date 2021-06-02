@@ -162,6 +162,7 @@ if(stateMachine == state_machine.wander){
 			}
 		}
 		if(abs(maxValCheck - maxVal) >= 0.75) checkHalf = !checkHalf;
+		if(maxValCheck == -999) checkHalf = !checkHalf;
 	}
 
 	dirGoal[0] = contextDir[maxIdxCheck][0];
@@ -180,13 +181,13 @@ if(stateMachine == state_machine.wander){
 		var x_ray = lengthdir_x(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
 		var y_ray = lengthdir_y(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
 
-		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
+		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_enemy, true, true) != noone || collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[0] = true;
 			dirGoal[0] += lengthdir_x(0.7, ideal_ppd + 180);
 			dirGoal[1] += lengthdir_y(0.7, ideal_ppd + 180);
 		}
 
-		if(collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_wall, true, true) != noone){
+		if(collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_enemy, true, true) != noone || collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[1] = true;
 			dirGoal[0] += lengthdir_x(0.7, ideal_ppd);
 			dirGoal[1] += lengthdir_y(0.7, ideal_ppd);

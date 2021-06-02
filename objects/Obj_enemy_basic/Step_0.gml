@@ -6,14 +6,9 @@ event_inherited();
 
 player_dist = point_distance(Obj_chr.x,Obj_chr.y,x,y);
 
-if(lengthdir_x(1,moveAngle) < 0){
-	xscale *= (sign(xscale) == 1) ? 1 : -1;
-} else {
-	xscale *= (sign(xscale) == 1) ? -1 : 1;
-}
 
 
-if(player_dist <= attackRange && in_sight == true){
+if(player_dist <= attackRange + 60 && in_sight == true){
 	stateMachine = state_machine.fight;	
 } else {
 	stateMachine = state_machine.wander;	
@@ -162,13 +157,13 @@ if(stateMachine == state_machine.wander){
 		var x_ray = lengthdir_x(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
 		var y_ray = lengthdir_y(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
 
-		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
+		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_enemy, true, true) != noone || collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[0] = true;
 			dirGoal[0] += lengthdir_x(0.7, ideal_ppd + 180);
 			dirGoal[1] += lengthdir_y(0.7, ideal_ppd + 180);
 		}
 
-		if(collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_wall, true, true) != noone){
+		if(collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_enemy, true, true) != noone || collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[1] = true;
 			dirGoal[0] += lengthdir_x(0.7, ideal_ppd);
 			dirGoal[1] += lengthdir_y(0.7, ideal_ppd);
@@ -207,8 +202,8 @@ if(stateMachine == state_machine.wander){
 	/*if(moveDir > 360) moveDir -= 360;
 	if(moveDir < 0) moveDir = 360;
 	moveDir = lerp(moveDir, dirGoal, 0.1);*/
-	if(state == ai_state.backward) moveSpeed  = 1 * global.timeScale;
-	else moveSpeed = 0.6 * global.timeScale;
+	if(state == ai_state.backward) moveSpeed  = 1.3 * global.timeScale;
+	else moveSpeed = 1.5 * global.timeScale;
 
 	Scr_force_update([lengthdir_x(moveSpeed,force_dir), lengthdir_y(moveSpeed, force_dir)]);
 	

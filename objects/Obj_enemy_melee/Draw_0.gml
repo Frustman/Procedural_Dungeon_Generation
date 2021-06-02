@@ -9,6 +9,8 @@ if(state != ai_state.stop && state != ai_state.attackready){
 }
 shader_reset();
 
+draw_sprite(Spr_slime_msk,0,x,y);
+
 draw_text(x,y,attackGage);
 draw_text(x,y + 10,state);
 for(var i = 0; i < rayCount; i++){
@@ -42,4 +44,4 @@ draw_set_color(c_white);
 
 draw_line(x,y,x+moveDir[0]*10,y+moveDir[1]*10);
 
-//draw_text(x,y,moveSpeed);
+//draw_text(x,y,moveSpeed);*/

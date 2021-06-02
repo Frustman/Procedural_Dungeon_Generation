@@ -62,7 +62,7 @@ attackDir = 0;
 
 
 attackGage = 0;
-attackMaxGage = 120 + irandom(20);
+attackMaxGage = 60 + irandom(20);
 
 contextInterval = 3;
 contextVal = 0;
