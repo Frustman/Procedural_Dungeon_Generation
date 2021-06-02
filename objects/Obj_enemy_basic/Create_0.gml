@@ -48,6 +48,8 @@ for(var i = 0; i < rayCount; i++){
 	contextMap[i] = 0;
 	contextDanger[i] = false;
 }
+rayExtraCheck[0] = false;
+rayExtraCheck[1] = false;
 
 maxVal = -1;
 maxIdx = 0;

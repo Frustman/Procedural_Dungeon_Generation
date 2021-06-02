@@ -85,13 +85,13 @@ texel_h					= 1 / app_h;
 
 
 
-blur_steps		= round(0.1 * 15) + 1;
-sigma			= max(0.2, 0.0001);
-bloom_threshold = 0.3;
+blur_steps		= round(0.15 * 15) + 1;
+sigma			= max(0.1, 0.0001);
+bloom_threshold = 0.2;
 bloom_range		= 0.1;
 bloom_intensity	= 0.25 * 2;
 bloom_darken	= 0.9;
-bloom_saturation= 1 * 2;
+bloom_saturation= 3;
 
 
 size		= 0.2 * 4;

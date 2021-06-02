@@ -41,11 +41,3 @@ draw_set_color(c_white);
 
 draw_line(x,y,x+dir[0]*10,y+dir[1]*10);*/
 
-/*for(var i = 0; i < path_get_number(player_path); i++){
-	targetx[i] = path_get_point_x(player_path,i);
-	targety[i] = path_get_point_y(player_path,i);
-}
-	draw_circle(targetx[1],targety[1],2,false);
-draw_text(x,y+30,path_get_number(player_path));
-
-if(player_path != -1) draw_path(player_path,x,y,1);*/

@@ -49,7 +49,7 @@ if(stateMachine == state_machine.wander){
 		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY),0.1 * global.timeScale);
 	}
 	moveAngle += Scr_perlin_noise_1d(seed + current_time / 100) * 2;
-	motion_set(moveAngle,moveSpeed);
+	Scr_force_update([lengthdir_x(moveSpeed,moveAngle), lengthdir_y(moveSpeed, moveAngle)]);
 
 	if(instance_place(x + lengthdir_x(10,moveAngle), y + lengthdir_y(10,moveAngle),Obj_wall)){
 		moveAngle = lerp(moveAngle,point_direction(x,y,spawnX,spawnY), 0.1 * global.timeScale);
