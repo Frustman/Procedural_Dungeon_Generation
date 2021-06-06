@@ -18,12 +18,12 @@ for(var i = 0; i < rayCount; i++){
 			draw_set_color(c_red);
 		}
 		if(i == maxIdxCheck) draw_set_color(c_blue);
-		draw_line(x,y,x + lengthdir_x(abs(20),point_direction(0,0,contextDir[i][0],contextDir[i][1])), y + lengthdir_y(abs(20), point_direction(0,0,contextDir[i][0],contextDir[i][1])));
+		draw_line(x,y,x + lengthdir_x(contextMap[i] * abs(20),point_direction(0,0,contextDir[i][0],contextDir[i][1])), y + lengthdir_y(abs(contextMap[i] *20), point_direction(0,0,contextDir[i][0],contextDir[i][1])));
 		draw_set_color(c_white);
 	}
 }
 
-
+/*
 var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
 var x_ppd = lengthdir_x(10,ideal_ppd);
 var y_ppd = lengthdir_y(10,ideal_ppd);
@@ -36,7 +36,6 @@ if(rayExtraCheck[0]) draw_set_color(c_red);
 draw_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray);
 draw_set_color(c_blue);
 if(rayExtraCheck[1]) draw_set_color(c_red);
-draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);
+draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);*/
 draw_set_color(c_white);
-
 draw_line(x,y,x+moveDir[0]*10,y+moveDir[1]*10);

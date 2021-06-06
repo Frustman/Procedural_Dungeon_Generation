@@ -74,6 +74,13 @@ if(stateMachine == state_machine.wander){
 			Alarm[2] = 30;
 		} else if(state == ai_state.attack){
 			moveSpeed = 2.1 * global.timeScale;
+			if(attackTime < attackDuration){
+				attackTime += global.timeScale;	
+			} else {
+				state = ai_state.chase;
+				moveSpeed = 1.3 * global.timeScale;
+				attackTime = 0;
+			}
 			if(player_dist <= attackRange){
 				state = ai_state.stop;
 				moveSpeed = 0;

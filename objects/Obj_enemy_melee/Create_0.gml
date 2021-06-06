@@ -60,6 +60,9 @@ strafeRange = 80 + irandom(60);
 attackRange = 25;
 attackDir = 0;
 
+attackDuration = 45;
+attackTime = 0;
+
 
 attackGage = 0;
 attackMaxGage = 60 + irandom(20);

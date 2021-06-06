@@ -9,10 +9,6 @@ if(state != ai_state.stop && state != ai_state.attackready){
 }
 shader_reset();
 
-draw_sprite(Spr_slime_msk,0,x,y);
-
-draw_text(x,y,attackGage);
-draw_text(x,y + 10,state);
 for(var i = 0; i < rayCount; i++){
 	if(contextDanger[i] == false && contextCheck[i] == true){
 		if(contextMap[i] >= 0){
@@ -26,7 +22,7 @@ for(var i = 0; i < rayCount; i++){
 	}
 }
 
-
+/*
 var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
 var x_ppd = lengthdir_x(10,ideal_ppd);
 var y_ppd = lengthdir_y(10,ideal_ppd);
@@ -41,6 +37,7 @@ draw_set_color(c_blue);
 if(rayExtraCheck[1]) draw_set_color(c_red);
 draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);
 draw_set_color(c_white);
+*/
 
 draw_line(x,y,x+moveDir[0]*10,y+moveDir[1]*10);
 
