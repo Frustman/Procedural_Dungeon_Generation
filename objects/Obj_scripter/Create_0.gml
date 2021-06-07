@@ -6,10 +6,15 @@ dialog_body		= "";
 
 dialog			= "";
 
-buff			= "";
+for(var i = 0; i < 10; i++){
+	buff[i]		= "";
+}
 
 cursor			= 1;
+line			= 0;
 delay			= 5;
+pause			= false;
+alpha			= 1;
 
 parent			= noone;
 
