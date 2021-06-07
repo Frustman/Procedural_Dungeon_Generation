@@ -59,6 +59,4 @@ with(Obj_camera){
 	event_perform(ev_other,ev_user0);	
 }
 
-for(var i = 0; i < 12; i++){
-	Alarm[i] = ALARMINACTIVE;
-}
+Scr_alarm_init();

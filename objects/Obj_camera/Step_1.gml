@@ -51,7 +51,7 @@ if(instance_exists(Obj_chr)){
 	targetY = min(targetY, roomY  + DG_HEIGHT * CELL_HEIGHT / 2 - view_height / 2);
 	targetY = max(targetY, roomY - DG_HEIGHT * CELL_HEIGHT / 2 + view_height / 2);
 	
-	cam_zoom = 1 - zoom_shake;
+	cam_zoom = 1.0 - zoom_shake;
 } else if(global.paused == true){
 	targetX = x;
 	targetY = y;
