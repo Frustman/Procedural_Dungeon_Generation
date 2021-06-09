@@ -75,6 +75,10 @@ if(instance_exists(Obj_chr)){
 	}
 }
 
+for(var i = 0; i < global.synergy_count; i++){
+	draw_text(0,300 + 10 * i,global.synergy_name[#0, i] + " : " + string(CONTAINER.player_synergy[i]));	
+}
+
 	draw_set_font(Font_ui);
 	
 //draw_text(190,20,string(global.level) + " Floor");

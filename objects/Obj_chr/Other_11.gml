@@ -55,7 +55,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 			damage = 5;
 			par = other.id;
 			dir = _angle;
-			spd = 7 + random(1);
+			spd = 12 + random(1);
 			motion_set(dir,spd * global.timeScale);
 		}
 	} else{
@@ -63,7 +63,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		with(bullet){
 			damage = Obj_valueContainer.player_bulletDamage;
 			dir = _angle;
-			spd = 7 + random(1);
+			spd = 12 + random(1);
 			motion_set(dir,spd * global.timeScale);
 			image_angle = _angle;
 	

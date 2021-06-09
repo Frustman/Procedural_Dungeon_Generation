@@ -8,7 +8,6 @@ for(var i = 0; i < 12; i++){
 	Alarm[i] = ALARMINACTIVE;
 }
 
-
 randomize();
 
 deviceWidth = display_get_width() * 0.75;
@@ -37,24 +36,12 @@ dg_trim = 6;
 real_width = DG_WIDTH * 9;
 real_height = DG_HEIGHT * 8;
 
-for(var i = 0; i < max_mapcnt; i++){
+dungeon_cnt = 5;
+
+for(var i = 0; i < dungeon_cnt; i++){
 	map_list[i] = Scr_Pdg_Init(DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
 }
 
-dungeon_cnt = max_mapcnt;
 /*map = real(load_csv("dungeon_map.csv"));
 
 for(var i = 0; i < ds_grid_width(map); i++){

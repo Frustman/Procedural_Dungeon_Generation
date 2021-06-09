@@ -12,7 +12,17 @@ for(var i = 0; i < 99; i ++){
 }
 
 
+for(var i = 0; i < DG_WIDTH; i++){
+	for(var j = 0; j < DG_HEIGHT; j++){
+		draw_text(10 * i, 400 + 10 * j, map[#i, j]);	
+	}
+}
 
+for(var i = 0; i < DG_WIDTH; i++){
+	for(var j = 0; j < DG_HEIGHT; j++){
+		draw_text(300 + 10 * i, 400 + 10 * j, Scr_Pdg_CountNeighbor(map, i, j));	
+	}
+}
 
 
 draw_line(0,200,1600,200);

@@ -36,8 +36,8 @@ if(cursor != -1){
 	draw_set_valign(fa_center);
 	draw_set_halign(fa_center);
 	Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) / 2,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,CONTAINER.player_itemList[| cursor].info);
-	//Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) - 20,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,string_upper(global.synergy_name[# 0, CONTAINER.player_itemList[| cursor].synergy[| 0]]));
-	//Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) - 40,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,string_upper(global.synergy_name[# 0, CONTAINER.player_itemList[| cursor].synergy[| 1]]));
+	Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) - 20,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,string_upper(global.synergy_name[# 0, CONTAINER.player_itemList[| cursor].synergy[| 0]]));
+	Scr_draw_text_outline(cursorX + (infoW) / 2 - 60,cursorY + (infoH) - 40,infoW / 674 + 0.5,infoW / 674 + 0.5,4,Font_ui,c_black,c_white,string_upper(global.synergy_name[# 0, CONTAINER.player_itemList[| cursor].synergy[| 1]]));
 	Scr_draw_text_outline(cursorX + compoX + 98,cursorY - 19,0.75,0.75,3,Font_ui,c_black,c_white,CONTAINER.player_itemList[| cursor].name);
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
