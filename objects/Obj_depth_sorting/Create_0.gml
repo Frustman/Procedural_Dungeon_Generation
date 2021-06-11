@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-room_H = 19 * CELL_HEIGHT;
+room_H = DG_HEIGHT * CELL_HEIGHT;
 
 global.depth_grid = ds_grid_create(1,room_H);
 global.deco_grid = ds_grid_create(1,room_H);

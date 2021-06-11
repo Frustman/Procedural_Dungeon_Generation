@@ -8,7 +8,7 @@ for(var i = 0; i < 9; i++){
 			var c = irandom(dungeon_cnt - 1);
 			var deco_c = irandom(deco_cnt - 1);
 			if(map_grid[# i, j] == 1) {
-				ds_grid_set_grid_region(real_map, map_list[c], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
 				ds_grid_set_grid_region(deco_real, deco_list[deco_c], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			}else {
 				if(map_grid[# i, j] == 3){
@@ -72,14 +72,6 @@ for(var i = 0; i < 9; i++){
 		}
 	}
 }
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
 
 for(var _i = 0; _i < real_width; _i++){
 	for(var _j = 0; _j < real_height; _j++){
@@ -100,7 +92,8 @@ for(var i = 0; i < real_width; i++){
 		
 		
 		if(abs(map[#i, j]) == cellular.MutableWall){
-			var ind = Scr_bit_masking_16(map,i,j,real_width,real_height,cellular.MutableWall);
+			//var ind = Scr_bit_masking_16(map,i,j,real_width,real_height,cellular.MutableWall);
+			var ind = Scr_bit_masking_47(map,i,j,real_width,real_height,1);
 			
 			var tile_data = tile_set_index(TileSet_desert,ind);
 			real_mini_map[i][j] = ind;
@@ -115,10 +108,10 @@ for(var i = 0; i < real_width; i++){
 }
 
 var _map = deco_real;
-for(var i = 0; i < real_width * 2; i++){
-	for(var j = 0; j < real_height * 2; j++){
+for(var i = 0; i < real_width; i++){
+	for(var j = 0; j < real_height; j++){
 		if(_map[#i, j] == 2){
-			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width * 2,real_height * 2,TileSet_desert_water, 2);
+			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width,real_height,TileSet_desert_water, 2);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
 			
 			var _ind = tile_get_index(tile_data);

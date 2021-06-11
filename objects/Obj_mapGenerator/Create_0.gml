@@ -40,6 +40,19 @@ dungeon_cnt = 5;
 
 for(var i = 0; i < dungeon_cnt; i++){
 	map_list[i] = Scr_Pdg_Init(DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	/*Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);
+	Scr_Pdg_Process(real_map,real_width,real_height);*/
 }
 
 /*map = real(load_csv("dungeon_map.csv"));
@@ -72,12 +85,12 @@ for(var i = 0; i < deco_cnt; i++){
 }
 
 real_map = ds_grid_create(real_width, real_height);
-deco_real = ds_grid_create(real_width * 2, real_height * 2);
+deco_real = ds_grid_create(real_width, real_height);
 
 map_grid_list = ds_grid_create(9,8);
 
 ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, -1);
-ds_grid_set_region(deco_real, 0,0, real_width * 2 - 1, real_height * 2 - 1, -1);
+ds_grid_set_region(deco_real, 0,0, real_width - 1, real_height - 1, -1);
 
 map_grid = ds_grid_create(9,8);
 miniMap_grid = ds_grid_create(9,8);
