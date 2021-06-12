@@ -9,7 +9,8 @@ if(instance_exists(Obj_chr)){
 	var ypos = cur_room % 10;
 	draw_sprite_ext(Spr_map_frame,0,0,0,mapW,mapH,0,c_white,1.0);
 	
-	/*if(minimap_gen == false){
+	
+	if(minimap_gen == false){
 		for(var _i = 0; _i < 9; _i++){
 			for(var _j = 0; _j < 8; _j++){
 				surf = surface_create(120, 100);
@@ -38,7 +39,7 @@ if(instance_exists(Obj_chr)){
 	//} else draw_surface_stretched(surf, 0, deviceWidth - 90,270,300);
 	
 	draw_sprite_ext(Spr_minimap_chr,0,deviceWidth - 311 * mapW / 3 + ((Obj_chr.x - xpos * DG_WIDTH * CELL_WIDTH) / CELL_WIDTH * 12) * mapW / 3, 57 * mapH / 3 + ((Obj_chr.y - ypos * DG_HEIGHT * CELL_HEIGHT) / CELL_HEIGHT * 12) * mapH / 3,mapW - 1,mapH - 1,0,c_white,1);
-	*/
+	
 	draw_sprite_ext(Spr_minimap_frame,0, deviceWidth - 350 * mapW / 3, 2,mapW,mapH,0,c_white,1);
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 8; j++){
@@ -75,9 +76,6 @@ if(instance_exists(Obj_chr)){
 	}
 }
 
-for(var i = 0; i < global.synergy_count; i++){
-	draw_text(0,300 + 10 * i,global.synergy_name[#0, i] + " : " + string(CONTAINER.player_synergy[i]));	
-}
 
 	draw_set_font(Font_ui);
 	
@@ -125,9 +123,3 @@ if(CONTAINER.boss_exist == true){
 	draw_sprite_ext(Spr_boss_hpbar,0,deviceWidth / 2 - 348,bosshpY,hpper * (348 * 2 - 22) / 584,1.0,0,c_white,1);
 }
 
-
-for(var i = 0; i < DG_WIDTH; i++){
-	for(var j = 0; j < DG_HEIGHT; j++){
-		draw_text(10 * i, 400 + 10 * j, map_list[0][#i, j]);	
-	}
-}

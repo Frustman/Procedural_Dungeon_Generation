@@ -40,12 +40,12 @@ dungeon_cnt = 5;
 
 for(var i = 0; i < dungeon_cnt; i++){
 	map_list[i] = Scr_Pdg_Init(DG_WIDTH,DG_HEIGHT);
+	/*Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
 	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
 	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
 	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
 	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
+	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);*/
 	/*Scr_Pdg_Process(real_map,real_width,real_height);
 	Scr_Pdg_Process(real_map,real_width,real_height);
 	Scr_Pdg_Process(real_map,real_width,real_height);
@@ -85,7 +85,7 @@ for(var i = 0; i < deco_cnt; i++){
 }
 
 real_map = ds_grid_create(real_width, real_height);
-deco_real = ds_grid_create(real_width, real_height);
+deco_real = ds_grid_create(real_width * 2, real_height * 2);
 
 map_grid_list = ds_grid_create(9,8);
 

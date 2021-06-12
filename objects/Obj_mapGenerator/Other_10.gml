@@ -4,11 +4,13 @@
 randomize()
 for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
+		var mapR = Scr_Pdg_Init(DG_WIDTH, DG_HEIGHT);
+		real_map = Scr_Pdg_Map_Init(map_grid, door_grid, real_width, real_height, 8, 6);
 		if(map_grid[# i, j] != 0){
-			var c = irandom(dungeon_cnt - 1);
+			//var c = irandom(dungeon_cnt - 1);
 			var deco_c = irandom(deco_cnt - 1);
 			if(map_grid[# i, j] == 1) {
-				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+				//ds_grid_set_grid_region(real_map, mapR, 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
 				ds_grid_set_grid_region(deco_real, deco_list[deco_c], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			}else {
 				if(map_grid[# i, j] == 3){
@@ -33,12 +35,11 @@ for(var i = 0; i < 9; i++){
 					instance_create_layer(xCenter, yCenter,"sort_start",Obj_itemTable);
 					instance_create_layer(xCenter, yCenter,"sort_end",Obj_ground);
 				}
-				ds_grid_set_grid_region(real_map, map_list[0], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
-				global.path_grid[i * 10 + j] = map_list[0];
+				ds_grid_set_grid_region(real_map, mapR, 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
 			}
-			if(i == 4 && j == 3) ds_grid_set_grid_region(real_map, map_list[0], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
-			if(door_grid[# i, j] % 10 == 1){ // left door
-				ds_grid_set_region(real_map, i * DG_WIDTH, j * DG_HEIGHT + DG_HEIGHT / 2 - 1, i * DG_WIDTH + dg_trim - 1, j * DG_HEIGHT + DG_HEIGHT / 2 + 1, 0);
+			//if(i == 4 && j == 3) ds_grid_set_grid_region(real_map, mapR, 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+			/*if(door_grid[# i, j] % 10 == 1){ // left door
+				ds_grid_set_region(real_map, i * DG_WIDTH, j * DG_HEIGHT + DG_HEIGHT / 2 - 1, i * DG_WIDTH + dg_trim - 1, j * DG_HEIGHT + DG_HEIGHT / 2, cellular.ImmutableGround);
 				//ds_grid_set(real_map, i * DG_WIDTH + dg_trim - 2, j * DG_HEIGHT + DG_HEIGHT / 2, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + dg_trim - 2, j * DG_HEIGHT + DG_HEIGHT / 2 - 1, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + dg_trim - 2, j * DG_HEIGHT + DG_HEIGHT / 2 + 1, 1);
@@ -46,7 +47,7 @@ for(var i = 0; i < 9; i++){
 				//door_L.dir = 0;
 			}
 			if(door_grid[# i, j] div 10 % 10 == 1){ //
-				ds_grid_set_region(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, (j + 1) * DG_HEIGHT, i * DG_WIDTH + DG_WIDTH / 2 + 1, (j + 1) * DG_HEIGHT - dg_trim, 0);
+				ds_grid_set_region(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, (j + 1) * DG_HEIGHT, i * DG_WIDTH + DG_WIDTH / 2, (j + 1) * DG_HEIGHT - dg_trim, cellular.ImmutableGround);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2, (j + 1) * DG_HEIGHT - dg_trim + 1, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, (j + 1) * DG_HEIGHT - dg_trim + 1, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2 + 1, (j + 1) * DG_HEIGHT - dg_trim + 1, 1);
@@ -54,7 +55,7 @@ for(var i = 0; i < 9; i++){
 				//door_D.dir = 1;
 			}
 			if(door_grid[# i, j] div 100 % 10 == 1){
-				ds_grid_set_region(real_map, (i + 1) * DG_WIDTH, j * DG_HEIGHT + DG_HEIGHT / 2 - 1,(i + 1) * DG_WIDTH - dg_trim, j * DG_HEIGHT + DG_HEIGHT / 2 + 1, 0);
+				ds_grid_set_region(real_map, (i + 1) * DG_WIDTH, j * DG_HEIGHT + DG_HEIGHT / 2 - 1,(i + 1) * DG_WIDTH - dg_trim, j * DG_HEIGHT + DG_HEIGHT / 2, cellular.ImmutableGround);
 				//ds_grid_set(real_map, (i + 1) * DG_WIDTH - dg_trim + 1, j * DG_HEIGHT + DG_HEIGHT / 2, 1);
 				//ds_grid_set(real_map, (i + 1) * DG_WIDTH - dg_trim + 1, j * DG_HEIGHT + DG_HEIGHT / 2 - 1, 1);
 				//ds_grid_set(real_map, (i + 1) * DG_WIDTH - dg_trim + 1, j * DG_HEIGHT + DG_HEIGHT / 2 + 1, 1);
@@ -62,16 +63,25 @@ for(var i = 0; i < 9; i++){
 				//door_R.dir = 2;
 			}
 			if(door_grid[# i, j] div 1000 % 10 == 1){
-				ds_grid_set_region(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, j * DG_HEIGHT, i * DG_WIDTH + DG_WIDTH / 2 + 1, j * DG_HEIGHT + dg_trim - 1, 0);
+				ds_grid_set_region(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, j * DG_HEIGHT, i * DG_WIDTH + DG_WIDTH / 2, j * DG_HEIGHT + dg_trim - 1, cellular.ImmutableGround);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2, j * DG_HEIGHT + dg_trim - 2, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2 + 1, j * DG_HEIGHT + dg_trim - 2, 1);
 				//ds_grid_set(real_map, i * DG_WIDTH + DG_WIDTH / 2 - 1, j * DG_HEIGHT + dg_trim - 2, 1);
 				//var door_U = instance_create_layer(floor(i * DG_WIDTH + DG_WIDTH / 2) * CELL_WIDTH, floor(j * DG_HEIGHT + dg_trim - 1) * CELL_HEIGHT, "sort_start", Obj_door);	
 				//door_U.dir = 3;
-			}
+			}*/
 		}
 	}
 }
+
+
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
+Scr_Pdg_Process(real_map,real_width,real_height);
 
 for(var _i = 0; _i < real_width; _i++){
 	for(var _j = 0; _j < real_height; _j++){
@@ -93,7 +103,7 @@ for(var i = 0; i < real_width; i++){
 		
 		if(abs(map[#i, j]) == cellular.MutableWall){
 			//var ind = Scr_bit_masking_16(map,i,j,real_width,real_height,cellular.MutableWall);
-			var ind = Scr_bit_masking_47(map,i,j,real_width,real_height,1);
+			var ind = Scr_bit_masking_47(map,i,j,real_width,real_height,cellular.MutableWall);
 			
 			var tile_data = tile_set_index(TileSet_desert,ind);
 			real_mini_map[i][j] = ind;
@@ -108,8 +118,8 @@ for(var i = 0; i < real_width; i++){
 }
 
 var _map = deco_real;
-for(var i = 0; i < real_width; i++){
-	for(var j = 0; j < real_height; j++){
+for(var i = 0; i < real_width * 2; i++){
+	for(var j = 0; j < real_height * 2; j++){
 		if(_map[#i, j] == 2){
 			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width,real_height,TileSet_desert_water, 2);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
