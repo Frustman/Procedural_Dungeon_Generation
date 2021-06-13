@@ -1,6 +1,6 @@
 /// @description Insert description here
-#macro DG_WIDTH 23
-#macro DG_HEIGHT 19
+#macro DG_WIDTH 16
+#macro DG_HEIGHT 12
 
 #macro ALARMINACTIVE -100
 
@@ -70,7 +70,7 @@ for(var i = 0; i < dungeon_cnt; i++){
 }
 
 */
-deco_map = real(load_csv("deco_map.csv"));
+/*deco_map = real(load_csv("deco_map.csv"));
 
 for(var i = 0; i < ds_grid_width(deco_map); i++){
 	for(var j = 0; j < ds_grid_height(deco_map); j++){
@@ -82,7 +82,7 @@ deco_cnt = ds_grid_height(deco_map) div deco_height;
 for(var i = 0; i < deco_cnt; i++){
 	deco_list[i] = ds_grid_create(deco_width,deco_height);
 	ds_grid_set_grid_region(deco_list[i],deco_map,0,i*deco_width,deco_width-1,(i+1)*deco_height - 1,0,0);
-}
+}*/
 
 real_map = ds_grid_create(real_width, real_height);
 deco_real = ds_grid_create(real_width * 2, real_height * 2);
