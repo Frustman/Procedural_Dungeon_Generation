@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 sprite_index = Spr_desert_deco;
-image_index = 0;
 image_speed = 0;
 
 Scr_update_depth(x,y);

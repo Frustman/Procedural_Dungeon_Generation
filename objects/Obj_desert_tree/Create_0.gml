@@ -21,7 +21,7 @@ switch(irandom(5)){
 		break;
 }
 image_index = 0;
-image_speed = 0;
+image_speed = 1;
 
 Scr_update_depth(x,y);
 

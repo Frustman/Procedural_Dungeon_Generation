@@ -4,16 +4,17 @@
 randomize()
 for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
-		real_map = Scr_Pdg_Map_Init(map_grid, door_grid, real_width, real_height, 6, 4);
+		//real_solid = Scr_Pdg_Map_Init(map_grid, door_grid, real_width, real_height, 6, 4);
 		if(map_grid[# i, j] != 0){
-			//var deco_c = irandom(deco_cnt - 1);
+			var ran = irandom(dungeon_cnt - 1);
+			ds_grid_set_grid_region(real_solid, solid_map[ran], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+			ds_grid_set_grid_region(real_ground, ground_map[ran], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			if(map_grid[# i, j] == 1) {
-				//ds_grid_set_grid_region(deco_real, deco_list[deco_c], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			}else {
 				if(map_grid[# i, j] == 3){
 					var xCenter = (i * DG_WIDTH + DG_WIDTH / 2 - 1) * CELL_WIDTH + CELL_WIDTH / 2;
 					var yCenter = (j * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT + CELL_HEIGHT / 2;
-					with(instance_create_layer(xCenter + 80, yCenter + 76,"sort_start",Obj_deco_instance)){
+					/*with(instance_create_layer(xCenter + 80, yCenter + 76,"sort_start",Obj_deco_instance)){
 						sprite_index = Spr_deco_wood;
 						image_speed = 1;
 					}
@@ -28,7 +29,7 @@ for(var i = 0; i < 9; i++){
 					with(instance_create_layer(xCenter - 80, yCenter - 64,"sort_start",Obj_deco_instance)){
 						sprite_index = Spr_deco_wood;
 						image_speed = 1;
-					}
+					}*/
 					instance_create_layer(xCenter, yCenter,"sort_start",Obj_itemTable);
 					instance_create_layer(xCenter, yCenter,"sort_end",Obj_ground);
 				}
@@ -38,24 +39,16 @@ for(var i = 0; i < 9; i++){
 }
 
 
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-Scr_Pdg_Process(real_map,real_width,real_height);
-
 for(var _i = 0; _i < real_width; _i++){
 	for(var _j = 0; _j < real_height; _j++){
-		if(real_map[#_i,_j] == cellular.ImmutableGround)
-			real_map[#_i,_j] = cellular.MutableGround;
-		if(real_map[#_i,_j] == cellular.ImmutableWall)
-			real_map[#_i,_j] = cellular.MutableWall;
+		if(real_solid[#_i,_j] == cellular.ImmutableGround)
+			real_solid[#_i,_j] = cellular.MutableGround;
+		if(real_solid[#_i,_j] == cellular.ImmutableWall)
+			real_solid[#_i,_j] = cellular.MutableWall;
 	}
 }
 
-var map = real_map;
+var map = real_solid;
 for(var i = 0; i < real_width; i++){
 	for(var j = 0; j < real_height; j++){
 		var rand = irandom(6);
@@ -80,10 +73,10 @@ for(var i = 0; i < real_width; i++){
 	}
 }
 
-/*var _map = deco_real;
+var _map = real_ground;
 for(var i = 0; i < real_width * 2; i++){
 	for(var j = 0; j < real_height * 2; j++){
-		if(_map[#i, j] == 2){
+		/*if(_map[#i, j] == 2){
 			var tile_data = Scr_auto_tiling_16(_map,i,j,real_width,real_height,TileSet_desert_water, 2);
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i* CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
 			
@@ -120,9 +113,19 @@ for(var i = 0; i < real_width * 2; i++){
 					}
 				}
 			}
+		}*/
+		
+		if(_map[#i, j] >= 100){
+			var tile_data = tile_set_index(TileSet_ground_deco, _map[# i, j] - 100);
+			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_ground"), tile_data, i * CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
+			real_mini_water[i][j] = 0;
+		} else {
+			var tile_data = tile_set_index(TileSet_ground_deco, _map[# i, j]);
+			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_water"), tile_data, i * CELL_WIDTH / 2, j * CELL_HEIGHT / 2);
+			real_mini_water[i][j] = _map[# i, j];
 		}
 	}
-}*/
+}
 
 
 instance_create_layer(0,0, "controller",Obj_controller);

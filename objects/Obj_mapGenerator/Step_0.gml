@@ -120,7 +120,7 @@ if(generated && instance_exists(Obj_chr)){
 				var xpos = xcur * CELL_WIDTH;
 				var ypos = ycur * CELL_HEIGHT;
 			
-				if(!instance_place(xpos,ypos,Obj_wall) && !instance_place(xpos,ypos,Obj_wall32) && !instance_place(xpos,ypos,Obj_spawner) && real_map[# xcur, ycur] == 0){
+				if(!instance_place(xpos,ypos,Obj_wall) && !instance_place(xpos,ypos,Obj_wall32) && !instance_place(xpos,ypos,Obj_spawner) && real_solid[# xcur, ycur] == 0){
 					with(instance_create_layer(xpos, ypos,"sort_start",Obj_spawner)){
 						if(irandom(1) == 0){
 							//obj = Obj_enemy_wildpig;

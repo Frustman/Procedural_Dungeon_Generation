@@ -36,24 +36,17 @@ dg_trim = 6;
 real_width = DG_WIDTH * 9;
 real_height = DG_HEIGHT * 8;
 
-dungeon_cnt = 5;
+dungeon_cnt = 2;
 
 for(var i = 0; i < dungeon_cnt; i++){
-	map_list[i] = Scr_Pdg_Init(DG_WIDTH,DG_HEIGHT);
-	/*Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);
-	Scr_Pdg_Process(map_list[i],DG_WIDTH,DG_HEIGHT);*/
-	/*Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);
-	Scr_Pdg_Process(real_map,real_width,real_height);*/
+	solid_map[i] = ds_grid_create(DG_WIDTH, DG_HEIGHT);
+	ground_map[i] = ds_grid_create(DG_WIDTH * 2, DG_HEIGHT * 2);
+	inst_list[i] = ds_list_create();
+	
 }
+
+Scr_get_map_template(solid_map[0], ground_map[0], inst_list[0], rm_desert_1);
+Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_1);
 
 /*map = real(load_csv("dungeon_map.csv"));
 
@@ -84,13 +77,13 @@ for(var i = 0; i < deco_cnt; i++){
 	ds_grid_set_grid_region(deco_list[i],deco_map,0,i*deco_width,deco_width-1,(i+1)*deco_height - 1,0,0);
 }*/
 
-real_map = ds_grid_create(real_width, real_height);
-deco_real = ds_grid_create(real_width * 2, real_height * 2);
+real_solid = ds_grid_create(real_width, real_height);
+real_ground = ds_grid_create(real_width * 2, real_height * 2);
 
 map_grid_list = ds_grid_create(9,8);
 
-ds_grid_set_region(real_map, 0,0, real_width - 1, real_height - 1, -1);
-ds_grid_set_region(deco_real, 0,0, real_width - 1, real_height - 1, -1);
+ds_grid_set_region(real_solid, 0,0, real_width - 1, real_height - 1, -1);
+ds_grid_set_region(real_ground, 0,0, real_width - 1, real_height - 1, -1);
 
 map_grid = ds_grid_create(9,8);
 miniMap_grid = ds_grid_create(9,8);

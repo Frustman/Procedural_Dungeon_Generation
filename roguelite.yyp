@@ -20,6 +20,7 @@
     {"id":{"name":"Spr_mini_map_ground","path":"sprites/Spr_mini_map_ground/Spr_mini_map_ground.yy",},"order":17,},
     {"id":{"name":"ac_gun_reaction","path":"animcurves/ac_gun_reaction/ac_gun_reaction.yy",},"order":7,},
     {"id":{"name":"Spr_mini_mapF","path":"sprites/Spr_mini_mapF/Spr_mini_mapF.yy",},"order":11,},
+    {"id":{"name":"Scr_get_map_template","path":"scripts/Scr_get_map_template/Scr_get_map_template.yy",},"order":45,},
     {"id":{"name":"Spr_wildpig_msk","path":"sprites/Spr_wildpig_msk/Spr_wildpig_msk.yy",},"order":4,},
     {"id":{"name":"Scr_layer_end","path":"scripts/Scr_layer_end/Scr_layer_end.yy",},"order":35,},
     {"id":{"name":"Scr_interpolated_noise","path":"scripts/Scr_interpolated_noise/Scr_interpolated_noise.yy",},"order":22,},
