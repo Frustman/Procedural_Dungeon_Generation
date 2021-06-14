@@ -46,7 +46,7 @@ for(var i = 0; i < dungeon_cnt; i++){
 }
 
 Scr_get_map_template(solid_map[0], ground_map[0], inst_list[0], rm_desert_1);
-Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_1);
+Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_2);
 
 /*map = real(load_csv("dungeon_map.csv"));
 

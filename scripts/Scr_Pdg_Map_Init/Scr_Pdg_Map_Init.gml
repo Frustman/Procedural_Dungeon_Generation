@@ -42,8 +42,6 @@ function Scr_Pdg_Map_Init(_map, _door, _width, _height, _Wradius, _Hradius){
 			}
 		}
 	}
-	var _door_check = ds_grid_create(_map_W, _map_H);
-	ds_grid_set_region(_door_check, 0, 0, _map_W, _map_H, false);
 	for(var i = 0; i < _map_W; i++){
 		for(var j = 0; j < _map_H; j++){
 			if(_map[# i, j] != 0){

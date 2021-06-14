@@ -25,7 +25,7 @@ if(instance_exists(Obj_chr)){
 					for(var k = 0; k < DG_WIDTH * 2; k++){
 						for(var l = 0; l < DG_HEIGHT * 2; l++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							//draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 21 + 2 * l);
+							draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 21 + 2 * l);
 						}
 					}
 				surface_reset_target();

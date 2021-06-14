@@ -9,7 +9,8 @@ enum cellular{
 	MutableGround,
 	MutableWall,
 	ImmutableGround,
-	ImmutableWall
+	ImmutableWall,
+	WallReal = -1
 };
 
 function Scr_Pdg_Init(width, height){

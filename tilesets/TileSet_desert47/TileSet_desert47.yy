@@ -134,7 +134,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TileSet_desert_anim",
+  "name": "TileSet_desert47",
   "tags": [],
   "resourceType": "GMTileSet",
 }
