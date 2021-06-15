@@ -6,43 +6,45 @@ for(var i = 0; i < 9; i++){
 	for(var j = 0; j < 8; j++){
 		//real_solid = Scr_Pdg_Map_Init(map_grid, door_grid, real_width, real_height, 6, 4);
 		if(map_grid[# i, j] != 0){
-			var ran = irandom(dungeon_cnt - 1);
-			for(var k = 0; k < ds_list_size(inst_list[ran]); k++){
-				var data = inst_list[ran][| k];
-				var xx = data[? "x"] + i * DG_WIDTH * CELL_WIDTH;	
-				var yy = data[? "y"] + j * DG_HEIGHT * CELL_HEIGHT;	
-				var _image_speed= data[? "image_speed"];	
-				var _image_index = data[? "image_index"];	
-				var _sprite_index = data[? "sprite_index"];	
-				with(instance_create_layer(xx,yy,"sort_start",Obj_desert_deco)){
-					sprite_index = _sprite_index;
-					image_speed = _image_speed;
-					image_index = _image_index;
-				}
-			}
-			ds_grid_set_grid_region(real_solid, solid_map[ran], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
-			ds_grid_set_grid_region(real_ground, ground_map[ran], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			if(map_grid[# i, j] == 1) {
+				var ran = irandom(dungeon_cnt - 1);
+				for(var k = 0; k < ds_list_size(inst_list[ran]); k++){
+					var data = inst_list[ran][| k];
+					var xx = data[? "x"] + i * DG_WIDTH * CELL_WIDTH;	
+					var yy = data[? "y"] + j * DG_HEIGHT * CELL_HEIGHT;	
+					var _image_speed= data[? "image_speed"];	
+					var _image_index = data[? "image_index"];	
+					var _sprite_index = data[? "sprite_index"];	
+					with(instance_create_layer(xx,yy,"sort_start",Obj_desert_deco)){
+						sprite_index = _sprite_index;
+						image_speed = _image_speed;
+						image_index = _image_index;
+					}
+				}
+				ds_grid_set_grid_region(real_solid, solid_map[ran], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+				ds_grid_set_grid_region(real_ground, ground_map[ran], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
 			}else {
 				if(map_grid[# i, j] == 3){
-					var xCenter = (i * DG_WIDTH + DG_WIDTH / 2 - 1) * CELL_WIDTH + CELL_WIDTH / 2;
-					var yCenter = (j * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT + CELL_HEIGHT / 2;
-					with(instance_create_layer(xCenter + 80, yCenter + 76,"sort_start",Obj_desert_deco)){
-						sprite_index = Spr_deco_wood;
-						image_speed = 1;
+					var rewardRan = irandom(reward_cnt - 1);
+					for(var k = 0; k < ds_list_size(reward_inst_list[rewardRan]); k++){
+						var data = reward_inst_list[rewardRan][| k];
+						var xx = data[? "x"] + i * DG_WIDTH * CELL_WIDTH;	
+						var yy = data[? "y"] + j * DG_HEIGHT * CELL_HEIGHT;	
+						var _image_speed= data[? "image_speed"];	
+						var _image_index = data[? "image_index"];	
+						var _sprite_index = data[? "sprite_index"];	
+						with(instance_create_layer(xx,yy,"sort_start",Obj_desert_deco)){
+							sprite_index = _sprite_index;
+							image_speed = _image_speed;
+							image_index = _image_index;
+						}
 					}
-					with(instance_create_layer(xCenter + 80, yCenter - 64,"sort_start",Obj_desert_deco)){
-						sprite_index = Spr_deco_wood;
-						image_speed = 1;
-					}
-					with(instance_create_layer(xCenter - 80, yCenter + 76,"sort_start",Obj_desert_deco)){
-						sprite_index = Spr_deco_wood;
-						image_speed = 1;
-					}
-					with(instance_create_layer(xCenter - 80, yCenter - 64,"sort_start",Obj_desert_deco)){
-						sprite_index = Spr_deco_wood;
-						image_speed = 1;
-					}
+					ds_grid_set_grid_region(real_solid, reward_solid_map[rewardRan], 0, 0, DG_WIDTH - 1, DG_HEIGHT - 1, i * DG_WIDTH, j * DG_HEIGHT);
+					ds_grid_set_grid_region(real_ground, reward_ground_map[rewardRan], 0, 0, deco_width - 1, deco_height - 1, i * deco_width, j * deco_height);
+					
+					var xCenter = (DG_WIDTH * CELL_WIDTH * i) + DG_WIDTH / 2 * CELL_WIDTH;
+					var yCenter = (DG_HEIGHT * CELL_HEIGHT * j) + DG_HEIGHT / 2 * CELL_HEIGHT;
+					
 					instance_create_layer(xCenter, yCenter,"sort_start",Obj_itemTable);
 				}
 			}
@@ -64,7 +66,7 @@ for(var i = 0; i < 9; i++){
 				var xx = i * DG_WIDTH + DG_WIDTH div 2;
 				var y1 = j * DG_HEIGHT + DG_HEIGHT div 2;
 				var y2 = (j + 1) * DG_HEIGHT + DG_HEIGHT div 2;
-				var offset = irandom(3) - 3 div 2;
+				var offset = irandom_range(-1,1);
 				for(var yy = y1; yy <= y2; yy++){
 					if(real_solid[# xx + offset + 1, yy] == cellular.ImmutableWall) ds_grid_set(real_solid, xx + offset + 1, yy, cellular.WallReal);
 					if(real_solid[# xx + offset - 1, yy] == cellular.ImmutableWall) ds_grid_set(real_solid, xx + offset - 1, yy, cellular.WallReal);
@@ -75,7 +77,7 @@ for(var i = 0; i < 9; i++){
 				var x1 = i * DG_WIDTH + DG_WIDTH div 2;
 				var x2 = (i + 1) * DG_WIDTH + DG_WIDTH div 2;
 				var yy = j * DG_HEIGHT + DG_HEIGHT div 2;
-				var offset = irandom(3) - 3 div 2;
+				var offset = irandom_range(-1,1);
 				
 				for(var xx = x1; xx <= x2; xx++){
 					if(real_solid[# xx, yy + offset + 1] == cellular.ImmutableWall) ds_grid_set(real_solid, xx, yy + offset + 1, cellular.WallReal);
@@ -127,11 +129,37 @@ for(var i = 0; i < real_width; i++){
 			
 			var tile_data = tile_set_index(TileSet_desert47,ind);
 			real_mini_map[i][j] = ind;
-			if(map[#i, j] == cellular.WallReal)
+			if(map[#i, j] == cellular.WallReal){
 				with(instance_create_layer(i * CELL_WIDTH, j * CELL_HEIGHT, "sort_start",Obj_wall)){
 					image_index = ind;
 				}
-			
+			} else{
+				if(random(100) <= 55){
+					with(instance_create_layer(i * CELL_WIDTH + 10 + random(30), j * CELL_HEIGHT + 10 + random(30), "sort_start", Obj_desert_deco)){		
+						switch(irandom(5)){
+							case 0 :
+								sprite_index = Spr_desert_tree1A;
+								break;
+							case 1 :
+								sprite_index = Spr_desert_tree1B;
+								break;
+							case 2 :
+								sprite_index = Spr_desert_tree2A;
+								break;
+							case 3 :
+								sprite_index = Spr_desert_tree2B;
+								break;
+							case 4 :
+								sprite_index = Spr_desert_tree3A;
+								break;
+							case 5 :
+								sprite_index = Spr_desert_tree3B;
+								break;
+						}
+						image_speed = 1.0;
+					}
+				}	
+			}
 			tilemap_set_at_pixel(layer_tilemap_get_id("Tiles_1"), tile_data, i* CELL_WIDTH, j * CELL_HEIGHT);
 		}
 	}

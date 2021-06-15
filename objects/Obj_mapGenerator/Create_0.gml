@@ -42,40 +42,19 @@ for(var i = 0; i < dungeon_cnt; i++){
 	solid_map[i] = ds_grid_create(DG_WIDTH, DG_HEIGHT);
 	ground_map[i] = ds_grid_create(DG_WIDTH * 2, DG_HEIGHT * 2);
 	inst_list[i] = ds_list_create();
-	
+}
+
+reward_cnt = 1;
+
+for(var i = 0; i < dungeon_cnt; i++){
+	reward_solid_map[i] = ds_grid_create(DG_WIDTH, DG_HEIGHT);
+	reward_ground_map[i] = ds_grid_create(DG_WIDTH * 2, DG_HEIGHT * 2);
+	reward_inst_list[i] = ds_list_create();
 }
 
 Scr_get_map_template(solid_map[0], ground_map[0], inst_list[0], rm_desert_1);
 Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_2);
-
-/*map = real(load_csv("dungeon_map.csv"));
-
-for(var i = 0; i < ds_grid_width(map); i++){
-	for(var j = 0; j < ds_grid_height(map); j++){
-		map[# i, j] = real(map[# i, j]);
-	}
-}
-dungeon_cnt = ds_grid_height(map) div DG_HEIGHT;
-
-for(var i = 0; i < dungeon_cnt; i++){
-	map_list[i] = ds_grid_create(DG_WIDTH,DG_HEIGHT);
-	ds_grid_set_grid_region(map_list[i],map,0,i*DG_HEIGHT,DG_WIDTH-1,(i+1)*DG_HEIGHT - 1,0,0);
-}
-
-*/
-/*deco_map = real(load_csv("deco_map.csv"));
-
-for(var i = 0; i < ds_grid_width(deco_map); i++){
-	for(var j = 0; j < ds_grid_height(deco_map); j++){
-		deco_map[# i, j] = real(deco_map[# i, j]);
-	}
-}
-deco_cnt = ds_grid_height(deco_map) div deco_height;
-
-for(var i = 0; i < deco_cnt; i++){
-	deco_list[i] = ds_grid_create(deco_width,deco_height);
-	ds_grid_set_grid_region(deco_list[i],deco_map,0,i*deco_width,deco_width-1,(i+1)*deco_height - 1,0,0);
-}*/
+Scr_get_map_template(reward_solid_map[0], reward_ground_map[0], reward_inst_list[0], rm_desert_reward1);
 
 real_solid = ds_grid_create(real_width, real_height);
 real_ground = ds_grid_create(real_width * 2, real_height * 2);

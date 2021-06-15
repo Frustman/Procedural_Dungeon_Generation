@@ -26,7 +26,7 @@ if (global.paused == true){
 			for(var i = 0; i < room_H; i++){
 				instance_deactivate_layer(global.depth_grid[# 0, i]);
 			}
-			instance_deactivate_object(Obj_bloom_shader);
+			if(instance_exists(Obj_bloom_shader)) instance_deactivate_object(Obj_bloom_shader);
 	    }
 	}
 	/*if(!sprite_exists(paused_gui)){

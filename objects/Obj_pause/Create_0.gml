@@ -2,4 +2,4 @@
 // You can write your code in this editor
 paused_surf = -1;
 
-room_H = 19 * CELL_HEIGHT;
+room_H = DG_HEIGHT * CELL_HEIGHT;

@@ -23,7 +23,7 @@ player_charge			= false;
 player_sharpshooting	= false;
 player_fireshot			= false;
 player_chain			= false;
-player_explosion		= false;
+player_explosion		= true;
 player_penetrate		= false;
 player_flameShot		= false;
 

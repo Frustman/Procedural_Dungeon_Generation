@@ -149,8 +149,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "desert",
-    "path": "folders/Rooms/desert.yy",
+    "name": "room",
+    "path": "folders/Rooms/desert/room.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_desert_2",
