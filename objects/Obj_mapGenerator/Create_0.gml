@@ -36,7 +36,7 @@ dg_trim = 6;
 real_width = DG_WIDTH * 9;
 real_height = DG_HEIGHT * 8;
 
-dungeon_cnt = 2;
+dungeon_cnt = 3;
 
 for(var i = 0; i < dungeon_cnt; i++){
 	solid_map[i] = ds_grid_create(DG_WIDTH, DG_HEIGHT);
@@ -54,6 +54,7 @@ for(var i = 0; i < dungeon_cnt; i++){
 
 Scr_get_map_template(solid_map[0], ground_map[0], inst_list[0], rm_desert_1);
 Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_2);
+Scr_get_map_template(solid_map[2], ground_map[2], inst_list[2], rm_desert_3);
 Scr_get_map_template(reward_solid_map[0], reward_ground_map[0], reward_inst_list[0], rm_desert_reward1);
 
 real_solid = ds_grid_create(real_width, real_height);

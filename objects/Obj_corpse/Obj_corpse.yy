@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_wildpig_dead",
-    "path": "sprites/Spr_wildpig_dead/Spr_wildpig_dead.yy",
+    "name": "Spr_slime_dead",
+    "path": "sprites/Spr_slime_dead/Spr_slime_dead.yy",
   },
   "solid": false,
   "visible": true,

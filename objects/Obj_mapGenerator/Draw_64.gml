@@ -15,17 +15,19 @@ if(instance_exists(Obj_chr)){
 			for(var _j = 0; _j < 8; _j++){
 				surf = surface_create(120, 100);
 				surface_set_target(surf);
-					draw_rectangle_color(11,22,103,93,false,c_black,c_black,c_black,false);
-					for(var i = 0; i < DG_WIDTH; i++){
-						for(var j = 0; j < DG_HEIGHT; j++){
-							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							draw_sprite(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 4 * i,21 + 4 * j);
-						}
-					}
+					var color = make_color_rgb(200,134,79);
+					draw_rectangle_color(11,22,103,93,c_black,c_black,c_black,c_black,false);
+					draw_rectangle_color(12,23,102,92,color,color,color,color,false);
 					for(var k = 0; k < DG_WIDTH * 2; k++){
 						for(var l = 0; l < DG_HEIGHT * 2; l++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
 							draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 21 + 2 * l);
+						}
+					}
+					for(var i = 0; i < DG_WIDTH; i++){
+						for(var j = 0; j < DG_HEIGHT; j++){
+							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
+							draw_sprite(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 4 * i,21 + 4 * j);
 						}
 					}
 				surface_reset_target();

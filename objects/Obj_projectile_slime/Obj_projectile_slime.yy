@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Spr_dustA",
-    "path": "sprites/Spr_dustA/Spr_dustA.yy",
+    "name": "Spr_projectile_slime",
+    "path": "sprites/Spr_projectile_slime/Spr_projectile_slime.yy",
   },
   "solid": false,
   "visible": true,
