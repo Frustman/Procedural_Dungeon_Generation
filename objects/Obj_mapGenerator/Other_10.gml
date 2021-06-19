@@ -143,7 +143,7 @@ for(var i = 0; i < real_width; i++){
 			var ind = Scr_bit_masking_47(map,i,j,real_width,real_height,cellular.MutableWall);
 			
 			if(random(100) <= 30){
-				with(instance_create_layer(i * CELL_WIDTH + 10 + random(30), j * CELL_HEIGHT + 10 + random(30), "sort_start", Obj_desert_deco)){		
+				with(instance_create_layer(i * CELL_WIDTH + CELL_WIDTH / 2 + random_range(-10, 10), j * CELL_HEIGHT + CELL_HEIGHT / 2 + random_range(-10, 10), "sort_start", Obj_desert_deco)){		
 					switch(irandom(5)){
 						case 0 :
 							sprite_index = Spr_desert_tree1A;
@@ -245,7 +245,7 @@ instance_create_layer(0,0, "controller",Obj_controller);
 
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2 + 2) * CELL_HEIGHT, "sort_start", Obj_chr);
 //instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "sort_start", Obj_npc);
-//instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "shader", Obj_bloom_shader);
+instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT, "shader", Obj_bloom_shader);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_itemTable);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_itemTable);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2) * CELL_HEIGHT + 64, "sort_start", Obj_itemTable);

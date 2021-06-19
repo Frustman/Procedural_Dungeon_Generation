@@ -16,18 +16,18 @@ if(instance_exists(Obj_chr)){
 				surf = surface_create(120, 100);
 				surface_set_target(surf);
 					var color = make_color_rgb(200,134,79);
-					draw_rectangle_color(11,22,103,93,c_black,c_black,c_black,c_black,false);
-					draw_rectangle_color(12,23,102,92,color,color,color,color,false);
+					//draw_rectangle_color(11,22,103,93,c_black,c_black,c_black,c_black,false);
+					draw_rectangle_color(11,22,103,93,color,color,color,color,false);
 					for(var k = 0; k < DG_WIDTH * 2; k++){
 						for(var l = 0; l < DG_HEIGHT * 2; l++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 21 + 2 * l);
+							draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 22 + 2 * l);
 						}
 					}
 					for(var i = 0; i < DG_WIDTH; i++){
 						for(var j = 0; j < DG_HEIGHT; j++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							draw_sprite(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 4 * i,21 + 4 * j);
+							draw_sprite(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 4 * i,22 + 4 * j);
 						}
 					}
 				surface_reset_target();
@@ -37,7 +37,7 @@ if(instance_exists(Obj_chr)){
 			}
 		}
 		minimap_gen = true;
-	} else draw_sprite_ext(surf_min[xpos][ypos], 0, deviceWidth - 350 * mapW / 3, 2,mapW,mapH,0,c_white,1.0);
+	} else draw_sprite_ext(surf_min[xpos][ypos], 0, deviceWidth - 353 * mapW / 3, 2,mapW,mapH,0,c_white,1.0);
 	//} else draw_surface_stretched(surf, 0, deviceWidth - 90,270,300);
 	
 	draw_sprite_ext(Spr_minimap_chr,0,deviceWidth - 311 * mapW / 3 + ((Obj_chr.x - xpos * DG_WIDTH * CELL_WIDTH) / CELL_WIDTH * 12) * mapW / 3, 57 * mapH / 3 + ((Obj_chr.y - ypos * DG_HEIGHT * CELL_HEIGHT) / CELL_HEIGHT * 12) * mapH / 3,mapW - 1,mapH - 1,0,c_white,1);
