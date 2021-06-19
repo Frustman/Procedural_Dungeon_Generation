@@ -4,6 +4,7 @@ real_index = anim_index div anim_fps;
 //draw_sprite(Spr_wallM,0,(x div 64) * 64, ((y + 8) div 64) * 64);
 //shader_set(Sha_sepia);
 
+
 if(AttackTarget == noone){
 	TargetAngle = angle;	
 }
@@ -39,6 +40,8 @@ if(shoot){
 	if(gun_index <= 2) draw_sprite_ext(Spr_muzzle,irandom(3),x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
 	
 }
+//draw_circle(x,y,3,false);
+
 //shader_reset();
 /*if(charging){
 	anim_fps = 10;

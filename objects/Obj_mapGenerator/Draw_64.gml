@@ -7,7 +7,7 @@ if(instance_exists(Obj_chr)){
 	var cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
 	var xpos = cur_room div 10;
 	var ypos = cur_room % 10;
-	draw_sprite_ext(Spr_map_frame,0,0,0,mapW,mapH,0,c_white,1.0);
+	draw_sprite_ext(Spr_map_frame,0,0,0,mapW,mapH,0,c_white,1);
 	
 	
 	if(minimap_gen == false){
@@ -21,13 +21,13 @@ if(instance_exists(Obj_chr)){
 					for(var k = 0; k < DG_WIDTH * 2; k++){
 						for(var l = 0; l < DG_HEIGHT * 2; l++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							draw_sprite(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 2 * k, 22 + 2 * l);
+							draw_sprite_ext(Spr_mini_map_water, real_mini_water[_i * DG_WIDTH * 2 + k][ _j* DG_HEIGHT * 2 + l],13 + 3 * k, 22 + 3 * l,1.5,1.5,0,c_white,1);
 						}
 					}
 					for(var i = 0; i < DG_WIDTH; i++){
 						for(var j = 0; j < DG_HEIGHT; j++){
 							//draw_text( 4 + 4 * i, 12 + 4 * j,real_mini_map[_i * DG_WIDTH + i][_j* DG_HEIGHT + j]);
-							draw_sprite(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 4 * i,22 + 4 * j);
+							draw_sprite_ext(Spr_mini_map_ground, real_mini_map[_i * DG_WIDTH + i][ _j* DG_HEIGHT + j],13 + 6 * i,22 + 6 * j,1.5,1.5,0,c_white,1);
 						}
 					}
 				surface_reset_target();
@@ -40,9 +40,9 @@ if(instance_exists(Obj_chr)){
 	} else draw_sprite_ext(surf_min[xpos][ypos], 0, deviceWidth - 353 * mapW / 3, 2,mapW,mapH,0,c_white,1.0);
 	//} else draw_surface_stretched(surf, 0, deviceWidth - 90,270,300);
 	
-	draw_sprite_ext(Spr_minimap_chr,0,deviceWidth - 311 * mapW / 3 + ((Obj_chr.x - xpos * DG_WIDTH * CELL_WIDTH) / CELL_WIDTH * 12) * mapW / 3, 57 * mapH / 3 + ((Obj_chr.y - ypos * DG_HEIGHT * CELL_HEIGHT) / CELL_HEIGHT * 12) * mapH / 3,mapW - 1,mapH - 1,0,c_white,1);
+	draw_sprite_ext(Spr_minimap_chr,0,deviceWidth - 311 * mapW / 3 + ((Obj_chr.x + CELL_WIDTH / 2 - xpos * DG_WIDTH * CELL_WIDTH) / DG_WIDTH / CELL_WIDTH * 90) * mapW, 57 * mapH / 3 + ((Obj_chr.y + CELL_HEIGHT - ypos * DG_HEIGHT * CELL_HEIGHT) / DG_HEIGHT / CELL_HEIGHT * 70) * mapH,mapW - 1,mapH - 1,0,c_white,1);
 	
-	draw_sprite_ext(Spr_minimap_frame,0, deviceWidth - 350 * mapW / 3, 2,mapW,mapH,0,c_white,1);
+	draw_sprite_ext(Spr_minimap_frame,0, deviceWidth - 350 * mapW / 3 , 2,mapW,mapH,0,c_white,1);
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 8; j++){
 			var xpos = 27 + 24 * i;
