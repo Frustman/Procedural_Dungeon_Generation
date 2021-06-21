@@ -37,6 +37,7 @@ real_width = DG_WIDTH * 9;
 real_height = DG_HEIGHT * 8;
 
 dungeon_cnt = 3;
+test_map = ds_grid_create(DG_WIDTH, DG_HEIGHT);
 
 for(var i = 0; i < dungeon_cnt; i++){
 	solid_map[i] = ds_grid_create(DG_WIDTH, DG_HEIGHT);
@@ -51,7 +52,9 @@ for(var i = 0; i < dungeon_cnt; i++){
 	reward_ground_map[i] = ds_grid_create(DG_WIDTH * 2, DG_HEIGHT * 2);
 	reward_inst_list[i] = ds_list_create();
 }
-
+var aa = ds_grid_create(DG_WIDTH, DG_HEIGHT);
+var bb = ds_grid_create(DG_WIDTH * 2, DG_HEIGHT * 2);
+Scr_get_map_template(test_map, aa, bb, rm_test);
 Scr_get_map_template(solid_map[0], ground_map[0], inst_list[0], rm_desert_1);
 Scr_get_map_template(solid_map[1], ground_map[1], inst_list[1], rm_desert_2);
 Scr_get_map_template(solid_map[2], ground_map[2], inst_list[2], rm_desert_3);
@@ -70,7 +73,7 @@ miniMap_grid = ds_grid_create(9,8);
 Map_visit_grid = ds_grid_create(9,8);
 door_grid = ds_grid_create(9,8);
 
-ds_grid_set(map_grid,4,3,1);
+ds_grid_set(map_grid,4,3,-1);
 ds_grid_set_region(door_grid, 0, 0, 8, 7, 0);
 ds_grid_set_region(miniMap_grid, 0, 0, 8, 7, 0);
 ds_grid_set_region(Map_visit_grid, 0, 0, 8, 7, 0);

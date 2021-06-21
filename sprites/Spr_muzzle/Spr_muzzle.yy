@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"1de8e4c5-59d2-4e42-8edd-52f53389c354","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1de8e4c5-59d2-4e42-8edd-52f53389c354","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":{"name":"04784305-99b2-4c45-af28-38c7680b6a85","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"1de8e4c5-59d2-4e42-8edd-52f53389c354","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":{"name":"ba1475b5-ef49-4f3c-bb87-3d27d76d7278","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"1de8e4c5-59d2-4e42-8edd-52f53389c354","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":{"name":"04784305-99b2-4c45-af28-38c7680b6a85","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"Spr_muzzle","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"resourceVersion":"1.0","name":"1de8e4c5-59d2-4e42-8edd-52f53389c354","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"93ee74b2-36f9-4cd1-9dfd-d2645e51f899","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"93ee74b2-36f9-4cd1-9dfd-d2645e51f899","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"LayerId":{"name":"ba1475b5-ef49-4f3c-bb87-3d27d76d7278","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
@@ -75,8 +75,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 20,
-    "yorigin": 28,
+    "xorigin": 47,
+    "yorigin": 27,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"Spr_muzzle","path":"sprites/Spr_muzzle/Spr_muzzle.yy",},

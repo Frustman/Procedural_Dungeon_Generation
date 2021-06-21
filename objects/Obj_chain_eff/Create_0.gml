@@ -6,7 +6,6 @@ parX = 0;
 parY = 0;
 par = -1;
 target = -1;
-len = 142 - 42;
 margin = 21;
 crit = false;
 //alarm[1] = 10;

@@ -9,7 +9,7 @@ global.timeScale		= 1;
 player_maxhp			= 30;
 player_hp				= 30;
 
-player_attackdelay		= 2;
+player_attackdelay		= 10;
 
 critical_chance			= 0.5;
 
@@ -22,8 +22,8 @@ player_chainCount		= 6;
 player_charge			= false;
 player_sharpshooting	= false;
 player_fireshot			= false;
-player_chain			= false;
-player_explosion		= true;
+player_chain			= true;
+player_explosion		= false;
 player_penetrate		= false;
 player_flameShot		= false;
 
@@ -44,6 +44,8 @@ player_shield			= 4;
 player_maxshield		= 4;
 
 player_shieldregen		= 320;
+
+player_guntype			= 0;
 
 boss_exist				= false;
 boss_id					= noone;
