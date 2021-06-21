@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(Obj_valueContainer.bullet_count > 0 && !reload){
+if(CONTAINER.bullet_count > 0 && !reload){
 	//Scr_shake(0.9,0.2,5,0.7,0.45,0.8);
 	audio_play_sound(Pistol_Shot_02,0,false);
 	//instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge);
@@ -50,32 +50,32 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 	with(bullet){
 		image_xscale = 0.5 + other.charge / 100 * 0.5;
 		image_yscale = 0.5 + other.charge / 100 * 0.5;
-		damage = floor(other.charge / 100 * Obj_valueContainer.player_chargeMaxDamage);
+		damage = floor(other.charge / 100 * CONTAINER.player_chargeMaxDamage);
 		dir = _angle;
 		spd = 7;
 		motion_set(dir,spd * global.timeScale);
 		image_angle = _angle;
 	
-		chainDamage = Obj_valueContainer.player_chainDamage;
-		chain_lightning = Obj_valueContainer.player_chain;
-		critical_chance = Obj_valueContainer.critical_chance;
+		chainDamage = CONTAINER.player_chainDamage;
+		chain_lightning = CONTAINER.player_chain;
+		critical_chance = CONTAINER.critical_chance;
 	
 		par = other.id;	
 	
-		fireshot = Obj_valueContainer.player_fireshot;
+		fireshot = CONTAINER.player_fireshot;
 	
 		target = other.AttackTarget;
-		sharp_shooting = Obj_valueContainer.player_sharpshooting;
-		cusion_max = Obj_valueContainer.sharp_cusionCount;
-		cusion_dist = Obj_valueContainer.sharp_distance;
+		sharp_shooting = CONTAINER.player_sharpshooting;
+		cusion_max = CONTAINER.sharp_cusionCount;
+		cusion_dist = CONTAINER.sharp_distance;
 	}
-	Obj_valueContainer.bullet_count--;
-	with(global.bullet_ui[Obj_valueContainer.bullet_count]){
+	CONTAINER.bullet_count--;
+	with(global.bullet_ui[CONTAINER.bullet_count]){
 		event_perform(ev_other,ev_user0);
 	}
-	if(Obj_valueContainer.bullet_count == 0){
+	if(CONTAINER.bullet_count == 0){
 		reload = true;
-		Obj_valueContainer.bullet_count = Obj_valueContainer.bullet_maxCount;
+		CONTAINER.bullet_count = CONTAINER.bullet_maxCount;
 		Alarm[3] = 90;
 	}
 }

@@ -130,7 +130,7 @@ if(attackIndex != -1){
 			if(can_attack){
 				with(Obj_chr){
 					event_perform(ev_other,ev_user1);
-					other.Alarm[0] = bullet_delay;
+					other.Alarm[0] = CONTAINER.player_attackdelay;
 				}
 				can_attack = false;
 			}

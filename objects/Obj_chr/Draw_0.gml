@@ -36,7 +36,7 @@ if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;
 	gun_index += global.timeScale;
 	var Gangle = (hand_x == 1.0) ? TargetAngle : TargetAngle  - 180;
-	draw_sprite_ext(Spr_chr_hand,0,x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
+	draw_sprite_ext(Spr_chr_hand,CONTAINER.player_guntype,x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
 	if(gun_index <= 2) draw_sprite_ext(Spr_muzzle,irandom(3),x + lengthdir_x(gun_reac,Gangle),y + 8 + lengthdir_y(gun_reac, Gangle),hand_x,image_yscale,Gangle,c_white,image_alpha);
 	
 }

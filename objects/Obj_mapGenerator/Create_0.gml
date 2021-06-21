@@ -110,16 +110,12 @@ mini_resize = false;
 mapW_target = 2.0;
 mapH_target = 2.0;
 
+for(var i = 0; i < CONTAINER.bullet_maxCount; i++){
+	global.bullet_ui[i] = instance_create_layer(x,y,"bullet_gui",Obj_bullet_ui);
+}
+
 mapW = 1.0;
 mapH = 1.0;
 
 mapX = 90 * mapW;
 bosshpY = deviceHeight + 60;
-
-for(var i = 0; i < Obj_valueContainer.bullet_maxCount; i++){
-	global.bullet_ui[i] = instance_create_layer(x,y,"bullet_gui",Obj_bullet_ui);
-	/*with(bullet_ui[i]){
-		xpos = 300 - 24 + 20 * i;
-		ypos = 30;
-	}*/
-}

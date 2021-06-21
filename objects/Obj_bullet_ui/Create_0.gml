@@ -11,4 +11,4 @@ anim_fps = 3;
 
 scale = 3.0
 
-state = "exist";
+state = bulletState.exist;

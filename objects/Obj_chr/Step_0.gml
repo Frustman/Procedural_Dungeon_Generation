@@ -62,7 +62,7 @@ if(anim_index < (anim_maxIndex) * anim_fps){
 }
 
 if(dash){
-	dashSpeed -= 0.4 * global.timeScale;
+	dashSpeed -= 0.3 * global.timeScale;
 	if(dashSpeed < 0) dashSpeed = 0;
 	if(random(1) < 0.4){
 		instance_create_layer(x,y+8,"sort_end",Obj_dust);

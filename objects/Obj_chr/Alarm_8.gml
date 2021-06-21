@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-	Scr_sleep(120);
+	Scr_sleep(150);

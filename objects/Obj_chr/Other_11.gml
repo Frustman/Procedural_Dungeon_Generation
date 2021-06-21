@@ -43,7 +43,7 @@ if(Obj_valueContainer.bullet_count > 0 && !reload){
 		TargetAngle = point_direction(shootX,shootY,AttackTarget.x,AttackTarget.y);
 	}
 	
-	var _angle = TargetAngle + random_range(-2,2);
+	var _angle = TargetAngle + random_range(-1 * CONTAINER.player_recoil, CONTAINER.player_recoil);
 	
 	with(instance_create_layer(shootX,shootY, "sort_end", Obj_Catridge)){
 		hspd = -sign(lengthdir_x(1,_angle)) * random(3);
