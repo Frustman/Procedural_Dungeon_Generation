@@ -9,7 +9,7 @@ global.timeScale		= 1;
 player_maxhp			= 30;
 player_hp				= 30;
 
-player_attackdelay		= 7;
+player_attackdelay		= 2;
 
 critical_chance			= 0.5;
 
@@ -58,7 +58,6 @@ global.item = string_upper(string(load_csv("item_desc.csv")));
 global.synergy_count = ds_grid_height(global.synergy_name);
 for(var i = 0; i < global.synergy_count; i++){
 	player_synergy[i] = 0;
-//	show_message(global.synergy_name[#0, i]);	
 }
 
 Scr_alarm_init();
