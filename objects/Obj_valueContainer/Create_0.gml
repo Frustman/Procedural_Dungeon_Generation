@@ -58,11 +58,11 @@ player_recoil			= 0;
 
 player_guntype			= 0;
 player_gunMaxType		= 5;
-player_gundelay			= [12,1,45,6,45];
-player_gundamage		= [6,1,30,2,30];
+player_gundelay			= [12,1,45,3,45];
+player_gunDamage		= [6,1,30,2,30];
 player_gunrecoil		= [0.5,0,0,2,0];
-player_gunMaxCount		= [7,1,4,30,5];
-player_gunBulletCount	= [7,1,4,30,5];
+player_gunMaxCount		= [7,1,4,50,5];
+player_gunBulletCount	= [7,1,4,50,5];
 
 bullet_maxCount			= player_gunMaxCount[player_guntype];
 bullet_count			= player_gunBulletCount[player_guntype];

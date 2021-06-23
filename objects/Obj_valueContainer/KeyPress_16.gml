@@ -8,6 +8,7 @@ bullet_count							= player_gunBulletCount[player_guntype];
 player_attackdelay						= player_gundelay[player_guntype];
 player_recoil							= player_gunrecoil[player_guntype];
 bullet_count							= player_gunBulletCount[player_guntype];
+player_bulletDamage						= player_gunDamage[player_guntype];
 
 instance_destroy(Obj_bullet_ui);
 
