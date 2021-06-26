@@ -65,7 +65,7 @@
     "spriteId": {"name":"Spr_chain_mid","path":"sprites/Spr_chain_mid/Spr_chain_mid.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 20.0,
+    "playbackSpeed": 30.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
