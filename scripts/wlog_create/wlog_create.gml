@@ -27,6 +27,7 @@ function wlog_create(argument0) {
 		onEmp=0;
 		onEffect=array_create(10,-1);
 		isRepeating=0;
+		parent = other.id;
 	}
 	global.wlogRecent=inst;
 	global.wcount+=1;
