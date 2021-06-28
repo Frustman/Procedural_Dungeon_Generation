@@ -74,7 +74,6 @@ bullet_count			= player_gunBulletCount[player_guntype];
 
 game_timeScale			= 1.0;
 game_surface_blur_sigma	= 0;
-game_surface_blur		= false;
 
 #endregion
 

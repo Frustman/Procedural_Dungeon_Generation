@@ -17,7 +17,9 @@ wlog_add_elif_link(1);
 wlog_add_text("여우가 잠들었어! 시간이나 때워야지!");
 wlog_add_elif_link(2);
 wlog_add_text("네 시간이 지났다...");
-wlog_add_end();
+
+wlog_add_elif_link(1);
+wlog_add_text("안녕");
 
 wlog_add_else();
 wlog_add_text("뭐라도 할 게 있으면 미리미리 하도록 하자!"	);

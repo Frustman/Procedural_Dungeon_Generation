@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 chr_diff = point_distance(Obj_chr.x, Obj_chr.y, x, y);
 
 width = (bbox_bottom - bbox_top)*3/5;

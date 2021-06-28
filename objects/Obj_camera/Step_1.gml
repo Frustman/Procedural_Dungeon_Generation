@@ -84,7 +84,7 @@ camera_set_view_border(view_camera[0], new_width / 2, new_height / 2);
 camera_set_view_pos(view_camera[0], x - camera_get_view_border_x(view_camera[0]) + offsetX, y - camera_get_view_border_y(view_camera[0]) + offsetY);
 
 global.timeScale = lerp(global.timeScale, targetTimeScale, 0.05);
-CONTAINER.game_surface_blur_sigma = abs(1.2 - global.timeScale);
+CONTAINER.game_surface_blur_sigma = abs(1.0 - global.timeScale);
 
 screenX = camera_get_view_x(view_camera[0]);
 screenY = camera_get_view_y(view_camera[0]);
