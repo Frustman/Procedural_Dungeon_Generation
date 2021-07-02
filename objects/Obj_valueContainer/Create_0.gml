@@ -7,7 +7,7 @@ global.level			= 1;
 global.timeScale		= 1;
 #region player status
 
-critical_chance			= 0.5;
+critical_chance			= 0.7;
 
 player_maxhp			= 30;
 player_hp				= 30;
@@ -33,7 +33,7 @@ player_chainCount		= 6;
 player_charge			= false;
 player_sharpshooting	= false;
 player_fireshot			= false;
-player_chain			= false;
+player_chain			= true;
 player_explosion		= false;
 player_penetrate		= false;
 player_flameShot		= false;

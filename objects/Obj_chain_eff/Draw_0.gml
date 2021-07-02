@@ -20,10 +20,15 @@ if(par != -1 && instance_exists(par)){
 }
 var dir = point_direction(px,py,tx,ty);
 var dist = point_distance(px,py,tx,ty);
-draw_sprite_ext(Spr_chain_burst1,image_index,px,py,1.0,1.0,dir,c_white,1.0);
-draw_sprite_ext(Spr_chain_burst1,image_index,tx,ty,1.0,1.0,dir,c_white,1.0);
-draw_sprite_ext(Spr_chain_burst2,image_index,px,py,1.0,1.0,dir,c_white,1.0);
-draw_sprite_ext(Spr_chain_burst2,image_index,tx,ty,1.0,1.0,dir,c_white,1.0);
+
+if(crit){
+	draw_sprite_ext(Spr_chain_burst1,image_index,px,py,1.0,1.0,dir,c_white,1.0);
+	draw_sprite_ext(Spr_chain_burst2,image_index,tx,ty,1.0,1.0,dir,c_white,1.0);
+}
+
+
+//draw_sprite_ext(Spr_chain_burst1,image_index,tx,ty,1.0,1.0,dir,c_white,1.0);
+//draw_sprite_ext(Spr_chain_burst2,image_index,px,py,1.0,1.0,dir,c_white,1.0);
 /*var cnt = dist div len;
 var ratio = (dist - cnt * len) / len;
 //if(cnt == 0) draw_sprite_ext(Spr_chain_mid,image_index,par.x,par.y,1.0,1.0,dir,c_white,1.0);
