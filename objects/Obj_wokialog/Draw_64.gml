@@ -12,3 +12,7 @@ if(wait==-1){
 		draw_sprite(s_cursor,0,x+width-32,y+height+8);
 	}
 }
+
+for(var i = 0; i < array_length(wUserProperty); i++){
+	draw_text(0,300+20*i,wUserProperty[i]);	
+}
