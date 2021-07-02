@@ -15,6 +15,7 @@ cur_room = 0;
 
 target = noone;
 
+focus_id = -1;
 
 dg_trim = 6;
 

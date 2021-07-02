@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Obj_sequence",
+    "path": "objects/Obj_sequence/Obj_sequence.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -25,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "system",
-    "path": "folders/Objects/system.yy",
+    "name": "sequence",
+    "path": "folders/Objects/sequence.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_item_sequence",

@@ -12,7 +12,8 @@ draw_sprite_ext(Spr_letterbox,0,centerX, -128 + _val_E * 128,deviceWidth / 10,1.
 //if(cnt >= sequence_length * 2 / 5){
 	draw_set_font(Font_ui);
 	draw_set_halign(fa_center);
-	draw_text_transformed(centerX,2 * centerY + 128 - _val_E * 128 - 100,"YOU'VE GOT " + item_name,2.0,2.0,0);
+	draw_set_valign(fa_center);
+	draw_text_transformed(centerX,2 * centerY + 128 - _val_E * 128 - 72,"YOU'VE GOT " + item_name,2.0,2.0,0);
 	draw_set_halign(fa_left);
 	draw_set_font(-1);
 //}

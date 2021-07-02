@@ -17,6 +17,8 @@ function wlog_create(argument0) {
 		countN=0;
 		wait=0;
 		initText=0;//bool
+		cameraFocus=0;//bool
+		sequenceid=-1;
 		iHeight=-1;
 		iValue=[0];//LogicIndex
 		ColorIndex=0;

@@ -3,7 +3,11 @@
 
 gpu_set_tex_filter(false);
 
-if(instance_exists(Obj_chr)){
+if(instance_exists(Obj_sequence)){
+	mapW = 0;
+	mapH = 0;
+}
+if(instance_exists(Obj_chr) && !instance_exists(Obj_sequence)){
 	var cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
 	var xpos = cur_room div 10;
 	var ypos = cur_room % 10;
@@ -70,13 +74,14 @@ if(instance_exists(Obj_chr)){
 			}
 		}
 	}
-} else {
+}
+/*else {
 	for(var i = 0; i < 9; i++){
 		for(var j = 0; j < 8; j++){
 			draw_text(i * 10, j * 10, map_grid[#i,j]);
 		}
 	}
-}
+}*/
 
 
 	draw_set_font(Font_ui);

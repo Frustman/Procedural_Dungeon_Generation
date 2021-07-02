@@ -99,13 +99,11 @@ if(generated && instance_exists(Obj_chr)){
 	if(Obj_valueContainer.boss_exist == true){
 		bosshpY = lerp(bosshpY, deviceHeight - 100, 0.1 * global.timeScale);
 	}
-	if(mini_resize == true){
+	if(abs(mapW - mapW_target) != 0){
 		mapW = lerp(mapW, mapW_target, 0.1 * global.timeScale);
 		mapH = lerp(mapH, mapH_target, 0.1 * global.timeScale);
 
 		mapX = 90 * mapW;
-		
-		if(mapW == mapW_target) mini_resize = false;
 	}
 	
 	

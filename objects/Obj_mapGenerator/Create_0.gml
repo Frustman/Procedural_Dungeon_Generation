@@ -105,7 +105,6 @@ dir_list[2][1] = 0;
 dir_list[3][0] = 0;
 dir_list[3][1] = -1;
 
-mini_resize = false;
 
 mapW_target = 2.0;
 mapH_target = 2.0;

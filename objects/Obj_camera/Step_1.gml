@@ -35,22 +35,27 @@ view_height = camera_get_view_height(view_camera[0]);
 
 //version 2
 if(instance_exists(Obj_chr)){
-	cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
-	var roomX = ((cur_room div 10) * DG_WIDTH + DG_WIDTH / 2) * CELL_WIDTH;
-	var roomY = ((cur_room % 10) * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT;
+	if(focus_id == -1){
+		cur_room = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
+		var roomX = ((cur_room div 10) * DG_WIDTH + DG_WIDTH / 2) * CELL_WIDTH;
+		var roomY = ((cur_room % 10) * DG_HEIGHT + DG_HEIGHT / 2) * CELL_HEIGHT;
 	
-	var dir = point_direction(roomX,roomY,Obj_chr.x,Obj_chr.y);
-	var len = point_distance(roomX,roomY,Obj_chr.x,Obj_chr.y);
+		var dir = point_direction(roomX,roomY,Obj_chr.x,Obj_chr.y);
+		var len = point_distance(roomX,roomY,Obj_chr.x,Obj_chr.y);
 	
-	targetX = roomX + lengthdir_x(len / 7 * 6, dir);
-	targetY = roomY + lengthdir_y(len / 7 * 6, dir);
 	
-	targetX = min(targetX, roomX + DG_WIDTH * CELL_WIDTH / 2 - view_width / 2);
-	targetX = max(targetX, roomX - DG_WIDTH * CELL_WIDTH / 2 + view_width / 2);
+		targetX = roomX + lengthdir_x(len / 7 * 6, dir);
+		targetY = roomY + lengthdir_y(len / 7 * 6, dir);
 	
-	targetY = min(targetY, roomY  + DG_HEIGHT * CELL_HEIGHT / 2 - view_height / 2);
-	targetY = max(targetY, roomY - DG_HEIGHT * CELL_HEIGHT / 2 + view_height / 2);
+		targetX = min(targetX, roomX + DG_WIDTH * CELL_WIDTH / 2 - view_width / 2);
+		targetX = max(targetX, roomX - DG_WIDTH * CELL_WIDTH / 2 + view_width / 2);
 	
+		targetY = min(targetY, roomY  + DG_HEIGHT * CELL_HEIGHT / 2 - view_height / 2);
+		targetY = max(targetY, roomY - DG_HEIGHT * CELL_HEIGHT / 2 + view_height / 2);
+	} else {
+		targetX = (focus_id.parent.x + Obj_chr.x) / 2;
+		targetY = (focus_id.parent.y + Obj_chr.y) / 2;
+	}
 	cam_zoom = 1.0 - zoom_shake;
 } else if(global.paused == true){
 	targetX = x;
