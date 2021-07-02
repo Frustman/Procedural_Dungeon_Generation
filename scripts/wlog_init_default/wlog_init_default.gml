@@ -2,8 +2,9 @@
 function wlog_init_default() {
 
 	wFont=global.wFont;
-	width=200;
-	height=80;
+	targetWidth=100;
+	width=0;
+	height=50;
 	lineSpace=4; //vertical
 	hSpace=1; //horizontal
 

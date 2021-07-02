@@ -36,7 +36,7 @@ function wlog_draw() {
 							}
 						}
 					}
-				
+					
 					draw_set_color(defaultColor[_indexc]);
 					draw_text_transformed(x+__x+_x,y+__y+_y,string_char_at(_arr,j),defaultScale[_indexs],defaultScale[_indexs],0);
 					_mx=floor((hSpace+tspace[_line])*0.5);

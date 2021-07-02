@@ -14,6 +14,5 @@ function wlog_add_text() {
 	}
 	ds_list_add(global.wlogRecent.list,0);
 	ds_list_add(global.wlogRecent.list,_property);
-
-
+	
 }

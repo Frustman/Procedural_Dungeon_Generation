@@ -58,6 +58,7 @@
     {"id":{"name":"Spr_itemTable","path":"sprites/Spr_itemTable/Spr_itemTable.yy",},"order":11,},
     {"id":{"name":"Spr_chr","path":"sprites/Spr_chr/Spr_chr.yy",},"order":0,},
     {"id":{"name":"Spr_desert_tree2B","path":"sprites/Spr_desert_tree2B/Spr_desert_tree2B.yy",},"order":3,},
+    {"id":{"name":"Obj_logSequence","path":"objects/Obj_logSequence/Obj_logSequence.yy",},"order":6,},
     {"id":{"name":"wlog_event_destroy","path":"scripts/wlog_event_destroy/wlog_event_destroy.yy",},"order":13,},
     {"id":{"name":"Scr_BS_line","path":"scripts/Scr_BS_line/Scr_BS_line.yy",},"order":7,},
     {"id":{"name":"Spr_slime_dead","path":"sprites/Spr_slime_dead/Spr_slime_dead.yy",},"order":2,},

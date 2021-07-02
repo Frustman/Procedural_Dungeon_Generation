@@ -37,6 +37,7 @@ function wlog_update() {
 					if (wait==0){
 						if (is_array(ltext[|index])){//pos단위로 사용하지 않는다. [index, indexSub] 단위로 사용한다. 
 							var testArr=ltext[|index];
+							
 							if (testArr[0]=="n"){//draw에서도 (posLine+1>countN)로 더 그릴지 확인해야된다. 
 								do{
 									index++;
