@@ -106,6 +106,27 @@ function wlog_update() {
 									SpeedIndex=0;
 									onEffect=array_create(10,-1);
 								}
+								else if (testArr[0]=="q"){
+									repeat(index+1){
+										ds_list_delete(ltext,0);
+									}
+								
+									//tspace=array_create(3,0);
+									//theight=array_create(3,0);
+									index=-1;
+									posLine=0;
+									textX=0;
+									textY=0;
+									frame=0;
+									onLdown=0;
+									onLmiddle=0;
+									onEmp=0;
+									ColorIndex=0;
+									ScaleIndex=0;
+									SpeedIndex=0;
+									onEffect=array_create(10,-1);
+									wlog_destroy();
+								}
 								else if (testArr[0]=="a"){
 									var _arr=wNowProperty[2];
 									audio_play_sound(_arr[testArr[1]],0,0);

@@ -95,6 +95,7 @@
     {"id":{"name":"o_event_select","path":"objects/o_event_select/o_event_select.yy",},"order":2,},
     {"id":{"name":"rm_desert_1","path":"rooms/rm_desert_1/rm_desert_1.yy",},"order":0,},
     {"id":{"name":"wlog_set_focus","path":"scripts/wlog_set_focus/wlog_set_focus.yy",},"order":33,},
+    {"id":{"name":"Obj_npc2","path":"objects/Obj_npc2/Obj_npc2.yy",},"order":1,},
     {"id":{"name":"Scr_strafe_ai","path":"scripts/Scr_strafe_ai/Scr_strafe_ai.yy",},"order":39,},
     {"id":{"name":"Scr_bit_masking_47","path":"scripts/Scr_bit_masking_47/Scr_bit_masking_47.yy",},"order":43,},
     {"id":{"name":"Spr_minimap_frame","path":"sprites/Spr_minimap_frame/Spr_minimap_frame.yy",},"order":10,},
@@ -305,6 +306,7 @@
     {"id":{"name":"Obj_mapCreator","path":"objects/Obj_mapCreator/Obj_mapCreator.yy",},"order":1,},
     {"id":{"name":"Obj_enemy_contextMap","path":"objects/Obj_enemy_contextMap/Obj_enemy_contextMap.yy",},"order":7,},
     {"id":{"name":"Scr_Pdg_CountNeighbor","path":"scripts/Scr_Pdg_CountNeighbor/Scr_Pdg_CountNeighbor.yy",},"order":2,},
+    {"id":{"name":"Obj_event_select","path":"objects/Obj_event_select/Obj_event_select.yy",},"order":6,},
     {"id":{"name":"rm_level","path":"rooms/rm_level/rm_level.yy",},"order":0,},
   ],
   "Options": [

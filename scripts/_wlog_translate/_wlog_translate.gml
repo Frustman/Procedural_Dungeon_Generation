@@ -47,7 +47,7 @@ function _wlog_translate() {
 					list[|1]=_list;
 					break;
 				}
-				else if (_char=="x"||_char=="p"){
+				else if (_char=="x"||_char=="p"||_char=="q"){
 					ds_list_add(ltext,[_char]);
 				
 					/*var _size=ds_list_size(ltext),str="";

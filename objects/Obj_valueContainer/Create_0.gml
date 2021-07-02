@@ -86,6 +86,7 @@ boss_id					= noone;
 player_itemCount = 0;
 player_itemList = ds_list_create();
 
+global.wlogList = ds_list_create();
 
 global.synergy_name = string(load_csv("synergy_name.csv"));
 global.item = string_upper(string(load_csv("item_desc.csv")));

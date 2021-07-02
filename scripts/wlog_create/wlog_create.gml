@@ -31,6 +31,7 @@ function wlog_create(argument0) {
 		isRepeating=0;
 		parent = other.id;
 	}
+	ds_list_add(global.wlogList, inst);
 	global.wlogRecent=inst;
 	global.wcount+=1;
 
