@@ -23,7 +23,7 @@ for(var i = 0; i < rayCount; i++){
 	}
 }
 
-/*
+
 var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
 var x_ppd = lengthdir_x(10,ideal_ppd);
 var y_ppd = lengthdir_y(10,ideal_ppd);
@@ -36,6 +36,6 @@ if(rayExtraCheck[0]) draw_set_color(c_red);
 draw_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray);
 draw_set_color(c_blue);
 if(rayExtraCheck[1]) draw_set_color(c_red);
-draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);*/
+draw_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray);
 draw_set_color(c_white);
 draw_line(x,y,x+moveDir[0]*10,y+moveDir[1]*10);

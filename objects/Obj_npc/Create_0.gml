@@ -2,7 +2,7 @@
 // You can write your code in this editor
 wlog_init();
 
-choice = 0;
+logInst = -1;
 /*
 
 [Command]

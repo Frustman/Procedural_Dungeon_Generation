@@ -71,9 +71,16 @@ if(stateMachine == state_machine.wander){
 
 	if(contextVal >= contextInterval) contextVal = 0;
 	if(contextVal == 0){
-		if(player_dist > strafeRange) state = ai_state.chase;
+		/*if(player_dist > strafeRange) state = ai_state.chase;
 		else if(player_dist <= strafeRange && player_dist >= strafeRange - 10) state = ai_state.strafe;
-		else if(player_dist < strafeRange - 10) state = ai_state.backward;
+		else if(player_dist < strafeRange - 10) state = ai_state.backward;*/
+		
+		var strafeCheck1 = collision_circle(x,y,strafeRange - 10, Obj_chr, true, false) != noone;
+		var strafeCheck2 = collision_circle(x,y,strafeRange, Obj_chr, true, false) != noone;
+		
+		if(strafeCheck1 == false && strafeCheck2 == false) state = ai_state.chase;
+		else if(strafeCheck1 == false && strafeCheck2 == true) state = ai_state.strafe;
+		else if(strafeCheck1 == true && strafeCheck2 == true) state = ai_state.backward;
 
 		maxVal = -999;
 		maxIdx = 0;
@@ -189,12 +196,18 @@ if(stateMachine == state_machine.wander){
 		}
 	}
 	//
-
+	
+	moveDir[0] = lerp(moveDir[0], dirGoal[0], 0.2);
+	moveDir[1] = lerp(moveDir[1], dirGoal[1], 0.2);
+	
+	/*
 	force[0] = dirGoal[0] - moveDir[0];
 	force[1] = dirGoal[1] - moveDir[1];
 
 	moveDir[0] += force[0] / 6;
 	moveDir[1] += force[1] / 6;
+	*/
+	
 
 	var force_dir = point_direction(0,0,moveDir[0],moveDir[1]);
 
@@ -202,8 +215,8 @@ if(stateMachine == state_machine.wander){
 	/*if(moveDir > 360) moveDir -= 360;
 	if(moveDir < 0) moveDir = 360;
 	moveDir = lerp(moveDir, dirGoal, 0.1);*/
-	if(state == ai_state.backward) moveSpeed  = 1.3 * global.timeScale;
-	else moveSpeed = 1.5 * global.timeScale;
+	if(state == ai_state.backward) moveSpeed  = 0.7 * global.timeScale;
+	else moveSpeed = 1 * global.timeScale;
 
 	Scr_force_update([lengthdir_x(moveSpeed,force_dir), lengthdir_y(moveSpeed, force_dir)]);
 	

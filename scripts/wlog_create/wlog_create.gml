@@ -1,7 +1,7 @@
 ///@function wlog_create(object)
 ///@arg object
 function wlog_create(argument0) {
-	var inst=instance_create_depth(x,y,-999,argument0);
+	var inst=instance_create_layer(x,y,"gui",argument0);
 	with(inst){
 		textX=0;
 		textY=0;

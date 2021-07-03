@@ -29,6 +29,7 @@ if(context_val == 0){
 	if(player_dist > strafe_range) state = ai_state.chase;
 	else if(player_dist <= strafe_range && player_dist >= strafe_range - 10) state = ai_state.strafe;
 	else if(player_dist < strafe_range - 10) state = ai_state.backward;
+	
 
 	max_val = -999;
 	max_idx = 0;

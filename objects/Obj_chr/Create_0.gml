@@ -1,4 +1,4 @@
-moveSpeed = 2 * global.timeScale;
+moveSpeed = 4 * global.timeScale;
 dashSpeed = 2 * global.timeScale;
 
 hand_x = 1.0;
