@@ -108,7 +108,7 @@ if(generated && instance_exists(Obj_chr)){
 	
 	
 	curRoom = Scr_get_room_pos(Obj_chr.x,Obj_chr.y);
-	/*if(Map_visit_grid[# curRoom div 10, curRoom % 10] == 0 && map_grid[# curRoom div 10, curRoom % 10] == 1){
+	if(Map_visit_grid[# curRoom div 10, curRoom % 10] == 0 && map_grid[# curRoom div 10, curRoom % 10] == 1){
 		repeat(6){
 			mongen = false;
 			while(!mongen){
@@ -128,7 +128,7 @@ if(generated && instance_exists(Obj_chr)){
 				}
 			}
 		}
-	}*/
+	}
 	Map_visit_grid[# curRoom div 10, curRoom % 10] = 1;
 	miniMap_grid[# curRoom div 10, curRoom % 10] = map_grid[# curRoom div 10, curRoom % 10];
 	miniMap_grid[# curRoom div 10, curRoom % 10 - 1] = map_grid[# curRoom div 10, curRoom % 10 - 1];

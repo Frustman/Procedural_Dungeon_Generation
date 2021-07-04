@@ -89,7 +89,12 @@ if(stateMachine == state_machine.wander){
 		maxIdxCheck = 0;
 
 		var normal = point_direction(Obj_chr.x,Obj_chr.y,x,y);
-	
+		if(state == ai_state.strafe){
+			pos = [Obj_chr.x + lengthdir_x(strafeRange, normal + theta), Obj_chr.y + lengthdir_y(strafeRange, normal + theta)]
+			normal = point_direction(pos[0],pos[1],x,y);
+		}
+		
+		DangerCount = 0;
 		for(var i = 0; i < rayCount; i++){
 			contextMap[i] = 0;	
 			contextDanger[i] = false;
@@ -101,15 +106,17 @@ if(stateMachine == state_machine.wander){
 		
 			var dot = (x1 * x2 + y1 * y2);
 			if(state == ai_state.backward) contextMap[i] =  (1.0 - abs(dot - 0.9)) * 2;
-			if(state == ai_state.strafe) contextMap[i] = (1.0 - abs(dot)) * 2;
+			//if(state == ai_state.strafe) contextMap[i] = (1.0 - abs(dot)) * 2;
+			if(state == ai_state.strafe) contextMap[i] = 1.0 - (dot);
 			if(state == ai_state.chase) contextMap[i] = 1.0 - (dot);
 	
-	
+			
 			if(collision_line(x,y,x + lengthdir_x(abs(contextMap[i] * rayDistance),contextDir[i][2]),y + lengthdir_y(abs(contextMap[i] * rayDistance),contextDir[i][2]),Obj_enemy,true,true) != noone || collision_line(x,y,x + lengthdir_x(abs(contextMap[i] * rayDistance),contextDir[i][2]),y + lengthdir_y(abs(contextMap[i] * rayDistance),contextDir[i][2]),Obj_wall,true,true) != noone){
 			//if(collision_line(x,y,x + lengthdir_x(abs(contextMap[i] * rayDistance),contextDir[i][2]),y + lengthdir_y(abs(contextMap[i] * rayDistance),contextDir[i][2]),Obj_wall,false,true) != noone){
 				contextDanger[i] = true;
+				DangerCount++;
 			}
-	
+			
 			contextCheck[i] = false;
 			if(!contextDanger[i]){
 				if(contextMap[i] > maxVal){
@@ -118,8 +125,11 @@ if(stateMachine == state_machine.wander){
 				}
 			}
 		}
-
-		force[0] = 0;
+		
+		if(DangerCount > 2){
+			theta = (theta > 0) ? -10 : 10;	
+		}
+		/*force[0] = 0;
 		force[1] = 0;
 
 		var st = round(point_direction(x,y,Obj_chr.x,Obj_chr.y) / ( 360 / rayCount));
@@ -145,11 +155,11 @@ if(stateMachine == state_machine.wander){
 				contextCheck[i % rayCount] = true;
 			}
 		}
-		if(abs(maxValCheck - maxVal) >= 0.75) checkHalf = !checkHalf;
+		if(abs(maxValCheck - maxVal) >= 0.75) checkHalf = !checkHalf;*/
 	}
 
-	dirGoal[0] = contextDir[maxIdxCheck][0];
-	dirGoal[1] = contextDir[maxIdxCheck][1];
+	dirGoal[0] = contextDir[maxIdx][0];
+	dirGoal[1] = contextDir[maxIdx][1];
 
 	// check big size
 
@@ -157,12 +167,12 @@ if(stateMachine == state_machine.wander){
 	rayExtraCheck[1] = false;
 
 	if(state == ai_state.chase){
-		var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
+		var ideal_ppd = contextDir[maxIdx][2] - 90;
 		var x_ppd = lengthdir_x(sprite_rad,ideal_ppd);
 		var y_ppd = lengthdir_y(sprite_rad,ideal_ppd);
 
-		var x_ray = lengthdir_x(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
-		var y_ray = lengthdir_y(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
+		var x_ray = lengthdir_x(abs(contextMap[maxIdx] * rayDistance),contextDir[maxIdx][2]);
+		var y_ray = lengthdir_y(abs(contextMap[maxIdx] * rayDistance),contextDir[maxIdx][2]);
 
 		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_enemy, true, true) != noone || collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[0] = true;
@@ -176,26 +186,27 @@ if(stateMachine == state_machine.wander){
 			dirGoal[1] += lengthdir_y(0.7, ideal_ppd);
 		}
 	} else if(state == ai_state.strafe){
-		var ideal_ppd = contextDir[maxIdxCheck][2] - 90;
+		var ideal_ppd = contextDir[maxIdx][2] - 90;
 		var x_ppd = lengthdir_x(sprite_rad,ideal_ppd);
 		var y_ppd = lengthdir_y(sprite_rad,ideal_ppd);
 
-		var x_ray = lengthdir_x(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
-		var y_ray = lengthdir_y(abs(contextMap[maxIdxCheck] * rayDistance),contextDir[maxIdxCheck][2]);
+		var x_ray = lengthdir_x(abs(contextMap[maxIdx] * rayDistance),contextDir[maxIdx][2]);
+		var y_ray = lengthdir_y(abs(contextMap[maxIdx] * rayDistance),contextDir[maxIdx][2]);
 
 		if(collision_line(x + x_ppd, y + y_ppd, x + x_ppd + x_ray, y + y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[0] = true;
-			dirGoal[0] += lengthdir_x(0.3, ideal_ppd + 180);
-			dirGoal[1] += lengthdir_y(0.3, ideal_ppd + 180);
+			dirGoal[0] += lengthdir_x(0.7, ideal_ppd + 180);
+			dirGoal[1] += lengthdir_y(0.7, ideal_ppd + 180);
 		}
 
 		if(collision_line(x - x_ppd, y - y_ppd, x - x_ppd + x_ray, y - y_ppd + y_ray, Obj_wall, true, true) != noone){
 			rayExtraCheck[1] = true;
-			dirGoal[0] += lengthdir_x(0.3, ideal_ppd);
-			dirGoal[1] += lengthdir_y(0.3, ideal_ppd);
+			dirGoal[0] += lengthdir_x(0.7, ideal_ppd);
+			dirGoal[1] += lengthdir_y(0.7, ideal_ppd);
 		}
 	}
 	//
+	
 	
 	moveDir[0] = lerp(moveDir[0], dirGoal[0], 0.2);
 	moveDir[1] = lerp(moveDir[1], dirGoal[1], 0.2);
@@ -215,7 +226,7 @@ if(stateMachine == state_machine.wander){
 	/*if(moveDir > 360) moveDir -= 360;
 	if(moveDir < 0) moveDir = 360;
 	moveDir = lerp(moveDir, dirGoal, 0.1);*/
-	if(state == ai_state.backward) moveSpeed  = 0.7 * global.timeScale;
+	if(state == ai_state.backward) moveSpeed  = 1 * global.timeScale;
 	else moveSpeed = 1 * global.timeScale;
 
 	Scr_force_update([lengthdir_x(moveSpeed,force_dir), lengthdir_y(moveSpeed, force_dir)]);

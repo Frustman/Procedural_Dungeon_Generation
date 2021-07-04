@@ -38,6 +38,7 @@ rayCount = 16;
 rayDistance = 20;
 
 checkHalf = false;
+DangerCount = 0;
 
 for(var i = 0; i < rayCount; i++){
 	var degree = 360 / rayCount * i;
@@ -67,6 +68,9 @@ contextVal = 0;
 force[0] = 0;
 force[1] = 0;
 
+
+theta = -10;
+pos = [0,0];
 
 #endregion
 
