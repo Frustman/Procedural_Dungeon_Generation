@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-Alarm[2] = 2400;
-//spawnX = x;
-//spawnY = y;
+//FA_center_x = x;
+//FA_center_y = y;
+
+Alarm[0] = 1600;

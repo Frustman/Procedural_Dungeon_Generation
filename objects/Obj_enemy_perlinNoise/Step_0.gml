@@ -15,7 +15,6 @@ if(hp <= 0){
 if(!relax) _speed = lerp(_speed, 0.3, random(0.05) + 0.07);
 else _speed = 0;
 
-
 if(point_distance(x,y,spawnX,spawnY) >= spawn_radius){
 	_angle = lerp(_angle,point_direction(x,y,spawnX,spawnY),0.1);
 }
