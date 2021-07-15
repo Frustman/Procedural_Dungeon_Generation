@@ -15,5 +15,6 @@ function Scr_FA_attack(){
 		}
 		sprite_index = FA_sprite_atk;
 		Scr_SM_switch("MOVE");
+		
 	}
 }
