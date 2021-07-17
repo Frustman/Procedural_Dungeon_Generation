@@ -290,6 +290,7 @@
     {"id":{"name":"wlog_init","path":"scripts/wlog_init/wlog_init.yy",},"order":15,},
     {"id":{"name":"Obj_wokialog","path":"objects/Obj_wokialog/Obj_wokialog.yy",},"order":5,},
     {"id":{"name":"Spr_hpbar","path":"sprites/Spr_hpbar/Spr_hpbar.yy",},"order":9,},
+    {"id":{"name":"Scr_weapon_controller","path":"scripts/Scr_weapon_controller/Scr_weapon_controller.yy",},"order":52,},
     {"id":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},"order":3,},
     {"id":{"name":"Spr_boss","path":"sprites/Spr_boss/Spr_boss.yy",},"order":0,},
     {"id":{"name":"Obj_depth_sorting","path":"objects/Obj_depth_sorting/Obj_depth_sorting.yy",},"order":7,},
