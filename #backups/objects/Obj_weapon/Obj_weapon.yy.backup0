@@ -1,0 +1,83 @@
+// 2021-07-18 00:42:57
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+#region weapon setting
+
+weapon_name = noone;
+weapon_description = noone;
+weapon_type_num = -1;
+
+#endregion
+
+#region weapon image setting
+
+weapon_equip_image = -1;
+weapon_has_image = -1;
+weapon_reload_anim = -1;
+weapon_shoot_anim = -1;
+
+#endregion
+
+
+#region animation frame setting
+
+weapon_shoot_frame = 0;
+weapon_reload_frame = 0;
+
+#endregion
+
+#region bullet setting
+
+bullet_image = -1;
+bullet_shoot_event = noone;
+bullet_tick_event = noone;
+bullet_hit_event = noone;
+
+shootX = Obj_chr.x;
+shootY = Obj_chr.y;
+
+bullet_dir = Obj_chr.angle;
+
+bullet_damage = 0;
+bullet_speed = 10;
+
+#endregion
+
+#event step Insert description here
+// You can write your code in this editor
+switch(sprite_index){
+    case weapon_shoot_anim:
+        if(image_index == weapon_shoot_frame){
+            with(instance_create_layer(shootX, shootY, "sort_start", Obj_bullet_eff)){
+    			damage = other.bullet_damage;
+    			dir = other.bullet_dir;
+    			spd = other.bullet_speed;
+    			motion_set(dir,spd * global.timeScale);
+    			image_angle = _angle;
+    	
+    			chainDamage = Obj_valueContainer.player_chainDamage;
+    			chain_lightning = Obj_valueContainer.player_chain;
+    			critical_chance = Obj_valueContainer.critical_chance;
+    	
+    			par = other.id;	
+    	
+    			fireshot = Obj_valueContainer.player_fireshot;
+    	
+    			target = other.AttackTarget;
+    			sharp_shooting = Obj_valueContainer.player_sharpshooting;
+    			cusion_max = Obj_valueContainer.sharp_cusionCount;
+    			cusion_dist = Obj_valueContainer.sharp_distance;
+            }
+        }
+        break;
+    case weapon_reload_anim:
+        if(image_index == weapon_reload_frame){
+            
+        }
+        break;
+}
