@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+#region default setting
+
 damage = 0;
 dir = 0;
 spd = 0;
@@ -8,7 +11,6 @@ Scr_update_depth(x,y);
 cur_room = Scr_get_room_pos(x,y);
 image_speed = global.timeScale;
 
+#endregion
 
-for(var i = 0; i < 12; i++){
-	Alarm[i] = ALARMINACTIVE;
-}
+Scr_alarm_init();

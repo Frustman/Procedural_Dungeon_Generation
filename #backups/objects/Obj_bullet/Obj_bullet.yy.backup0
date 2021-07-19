@@ -1,0 +1,147 @@
+// 2021-07-20 01:48:26
+#event properties (no comments/etc. here are saved)
+parent_index = Obj_bullet_parent;
+uses_physics = false;
+
+#event create
+
+event_inherited();
+
+#region bullet setting
+
+bullet_image			= -1;
+bullet_shoot_event		= noone;
+bullet_tick_event		= noone;
+bullet_hit_event		= noone;
+
+bullet_shoot_event_arg  = [];
+bullet_tick_event_arg   = [];
+bullet_hit_event_arg    = [];
+
+#endregion
+
+#region variable
+
+bullet_tick             = 1;
+
+#endregion
+
+#region alarm
+
+alarm[11] = 1;
+
+#endregion
+
+#event alarm11
+
+var arr = bullet_shoot_event_arg;
+var scr = bullet_shoot_event;
+switch(array_length(arr)){
+    case 0:
+        script_execute(scr);
+        break;
+    case 1:
+        script_execute(scr, arr[0]);
+        break;
+    case 2:
+        script_execute(scr, arr[0], arr[1]);
+        break;
+    case 3:
+        script_execute(scr, arr[0], arr[1], arr[2]);
+        break;
+    case 4:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3]);
+        break;
+    case 5:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4]);
+        break;
+    case 6:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]);
+        break;
+    case 7:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+        break;
+    case 8:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]);
+        break;
+    case 9:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+        break;
+}
+
+
+#event collision:Obj_enemy
+
+var arr = bullet_hit_event_arg;
+var scr = bullet_hit_event;
+switch(array_length(arr)){
+    case 0:
+        script_execute(scr);
+        break;
+    case 1:
+        script_execute(scr, arr[0]);
+        break;
+    case 2:
+        script_execute(scr, arr[0], arr[1]);
+        break;
+    case 3:
+        script_execute(scr, arr[0], arr[1], arr[2]);
+        break;
+    case 4:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3]);
+        break;
+    case 5:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4]);
+        break;
+    case 6:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]);
+        break;
+    case 7:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+        break;
+    case 8:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]);
+        break;
+    case 9:
+        script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+        break;
+}
+
+#event step
+if(delta_time % bullet_tick == 0){
+        
+    var arr = bullet_tick_event_arg;
+    var scr = bullet_tick_event;
+    switch(array_length(arr)){
+        case 0:
+            script_execute(scr);
+            break;
+        case 1:
+            script_execute(scr, arr[0]);
+            break;
+        case 2:
+            script_execute(scr, arr[0], arr[1]);
+            break;
+        case 3:
+            script_execute(scr, arr[0], arr[1], arr[2]);
+            break;
+        case 4:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3]);
+            break;
+        case 5:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4]);
+            break;
+        case 6:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]);
+            break;
+        case 7:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+            break;
+        case 8:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]);
+            break;
+        case 9:
+            script_execute(scr, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+            break;
+    }
+}

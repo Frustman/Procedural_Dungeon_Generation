@@ -1,0 +1,49 @@
+// 2021-07-20 00:48:29
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+#region default setting
+
+damage = 0;
+dir = 0;
+spd = 0;
+par = noone;
+Scr_update_depth(x,y);
+cur_room = Scr_get_room_pos(x,y);
+image_speed = global.timeScale;
+
+#endregion
+
+Scr_alarm_init();
+
+#event step_begin Insert description here
+// You can write your code in this editor
+cur_room = Scr_get_room_pos(x,y);
+
+Scr_alarm_step();
+motion_set(dir,spd * global.timeScale);
+
+#event step_end Insert description here
+// You can write your code in this editor
+if(cur_room != Scr_get_room_pos(x,y)) instance_destroy(self);
+if(abs(floor(y) - floor(yprevious)) >= 1){
+	Scr_update_depth(x,y);
+}
+
+#event collision:Obj_enemy Insert description here
+// You can write your code in this editor
+if(!Obj_valueContainer.player_penetrate)
+	instance_destroy(self);
+
+#event collision:Obj_wall Insert description here
+// You can write your code in this editor
+if(!other.penetrate)
+	instance_destroy(self);
+
+#event draw Insert description here
+// You can write your code in this editor
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);

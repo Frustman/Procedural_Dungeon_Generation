@@ -1,4 +1,85 @@
-/// @description Insert description here
+// 2021-07-20 00:36:57
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+boxCenterX = 160;
+boxCenterY = deviceHeight - 256;
+boxRadius = 128;
+
+AttackCenterX = deviceWidth - 160;
+AttackCenterY = deviceHeight - 256;
+AttackX = deviceWidth - 216;
+AttackY = deviceHeight - 256;
+AttackRadius = 160;
+
+dashCenterX = AttackCenterX + 90;
+dashCenterY = AttackCenterY - 160;
+dashRadius = 32;
+
+
+for(var i = 0; i < 12; i++){
+	Alarm[i] = ALARMINACTIVE;
+}
+
+attack = false;
+
+infoCenterX = deviceWidth - 64;
+infoCenterY = 64;
+infoRadius = 32;
+
+joyIndex = -1;
+attackIndex = -1;
+
+clickOne = false;
+clickTwo = false;
+
+chargeMax = 100;
+charge = 0;
+
+AttackDirection = 90;
+AttackDistance = 0;
+
+directionBox = 90;
+distanceBox = 0;
+
+move = false;
+keypress = false;
+
+can_attack = true;
+can_info = true;
+can_dash = true;
+
+dash_delay = 47;
+
+device_press_x[0] = 0;
+device_press_x[1] = 0;
+device_press_y[0] = 0;
+device_press_y[1] = 0;
+
+/*globalvar path_grid;
+path_grid = mp_grid_create(0,0,room_width / CELL_WIDTH, room_height / CELL_HEIGHT,CELL_WIDTH,CELL_HEIGHT);
+mp_grid_add_instances(path_grid, Obj_wall, false);*/
+
+#event alarm0 Insert description here
+// You can write your code in this editor
+
+can_attack = true;
+
+#event alarm1 Insert description here
+// You can write your code in this editor
+
+can_dash = true;
+
+#event alarm2 Insert description here
+// You can write your code in this editor
+
+can_info = true;
+
+#event step Insert description here
 // You can write your code in this editor
 clickOne = device_mouse_check_button(0, mb_left);
 clickTwo = device_mouse_check_button(1, mb_left);
@@ -183,3 +264,76 @@ if(joyIndex != -1){
 Obj_weapon.angle = AttackDirection;
 
 Scr_alarm_step();
+
+#event keyboard:vk_anykey Insert description here
+// You can write your code in this editor
+keypress = true;
+
+#event keyboard:A Insert description here
+// You can write your code in this editor
+
+if(keyboard_check(ord("W"))){
+	directionBox = 135;
+}
+else if(keyboard_check(ord("S"))){
+	directionBox = 225;
+}
+else{
+	directionBox = 180;
+}
+move = true;
+
+#event keyboard:D Insert description here
+// You can write your code in this editor
+
+if(keyboard_check(ord("W"))){
+	directionBox = 45;
+}
+else if(keyboard_check(ord("S"))){
+	directionBox = 315;
+}
+else{
+	directionBox = 0;
+}
+move = true;
+
+#event keyboard:S Insert description here
+// You can write your code in this editor
+
+if(!keyboard_check(ord("A")) && !keyboard_check(ord("D")))
+	directionBox = 270;
+move = true;
+
+#event keyboard:W Insert description here
+// You can write your code in this editor
+
+if(!keyboard_check(ord("A")) && !keyboard_check(ord("D")))
+	directionBox = 90;
+move = true;
+
+#event mouse_global_left_press Insert description here
+// You can write your code in this editor
+
+#event draw_gui Insert description here
+// You can write your code in this editor
+
+draw_sprite_ext(Spr_controlBox, 0, boxCenterX, boxCenterY,4.0,4.0,0,c_white,1);
+
+draw_sprite(Spr_info, 0, infoCenterX, infoCenterY);
+draw_sprite(Spr_DashBox, 0, dashCenterX, dashCenterY);
+draw_sprite_ext(Spr_controlBox, 0, AttackCenterX, AttackCenterY,4.0,4.0,0,c_white,1);
+
+draw_sprite_ext(Spr_controller, 0, boxCenterX + lengthdir_x(min(distanceBox, boxRadius), directionBox), boxCenterY + lengthdir_y(min(distanceBox, boxRadius), directionBox),4.0,4.0,0,c_white,1);
+draw_sprite_ext(Spr_Attack, 0, AttackCenterX + lengthdir_x(min(AttackDistance, AttackRadius), AttackDirection), AttackCenterY + lengthdir_y(min(AttackDistance, AttackRadius), AttackDirection),4.0,4.0,0,c_white,1);
+
+
+#event keypress:vk_control Insert description here
+// You can write your code in this editor
+with(Obj_chr){
+	event_perform(ev_other,ev_user2);
+}
+
+#event keyrelease:vk_anykey Insert description here
+// You can write your code in this editor
+move = false;
+keypress = false;

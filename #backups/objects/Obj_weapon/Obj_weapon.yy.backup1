@@ -1,4 +1,4 @@
-// 2021-07-18 00:42:02
+// 2021-07-20 00:35:49
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -8,75 +8,103 @@ uses_physics = false;
 
 #region weapon setting
 
-weapon_name = noone;
-weapon_description = noone;
-weapon_type_num = -1;
+weapon_name				= noone;
+weapon_description		= noone;
+weapon_type_num			= -1;
+
+weapon_origin_x			= 0;
+weapon_origin_y			= 0;
+
+weapon_muzzle_x			= 0;
+weapon_muzzle_y			= 0;
 
 #endregion
 
 #region weapon image setting
 
-weapon_equip_image = -1;
-weapon_has_image = -1;
-weapon_reload_anim = -1;
-weapon_shoot_anim = -1;
+weapon_equip_image		= -1;
+weapon_has_image		= -1;
+weapon_reload_anim		= -1;
+weapon_shoot_anim		= -1;
 
 #endregion
 
-
 #region animation frame setting
 
-weapon_shoot_frame = 0;
-weapon_reload_frame = 0;
+weapon_shoot_frame		= 0;
+weapon_reload_frame		= 0;
 
 #endregion
 
 #region bullet setting
 
-bullet_image = -1;
-bullet_shoot_event = noone;
-bullet_tick_event = noone;
-bullet_hit_event = noone;
+bullet_image			= -1;
+bullet_shoot_event		= noone;
+bullet_tick_event		= noone;
+bullet_hit_event		= noone;
 
-shootX = Obj_chr.x;
-shootY = Obj_chr.y;
+shootX					= Obj_chr.x;
+shootY					= Obj_chr.y;
 
-bullet_dir = Obj_chr.angle;
+angle					= 0;
+bullet_dir				= 0;
 
-bullet_damage = 0;
-bullet_speed = 10;
+bullet_damage			= 0;
+bullet_speed			= 10;
+bullet_attackdelay		= 10;
+player_recoil			= 0;
+bullet_maxcount			= 7;
+bullet_count			= 7;
 
 #endregion
 
-#event step
+
+#region control variable
+
+controller_attack		= false;
+
+#endregion
+
+#event step Insert description here
+// You can write your code in this editor
+
+if(lengthdir_x(1,bullet_dir) >= 0){
+	shootX = Obj_chr.x + lengthdir_x(weapon_muzzle_x - weapon_origin_x, bullet_dir);
+	shootY = Obj_chr.y + lengthdir_y(weapon_muzzle_y - weapon_origin_y, bullet_dir - 90);
+} else {
+	shootX = Obj_chr.x - lengthdir_x(weapon_muzzle_x - weapon_origin_x, bullet_dir);
+	shootY = Obj_chr.y + lengthdir_y(weapon_muzzle_y - weapon_origin_y, bullet_dir - 90);
+}
+
 switch(sprite_index){
     case weapon_shoot_anim:
         if(image_index == weapon_shoot_frame){
-            with(instance_create_layer(shootX, shootY, "sort_start", Obj_bullet_eff)){
-    			damage = other.bullet_damage;
-    			dir = other.bullet_dir;
-    			spd = other.bullet_speed;
-    			motion_set(dir,spd * global.timeScale);
-    			image_angle = _angle;
-    	
-    			chainDamage = Obj_valueContainer.player_chainDamage;
-    			chain_lightning = Obj_valueContainer.player_chain;
-    			critical_chance = Obj_valueContainer.critical_chance;
-    	
-    			par = other.id;	
-    	
-    			fireshot = Obj_valueContainer.player_fireshot;
-    	
-    			target = other.AttackTarget;
-    			sharp_shooting = Obj_valueContainer.player_sharpshooting;
-    			cusion_max = Obj_valueContainer.sharp_cusionCount;
-    			cusion_dist = Obj_valueContainer.sharp_distance;
-            }
+            #region shoot func
+			#endregion
         }
         break;
     case weapon_reload_anim:
         if(image_index == weapon_reload_frame){
-            
+            #region reload func
+			#endregion
         }
         break;
 }
+
+
+
+
+#event other_user0 Insert description here
+// You can write your code in this editor
+
+var target = Scr_interpolate_aim(shootX, shootY, bullet_dir);
+
+if(target == noone){
+	
+} else {
+	
+}
+
+
+#event draw_begin Insert description here
+// You can write your code in this editor

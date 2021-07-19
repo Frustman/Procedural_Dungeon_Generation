@@ -42,10 +42,6 @@ channel_gun = animcurve_get_channel(ac_gun_reaction, 0);
 
 footstep = true;
 
-/*shoot_list = ds_list_create();
-wall_list = ds_list_create();
-enemy_pr = ds_priority_create();*/
-
 dx = 0;
 dy = 0;
 
