@@ -15,7 +15,7 @@ if(bullet_count > 0){
 		#region bullet setting
 	
 		bullet_image			= other.bullet_image;
-		bullet_shoot_event		= other.bullet_shoot_event;
+		bullet_create_event		= other.bullet_create_event;
 		bullet_tick_event		= other.bullet_tick_event;
 		bullet_hit_event		= other.bullet_hit_event;
 		
@@ -23,14 +23,16 @@ if(bullet_count > 0){
 		bullet_speed			= other.bullet_speed;
 		bullet_damage			= other.bullet_damage;
 		
-		bullet_shoot_event_arg  = other.bullet_shoot_event_arg;
+		bullet_create_event_arg = other.bullet_create_event_arg;
 		bullet_tick_event_arg   = other.bullet_tick_event_arg;
 		bullet_hit_event_arg    = other.bullet_hit_event_arg;
+		
+		event_tick				= other.bullet_tick;
 	
 		#endregion
 	}
 	bullet_count--;
 	if(bullet_count == 0){
-		
+		Scr_SM_switch("RELOAD");
 	}
 }

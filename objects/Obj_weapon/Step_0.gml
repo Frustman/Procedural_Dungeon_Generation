@@ -13,7 +13,7 @@ switch(sprite_index){
     case weapon_shoot_anim:
         if(image_index == weapon_shoot_frame){
             #region shoot func
-			
+			event_perform(ev_other, ev_user0);
 			#endregion
         }
         break;

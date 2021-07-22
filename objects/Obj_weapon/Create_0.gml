@@ -26,21 +26,26 @@ weapon_shoot_anim		= -1;
 
 #region animation frame setting
 
-weapon_shoot_frame		= 0;
-weapon_reload_frame		= 0;
+weapon_shoot_frame		= ds_list_create();
+weapon_reload_frame		= ds_list_create();
+
+weapon_shoot_event_arg  = ds_map_create();
+weapon_reload_event_arg = ds_map_create();
 
 #endregion
 
 #region bullet setting
 
 bullet_image			= -1;
-bullet_shoot_event		= noone;
+bullet_create_event		= noone;
 bullet_tick_event		= noone;
 bullet_hit_event		= noone;
 
-bullet_shoot_event_arg  = [];
-bullet_tick_event_arg   = [];
-bullet_hit_event_arg    = [];
+bullet_create_event_arg	= ds_list_create();
+bullet_tick_event_arg   = ds_list_create();
+bullet_hit_event_arg    = ds_list_create();
+
+bullet_tick		= 10;
 
 shootX					= Obj_chr.x;
 shootY					= Obj_chr.y;
@@ -50,10 +55,20 @@ bullet_dir				= 0;
 
 bullet_damage			= 0;
 bullet_speed			= 10;
-bullet_attackdelay		= 10;
+bullet_attackDelay		= 10;
 player_recoil			= 0;
-bullet_maxcount			= 7;
+bullet_maxCount			= 7;
 bullet_count			= 7;
+
+#endregion
+
+#region FSM setting
+
+Scr_SM_default_init();
+
+Scr_SM_create("IDLE", Scr_weapon_idle);
+Scr_SM_create("RELOAD", Scr_weapon_reload);
+Scr_SM_init("IDLE");
 
 #endregion
 
