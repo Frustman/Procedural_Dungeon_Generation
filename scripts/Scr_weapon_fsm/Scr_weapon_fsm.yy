@@ -6,7 +6,7 @@
     "path": "folders/Scripts/weapon.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Scr_interpolate_aim",
+  "name": "Scr_weapon_fsm",
   "tags": [],
   "resourceType": "GMScript",
 }

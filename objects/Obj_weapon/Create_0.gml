@@ -5,7 +5,7 @@
 
 weapon_name				= noone;
 weapon_description		= noone;
-weapon_type_num			= -1;
+weapon_type				= -1;
 
 weapon_origin_x			= 0;
 weapon_origin_y			= 0;
@@ -37,6 +37,10 @@ bullet_image			= -1;
 bullet_shoot_event		= noone;
 bullet_tick_event		= noone;
 bullet_hit_event		= noone;
+
+bullet_shoot_event_arg  = [];
+bullet_tick_event_arg   = [];
+bullet_hit_event_arg    = [];
 
 shootX					= Obj_chr.x;
 shootY					= Obj_chr.y;

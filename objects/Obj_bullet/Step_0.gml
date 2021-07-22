@@ -1,5 +1,6 @@
-if(delta_time % bullet_tick == 0){
-        
+tick += global.timeScale;
+if(tick > event_tick){
+    tick	= 0;
     var arr = bullet_tick_event_arg;
     var scr = bullet_tick_event;
     switch(array_length(arr)){

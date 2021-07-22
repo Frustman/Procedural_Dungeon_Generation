@@ -1,4 +1,8 @@
 
+if(other.penetrate == false){
+	instance_destroy(self);	
+}
+
 var arr = bullet_hit_event_arg;
 var scr = bullet_hit_event;
 switch(array_length(arr)){

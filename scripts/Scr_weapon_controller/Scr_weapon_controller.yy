@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "weapon",
+    "path": "folders/Scripts/weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "Scr_weapon_controller",

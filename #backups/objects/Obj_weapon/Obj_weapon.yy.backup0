@@ -1,4 +1,4 @@
-// 2021-07-20 00:36:29
+// 2021-07-22 22:14:52
 #event properties (no comments/etc. here are saved)
 parent_index = -1;
 uses_physics = false;
@@ -10,7 +10,7 @@ uses_physics = false;
 
 weapon_name				= noone;
 weapon_description		= noone;
-weapon_type_num			= -1;
+weapon_type				= -1;
 
 weapon_origin_x			= 0;
 weapon_origin_y			= 0;
@@ -42,6 +42,10 @@ bullet_image			= -1;
 bullet_shoot_event		= noone;
 bullet_tick_event		= noone;
 bullet_hit_event		= noone;
+
+bullet_shoot_event_arg  = [];
+bullet_tick_event_arg   = [];
+bullet_hit_event_arg    = [];
 
 shootX					= Obj_chr.x;
 shootY					= Obj_chr.y;
@@ -80,6 +84,7 @@ switch(sprite_index){
     case weapon_shoot_anim:
         if(image_index == weapon_shoot_frame){
             #region shoot func
+			
 			#endregion
         }
         break;
@@ -92,17 +97,41 @@ switch(sprite_index){
 }
 
 
+#event other_user0 shoot func
 
-
-#event other_user0 Insert description here
-// You can write your code in this editor
-
-var target = Scr_interpolate_aim(shootX, shootY, bullet_dir);
-
-if(target == noone){
-	bullet_dir = angle;
-} else {
-	bullet_dir = point_direction(shootX, shootY, target.x, target.y);
+if(bullet_count > 0){
+	var target = Scr_interpolate_aim(shootX, shootY, bullet_dir);
+	
+	if(target == noone){
+		bullet_dir	= angle;
+	} else {
+		bullet_dir	= point_direction(shootX, shootY, target.x, target.y);
+		angle		= bullet_dir;
+	}
+	
+	with(instance_create_layer(shootX,shootY,"sort_start", Obj_bullet)){
+		
+		#region bullet setting
+	
+		bullet_image			= other.bullet_image;
+		bullet_shoot_event		= other.bullet_shoot_event;
+		bullet_tick_event		= other.bullet_tick_event;
+		bullet_hit_event		= other.bullet_hit_event;
+		
+		bullet_dir				= other.bullet_dir;
+		bullet_speed			= other.bullet_speed;
+		bullet_damage			= other.bullet_damage;
+		
+		bullet_shoot_event_arg  = other.bullet_shoot_event_arg;
+		bullet_tick_event_arg   = other.bullet_tick_event_arg;
+		bullet_hit_event_arg    = other.bullet_hit_event_arg;
+	
+		#endregion
+	}
+	bullet_count--;
+	if(bullet_count == 0){
+		
+	}
 }
 
 
