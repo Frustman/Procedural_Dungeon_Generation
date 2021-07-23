@@ -62,6 +62,7 @@ bullet_count			= 7;
 
 #endregion
 
+
 #region FSM setting
 
 Scr_SM_default_init();
@@ -69,6 +70,7 @@ Scr_SM_default_init();
 Scr_SM_create("IDLE", Scr_weapon_idle);
 Scr_SM_create("RELOAD", Scr_weapon_reload);
 Scr_SM_init("IDLE");
+
 
 #endregion
 
