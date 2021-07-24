@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+#region Alarm setting
+
+Scr_alarm_init();
+#endregion
 
 #region weapon setting
 
@@ -13,6 +17,7 @@ weapon_origin_y			= 0;
 weapon_muzzle_x			= 0;
 weapon_muzzle_y			= 0;
 
+weapon_reloadDelay		= 20;
 #endregion
 
 #region weapon image setting
@@ -67,9 +72,9 @@ bullet_count			= 7;
 
 Scr_SM_default_init();
 
-Scr_SM_create("IDLE", Scr_weapon_idle);
+Scr_SM_create("USE", Scr_weapon_use);
 Scr_SM_create("RELOAD", Scr_weapon_reload);
-Scr_SM_init("IDLE");
+Scr_SM_init("USE");
 
 
 #endregion

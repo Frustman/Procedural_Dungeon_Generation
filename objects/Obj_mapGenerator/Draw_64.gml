@@ -100,7 +100,7 @@ draw_set_font(-1);
 //draw_sprite_ext(Spr_bullet_ui,0,bulletX,70, (180) / 144,2.0,0,c_white,1.0);
 
 
-for(var i = 0; i < CONTAINER.bullet_maxCount; i++){
+for(var i = 0; i < CONTAINER.player_curWeapon.bullet_maxCount; i++){
 	global.bullet_ui[i].xpos = bulletX + 3 * mapW + (7 * mapW) * i;
 	global.bullet_ui[i].ypos = bulletY;
 	global.bullet_ui[i].scale = mapW;

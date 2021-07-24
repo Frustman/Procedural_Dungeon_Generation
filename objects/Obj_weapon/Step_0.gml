@@ -24,3 +24,5 @@ switch(sprite_index){
         }
         break;
 }
+
+Scr_alarm_step();

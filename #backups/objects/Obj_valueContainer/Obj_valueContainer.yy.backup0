@@ -1,4 +1,10 @@
-/// @description Insert description here
+// 2021-07-24 15:55:48
+#event properties (no comments/etc. here are saved)
+parent_index = Obj_system;
+persistent = true;
+uses_physics = false;
+
+#event create Insert description here
 // You can write your code in this editor
 
 #macro CONTAINER Obj_valueContainer
@@ -98,3 +104,44 @@ for(var i = 0; i < global.synergy_count; i++){
 }
 
 Scr_alarm_init();
+
+#event alarm0 Insert description here
+// You can write your code in this editor
+if(player_maxshield > player_shield){
+	player_shield++;
+	Alarm[0] = player_shieldregen;
+}
+
+#event step Insert description here
+// You can write your code in this editor
+if(instance_exists(Obj_chr)){
+	x = Obj_chr.x;
+	y = Obj_chr.y;
+}
+
+
+
+Scr_alarm_step();
+
+#event keypress:vk_shift Insert description here
+// You can write your code in this editor
+
+player_gunBulletCount[player_guntype]	= (bullet_count == 0) ? player_gunMaxCount[player_guntype] : bullet_count;
+player_guntype							= (player_guntype + 1) % player_gunMaxType;
+bullet_maxCount							= player_gunMaxCount[player_guntype];
+bullet_count							= player_gunBulletCount[player_guntype];
+player_attackdelay						= player_gundelay[player_guntype];
+player_recoil							= player_gunrecoil[player_guntype];
+bullet_count							= player_gunBulletCount[player_guntype];
+player_bulletDamage						= player_gunDamage[player_guntype];
+
+instance_destroy(Obj_bullet_ui);
+
+for(var i = 0; i < bullet_maxCount; i++){
+	global.bullet_ui[i] = instance_create_layer(x,y,"bullet_gui",Obj_bullet_ui);
+	with(global.bullet_ui[i]){
+		if(i >= other.bullet_count){
+			state = bulletState.used;	
+		}
+	}
+}

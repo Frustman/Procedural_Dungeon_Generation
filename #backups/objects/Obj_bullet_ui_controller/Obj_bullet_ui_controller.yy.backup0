@@ -1,0 +1,20 @@
+// 2021-07-24 16:00:09
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create Insert description here
+// You can write your code in this editor
+
+var weapon = CONTAINER.player_curWeapon;
+
+if(weapon == noone) instance_destroy(self);
+
+for(var i = 0; i < weapon.bullet_maxCount; i++){
+    global.bullet_ui[i] = instance_create_layer(x,y,"bullet_gui",Obj_bullet_ui);
+}
+
+#event destroy Insert description here
+// You can write your code in this editor
+
+instance_destroy(Obj_bullet_ui);

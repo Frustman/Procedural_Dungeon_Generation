@@ -109,10 +109,6 @@ dir_list[3][1] = -1;
 mapW_target = 2.0;
 mapH_target = 2.0;
 
-for(var i = 0; i < CONTAINER.bullet_maxCount; i++){
-	global.bullet_ui[i] = instance_create_layer(x,y,"bullet_gui",Obj_bullet_ui);
-}
-
 mapW = 1.0;
 mapH = 1.0;
 

@@ -32,6 +32,9 @@ if(bullet_count > 0){
 		#endregion
 	}
 	bullet_count--;
+	with(global.bullet_ui[bullet_count]){
+		event_perform(ev_other,ev_user0);
+	}
 	if(bullet_count == 0){
 		Scr_SM_switch("RELOAD");
 	}
