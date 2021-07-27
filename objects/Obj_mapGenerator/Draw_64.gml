@@ -99,11 +99,12 @@ draw_set_font(-1);
 //draw_sprite_ext(Spr_bullet_frame,0,bulletX + 15,30, (12 * CONTAINER.bullet_maxCount + 20) / 355,1.0,0,c_white,1.0);
 //draw_sprite_ext(Spr_bullet_ui,0,bulletX,70, (180) / 144,2.0,0,c_white,1.0);
 
-
-for(var i = 0; i < CONTAINER.player_curWeapon.bullet_maxCount; i++){
-	global.bullet_ui[i].xpos = bulletX + 3 * mapW + (7 * mapW) * i;
-	global.bullet_ui[i].ypos = bulletY;
-	global.bullet_ui[i].scale = mapW;
+if(CONTAINER.player_curWeapon != noone){
+	for(var i = 0; i < CONTAINER.player_curWeapon.bullet_maxCount; i++){
+		global.bullet_ui[i].xpos = bulletX + 3 * mapW + (7 * mapW) * i;
+		global.bullet_ui[i].ypos = bulletY;
+		global.bullet_ui[i].scale = mapW;
+	}
 }
 
 //draw_sprite_ext(Spr_up_side,0,deviceWidth / 2,deviceHeight + 30, deviceWidth / 480,1,0,c_white,1.0);

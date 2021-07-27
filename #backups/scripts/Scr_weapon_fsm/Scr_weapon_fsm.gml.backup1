@@ -1,4 +1,4 @@
-// 2021-07-24 16:02:25
+// 2021-07-24 22:59:25
 //
 function Scr_weapon_fsm(){
 
@@ -13,6 +13,12 @@ function Scr_weapon_use(){
 			instance_create_layer(x,y,"sort_start",Obj_bullet_ui_controller);
 		}
 		ds_stack_push(_stack);
+	}
+}
+
+function Scr_weapon_back(){
+	if(state_new){
+		
 	}
 }
 

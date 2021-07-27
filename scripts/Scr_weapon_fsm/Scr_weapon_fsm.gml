@@ -15,6 +15,12 @@ function Scr_weapon_use(){
 	}
 }
 
+function Scr_weapon_back(){
+	if(state_new){
+		
+	}
+}
+
 function Scr_weapon_reload(){
 	if(state_new){
 		sprite_index = weapon_reload_anim;

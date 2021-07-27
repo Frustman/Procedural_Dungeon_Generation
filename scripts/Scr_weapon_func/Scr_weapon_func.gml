@@ -1,3 +1,4 @@
+/// @function Scr_weapon_func()
 /// @function Scr_weapon_init(_name, _desc, _type)
 /// @function Scr_weapon_reload_frame_set_event(_frame, _script, [argument])
 /// @function Scr_weapon_shoot_frame_set_event(_frame, _script, [argument])
@@ -44,25 +45,25 @@ function Scr_weapon_reload_frame_set_event(_frame, _script){
 			ds_map_add(weapon_reload_event_arg, _frame, []);
 			break;
 		case 3:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2]]);
 			break;
 		case 4:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3]]);
 			break;
 		case 5:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3, argument4]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3], argument[4]]);
 			break;
 		case 6:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3, argument4, argument5]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5]]);
 			break;
 		case 7:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6]]);
 			break;
 		case 8:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6, argument7]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]]);
 			break;
 		case 9:
-			ds_map_add(weapon_reload_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6, argument7, argument8]);
+			ds_map_add(weapon_reload_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8]]);
 			break;
 	}
 }
@@ -75,25 +76,25 @@ function Scr_weapon_shoot_frame_set_event(_frame, _script){
 			ds_map_add(weapon_shoot_event_arg, _frame, []);
 			break;
 		case 3:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2]]);
 			break;
 		case 4:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3]]);
 			break;
 		case 5:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3, argument4]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3], argument[4]]);
 			break;
 		case 6:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3, argument4, argument5]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5]]);
 			break;
 		case 7:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6]]);
 			break;
 		case 8:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6, argument7]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]]);
 			break;
 		case 9:
-			ds_map_add(weapon_shoot_event_arg, _frame, [argument2, argument3, argument4, argument5, argument6, argument7, argument8]);
+			ds_map_add(weapon_shoot_event_arg, _frame, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8]]);
 			break;
 	}
 }
@@ -107,25 +108,25 @@ function Scr_weapon_bullet_set_tick_event(_script, _tick){
 			ds_list_add(bullet_tick_event_arg, []);
 			break;
 		case 3:
-			ds_list_add(bullet_tick_event_arg, [argument2]);
+			ds_list_add(bullet_tick_event_arg, [argument[2]]);
 			break;
 		case 4:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3]]);
 			break;
 		case 5:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3, argument4]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3], argument[4]]);
 			break;
 		case 6:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3, argument4, argument5]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3], argument[4], argument[5]]);
 			break;
 		case 7:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3, argument4, argument5, argument6]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3], argument[4], argument[5], argument[6]]);
 			break;
 		case 8:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3, argument4, argument5, argument6, argument7]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]]);
 			break;
 		case 9:
-			ds_list_add(bullet_tick_event_arg, [argument2, argument3, argument4, argument5, argument6, argument7, argument8]);
+			ds_list_add(bullet_tick_event_arg, [argument[2], argument[3], argument[4], argument[5], argument[6], argument[7], argument[8]]);
 			break;
 	}
 }
@@ -138,25 +139,25 @@ function Scr_weapon_bullet_set_create_event(_script){
 			ds_list_add(bullet_create_event_arg, []);
 			break;
 		case 2:
-			ds_list_add(weapon_shoot_event_arg, [argument1]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1]]);
 			break;
 		case 3:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2]]);
 			break;
 		case 4:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2, argument3]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2], argument[3]]);
 			break;
 		case 5:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2, argument3, argument4]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2], argument[3], argument[4]]);
 			break;
 		case 6:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2, argument3, argument4, argument5]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5]]);
 			break;
 		case 7:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2, argument3, argument4, argument5, argument6]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5], argument[6]]);
 			break;
 		case 8:
-			ds_list_add(weapon_shoot_event_arg, [argument1, argument2, argument3, argument4, argument5, argument6, argument7]);
+			ds_list_add(weapon_shoot_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]]);
 			break;
 	}
 }
@@ -169,25 +170,25 @@ function Scr_weapon_bullet_set_hit_event(_script){
 			ds_list_add(bullet_hit_event_arg, []);
 			break;
 		case 2:
-			ds_list_add(bullet_hit_event_arg, [argument1]);
+			ds_list_add(bullet_hit_event_arg, [argument[1]]);
 			break;
 		case 3:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2]]);
 			break;
 		case 4:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2, argument3]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2], argument[3]]);
 			break;
 		case 5:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2, argument3, argument4]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2], argument[3], argument[4]]);
 			break;
 		case 6:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2, argument3, argument4, argument5]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5]]);
 			break;
 		case 7:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2, argument3, argument4, argument5, argument6]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5], argument[6]]);
 			break;
 		case 8:
-			ds_list_add(bullet_hit_event_arg, [argument1, argument2, argument3, argument4, argument5, argument6, argument7]);
+			ds_list_add(bullet_hit_event_arg, [argument[1], argument[2], argument[3], argument[4], argument[5], argument[6], argument[7]]);
 			break;
 	}
 }

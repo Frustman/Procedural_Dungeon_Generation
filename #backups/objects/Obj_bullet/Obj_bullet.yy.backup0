@@ -1,6 +1,7 @@
-// 2021-07-22 23:34:40
+// 2021-07-25 22:46:06
 #event properties (no comments/etc. here are saved)
 parent_index = Obj_bullet_parent;
+sprite_index = Spr_bullet;
 uses_physics = false;
 
 #event create
@@ -166,3 +167,7 @@ if(bullet_hit_event != noone && ds_list_size(bullet_hit_event) > 0){
         }
     }
 }
+
+#event draw
+
+draw_sprite_ext(bullet_image, image_index, x, y, image_xscale, image_yscale, bullet_dir, c_white, 1.0);

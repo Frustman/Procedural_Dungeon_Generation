@@ -123,6 +123,7 @@ if(clickOne){
 }
 if(attackIndex != -1){
 	if(device_x[attackIndex] >= view_wport[0] / 2){
+		CONTAINER.player_curWeapon.angle = AttackDirection;
 		if(!Obj_valueContainer.player_charge){
 			AttackDirection = point_direction(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
 			AttackDistance = point_distance(AttackCenterX,AttackCenterY,device_x[attackIndex],device_y[attackIndex]);
@@ -180,6 +181,5 @@ if(joyIndex != -1){
 	}
 }
 
-Obj_weapon.angle = AttackDirection;
 
 Scr_alarm_step();

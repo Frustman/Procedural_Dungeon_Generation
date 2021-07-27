@@ -85,8 +85,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "chr",
-    "path": "folders/Sprites/chr.yy",
+    "name": "gun",
+    "path": "folders/Sprites/gun.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_chr_hand",
