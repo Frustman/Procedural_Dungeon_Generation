@@ -277,6 +277,7 @@
     {"id":{"name":"Spr_enemy_attack","path":"sprites/Spr_enemy_attack/Spr_enemy_attack.yy",},"order":1,},
     {"id":{"name":"Sha_sepia","path":"shaders/Sha_sepia/Sha_sepia.yy",},"order":9,},
     {"id":{"name":"Obj_hitmask","path":"objects/Obj_hitmask/Obj_hitmask.yy",},"order":4,},
+    {"id":{"name":"Spr_chr_","path":"sprites/Spr_chr_/Spr_chr_.yy",},"order":8,},
     {"id":{"name":"Spr_projectile_slime","path":"sprites/Spr_projectile_slime/Spr_projectile_slime.yy",},"order":4,},
     {"id":{"name":"Spr_flower_dead","path":"sprites/Spr_flower_dead/Spr_flower_dead.yy",},"order":2,},
     {"id":{"name":"Scr_StateMachine","path":"scripts/Scr_StateMachine/Scr_StateMachine.yy",},"order":0,},
