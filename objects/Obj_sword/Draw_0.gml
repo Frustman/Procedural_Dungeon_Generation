@@ -29,14 +29,14 @@ var yCenter = ypos + lengthdir_y(10, mouse_dir);
 var handRadiusW = 10;
 var handRadiusH = 8;
 
-var swordRadiusW = 50;
-var swordRadiusH = 40;
+var swordRadiusW = 35;
+var swordRadiusH = 28;
 
 
-draw_ellipse(xpos - handRadiusW, ypos - handRadiusH, xpos + handRadiusW, ypos + handRadiusH, true);
+//draw_ellipse(xpos - handRadiusW, ypos - handRadiusH, xpos + handRadiusW, ypos + handRadiusH, true);
 //draw_circle(xpos + lengthdir_x(handRadiusW, mouse_dir - 90), ypos + lengthdir_y(handRadiusH, mouse_dir - 90),2,false);
 
-draw_ellipse(xpos - swordRadiusW, ypos + swordHeight - swordRadiusH, xpos + swordRadiusW, ypos + swordHeight + swordRadiusH, true);
+//draw_ellipse(xpos - swordRadiusW, ypos + swordHeight - swordRadiusH, xpos + swordRadiusW, ypos + swordHeight + swordRadiusH, true);
 //draw_circle(xpos + lengthdir_x(swordRadiusW, mouse_dir - 90), ypos + swordHeight + lengthdir_y(swordRadiusH, mouse_dir - 90),2,false);
 
 

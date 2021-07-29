@@ -57,6 +57,7 @@
     {"id":{"name":"Spr_AttackBox","path":"sprites/Spr_AttackBox/Spr_AttackBox.yy",},"order":3,},
     {"id":{"name":"Obj_pause","path":"objects/Obj_pause/Obj_pause.yy",},"order":3,},
     {"id":{"name":"ac_sin","path":"animcurves/ac_sin/ac_sin.yy",},"order":5,},
+    {"id":{"name":"Spr_chr_attack","path":"sprites/Spr_chr_attack/Spr_chr_attack.yy",},"order":9,},
     {"id":{"name":"Spr_itemTable","path":"sprites/Spr_itemTable/Spr_itemTable.yy",},"order":11,},
     {"id":{"name":"Spr_chr","path":"sprites/Spr_chr/Spr_chr.yy",},"order":0,},
     {"id":{"name":"Spr_desert_tree2B","path":"sprites/Spr_desert_tree2B/Spr_desert_tree2B.yy",},"order":3,},
