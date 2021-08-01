@@ -22,3 +22,24 @@ previous_mouse_x = mouse_x;
 previous_mouse_y = mouse_y;
 
 tick = 0;
+
+Scr_SM_default_init();
+
+Scr_SM_create("IDLE", Scr_sword_idle);
+Scr_SM_create("ATTACK", Scr_sword_attack);
+
+var xpos = room_width / 2;
+var ypos = room_height / 2;
+
+mouse_dir = point_direction(xpos, ypos, mouse_x, mouse_y);
+
+hand_dir = mouse_dir;
+
+sword_dir = mouse_dir - 60;
+
+handRadiusW = 10;
+handRadiusH = 4;
+
+trail = true;
+
+Scr_SM_init("IDLE");
