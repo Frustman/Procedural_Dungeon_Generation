@@ -52,8 +52,8 @@ function Scr_sword_attack(){
 	
 	state_var[1]++;
 	
-	var ac_channel = animcurve_get_channel(ac_sword_exponential, 1);
-	var ac_hand = animcurve_get_channel(ac_sword_exponential, 1);
+	var ac_channel = animcurve_get_channel(ac_sword_exponential, 0);
+	var ac_hand = animcurve_get_channel(ac_sword_exponential, 0);
 	
 	handRadiusW = 10 + animcurve_channel_evaluate(ac_hand, state_var[1] / anim_length) * 10;
 	handRadiusH = 4 + animcurve_channel_evaluate(ac_hand, state_var[1] / anim_length) * 4;
@@ -61,7 +61,7 @@ function Scr_sword_attack(){
 	sword_dir = state_var[0][2] + animcurve_channel_evaluate(ac_channel, state_var[1] / anim_length) * 150;
 	hand_dir = state_var[0][1] + animcurve_channel_evaluate(ac_channel, state_var[1] / anim_length) * 180;
 	
-	if(state_var[1] == 25){
+	if(state_var[1] == anim_length){
 		Scr_SM_switch("IDLE");
 		state_var[1] = 0;
 		trail = false;

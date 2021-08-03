@@ -49,6 +49,7 @@ Scr_update_depth(x,y);
 
 AttackTarget = noone;
 
+
 ray_map = -1;
 
 with(Obj_camera){
