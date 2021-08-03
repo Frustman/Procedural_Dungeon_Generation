@@ -52,12 +52,3 @@ if(abs(angle_difference(mouse_dir, 240)) < 30){
 } else if(abs(angle_difference(mouse_dir, 120)) < 30){
 	draw_sprite_ext(Spr_chr_, 1, xpos, ypos, -1.0, 1.0, 0, c_white, 1.0);	
 }
-
-var xx = xpos + lengthdir_x(handRadiusW, hand_dir);
-var yy = ypos + 6 + lengthdir_y(handRadiusH, hand_dir);
-
-var dx = lengthdir_x(length, sword_dir - 90);
-var dy = lengthdir_y(length, sword_dir - 90);
-
-draw_circle(xx, yy, 3, false);
-draw_circle(xx + dx, yy + dy, 3, false);
