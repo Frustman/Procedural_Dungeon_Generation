@@ -30,7 +30,7 @@ function Scr_sword_idle(){
 }
 
 function Scr_sword_attack(){
-	var anim_length = 45;
+	var anim_length = 60;
 	if(state_new){
 		var xpos = room_width / 2;
 		var ypos = room_height / 2;
@@ -53,7 +53,7 @@ function Scr_sword_attack(){
 	state_var[1]++;
 	
 	var ac_channel = animcurve_get_channel(ac_sword_exponential, 0);
-	var ac_hand = animcurve_get_channel(ac_sword_exponential, 0);
+	var ac_hand = animcurve_get_channel(ac_sword_exponential, 1);
 	
 	handRadiusW = 10 + animcurve_channel_evaluate(ac_hand, state_var[1] / anim_length) * 10;
 	handRadiusH = 4 + animcurve_channel_evaluate(ac_hand, state_var[1] / anim_length) * 4;
