@@ -29,6 +29,7 @@ Scr_SM_create("ATTACK", Scr_sword_attack);
 var xpos = room_width / 2;
 var ypos = room_height / 2;
 
+
 mouse_dir = point_direction(xpos, ypos, mouse_x, mouse_y);
 
 hand_dir = mouse_dir;
