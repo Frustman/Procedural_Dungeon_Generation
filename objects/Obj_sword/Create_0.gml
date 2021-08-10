@@ -20,6 +20,7 @@ previous_mouse_x = mouse_x;
 previous_mouse_y = mouse_y;
 
 
+
 tick = 0;
 
 Scr_SM_default_init();
