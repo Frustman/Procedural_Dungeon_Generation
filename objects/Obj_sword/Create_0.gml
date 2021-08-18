@@ -13,7 +13,7 @@ path_set_closed(p_trail_i, false);
 path_set_kind(p_trail_i, 1);
 
 
-length = -36;
+length = -32;
 step_size = 0.01;
 tex = sprite_get_texture(Spr_beam, 0);
 
