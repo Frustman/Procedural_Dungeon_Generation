@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "Pistol_Shot_02.wav",
-  "duration": 2.714683,
+  "duration": 2.709683,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

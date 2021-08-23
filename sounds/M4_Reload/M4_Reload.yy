@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "M4_Reload.wav",
-  "duration": 0.551349,
+  "duration": 0.546349,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

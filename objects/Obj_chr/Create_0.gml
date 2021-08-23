@@ -13,6 +13,7 @@ shootX = x;
 shootY = y;
 
 
+
 state = "idle";
 dash = false;
 dashDir = 90;
