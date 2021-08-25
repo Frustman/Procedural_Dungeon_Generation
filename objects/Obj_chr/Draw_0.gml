@@ -24,11 +24,11 @@ if(dash){
 		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state == "idle"){
 		sprite_index = Spr_girl_idle;
-		draw_sprite_ext(Spr_girl_idle,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+		draw_sprite_ext(Spr_girl_idle,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state == "move"){
 		anim_fps = 5;
 		sprite_index = Spr_girl_move;
-		draw_sprite_ext(Spr_girl_move,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+		draw_sprite_ext(Spr_girl_move,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
 	}
 }
 

@@ -10,8 +10,6 @@ for(var i = 0; i < 12; i++){
 
 randomize();
 
-deviceWidth = display_get_width() * 0.75;
-deviceHeight = display_get_height() * 0.75;
 window_set_size(deviceWidth,deviceHeight);
 surface_resize(application_surface,deviceWidth,deviceHeight);
 display_set_gui_size(deviceWidth,deviceHeight);
