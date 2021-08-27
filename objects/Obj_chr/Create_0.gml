@@ -1,4 +1,4 @@
-moveSpeed = 1.5 * global.timeScale;
+moveSpeed = 2.5 * global.timeScale;
 dashSpeed = 2 * global.timeScale;
 
 hand_x = 1.0;
@@ -12,6 +12,7 @@ justdodge = false;
 shootX = x;
 shootY = y;
 
+brake = false;
 
 state = "idle";
 dash = false;

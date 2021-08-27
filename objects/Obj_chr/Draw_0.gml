@@ -19,16 +19,20 @@ if(dash){
 	draw_sprite_ext(Spr_chr_dash,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 }else{
 	if(hit){
-		anim_fps = 10;
+		anim_fps = 4;
 		sprite_index = Spr_chr_hurt;
 		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
-	} else if(state == "idle"){
+	} else if(brake == false && state == "idle"){
 		sprite_index = Spr_girl_idle;
 		draw_sprite_ext(Spr_girl_idle,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state == "move"){
 		anim_fps = 5;
 		sprite_index = Spr_girl_move;
 		draw_sprite_ext(Spr_girl_move,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
+	} else if(brake == true && state == "idle"){
+		anim_fps = 5;
+		sprite_index = Spr_girl_move_to_stop;
+		draw_sprite_ext(Spr_girl_move_to_stop,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
 	}
 }
 

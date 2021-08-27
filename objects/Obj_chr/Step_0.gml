@@ -1,7 +1,6 @@
 image_xscale = sign(image_xscale) * 1.0;
 image_yscale = 1.0;
 
-
 if(!dash){
 	if(instance_exists(Obj_controller)){
 		dx = lengthdir_x(moveSpeed* (Obj_controller.distanceBox / Obj_controller.boxRadius / 10 * 0.3 + 0.7),Obj_controller.directionBox);
@@ -55,9 +54,10 @@ angle = Obj_controller.AttackDirection;
 
 anim_maxIndex = image_number;
 
-if(anim_index < (anim_maxIndex) * anim_fps){
+if(anim_index < (anim_maxIndex) * anim_fps - 1){
 	anim_index += global.timeScale;
 } else{
+	if(brake = true) brake = false;
 	anim_index = 0;
 }
 
