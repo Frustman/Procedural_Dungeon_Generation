@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "npc",
-    "path": "folders/Objects/map editor/npc.yy",
+    "path": "folders/Objects/npc.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_npc2",
