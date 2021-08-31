@@ -17,6 +17,6 @@ for(var i = 0; i < room_H; i++){
 		layer_script_end(global.deco_grid[#0, i],Scr_layer_end);
 }*/
 
-instance_create_layer(0,0,"sort_end",Obj_mapGenerator);
+instance_create_layer(0,0,"sort_end",Obj_mapController);
 
 tex_alpha = shader_get_uniform(Sha_set_alpha,"tex_alpha");

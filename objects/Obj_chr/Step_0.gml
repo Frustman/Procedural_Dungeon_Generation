@@ -70,16 +70,15 @@ if(dash){
 	Scr_force_update([dx * global.timeScale,dy * global.timeScale]);
 }
 
-if(sign(dx) > 0){
-	image_xscale = 1.0;
-	LookRight = 1;
-}
-else if(sign(dx) < 0){
-	image_xscale = -1.0;
-	LookRight = 0;
-}
-
 if(Obj_controller.move){
+	if(sign(dx) > 0){
+		image_xscale = 1.0;
+		LookRight = 1;
+	}
+	else if(sign(dx) < 0){
+		image_xscale = -1.0;
+		LookRight = 0;
+	}
 	state = "move";
 	if(!dash) Scr_force_update([dx * global.timeScale,dy * global.timeScale]);
 } else{

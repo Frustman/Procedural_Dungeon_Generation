@@ -8,10 +8,10 @@ function scr_test() {
 function script_execute_arg(_script, _arg){
 	var s = _script;
 	var a = _arg;
-	if(argument_count > 1){
+	if(argument_count > 1 && a != undefined){
 		var len = array_length(_arg);
-	
 		switch(len){
+			case 0: script_execute(s); break;
 			case 1: script_execute(s, a[0]); break;
 			case 2: script_execute(s, a[0], a[1]); break;
 			case 3: script_execute(s, a[0], a[1], a[2]); break;

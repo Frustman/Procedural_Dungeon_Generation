@@ -1,8 +1,4 @@
 /// @description Insert description here
-#macro DG_WIDTH 16
-#macro DG_HEIGHT 12
-
-#macro ALARMINACTIVE -100
 
 for(var i = 0; i < 12; i++){
 	Alarm[i] = ALARMINACTIVE;

@@ -90,6 +90,8 @@ player_itemList = ds_list_create();
 
 global.wlogList = ds_list_create();
 
+global.cutScene = -1;
+
 global.synergy_name = string(load_csv("synergy_name.csv"));
 global.item = string_upper(string(load_csv("item_desc.csv")));
 global.synergy_count = ds_grid_height(global.synergy_name);

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-room1 = room_duplicate(rm_level);
+room1 = room_duplicate(rm_tutorial);
 globalvar deviceWidth;
 deviceWidth = display_get_width();
 globalvar deviceHeight;

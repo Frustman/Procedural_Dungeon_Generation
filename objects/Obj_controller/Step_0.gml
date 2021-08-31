@@ -8,6 +8,9 @@ device_y[0] = device_mouse_y_to_gui(0);
 device_x[1] = device_mouse_x_to_gui(1);
 device_y[1] = device_mouse_y_to_gui(1);
 
+if(instance_exists(Obj_cutscene)){
+	move = false;	
+}
 
 if(clickOne && device_mouse_x_to_gui(0) <= view_wport[0] / 2){
 	if(joyIndex != 0){
