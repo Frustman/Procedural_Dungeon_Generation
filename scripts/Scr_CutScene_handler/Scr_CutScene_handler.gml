@@ -24,13 +24,24 @@ function Scr_CutScene_wait(_second){
 }
 
 function Scr_CutScene_end_action(){
-	global.cutScene.scene++;
-	if(global.cutScene.scene > array_length(global.cutScene.cutscene_info) - 1){
-		instance_destroy(global.cutScene);	
-	} else event_perform(ev_other, ev_user0);
+	with(global.cutScene){
+		scene++;
+		if(scene > array_length(cutscene_info) - 1){
+			instance_destroy();	
+		} else {
+			event_perform(ev_other, ev_user0);
+		}
+	}
 }
 
 function Scr_CutScene_show_message(str){
 	show_message(str);
+	Scr_CutScene_end_action();
+}
+
+function Scr_CutScene_object_change_state(_instance, _state){
+	with(_instance){
+		Scr_SM_switch(_state);
+	}
 	Scr_CutScene_end_action();
 }

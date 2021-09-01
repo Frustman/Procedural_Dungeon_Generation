@@ -31,9 +31,26 @@ function Scr_girl_move(){
 function Scr_girl_move_to_stop(){
 	if(state_new){
 		sprite_index = Spr_girl_move_to_stop;
-		image_index = 0;
+		image_index = 2;
 	}
 	if(image_index > image_number - 1){
 		Scr_SM_switch("IDLE");	
+	}
+}
+
+function Scr_girl_crouching(){
+	if(state_new){
+		sprite_index = Spr_girl_crouch;
+		image_index = 0;
+	}
+	if(image_index > image_number - 1){
+		Scr_SM_switch("CROUCH");	
+	}
+}
+
+function Scr_girl_crouch(){
+	if(state_new){
+		sprite_index = Spr_girl_crouch;
+		image_index = 6;
 	}
 }
