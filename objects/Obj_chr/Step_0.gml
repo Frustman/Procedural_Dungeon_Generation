@@ -71,7 +71,7 @@ if(dash){
 }
 
 if(Obj_controller.move){
-	if(sign(dx) > 0){
+	if(sign(dx) >= 0){
 		image_xscale = 1.0;
 		LookRight = 1;
 	}

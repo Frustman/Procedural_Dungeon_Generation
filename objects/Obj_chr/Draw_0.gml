@@ -12,6 +12,7 @@ if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));
 
 image_xscale = (abs(image_xscale) > 0) ? image_xscale : 1.0;
 hand_x = (abs(hand_x) > 0) ? hand_x : 1.0;
+if(hand_x == 0) hand_x = 1.0;
 
 if(dash){
 	sprite_index = Spr_chr_dash;
@@ -22,18 +23,18 @@ if(dash){
 		anim_fps = 4;
 		sprite_index = Spr_chr_hurt;
 		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
-	} else if(brake == false && state == "idle"){
-		sprite_index = Spr_girl_idle;
-		draw_sprite_ext(Spr_girl_idle,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
+	} else if(state == "idle"){
+		sprite_index = Spr_chr;
+		draw_sprite_ext(Spr_chr,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state == "move"){
 		anim_fps = 5;
-		sprite_index = Spr_girl_move;
-		draw_sprite_ext(Spr_girl_move,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
-	} else if(brake == true && state == "idle"){
+		sprite_index = Spr_chr_move;
+		draw_sprite_ext(Spr_chr_move,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+	} /*else if(brake == true && state == "idle"){
 		anim_fps = 5;
 		sprite_index = Spr_girl_move_to_stop;
 		draw_sprite_ext(Spr_girl_move_to_stop,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
-	}
+	}*/
 }
 
 if(shoot){
