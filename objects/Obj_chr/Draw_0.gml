@@ -4,17 +4,14 @@ real_index = anim_index div anim_fps;
 //draw_sprite(Spr_wallM,0,(x div 64) * 64, ((y + 8) div 64) * 64);
 //shader_set(Sha_sepia);
 
-
+/*
 if(AttackTarget == noone){
 	TargetAngle = angle;	
 }
-if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));
+if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));*/
 
-image_xscale = (abs(image_xscale) > 0) ? image_xscale : 1.0;
-hand_x = (abs(hand_x) > 0) ? hand_x : 1.0;
-if(hand_x == 0) hand_x = 1.0;
-
-if(dash){
+	
+if(state_name == "DASH"){
 	sprite_index = Spr_chr_dash;
 	anim_fps = 7;
 	draw_sprite_ext(Spr_chr_dash,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
@@ -23,20 +20,16 @@ if(dash){
 		anim_fps = 4;
 		sprite_index = Spr_chr_hurt;
 		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
-	} else if(state == "idle"){
+	} else if(state_name == "IDLE"){
 		sprite_index = Spr_chr;
 		draw_sprite_ext(Spr_chr,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
-	} else if(state == "move"){
+	} else if(state_name == "MOVE"){
 		anim_fps = 5;
 		sprite_index = Spr_chr_move;
 		draw_sprite_ext(Spr_chr_move,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
-	} /*else if(brake == true && state == "idle"){
-		anim_fps = 5;
-		sprite_index = Spr_girl_move_to_stop;
-		draw_sprite_ext(Spr_girl_move_to_stop,real_index,x,y,shoot ? -hand_x : -image_xscale,image_yscale,0,c_white,image_alpha);
-	}*/
+	}
 }
-
+/*
 if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;
 	gun_index += global.timeScale;

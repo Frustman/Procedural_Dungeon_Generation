@@ -8,6 +8,7 @@ if(!instance_exists(Obj_cutscene) && !instance_exists(Obj_wokialog)){
 		targetX = x;
 		targetY = y;
 	}
+	image_xscale = (x < targetX) ? 1 : -1;
 }
 
 Scr_SM_execute();

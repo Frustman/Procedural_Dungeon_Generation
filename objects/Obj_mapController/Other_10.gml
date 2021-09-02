@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-instance_create_layer(0,0, "controller",Obj_controller);
+//instance_create_layer(0,0, "controller",Obj_controller);
 
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2 + 2) * CELL_HEIGHT, "sort_start", Obj_chr);
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2 + 2) * CELL_HEIGHT, "sort_start", Obj_weapon_controller);

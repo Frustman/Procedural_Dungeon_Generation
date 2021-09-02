@@ -3,3 +3,5 @@
 if(abs(floor(y) - floor(yprevious)) >= 1){
 	Scr_update_depth(x,y + 20);
 }
+
+ Scr_SM_update();

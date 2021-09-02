@@ -21,11 +21,12 @@ function Scr_girl_move(){
 		sprite_index = Spr_girl_move;
 		image_index = 0;
 	}
-	if(point_distance(x,y,targetX,targetY) <= 20){
-		Scr_SM_switch("MOVETOSTOP");	
+	if(!instance_exists(Obj_cutscene) && !instance_exists(Obj_wokialog)){
+		if(point_distance(x,y,targetX,targetY) <= 20){
+			Scr_SM_switch("MOVETOSTOP");	
+		}
+		mp_potential_step(targetX, targetY, spd, false);
 	}
-	if(!instance_exists(Obj_cutscene) && !instance_exists(Obj_wokialog)) mp_potential_step(targetX, targetY, spd, false);
-	else Scr_SM_switch("MOVETOSTOP");
 }
 
 function Scr_girl_move_to_stop(){
