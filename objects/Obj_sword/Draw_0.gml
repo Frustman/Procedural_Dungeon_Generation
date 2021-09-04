@@ -7,12 +7,12 @@ var ypos = room_height / 2;
 draw_ellipse(xpos - handRadiusW, ypos - handRadiusH + 6, xpos + handRadiusW, ypos + 6 + handRadiusH, true);
 //draw_circle(xpos + lengthdir_x(handRadiusW, mouse_dir - 90), ypos + lengthdir_y(handRadiusH, mouse_dir - 90),2,false);
 
-if(state_name != "ATTACK"){
-	if(abs(angle_difference(hand_dir + 90, 60)) <= 30){
+if(true){
+	if(abs(angle_difference(mouse_dir, 60)) <= 30){
 		draw_sprite(Spr_chr_, 1, xpos, ypos);	
-	} else if(abs(angle_difference(hand_dir + 90, 0)) <= 30){
+	} else if(abs(angle_difference(mouse_dir, 0)) <= 30){
 		draw_sprite(Spr_chr_, 0, xpos, ypos);	
-	} else if(abs(angle_difference(hand_dir + 90, 300)) <= 30){
+	} else if(abs(angle_difference(mouse_dir, 300)) <= 30){
 		draw_sprite(Spr_chr_, 2, xpos, ypos);	
 	}
 }
@@ -29,10 +29,10 @@ if(state_name != "ATTACK"){
 								1.0);*/
 								
 draw_text(xpos, ypos+100, state_name);
-if(state_name == "ATTACK" && abs(angle_difference(hand_dir + 90, 0)) <= 90){
+/*if(state_name == "ATTACK" && abs(angle_difference(hand_dir + 90, 0)) <= 90){
 	draw_sprite_ext(Spr_chr_attack, image_index, xpos, ypos,(xpos < mouse_x) ? 1.0 : -1.0, 1.0,0,c_white,1);	
-}
-if(trail == true){
+}*/
+if(true){
 	draw_primitive_begin_texture(pr_trianglestrip, tex);
 
 	for(var i = 0; i < 1; i += step_size){
@@ -40,6 +40,7 @@ if(trail == true){
 		var py = path_get_y(p_trail_i, i);
 		var dx = path_get_x(p_trail_o, i);
 		var dy = path_get_y(p_trail_o, i);
+		
 		draw_vertex_texture_color(px, py, i, 0, c_white, 1.0);
 		draw_vertex_texture_color(dx, dy, i, 1, c_white, 1.0);
 	}
@@ -49,16 +50,16 @@ if(trail == true){
 
 draw_sprite_ext(Spr_sword_1, 1, xpos + lengthdir_x(handRadiusW, hand_dir), ypos + 6 + lengthdir_y(handRadiusH, hand_dir), 0.5, 0.5, sword_dir, c_white, 1.0);
 
-if(state_name == "ATTACK" && abs(angle_difference(hand_dir + 90, 180)) <= 90){
+/*if(state_name == "ATTACK" && abs(angle_difference(hand_dir + 90, 180)) <= 90){
 	draw_sprite_ext(Spr_chr_attack, image_index, xpos, ypos,(xpos < mouse_x) ? 1.0 : -1.0, 1.0,0,c_white,1);	
-}
+}*/
 
-if(state_name != "ATTACK"){
-	if(abs(angle_difference(hand_dir + 90, 240)) < 30){
+if(true){
+	if(abs(angle_difference(mouse_dir, 240)) < 30){
 		draw_sprite_ext(Spr_chr_, 2, xpos, ypos, -1.0, 1.0, 0, c_white, 1.0);	
-	} else if(abs(angle_difference(hand_dir + 90, 180)) <= 30){
+	} else if(abs(angle_difference(mouse_dir, 180)) <= 30){
 		draw_sprite_ext(Spr_chr_, 0, xpos, ypos, -1.0, 1.0, 0, c_white, 1.0);	
-	} else if(abs(angle_difference(hand_dir + 90, 120)) < 30){
+	} else if(abs(angle_difference(mouse_dir, 120)) < 30){
 		draw_sprite_ext(Spr_chr_, 1, xpos, ypos, -1.0, 1.0, 0, c_white, 1.0);	
 	}
 }

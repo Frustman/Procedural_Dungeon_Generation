@@ -37,6 +37,7 @@ function npc1_dialog_2(){
 		}
 	}
 };
+
 t_cutscene_info = [
 	[Scr_CutScene_object_change_state, Obj_girl, "MOVETOSTOP"],
 	[Scr_CutScene_object_change_state, Obj_chr, "IDLE"],
