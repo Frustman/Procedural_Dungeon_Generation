@@ -83,6 +83,7 @@
     {"id":{"name":"wlog_set_property_text","path":"scripts/wlog_set_property_text/wlog_set_property_text.yy",},"order":23,},
     {"id":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"order":2,},
     {"id":{"name":"Spr_boss_frame","path":"sprites/Spr_boss_frame/Spr_boss_frame.yy",},"order":22,},
+    {"id":{"name":"Spr_texture","path":"sprites/Spr_texture/Spr_texture.yy",},"order":27,},
     {"id":{"name":"Spr_desert_deco2","path":"sprites/Spr_desert_deco2/Spr_desert_deco2.yy",},"order":2,},
     {"id":{"name":"Spr_chr_move","path":"sprites/Spr_chr_move/Spr_chr_move.yy",},"order":3,},
     {"id":{"name":"Scr_chr_FSM","path":"scripts/Scr_chr_FSM/Scr_chr_FSM.yy",},"order":3,},
@@ -363,8 +364,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_home","path":"rooms/rm_home/rm_home.yy",},},
     {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
+    {"roomId":{"name":"rm_home","path":"rooms/rm_home/rm_home.yy",},},
     {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"roomId":{"name":"rm_map_editor","path":"rooms/rm_map_editor/rm_map_editor.yy",},},
     {"roomId":{"name":"rm_level","path":"rooms/rm_level/rm_level.yy",},},
