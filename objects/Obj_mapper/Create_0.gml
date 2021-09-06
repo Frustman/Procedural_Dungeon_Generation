@@ -6,11 +6,11 @@ deviceWidth = display_get_width();
 globalvar deviceHeight;
 deviceHeight = display_get_height();
 
-deviceWidth = 1480;
-deviceHeight = 720;
+deviceWidth = 1440;
+deviceHeight = 810;
 
-cam_width = 740;
-cam_height = 360;
+cam_width = 720;
+cam_height = 405;
 
 
 room_set_viewport(room1,0,true,0,0,740,360);

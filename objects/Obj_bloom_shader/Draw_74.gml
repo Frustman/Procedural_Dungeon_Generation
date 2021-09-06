@@ -12,6 +12,7 @@ var bloom_saturation= 1 * 2;
 time			+= 0.2 * 0.02;
 var size		= 0.2 * 4;
 var strength	= 0.2 * 0.01;*/
+if(shader_type == 0) exit;
 
 time			+= 0.2 * 0.02 * global.timeScale;
 
@@ -40,13 +41,15 @@ if (!surface_exists(srf_distortion)) {
 
 // 1st pass: Draw brights to bloom surface:
 // AppSrf -> srf_ping
-shader_set(shader_bloom_lum);
-	shader_set_uniform_f(u_bloom_threshold,		bloom_threshold);
-	shader_set_uniform_f(u_bloom_range,			bloom_range);
+if(shader_type == 1){
+	shader_set(shader_bloom_lum);
+		shader_set_uniform_f(u_bloom_threshold,		bloom_threshold);
+		shader_set_uniform_f(u_bloom_range,			bloom_range);
 	
-	surface_set_target(srf_ping);
-		draw_surface(application_surface, 0, 0);
-	surface_reset_target();
+		surface_set_target(srf_ping);
+			draw_surface(application_surface, 0, 0);
+		surface_reset_target();
+}
 	
 // 2nd pass: blur horizontally
 // srf_ping -> srf_pong

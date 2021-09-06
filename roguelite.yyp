@@ -81,6 +81,7 @@
     {"id":{"name":"Spr_note","path":"sprites/Spr_note/Spr_note.yy",},"order":12,},
     {"id":{"name":"wlog_set_pvalue","path":"scripts/wlog_set_pvalue/wlog_set_pvalue.yy",},"order":28,},
     {"id":{"name":"wlog_set_property_text","path":"scripts/wlog_set_property_text/wlog_set_property_text.yy",},"order":23,},
+    {"id":{"name":"Obj_slider","path":"objects/Obj_slider/Obj_slider.yy",},"order":0,},
     {"id":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},"order":2,},
     {"id":{"name":"Spr_boss_frame","path":"sprites/Spr_boss_frame/Spr_boss_frame.yy",},"order":22,},
     {"id":{"name":"Spr_texture","path":"sprites/Spr_texture/Spr_texture.yy",},"order":27,},
@@ -198,6 +199,7 @@
     {"id":{"name":"Obj_barrel","path":"objects/Obj_barrel/Obj_barrel.yy",},"order":4,},
     {"id":{"name":"Scr_get_point_line","path":"scripts/Scr_get_point_line/Scr_get_point_line.yy",},"order":8,},
     {"id":{"name":"Spr_wildpig_dead","path":"sprites/Spr_wildpig_dead/Spr_wildpig_dead.yy",},"order":3,},
+    {"id":{"name":"Sha_bloom_MRT_luminance","path":"shaders/Sha_bloom_MRT_luminance/Sha_bloom_MRT_luminance.yy",},"order":12,},
     {"id":{"name":"Scr_critical","path":"scripts/Scr_critical/Scr_critical.yy",},"order":17,},
     {"id":{"name":"ac_item_sequence","path":"animcurves/ac_item_sequence/ac_item_sequence.yy",},"order":4,},
     {"id":{"name":"Obj_enemy_perlinNoise","path":"objects/Obj_enemy_perlinNoise/Obj_enemy_perlinNoise.yy",},"order":8,},
@@ -364,8 +366,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
     {"roomId":{"name":"rm_home","path":"rooms/rm_home/rm_home.yy",},},
+    {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
     {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"roomId":{"name":"rm_map_editor","path":"rooms/rm_map_editor/rm_map_editor.yy",},},
     {"roomId":{"name":"rm_level","path":"rooms/rm_level/rm_level.yy",},},
@@ -428,6 +430,7 @@
     {"folderPath":"folders/Sprites/gun.yy","order":30,"resourceVersion":"1.0","name":"gun","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/chr/girl.yy","order":10,"resourceVersion":"1.0","name":"girl","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Cutscene.yy","order":54,"resourceVersion":"1.0","name":"Cutscene","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/handler.yy","order":13,"resourceVersion":"1.0","name":"handler","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

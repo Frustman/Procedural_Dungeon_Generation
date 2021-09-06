@@ -1,7 +1,7 @@
 rate = 0.1;
 
-cam_width = 740;
-cam_height = 360;
+cam_width = 720;
+cam_height = 405;
 
 cam_x = 0;
 cam_y = 0;
