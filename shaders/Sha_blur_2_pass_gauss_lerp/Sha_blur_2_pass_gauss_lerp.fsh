@@ -127,7 +127,7 @@ float weight(float pos) { // Gauss 1D
 
 void main()
 {
-    highp vec4 blurred_col	= texture2D(gm_BaseTexture, v_vTexcoord);
+    vec3 blurred_col	= texture2D(gm_BaseTexture, v_vTexcoord).rgb;
 	
 	vec2  sample;
 	float offset_D1, offset_L, sample_weight_D1, sample_weight_D2, sample_weight_L;
@@ -143,11 +143,11 @@ void main()
 		offset_L			= (offset_D1 * sample_weight_D1 + (offset_D1 + 1.0) * sample_weight_D2) / sample_weight_L;
 			
 		sample				= v_vTexcoord - offset_L * texel_size * blur_vector;
-		blurred_col			+= texture2D(gm_BaseTexture, sample) * sample_weight_L;
+		blurred_col			+= texture2D(gm_BaseTexture, sample).rgb * sample_weight_L;
 
 		sample				= v_vTexcoord + offset_L * texel_size * blur_vector;
-		blurred_col			+= texture2D(gm_BaseTexture, sample) * sample_weight_L;
+		blurred_col			+= texture2D(gm_BaseTexture, sample).rgb * sample_weight_L;
 	}
 	
-	gl_FragColor = v_vColour * blurred_col / total_weight;
+	gl_FragColor = v_vColour * vec4(blurred_col / total_weight, 1.0);
 }

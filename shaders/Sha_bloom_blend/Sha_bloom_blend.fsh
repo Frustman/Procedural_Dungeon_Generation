@@ -13,7 +13,7 @@ uniform sampler2D	bloom_texture;
 
 void main()
 {
-    vec4 base_col		= texture2D( gm_BaseTexture, v_vTexcoord );
+    vec3 base_col		= texture2D( gm_BaseTexture, v_vTexcoord ).rgb;
 	vec3 bloom_col		= texture2D( bloom_texture, v_vTexcoord ).rgb;
 	
 	
@@ -22,7 +22,7 @@ void main()
 	bloom_col			= mix(vec3(lum), bloom_col, bloom_saturation);
 	
 	// add (linear dodge):
-	base_col.rgb		= base_col.rgb * bloom_darken + bloom_col * bloom_intensity;
+	base_col			= base_col * bloom_darken + bloom_col * bloom_intensity;
 	
-	gl_FragColor		= v_vColour * base_col;
+	gl_FragColor		= v_vColour * vec4(base_col, 1.0);
 }

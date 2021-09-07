@@ -12,19 +12,11 @@ var bloom_saturation= 1 * 2;
 time			+= 0.2 * 0.02;
 var size		= 0.2 * 4;
 var strength	= 0.2 * 0.01;*/
-if(shader_type == 0) exit;
 
 time			+= 0.2 * 0.02 * global.timeScale;
 
 // DRAW:
 //-----------------------------------------------------------------------------
-if (!surface_exists(srf_ping)) {
-	srf_ping = surface_create(gui_w, gui_h);
-	bloom_texture = surface_get_texture(srf_ping);
-}
-if (!surface_exists(srf_pong)) {
-	srf_pong = surface_create(gui_w, gui_h);
-}
 if (!surface_exists(srf_ping_app)) {
 	srf_ping_app = surface_create(gui_w, gui_h);
 }
@@ -38,19 +30,17 @@ if (!surface_exists(srf_distortion)) {
 	srf_distortion = surface_create(gui_w, gui_h);
 }
 
-
 // 1st pass: Draw brights to bloom surface:
 // AppSrf -> srf_ping
-if(shader_type == 1){
-	shader_set(shader_bloom_lum);
-		shader_set_uniform_f(u_bloom_threshold,		bloom_threshold);
-		shader_set_uniform_f(u_bloom_range,			bloom_range);
+
+/*shader_set(shader_bloom_lum);
+	shader_set_uniform_f(u_bloom_threshold,		Scr_slider_get(0));
+	shader_set_uniform_f(u_bloom_range,			Scr_slider_get(1));
 	
-		surface_set_target(srf_ping);
-			draw_surface(application_surface, 0, 0);
-		surface_reset_target();
-}
-	
+	surface_set_target(srf_ping);
+		draw_surface(application_surface, 0, 0);
+	surface_reset_target();*/
+
 // 2nd pass: blur horizontally
 // srf_ping -> srf_pong
 gpu_set_tex_filter(true);
@@ -78,22 +68,20 @@ gpu_set_tex_filter(false);
 // AppSrf & srf_ping -> screen
 surface_set_target(srf_final);
 shader_set(shader_bloom_blend);
-	shader_set_uniform_f(u_bloom_intensity, bloom_intensity);
-	shader_set_uniform_f(u_bloom_darken, bloom_darken);
-	shader_set_uniform_f(u_bloom_saturation, bloom_saturation);
+	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(3));
+	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(4));
+	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(5));
 	texture_set_stage(u_bloom_texture, bloom_texture);
 	gpu_set_tex_filter_ext(u_bloom_texture, true);
 	draw_surface(application_surface, 0, 0);	
 shader_reset();
 surface_reset_target();
+
+
 gpu_set_tex_filter_ext(u_distort_tex, true);
-
-
-
 surface_set_target(srf_ping_app);
 	draw_surface(srf_final, 0, 0);
 surface_reset_target();
-
 
 if(CONTAINER.game_surface_blur_sigma > 0){
 	gpu_set_tex_filter(true);

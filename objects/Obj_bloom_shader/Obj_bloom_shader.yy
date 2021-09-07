@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "system",
-    "path": "folders/Objects/system.yy",
+    "name": "shader",
+    "path": "folders/Objects/shader.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_bloom_shader",

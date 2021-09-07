@@ -21,6 +21,7 @@ float bloom_range
 	threshold < lum < threshold + range:	is drawn darkened
 */
 
+
 attribute vec3 in_Position;                  // (x,y,z)
 //attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.
 attribute vec4 in_Colour;                    // (r,g,b,a)
