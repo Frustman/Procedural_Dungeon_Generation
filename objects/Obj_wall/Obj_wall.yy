@@ -1,10 +1,10 @@
 {
   "spriteId": {
-    "name": "Spr_wallM64",
-    "path": "sprites/Spr_wallM64/Spr_wallM64.yy",
+    "name": "Spr_wall",
+    "path": "sprites/Spr_wall/Spr_wall.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,

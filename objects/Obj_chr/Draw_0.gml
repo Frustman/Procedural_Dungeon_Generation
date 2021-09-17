@@ -10,23 +10,24 @@ if(AttackTarget == noone){
 }
 if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));*/
 
-	
+	draw_text(x,y+ 10,z);
+draw_sprite(Spr_chr_msk, 0, x, y + zFloor);
 if(state_name == "DASH"){
 	sprite_index = Spr_chr_dash;
 	anim_fps = 7;
-	draw_sprite_ext(Spr_chr_dash,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+	draw_sprite_ext(Spr_chr_dash,real_index,x,y + z,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 }else{
 	if(hit){
 		anim_fps = 4;
 		sprite_index = Spr_chr_hurt;
-		draw_sprite_ext(Spr_chr_hurt,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+		draw_sprite_ext(Spr_chr_hurt,real_index,x,y + z,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state_name == "IDLE"){
 		sprite_index = Spr_chr;
-		draw_sprite_ext(Spr_chr,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+		draw_sprite_ext(Spr_chr,real_index,x,y + z,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	} else if(state_name == "MOVE"){
 		anim_fps = 5;
 		sprite_index = Spr_chr_move;
-		draw_sprite_ext(Spr_chr_move,real_index,x,y,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
+		draw_sprite_ext(Spr_chr_move,real_index,x,y + z,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	}
 }
 /*

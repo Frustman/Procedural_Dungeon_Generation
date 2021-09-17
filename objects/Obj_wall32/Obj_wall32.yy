@@ -4,7 +4,7 @@
     "path": "sprites/Spr_wallM32/Spr_wallM32.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

@@ -43,6 +43,7 @@
     {"id":{"name":"Obj_perlin_noise","path":"objects/Obj_perlin_noise/Obj_perlin_noise.yy",},"order":5,},
     {"id":{"name":"Sha_blur_app","path":"shaders/Sha_blur_app/Sha_blur_app.yy",},"order":11,},
     {"id":{"name":"wlog_exists","path":"scripts/wlog_exists/wlog_exists.yy",},"order":14,},
+    {"id":{"name":"Spr_wall","path":"sprites/Spr_wall/Spr_wall.yy",},"order":17,},
     {"id":{"name":"Scr_Pdg_Map_Init","path":"scripts/Scr_Pdg_Map_Init/Scr_Pdg_Map_Init.yy",},"order":44,},
     {"id":{"name":"Sha_set_alpha","path":"shaders/Sha_set_alpha/Sha_set_alpha.yy",},"order":8,},
     {"id":{"name":"rm_desert_2","path":"rooms/rm_desert_2/rm_desert_2.yy",},"order":1,},
@@ -371,8 +372,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
     {"roomId":{"name":"rm_home","path":"rooms/rm_home/rm_home.yy",},},
+    {"roomId":{"name":"rm_testmap","path":"rooms/rm_testmap/rm_testmap.yy",},},
     {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"roomId":{"name":"rm_map_editor","path":"rooms/rm_map_editor/rm_map_editor.yy",},},
     {"roomId":{"name":"rm_level","path":"rooms/rm_level/rm_level.yy",},},
@@ -453,7 +454,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"synergy_name.csv","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.3.574",
+    "IDEVersion": "2.3.4.580",
   },
   "resourceVersion": "1.4",
   "name": "roguelite",
