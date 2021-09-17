@@ -12,6 +12,9 @@ if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));*/
 
 	draw_text(x,y+ 10,z);
 draw_sprite(Spr_chr_msk, 0, x, y + zFloor);
+
+Scr_z_tilt_set();
+
 if(state_name == "DASH"){
 	sprite_index = Spr_chr_dash;
 	anim_fps = 7;
@@ -30,6 +33,8 @@ if(state_name == "DASH"){
 		draw_sprite_ext(Spr_chr_move,real_index,x,y + z,shoot ? hand_x : image_xscale,image_yscale,0,c_white,image_alpha);
 	}
 }
+
+Scr_z_tilt_reset();
 /*
 if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;

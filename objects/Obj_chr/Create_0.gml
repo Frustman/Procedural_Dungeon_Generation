@@ -13,6 +13,8 @@ zGravity = 0.5;
 zFloor = 0;
 zHeight = -36;
 
+image_alpha = sprite_height / 255;
+
 #endregion
 
 //------------------------------------------------

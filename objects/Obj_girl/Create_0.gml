@@ -5,6 +5,7 @@ targetY = y;
 
 spd = 1;
 
+
 Scr_update_depth(x,y);
 
 Scr_SM_default_init();
@@ -16,3 +17,5 @@ Scr_SM_create("CROUCHING",Scr_girl_crouching);
 Scr_SM_create("CROUCH",Scr_girl_crouch);
 
 Scr_SM_init("IDLE");
+
+image_alpha = sprite_height / 255;
