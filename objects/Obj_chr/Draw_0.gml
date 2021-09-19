@@ -10,7 +10,6 @@ if(AttackTarget == noone){
 }
 if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));*/
 
-	draw_text(x,y+ 10,z);
 draw_sprite(Spr_chr_msk, 0, x, y + zFloor);
 
 Scr_z_tilt_set();

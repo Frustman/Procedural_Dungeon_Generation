@@ -41,7 +41,6 @@ footstep = true;
 
 #region function setting
 
-Scr_update_depth(x,y);
 
 with(Obj_camera){
 	event_perform(ev_other,ev_user0);	

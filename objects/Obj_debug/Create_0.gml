@@ -4,3 +4,5 @@ sliderList = ds_list_create();
 valList = ds_list_create();
 
 alarm[0] = 1;
+
+toggle = false;

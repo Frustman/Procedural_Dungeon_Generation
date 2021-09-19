@@ -5,9 +5,6 @@ targetY = y;
 
 spd = 1;
 
-
-Scr_update_depth(x,y);
-
 Scr_SM_default_init();
 
 Scr_SM_create("IDLE",Scr_girl_idle);

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 wlog_init();
 
+image_alpha = sprite_height / 255;
+
 /*
 
 [Command]

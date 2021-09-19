@@ -3,5 +3,3 @@
 penetrate = false;
 image_speed = 0;
 z = -32;
-
-Scr_update_depth(x,y);

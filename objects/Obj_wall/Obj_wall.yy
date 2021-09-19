@@ -4,7 +4,7 @@
     "path": "sprites/Spr_wall/Spr_wall.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,

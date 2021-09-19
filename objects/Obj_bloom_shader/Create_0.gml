@@ -56,6 +56,9 @@ tex_waves				= -1;
 
 
 instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2 + 2) * CELL_HEIGHT, "setter", Obj_uniform_setter);
+with(instance_create_layer((DG_WIDTH * 4 + DG_WIDTH / 2) * CELL_WIDTH, (DG_HEIGHT * 3 + DG_HEIGHT / 2 + 2) * CELL_HEIGHT, "setter2", Obj_uniform_setter)){
+	offset = 3;	
+}
 
 // wave parameters:
 wave_life				= 20;	// life in seconds

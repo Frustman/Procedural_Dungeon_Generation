@@ -8,7 +8,7 @@ function perform_shoot(){
 function perform_reload(){
 	event_perform(ev_other, ev_user1);
 }
-var weap = instance_create_layer(x,y,"sort_start",Obj_weapon);
+var weap = instance_create_layer(x,y,"Instances",Obj_weapon);
 with(weap){
 	Scr_weapon_init("Pulse Gun", "GOOD GUN", 1);
 	Scr_weapon_image(Spr_gun_1_idle,Spr_gun_1_idle,Spr_gun_1_reload,Spr_gun_1_shoot,18,38,53,29);

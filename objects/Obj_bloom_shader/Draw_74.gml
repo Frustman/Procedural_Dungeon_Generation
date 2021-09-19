@@ -68,9 +68,9 @@ gpu_set_tex_filter(false);
 // AppSrf & srf_ping -> screen
 surface_set_target(srf_final);
 shader_set(shader_bloom_blend);
-	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(3));
-	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(4));
-	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(5));
+	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(6));
+	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(7));
+	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(8));
 	texture_set_stage(u_bloom_texture, bloom_texture);
 	gpu_set_tex_filter_ext(u_bloom_texture, true);
 	draw_surface(application_surface, 0, 0);	

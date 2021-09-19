@@ -23,6 +23,7 @@ PixelShaderOutput main(PixelShaderInput INPUT) {
 	
 	// Original Colour:
 	float4 base_col = gm_BaseTextureObject.Sample(gm_BaseTexture, INPUT.Texcoord);
+	if(base_col.a < 1.0) { discard; }
 	OUTPUT.base_col	= base_col;
 
 	// Bloom Colour:

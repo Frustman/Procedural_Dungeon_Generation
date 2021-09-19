@@ -5,15 +5,17 @@ function Scr_z_tilt(){
 }
 
 function Scr_z_tilt_set(){
+	if event_number!=0 exit
 	gpu_set_ztestenable(true);
 	gpu_set_zwriteenable(true);
-	shader_set(Sha_z_tilt);
+	//shader_set(Sha_z_tilt);
 	shader_enable_corner_id(true);
 }
 
 function Scr_z_tilt_reset(){
-	shader_reset();
+	if event_number!=0 exit
+	//shader_reset();
+	shader_enable_corner_id(false);
 	gpu_set_ztestenable(false);
 	gpu_set_zwriteenable(false);
-	shader_enable_corner_id(false);
 }

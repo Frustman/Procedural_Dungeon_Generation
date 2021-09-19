@@ -12,4 +12,4 @@ if (!surface_exists(srf_pong)) {
 shader_set(shader_bloom_lum);
 surface_set_target_ext(0, application_surface);
 surface_set_target_ext(1, srf_ping);
-camera_apply(view_camera[0]);
+//camera_apply(view_camera[0]);

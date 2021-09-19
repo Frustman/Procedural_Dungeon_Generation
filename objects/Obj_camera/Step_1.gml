@@ -1,63 +1,51 @@
 
+if(d3d_mode == true){
+	x = Obj_chr.x;
+	y = Obj_chr.y;
+	
+	var up = keyboard_check(vk_up);
+	var down = keyboard_check(vk_down);
+	var left = keyboard_check(vk_left);
+	var right = keyboard_check(vk_right);
 
+	var inputX = right - left;
+	var inputY = down - up;
 
-//version 2
-/*if(instance_exists(Obj_chr)){
+	var dir = point_direction(0,0,inputX,inputY);
+
+	dx = 0;
+	dy = 0;
+
+	if(up || down || left || right){
+		dx = lengthdir_x(4, dir);
+		dy = lengthdir_y(4, dir);
+	}
+
+	ddx += dx;
+	ddy += dy;
+	
+} else {
+	
 	if(focus_id == -1){
 		targetX = Obj_chr.x;
 		targetY = Obj_chr.y;
 	} else {
-		targetX = (focus_id.parent.x + Obj_chr.x) / 2;
-		targetY = (focus_id.parent.y + Obj_chr.y) / 2;
+		targetX = focus_id.x;
+		targetY = focus_id.y;
 	}
-	cam_zoom = 1.0 - zoom_shake;
-} else if(global.paused == true){
-	targetX = x;
-	targetY = y;
+	
+	x += (targetX - x) / 7;	
+	y += (targetY - y) / 7;
+	
+	var new_width = cam_width * cam_zoom;
+	var new_height = cam_height * cam_zoom;
+	
+	cam_width = lerp(cam_width, new_width, rate);
+	cam_height = lerp(cam_height, new_height, rate);
+	
+	camera_set_view_size(view_camera[0], cam_width, cam_height);
+	camera_set_view_pos(view_camera[0], x - cam_width / 2, y - cam_height / 2);
 }
-else{
-	targetX = 0;
-	targetY = 0;
-}
-/*
-//version 3
-if(instance_exists(Obj_chr)){
-	var targetX = Obj_chr.x;
-	var targetY = Obj_chr.y;
-	cam_zoom = 0.7 - zoom_shake;
-} else{
-	var targetX = 0;
-	var targetY = 0;
-}*/
-
-/*
-x += (targetX - x) / 7 * global.timeScale;
-y += (targetY - y) / 7 * global.timeScale;
-
-/*x = round(x);
-y = round(y);*/
-
-var up = keyboard_check(vk_up);
-var down = keyboard_check(vk_down);
-var left = keyboard_check(vk_left);
-var right = keyboard_check(vk_right);
-
-var inputX = right - left;
-var inputY = down - up;
-
-var dir = point_direction(0,0,inputX,inputY);
-
-dx = 0;
-dy = 0;
-
-if(up || down || left || right){
-	dx = lengthdir_x(4, dir);
-	dy = lengthdir_y(4, dir);
-}
-
-ddx += dx;
-ddy += dy;
-
 
 global.timeScale = lerp(global.timeScale, targetTimeScale, 0.05);
 CONTAINER.game_surface_blur_sigma = abs(1.0 - global.timeScale);
