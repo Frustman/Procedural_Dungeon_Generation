@@ -21,6 +21,12 @@ function Scr_chr_idle(){
 
 function Scr_chr_move(){
 	if(!instance_exists(Obj_cutscene) && !instance_exists(Obj_wokialog)){
+		if(z == zFloor){
+			if(random(10) < 2) {
+				instance_create_layer(x + random_range(-2,2),y + z + 8 + random_range(-1,1), "Instances", Obj_dust);	
+			}
+		}
+		
 		var wPress = keyboard_check(ord("W"));
 		var aPress = keyboard_check(ord("A"));
 		var sPress = keyboard_check(ord("S"));

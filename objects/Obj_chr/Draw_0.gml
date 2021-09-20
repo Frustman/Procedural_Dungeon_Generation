@@ -1,16 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 real_index = anim_index div anim_fps;
-//draw_sprite(Spr_wallM,0,(x div 64) * 64, ((y + 8) div 64) * 64);
-//shader_set(Sha_sepia);
 
-/*
-if(AttackTarget == noone){
-	TargetAngle = angle;	
-}
-if(shoot) hand_x = sign(lengthdir_x(1,TargetAngle));*/
-
-draw_sprite(Spr_chr_msk, 0, x, y + zFloor);
 
 Scr_z_tilt_set();
 
@@ -34,6 +25,9 @@ if(state_name == "DASH"){
 }
 
 Scr_z_tilt_reset();
+
+draw_sprite(Spr_chr_msk, 0, x, y + 6 + zFloor);
+
 /*
 if(shoot){
 	var gun_reac = -animcurve_channel_evaluate(channel_gun, gun_index / gun_reac_duration) * 4;

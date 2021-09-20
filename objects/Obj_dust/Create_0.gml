@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_speed = random_range(1/2,1/4);
+image_speed = random_range(1/4,1/8);
 image_index = irandom(5);
-
+image_alpha = sprite_height / 255;
 
 vx = random_range(-0.2,0.2);
 vy = random_range(-0.2,0.2);

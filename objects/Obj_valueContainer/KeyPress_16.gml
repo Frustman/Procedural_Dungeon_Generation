@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+/*
 player_gunBulletCount[player_guntype]	= (bullet_count == 0) ? player_gunMaxCount[player_guntype] : bullet_count;
 player_guntype							= (player_guntype + 1) % player_gunMaxType;
 bullet_maxCount							= player_gunMaxCount[player_guntype];
@@ -19,4 +20,4 @@ for(var i = 0; i < bullet_maxCount; i++){
 			state = bulletState.used;	
 		}
 	}
-}
+}*/

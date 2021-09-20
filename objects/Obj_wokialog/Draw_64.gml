@@ -7,6 +7,11 @@ draw_set_color(c_white);
 if(abs(width - targetWidth) <= 1)
 	wlog_draw() //Effect Design in wlog_draw
 
+draw_set_font(-1);
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 if(wait==-1){
 	if(frame++%60<30){
 		draw_sprite(s_cursor,0,x+width-32,y+height+8);

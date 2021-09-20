@@ -30,8 +30,8 @@ if(d3d_mode == true){
 		targetX = Obj_chr.x;
 		targetY = Obj_chr.y;
 	} else {
-		targetX = focus_id.x;
-		targetY = focus_id.y;
+		targetX = (focus_id.parent.x + Obj_chr.x) / 2;
+		targetY = (focus_id.parent.y + Obj_chr.y) / 2;
 	}
 	
 	x += (targetX - x) / 7;	
