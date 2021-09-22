@@ -11,6 +11,7 @@ function Scr_z_tilt_set(){
 	shader_enable_corner_id(true);
 }
 
+
 function Scr_z_tilt_reset(){
 	if event_number!=0 exit
 	shader_enable_corner_id(false);
