@@ -24,6 +24,9 @@ globalvar screenY;
 globalvar screenW;
 globalvar screenH;
 
+screenW = 720;
+screenH = 405;
+
 z = -810;
 
 fov = 30;

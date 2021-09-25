@@ -45,6 +45,11 @@ if(d3d_mode == true){
 	
 	camera_set_view_size(view_camera[0], cam_width, cam_height);
 	camera_set_view_pos(view_camera[0], x - cam_width / 2, y - cam_height / 2);
+	global.vx = x - cam_width / 2;
+	global.vy = y - cam_height / 2;
+	
+	screenW = cam_width;
+	screenH = cam_height;
 }
 
 global.timeScale = lerp(global.timeScale, targetTimeScale, 0.05);
@@ -52,5 +57,3 @@ CONTAINER.game_surface_blur_sigma = abs(1.0 - global.timeScale);
 
 screenX = camera_get_view_x(view_camera[0]);
 screenY = camera_get_view_y(view_camera[0]);
-screenW = camera_get_view_width(view_camera[0]);
-screenH = camera_get_view_height(view_camera[0]);
