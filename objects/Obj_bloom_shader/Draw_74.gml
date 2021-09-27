@@ -30,11 +30,19 @@ if (!surface_exists(srf_distortion)) {
 	srf_distortion = surface_create(gui_w, gui_h);
 }
 
-// 1st pass: Draw brights to bloom surface:
+/*gpu_set_blendmode(bm_normal);
+//gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_one, bm_src_alpha, bm_inv_dest_alpha);
+//gpu_set_blendmode_ext_sepalpha(bm_inv_dest_alpha,bm_one,bm_inv_dest_alpha,bm_dest_alpha);
+surface_set_target(srf_ping);
+draw_surface_stretched(global.s_surf,0,0,gui_w,gui_h);
+surface_reset_target();
+gpu_set_blendmode(bm_normal);*/
+
+// 1st pass: Draw brights to bloom sursface:
 // AppSrf -> srf_ping
 
 /*shader_set(shader_bloom_lum);
-	shader_set_uniform_f(u_bloom_threshold,		Scr_slider_get(0));
+	shader_set_uniform_f(u_bloom_threshold,		Scr_slider_get(0));s
 	shader_set_uniform_f(u_bloom_range,			Scr_slider_get(1));
 	
 	surface_set_target(srf_ping);
@@ -74,7 +82,7 @@ shader_set(shader_bloom_blend);
 	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(8));
 	texture_set_stage(u_bloom_texture, bloom_texture);
 	gpu_set_tex_filter_ext(u_bloom_texture, true);
-	draw_surface_ext(global.s_surf, 0, 0, 2, 2, 0, c_white, 1);	
+	draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);	
 shader_reset();
 surface_reset_target();
 

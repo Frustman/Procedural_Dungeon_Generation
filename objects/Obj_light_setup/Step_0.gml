@@ -43,7 +43,7 @@ vertex_end(vb);
 
 
 //add lights by left clicking. For testing purposes
-if (mouse_check_button_pressed(mb_left)){
+if (mouse_check_button_pressed(mb_middle)){
 		instance_create_depth(mouse_x,mouse_y,depth,Obj_light);	
 }
 if (mouse_check_button_pressed(mb_right)){

@@ -1,5 +1,4 @@
 //Local variables setup
-
 var _u_pos = u_pos;
 var _u_zz = u_zz;
 var _u_str = u_str;
@@ -30,20 +29,24 @@ shader_reset();
 surface_reset_target();*/
 
 //Draw lights and shadows
-
 surface_set_target(shad_surf);
 draw_clear_alpha(c_black,0);
-draw_surface_ext(application_surface,_vx,_vy,0.5,0.5,0,c_white,0.2);
+//draw_surface_ext(application_surface,_vx,_vy,0.5,0.5,0,c_white,0.2);
 with(Obj_light){
 	
 	//Draw the shadows (AKA light blockers)
+	//gpu_set_blendmode_ext_sepalpha(bm_zero,bm_one,bm_one,bm_one);
 	gpu_set_blendmode_ext_sepalpha(bm_zero,bm_one,bm_one,bm_one);
+	//gpu_set_blendmode_ext_sepalpha(bm_zero,bm_one,bm_inv_dest_alpha,bm_dest_alpha);
 	shader_set(Sha_shadow);
 	shader_set_uniform_f(_u_pos2,x,y);
 	vertex_submit(_vb,pr_trianglelist,-1);
 
 	//Draw the Light
+	//gpu_set_blendmode_ext_sepalpha(bm_inv_dest_alpha,bm_one,bm_zero,bm_zero);
+	//gpu_set_blendmode_ext_sepalpha(bm_inv_dest_alpha,bm_one,bm_inv_dest_alpha,bm_dest_alpha); G
 	gpu_set_blendmode_ext_sepalpha(bm_inv_dest_alpha,bm_one,bm_zero,bm_zero);
+	//gpu_set_blendmode(bm_add);
 	shader_set(Sha_light);
 	shader_set_uniform_f(_u_pos,x,y);
 	shader_set_uniform_f(_u_zz,size);
@@ -63,5 +66,3 @@ matrix_set(matrix_world, mat);
 //matrix_set(matrix_world,matrix_build(0,0,0,0,0,0,1,1,1));
 
 global.s_surf = shad_surf;
-
-
