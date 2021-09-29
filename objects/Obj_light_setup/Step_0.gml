@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 function Quad(_vb,_x1,_y1,_x2,_y2){
 	//Upper triangle
 	vertex_position_3d(_vb,_x1,_y1,0);

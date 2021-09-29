@@ -34,7 +34,7 @@ fov = 30;
 ddx = 0;
 ddy = 0;
 
-d3d_mode = true;
+d3d_mode = false;
 
 #endregion
 

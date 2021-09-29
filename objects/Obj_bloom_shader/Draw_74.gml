@@ -127,7 +127,7 @@ surface_reset_target();
 var wave_list_size = ds_list_size(list_of_waves);
 
 if (wave_list_size <= 0) {
-	draw_surface(srf_distortion, 0, 0);
+	draw_surface(application_surface, 0, 0);
 } else {
 	// set values based on sliders. In a game you'd use constants inside the shader instead
 	var fx_strength	= 0.85 * 0.2 - 0.1;
