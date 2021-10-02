@@ -3,9 +3,8 @@
 //turn of automaic drawing of application surface
 
 
-surface_resize(application_surface,720,405);
+//surface_resize(application_surface,720,405);
 display_set_gui_maximize();
-application_surface_draw_enable(false);
 
 //Shader uniform variable setup
 u_pos = shader_get_uniform(Sha_light,"u_pos");
@@ -23,11 +22,8 @@ vf = vertex_format_end();
 vb = vertex_create_buffer();
 
 //shadow surface variable declaration
-shad_surf = noone;
-srf_temp = noone;
 srf_light = noone;
-srf_app = noone;
-
+srf_shadow = noone;
 
 //Background layer functions
 function BGbegin(){
@@ -67,39 +63,3 @@ layer_script_begin(_n_layer,Nbegin);
 layer_script_end(_n_layer,Nend);
 
 */
-
-
-
-#region bloom
-
-shader_bloom_lum		= Sha_bloom_filter_luminance;
-u_bloom_threshold		= shader_get_uniform(shader_bloom_lum, "bloom_threshold");
-u_bloom_range			= shader_get_uniform(shader_bloom_lum, "bloom_range");
-
-shader_blur				= Sha_blur_2_pass_gauss_lerp;
-u_blur_steps			= shader_get_uniform(shader_blur, "blur_steps");
-u_sigma					= shader_get_uniform(shader_blur, "sigma");
-u_blur_vector			= shader_get_uniform(shader_blur, "blur_vector");
-u_texel_size			= shader_get_uniform(shader_blur, "texel_size");
-
-shader_bloom_blend		= Sha_bloom_blend;
-u_bloom_intensity		= shader_get_uniform(shader_bloom_blend, "bloom_intensity");
-u_bloom_darken			= shader_get_uniform(shader_bloom_blend, "bloom_darken");
-u_bloom_saturation		= shader_get_uniform(shader_bloom_blend, "bloom_saturation");
-u_bloom_texture			= shader_get_sampler_index(shader_bloom_blend, "bloom_texture");
-
-bloom_texture			= -1;
-srf_ping				= -1;
-srf_pong				= -1;
-
-gui_w					= screenW;
-gui_h					= screenH;
-
-app_w					= gui_w / 3;
-app_h					= gui_h / 3;
-
-texel_w					= 1 / app_w;
-texel_h					= 1 / app_h;
-
-
-#endregion

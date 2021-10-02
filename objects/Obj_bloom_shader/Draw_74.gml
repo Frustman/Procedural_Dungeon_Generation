@@ -77,9 +77,9 @@ gpu_set_tex_filter(false);
 
 surface_set_target(srf_final);
 shader_set(shader_bloom_blend);
-	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(9));
-	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(10));
-	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(11));
+	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(6));
+	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(7));
+	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(8));
 	texture_set_stage(u_bloom_texture, bloom_texture);
 	gpu_set_tex_filter_ext(u_bloom_texture, true);
 	draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);	
@@ -127,7 +127,10 @@ surface_reset_target();
 var wave_list_size = ds_list_size(list_of_waves);
 
 if (wave_list_size <= 0) {
-	draw_surface(application_surface, 0, 0);
+	draw_surface_ext(srf_distortion, 0, 0, 1, 1, 0, c_white, 1);
+	gpu_set_blendmode_ext(bm_dest_color,bm_inv_dest_alpha);
+	draw_surface_ext(global.s_surf, 0, 0, 2, 2, 0, c_white, 1);
+	gpu_set_blendmode(bm_normal);
 } else {
 	// set values based on sliders. In a game you'd use constants inside the shader instead
 	var fx_strength	= 0.85 * 0.2 - 0.1;
