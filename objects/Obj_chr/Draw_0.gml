@@ -5,6 +5,8 @@ real_index = anim_index div anim_fps;
 
 Scr_z_tilt_set();
 
+draw_sprite_ext(Spr_chr_msk, 0, x, y + 4 + zFloor,1,1,0,c_white, 6 / 255);
+
 if(state_name == "DASH"){
 	sprite_index = Spr_chr_dash;
 	anim_fps = 7;
@@ -26,7 +28,6 @@ if(state_name == "DASH"){
 
 Scr_z_tilt_reset();
 
-draw_sprite(Spr_chr_msk, 0, x, y + 6 + zFloor);
 
 /*
 if(shoot){

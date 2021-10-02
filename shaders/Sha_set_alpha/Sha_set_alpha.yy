@@ -1,8 +1,8 @@
 {
   "type": 1,
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "alpha",
+    "path": "folders/Shaders/alpha.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sha_set_alpha",

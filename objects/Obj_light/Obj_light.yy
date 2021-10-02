@@ -20,7 +20,7 @@
   "eventList": [],
   "properties": [
     {"varType":0,"value":"4096","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"size","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":7,"value":"$FFFFE7CC","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"color","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":7,"value":"$FF6570FF","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"color","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"-1","rangeEnabled":true,"rangeMin":-1.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"str","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"69","rangeEnabled":true,"rangeMin":0.0,"rangeMax":360.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"dir","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"360","rangeEnabled":true,"rangeMin":0.0,"rangeMax":360.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"fov","tags":[],"resourceType":"GMObjectProperty",},

@@ -1,8 +1,8 @@
 {
   "type": 1,
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "heat",
+    "path": "folders/Shaders/heat.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sha_heat_haze",

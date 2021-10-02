@@ -1,11 +1,11 @@
 {
   "type": 1,
   "parent": {
-    "name": "bloom",
-    "path": "folders/Shaders/bloom.yy",
+    "name": "light",
+    "path": "folders/Shaders/light.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Sha_bloom_blend",
+  "name": "Sha_inv_alpha",
   "tags": [],
   "resourceType": "GMShader",
 }

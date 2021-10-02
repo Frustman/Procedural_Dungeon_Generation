@@ -1,6 +1,5 @@
 varying vec2 pos; //current pixel position
 varying vec4 col;
-varying vec2 v_vTexcoord;
 
 uniform vec2 u_pos; //light source positon
 
@@ -39,10 +38,10 @@ void main(){
 	float ref = pow(max(reflect(-lnorm,norm).z,0.),16.)*0.2;
 	*/
 	//render
-	vec4 frag = texture2D( gm_BaseTexture, v_vTexcoord );
+	//vec4 frag = texture2D( gm_BaseTexture, v_vTexcoord );
 	//gl_FragColor = col*vec4(vec3(str*norm_str),1.)*frag + ref*col*str;
 	//gl_FragColor = col*vec4(vec3(str),1.) + col*str;
 	//gl_FragColor = col*vec4(vec3(str),1.)*vec4(frag.rgb, 1. - str / 2.);
-	gl_FragColor = col*vec4(vec3(str),1.)*frag;
+	gl_FragColor = col*vec4(vec3(str),1.);
 
 }

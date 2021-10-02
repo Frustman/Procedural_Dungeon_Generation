@@ -1,8 +1,8 @@
 {
   "type": 1,
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "zTilt",
+    "path": "folders/Shaders/zTilt.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sha_z_tilt",

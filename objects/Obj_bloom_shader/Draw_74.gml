@@ -77,9 +77,9 @@ gpu_set_tex_filter(false);
 
 surface_set_target(srf_final);
 shader_set(shader_bloom_blend);
-	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(6));
-	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(7));
-	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(8));
+	shader_set_uniform_f(u_bloom_intensity, Scr_slider_get(9));
+	shader_set_uniform_f(u_bloom_darken, 1 - Scr_slider_get(10));
+	shader_set_uniform_f(u_bloom_saturation, Scr_slider_get(11));
 	texture_set_stage(u_bloom_texture, bloom_texture);
 	gpu_set_tex_filter_ext(u_bloom_texture, true);
 	draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);	
