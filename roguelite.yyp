@@ -155,6 +155,7 @@
     {"id":{"name":"Spr_gun_1_reload","path":"sprites/Spr_gun_1_reload/Spr_gun_1_reload.yy",},"order":3,},
     {"id":{"name":"Sha_bloom_hlsl_luminance","path":"shaders/Sha_bloom_hlsl_luminance/Sha_bloom_hlsl_luminance.yy",},"order":2,},
     {"id":{"name":"Obj_tilt_reset","path":"objects/Obj_tilt_reset/Obj_tilt_reset.yy",},"order":3,},
+    {"id":{"name":"Sha_wall_shadow","path":"shaders/Sha_wall_shadow/Sha_wall_shadow.yy",},"order":3,},
     {"id":{"name":"STileset_ground","path":"sprites/STileset_ground/STileset_ground.yy",},"order":0,},
     {"id":{"name":"Obj_enemy_wildpig","path":"objects/Obj_enemy_wildpig/Obj_enemy_wildpig.yy",},"order":4,},
     {"id":{"name":"Font_ui","path":"fonts/Font_ui/Font_ui.yy",},"order":1,},

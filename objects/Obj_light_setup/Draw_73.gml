@@ -15,6 +15,18 @@ if (!surface_exists(srf_light)){
 	srf_light = surface_create(screenW * 2,screenH * 2);
 }
 
+if (!surface_exists(srf_wall)){
+	srf_wall = surface_create(screenW * 2,screenH * 2);
+}
+
+if (!surface_exists(srf_wall_ping)){
+	srf_wall_ping = surface_create(screenW * 2,screenH * 2);
+}
+
+if (!surface_exists(srf_wall_pong)){
+	srf_wall_pong = surface_create(screenW * 2,screenH * 2);
+}
+
 
 //matrix_set(matrix_world,matrix_multiply(camera_get_view_mat(view_camera[0]), matrix_build(-1,-1,-1,-1,-1,-1,1,1,1)));
 matrix_set(matrix_world,matrix_build(-_vx,-_vy,0,0,0,0,1,1,1));
@@ -32,6 +44,7 @@ surface_reset_target();*/
 surface_set_target(srf_light);
 draw_clear_alpha(c_dkgray,0);
 //draw_surface_ext(application_surface,_vx,_vy,1,1,0,c_white,0.2);
+
 with(Obj_light){
 	
 	//Draw the shadows (AKA light blockers)
@@ -54,25 +67,64 @@ with(Obj_light){
 	gpu_set_blendmode(bm_normal);
 	shader_reset();
 }
-shader_reset();
-//gpu_set_blendmode_ext(bm_zero,bm_src_alpha);
-//draw_surface(application_surface,_vx,_vy);
 surface_reset_target();
 
-gpu_set_blendmode(bm_normal);
+
+surface_set_target(srf_wall_ping);
+draw_clear_alpha(c_dkgray,0);
+with(Obj_light_wall){
+	//gpu_set_blendmode_ext(bm_src_color, bm_one);
+	shader_set(Sha_wall_shadow);
+	draw_self();
+	shader_reset();
+}
+surface_reset_target();
+
+surface_set_target(srf_wall_pong);
+draw_clear_alpha(c_dkgray,0);
+surface_reset_target();
+
+
+surface_set_target(srf_wall);
+draw_clear_alpha(c_dkgray,0);
+surface_reset_target();
+
 
 matrix_set(matrix_world,matrix_build(0,0,0,0,0,0,1,1,1));
 
-//surface_set_target(srf_shadow);
-	//gpu_set_blendmode_ext(bm_dest_alpha,bm_inv_dest_alpha);
-	gpu_set_blendmode_ext(bm_dest_color,bm_inv_dest_alpha);
-
-	draw_surface(srf_light,_vx, _vy);
+gpu_set_tex_filter(true);
+shader_set(shader_blur);
+	shader_set_uniform_f(u_blur_steps,		blur_steps);
+	shader_set_uniform_f(u_sigma,			sigma);
+	shader_set_uniform_f(u_blur_vector,		1, 0);
+	shader_set_uniform_f(u_texel_size,		texel_w, texel_h);
 	
-	gpu_set_blendmode(bm_normal);
+	surface_set_target(srf_wall_pong);
+		draw_surface(srf_wall_ping, 0, 0);
+	surface_reset_target();
+	
+// 3rd pass: blur vertically
+// srf_pong -> srf_ping
+	shader_set_uniform_f(u_blur_vector,		0, 1);
+	
+	surface_set_target(srf_wall);
+		draw_surface(srf_wall_pong, 0, 0);
+	surface_reset_target();
+	
+gpu_set_tex_filter(false);
 
+
+
+
+
+
+
+//gpu_set_blendmode_ext(bm_dest_alpha,bm_inv_dest_alpha);
+gpu_set_blendmode_ext(bm_dest_color,bm_inv_dest_alpha);
+
+draw_surface(srf_light,_vx, _vy);
+	
+gpu_set_blendmode(bm_normal);
 
 global.s_surf = srf_light;
-//surface_reset_target();
-
-//draw_surface(srf_shadow,_vx, _vy);
+global.w_surf = srf_wall;

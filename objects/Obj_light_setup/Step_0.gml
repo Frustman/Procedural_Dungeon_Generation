@@ -30,12 +30,13 @@ with(Obj_chr){
 	Quad(_vb,x1,y1,x2,y2); //Negative Slope Diagonal Wall
 	Quad(_vb,x2,y1,x1,y2); //Positive Slope Diagonal Wall
 }
+/*
 with(Obj_wall){
 	var x1 = x - sprite_width / 2, x2 = x + sprite_width / 2;
 	var y1 = y - sprite_height * 5 / 16, y2 = y + sprite_height * 7 / 32;
 	Quad(_vb,x1,y1,x2,y2); //Negative Slope Diagonal Wall
 	Quad(_vb,x2,y1,x1,y2); //Positive Slope Diagonal Wall
-}
+}*/
 /*with(obj_tri){
 	Quad(_vb,x,y,x+sprite_width,y+sprite_height); //large diagonal wall
 	Quad(_vb,x,y+sprite_height,mid_x,mid_y); //small diagonal wall

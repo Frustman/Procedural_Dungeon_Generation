@@ -2,7 +2,7 @@ attribute vec3 in_Position;                  // (x,y,z)
 
 uniform vec2 u_pos; //light source positon
 
-const float len = 100000.; //length
+const float len = 1000000.; //length
 
 varying float tdis; //top distance
 varying float ldis; //light distance

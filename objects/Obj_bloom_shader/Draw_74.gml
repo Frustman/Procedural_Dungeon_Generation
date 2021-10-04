@@ -130,6 +130,8 @@ if (wave_list_size <= 0) {
 	draw_surface_ext(srf_distortion, 0, 0, 1, 1, 0, c_white, 1);
 	gpu_set_blendmode_ext(bm_dest_color,bm_inv_dest_alpha);
 	draw_surface_ext(global.s_surf, 0, 0, 2, 2, 0, c_white, 1);
+	gpu_set_blendmode_ext(bm_dest_color,bm_inv_dest_alpha);
+	draw_surface_ext(global.w_surf, 0, 0, 2, 2, 0, c_white, 1);
 	gpu_set_blendmode(bm_normal);
 } else {
 	// set values based on sliders. In a game you'd use constants inside the shader instead

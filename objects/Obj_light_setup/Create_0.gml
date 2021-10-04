@@ -23,7 +23,9 @@ vb = vertex_create_buffer();
 
 //shadow surface variable declaration
 srf_light = noone;
-srf_shadow = noone;
+srf_wall = noone;
+srf_wall_ping = noone;
+srf_wall_pong = noone;
 
 //Background layer functions
 function BGbegin(){
@@ -40,7 +42,7 @@ layer_script_begin(_bg_layer,BGbegin);
 layer_script_end(_bg_layer,BGend);*/
 
 global.s_surf = noone;
-global.n_surf = noone;
+global.w_surf = noone;
 global.vx = 0;
 global.vy = 0;
 /*
@@ -63,3 +65,20 @@ layer_script_begin(_n_layer,Nbegin);
 layer_script_end(_n_layer,Nend);
 
 */
+
+
+
+
+shader_blur				= Sha_blur_2_pass_gauss_lerp;
+u_blur_steps			= shader_get_uniform(shader_blur, "blur_steps");
+u_sigma					= shader_get_uniform(shader_blur, "sigma");
+u_blur_vector			= shader_get_uniform(shader_blur, "blur_vector");
+u_texel_size			= shader_get_uniform(shader_blur, "texel_size");
+
+//blur_steps		= round(0.15 * 15) + 1;
+blur_steps		= round(0.15 * 15) + 1.5;
+//sigma			= max(0.1, 0.0001);
+sigma			= 0.2;
+
+texel_w					= 1 / screenW / 2;
+texel_h					= 1 / screenH / 2;
